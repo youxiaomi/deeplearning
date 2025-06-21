@@ -252,7 +252,7 @@ def programming_exercises():
             self.fc1 = nn.Linear(64 * 8 * 8, 512)
             self.fc2 = nn.Linear(512, num_classes)
             self.dropout = nn.Dropout(0.5)
-            
+        
         def forward(self, x):
             # TODO: Implement forward pass
             # Apply conv1 -> ReLU -> MaxPool
@@ -315,7 +315,7 @@ def programming_exercises():
 
     print(f"Input: 28x28, Kernel: 5x5, Stride: 1, Padding: 0")
     print(f"Output: {calculate_conv_output_size(28, 5, 1, 0)}x{calculate_conv_output_size(28, 5, 1, 0)}")
-    print()
+        print()
     
     print("Exercise 3: Implement ResNet block")
     print("练习3：实现ResNet块")

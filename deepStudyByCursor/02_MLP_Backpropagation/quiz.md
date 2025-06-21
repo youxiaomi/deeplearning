@@ -282,9 +282,9 @@ def manual_backprop_example():
     print(f"∂L/∂b2 = {db2:.3f}")
     print(f"∂L/∂W1 = {dW1}")
     print(f"∂L/∂b1 = {db1}")
-
-# 运行手动计算示例
-manual_backprop_example()
+    
+    # 运行手动计算示例
+    manual_backprop_example()
 ```
 
 ---
