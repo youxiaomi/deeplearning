@@ -1,0 +1,37 @@
+# Deep Learning Dependencies
+# 深度学习依赖项
+
+# Core scientific computing
+numpy>=1.21.0
+matplotlib>=3.5.0
+scipy>=1.7.0
+
+# Machine learning
+scikit-learn>=1.0.0
+
+# Deep learning framework
+torch>=1.12.0
+torchvision>=0.13.0
+
+# Data manipulation and analysis
+pandas>=1.3.0
+
+# Jupyter notebook support
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Progress bars and utilities
+tqdm>=4.62.0
+
+# Plotting and visualization
+seaborn>=0.11.0
+
+# Image processing
+Pillow>=8.3.0
+
+# Optional: For better performance
+# numba>=0.56.0  # Just-in-time compilation
+
+# Development tools (optional)
+# pytest>=6.2.0  # For testing
+# black>=21.0.0   # Code formatting 
