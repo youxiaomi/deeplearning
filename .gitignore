@@ -6,3 +6,5 @@ node_modules
 .vscode
 .cursor
 .conda
+**/data
+**/__pycache__

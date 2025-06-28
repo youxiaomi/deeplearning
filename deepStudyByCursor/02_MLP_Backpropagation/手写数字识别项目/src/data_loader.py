@@ -59,10 +59,13 @@ class MNISTDataLoader:
         print("Downloading MNIST dataset... (正在下载MNIST数据集...)")
         
         # Download training data (下载训练数据)
-        train_dataset = datasets.MNIST(
+        # Check if data already exists (检查数据是否已存在)
+
+      
+        train_dataset =  datasets.MNIST(
             root=self.raw_dir,
             train=True,
-            download=True,
+            download=True,  # Only download if data doesn't exist (仅在数据不存在时下载)
             transform=self.transform
         )
         

@@ -206,4 +206,123 @@
     # X_test, y_test = prepare_multiclass_data(100, 4, 3)
     # print(f"Generated X shape: {X_test.shape}, y shape: {y_test.shape}")
     # 期望输出类似: Generated X shape: (100, 4), y shape: (100,)
-    ``` 
+    ```
+
+# Quiz: Matrix Operations and Model Evaluation
+
+小测验：矩阵运算与模型评估
+
+Welcome to the quiz! Test your understanding of matrix operations and the confusion matrix.
+
+欢迎来到小测验！测试你对矩阵运算和混淆矩阵的理解。
+
+---
+
+## Part 1: Matrix Operations (矩阵运算部分)
+
+### Question 1 (问题 1)
+
+Given two matrices $\mathbf{A}$ and $\mathbf{B}$:
+
+给出两个矩阵 $\mathbf{A}$ 和 $\mathbf{B}$：
+
+$$\mathbf{A} = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad \mathbf{B} = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$$
+
+Calculate their standard matrix product $\mathbf{C} = \mathbf{AB}$.
+
+计算它们的标准矩阵乘积 $\mathbf{C} = \mathbf{AB}$。
+
+**Answer (答案):**
+
+$\mathbf{C} = \begin{pmatrix} 1 \cdot 5 + 2 \cdot 7 & 1 \cdot 6 + 2 \cdot 8 \\ 3 \cdot 5 + 4 \cdot 7 & 3 \cdot 6 + 4 \cdot 8 \end{pmatrix} = \begin{pmatrix} 5 + 14 & 6 + 16 \\ 15 + 28 & 18 + 32 \end{pmatrix} = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix}$
+
+---
+
+### Question 2 (问题 2)
+
+What is the transpose of matrix $\mathbf{D}$?
+
+矩阵 $\mathbf{D}$ 的转置是什么？
+
+$$\mathbf{D} = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$$
+
+**Answer (答案):**
+
+$$\mathbf{D}^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}$$
+
+---
+
+### Question 3 (问题 3)
+
+In deep learning, element-wise multiplication (Hadamard product) is often used for what purpose during backpropagation?
+
+在深度学习中，逐元素乘法（哈达玛积）在反向传播期间通常用于什么目的？
+
+**Answer (答案):**
+
+It's used to apply activation function derivatives to the error signal, like in the formula $\delta = \nabla_a C \odot f'(z)$. This scales the error signal based on the slope of the activation function at that point.
+
+它用于将激活函数导数应用于误差信号，例如公式 $\delta = \nabla_a C \odot f'(z)$ 中。这根据激活函数在该点的斜率来调整误差信号。
+
+---
+
+## Part 2: Model Evaluation (模型评估部分)
+
+### Question 4 (问题 4)
+
+A classification model is evaluated, and its confusion matrix is given below. This is a binary classification problem where the positive class is "Spam" and the negative class is "Not Spam".
+
+对一个分类模型进行了评估，其混淆矩阵如下。这是一个二分类问题，正类是"垃圾邮件"，负类是"非垃圾邮件"。
+
+|                   | Predicted Spam | Predicted Not Spam |
+| :---------------- | :------------- | :----------------- |
+| **Actual Spam**   | 80             | 20                 |
+| **Actual Not Spam** | 10             | 90                 |
+
+Based on this matrix, how many emails were **actually spam** but were **predicted as not spam**? What is this metric called?
+
+根据这个矩阵，有多少邮件**实际是垃圾邮件**但被**预测为非垃圾邮件**？这个指标叫什么？
+
+**Answer (答案):**
+
+20 emails were actually spam but predicted as not spam. This metric is called **False Negative (FN)** or **假阴性**。
+
+---
+
+### Question 5 (问题 5)
+
+Why is a **normalized confusion matrix** particularly useful when dealing with **imbalanced datasets** in classification tasks? Explain with a simple example.
+
+在分类任务中处理**不平衡数据集**时，为什么**归一化混淆矩阵**特别有用？请用一个简单的例子解释。
+
+**Answer (答案):**
+
+A normalized confusion matrix is useful for imbalanced datasets because it shows the *proportions* of correct/incorrect predictions for each class, rather than just raw counts. This prevents a model's good performance on a large majority class from masking poor performance on a small minority class.
+
+**Example (示例):**
+Suppose you have 100 images: 90 are of cats and 10 are of dogs. Your model predicts everything as "cat".
+-   **Raw Confusion Matrix (原始混淆矩阵):**
+    | True \\ Predicted | Cat | Dog |
+    | :---------------- | :-- | :-- |
+    | **Actual Cat**    | 90  | 0   |
+    | **Actual Dog**    | 10  | 0   |
+    Overall accuracy would be 90/100 = 90%, which looks good.
+
+-   **Normalized (Row-wise) Confusion Matrix (归一化（按行）混淆矩阵):**
+    | True \\ Predicted | Cat    | Dog    |
+    | :---------------- | :----- | :----- |
+    | **Actual Cat**    | 1.00   | 0.00   |
+    | **Actual Dog**    | 1.00   | 0.00   |
+    Here, you clearly see that for actual dogs, 100% were misclassified as cats (Recall for Dog is 0%). This reveals the model's failure on the minority class, which was hidden by the high overall accuracy in the raw matrix.
+
+---
+
+### Question 6 (问题 6)
+
+In the context of a normalized confusion matrix (normalized by true class), what do the diagonal elements represent?
+
+在归一化混淆矩阵（按真实类别归一化）的背景下，对角线上的元素代表什么？
+
+**Answer (答案):**
+
+When a confusion matrix is normalized by true class (row-wise), the diagonal elements represent the **Recall (召回率)** or **True Positive Rate (真阳性率)** for each class. It indicates the proportion of actual positive cases that were correctly identified. 

@@ -1,0 +1,47 @@
+MNIST Handwritten Digit Recognition - Training Report
+MNIST手写数字识别 - 训练报告
+============================================================
+
+Configuration (配置):
+------------------------------
+Model Architecture: [784, 128, 64, 10]
+Activations: ['relu', 'relu']
+Epochs: 50
+Batch Size: 64
+Learning Rate: 0.01
+Validation Split: 0.1
+Training Time: 42.64 seconds
+
+Dataset Information (数据集信息):
+------------------------------
+Training samples: 54000
+Validation samples: 6000
+Test samples: 10000
+Input features: 784 (28x28 pixels)
+Number of classes: 10 (digits 0-9)
+
+Final Performance (最终性能):
+------------------------------
+Training Accuracy: 0.9994 (99.94%)
+Validation Accuracy: 0.9720 (97.20%)
+Test Accuracy: 0.9752 (97.52%)
+
+Per-Class Accuracy (每个类别准确率):
+------------------------------
+Digit 0: 0.9878 (98.78%)
+Digit 1: 0.9903 (99.03%)
+Digit 2: 0.9738 (97.38%)
+Digit 3: 0.9792 (97.92%)
+Digit 4: 0.9827 (98.27%)
+Digit 5: 0.9630 (96.30%)
+Digit 6: 0.9802 (98.02%)
+Digit 7: 0.9728 (97.28%)
+Digit 8: 0.9641 (96.41%)
+Digit 9: 0.9554 (95.54%)
+
+Training Progress (训练进度):
+------------------------------
+Best Training Accuracy: 0.9994
+Best Validation Accuracy: 0.9725
+Final Training Loss: 0.0098
+Final Validation Loss: 0.1024
