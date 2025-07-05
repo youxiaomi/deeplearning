@@ -338,3 +338,100 @@ def manual_backprop_example():
 - 引入非线性，使网络能够学习复杂的非线性模式
 - 没有激活函数的多层网络等价于单层线性模型
 - 激活函数提供了网络的表达能力和学习复杂函数的基础 
+
+## 02_MLP_Backpropagation: 多层感知机与反向传播 - 随堂测验
+
+### 02.1 PyTorch与GPU加速
+
+**问题 1 (Question 1):**
+
+你的原始 `train.py` 脚本使用NumPy从零实现MLP。请问，为什么这个脚本不能直接利用GPU进行加速？
+
+**Why can't your original `train.py` script, which implements MLP from scratch using NumPy, directly utilize the GPU for acceleration?
+
+**答案 (Answer):**
+
+原始的NumPy实现是在CPU上执行数学运算的，NumPy本身不具备直接与GPU硬件交互的能力。要利用GPU，需要使用像PyTorch或TensorFlow这样的深度学习框架，它们提供了将计算任务分配到GPU的接口和优化。
+
+The original NumPy implementation performs mathematical operations on the CPU, and NumPy itself does not have the capability to directly interact with GPU hardware. To utilize the GPU, deep learning frameworks like PyTorch or TensorFlow are required, as they provide interfaces and optimizations to offload computational tasks to the GPU.
+
+---
+
+**问题 2 (Question 2):**
+
+在PyTorch中，如果你想把模型和数据从CPU移动到GPU上进行计算，你会使用哪个核心方法？请举例说明。
+
+**In PyTorch, if you want to move a model and data from the CPU to the GPU for computation, which core method would you use? Please provide an example.
+
+**答案 (Answer):**
+
+你会使用 `.to(device)` 方法。
+
+You would use the `.to(device)` method.
+
+**例子 (Example):**
+```python
+import torch
+import torch.nn as nn
+
+# Check if GPU is available (检查GPU是否可用)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
+
+# Create a dummy model (创建一个虚拟模型)
+class SimpleModel(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.linear = nn.Linear(10, 1)
+    def forward(self, x):
+        return self.linear(x)
+
+model = SimpleModel()
+model.to(device) # Move model to GPU (将模型移动到GPU)
+print(f"Model is on: {next(model.parameters()).device}")
+
+# Create a dummy tensor (创建一个虚拟张量)
+data = torch.randn(5, 10)
+data = data.to(device) # Move data to GPU (将数据移动到GPU)
+print(f"Data is on: {data.device}")
+```
+
+---
+
+**问题 3 (Question 3):**
+
+在PyTorch的训练循环中，`optimizer.zero_grad()`、`loss.backward()` 和 `optimizer.step()` 这三个步骤分别有什么作用？
+
+**In a PyTorch training loop, what are the roles of `optimizer.zero_grad()`, `loss.backward()`, and `optimizer.step()` respectively?
+
+**答案 (Answer):**
+
+*   `optimizer.zero_grad()`:
+    *   **作用 (Role)**: 清除模型中所有可训练参数的梯度。PyTorch默认会累积梯度，所以每次反向传播之前都需要清零，以避免梯度累积导致错误更新。
+    *   **Role**: Zeros the gradients of all optimized `torch.Tensor`s. PyTorch accumulates gradients by default, so it's necessary to zero them before each backward pass to prevent incorrect updates due to accumulated gradients.
+
+*   `loss.backward()`:
+    *   **作用 (Role)**: 执行反向传播。它根据损失函数计算模型中所有可训练参数的梯度。
+    *   **Role**: Performs backpropagation. It computes the gradients of the loss with respect to all trainable parameters in the model.
+
+*   `optimizer.step()`:
+    *   **作用 (Role)**: 根据计算出的梯度更新模型的参数。优化器（如Adam或SGD）会使用这些梯度和学习率来调整模型的权重和偏置。
+    *   **Role**: Updates the model's parameters based on the computed gradients. The optimizer (e.g., Adam or SGD) uses these gradients and the learning rate to adjust the model's weights and biases.
+
+---
+
+**问题 4 (Question 4):**
+
+`torchvision.datasets.MNIST` 和 `torch.utils.data.DataLoader` 在PyTorch的数据加载流程中分别扮演什么角色？
+
+**What roles do `torchvision.datasets.MNIST` and `torch.utils.data.DataLoader` play in PyTorch's data loading pipeline?
+
+**答案 (Answer):**
+
+*   `torchvision.datasets.MNIST` (或任何 `torch.utils.data.Dataset` 的子类):
+    *   **角色 (Role)**: 它代表了数据集本身。它负责加载单个数据样本及其对应的标签。对于MNIST，它处理数据集的下载、读取和基本的预处理（通过 `transform` 参数）。
+    *   **Role**: It represents the dataset itself. It is responsible for loading individual data samples and their corresponding labels. For MNIST, it handles downloading, reading, and basic preprocessing (via the `transform` argument).
+
+*   `torch.utils.data.DataLoader`:
+    *   **角色 (Role)**: 它是一个迭代器，包裹着 `Dataset`，并提供了一种从数据集中高效加载批次数据的方法。它负责批量处理 (batching)、数据混洗 (shuffling) 和并行数据加载 (multi-process data loading using `num_workers`)。`DataLoader` 使训练过程能够以小批量的方式进行，这对于深度学习的优化至关重要。
+    *   **Role**: It is an iterator that wraps a `Dataset` and provides an efficient way to load batches of data from the dataset. It is responsible for batching, shuffling, and parallel data loading (using `num_workers`). The `DataLoader` enables the training process to work with mini-batches, which is crucial for deep learning optimization. 

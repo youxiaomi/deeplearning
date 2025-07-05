@@ -351,7 +351,7 @@ class MLPClassifier:
         # Backward through hidden layers (隐藏层反向传播)
         for layer in reversed(self.layers[:-1]):
             grad_input = layer.backward(grad_input)
-    
+      
     def update_parameters(self, learning_rate: float):
         """
         Update all layer parameters

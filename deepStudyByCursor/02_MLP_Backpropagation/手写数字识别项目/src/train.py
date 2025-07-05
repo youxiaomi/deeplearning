@@ -304,7 +304,7 @@ def main():
     parser.add_argument('--epochs', type=int, default=50, help='Number of training epochs')
     parser.add_argument('--batch_size', type=int, default=64, help='Batch size')
     parser.add_argument('--learning_rate', type=float, default=0.01, help='Learning rate')
-    parser.add_argument('--hidden_sizes', nargs='+', type=int, default=[128, 64], 
+    parser.add_argument('--hidden_sizes', nargs='+', type=int, default=[128, 64, 32], 
                         help='Hidden layer sizes')
     parser.add_argument('--validation_split', type=float, default=0.1, 
                         help='Validation split ratio')
