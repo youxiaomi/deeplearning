@@ -1,0 +1,48 @@
+MNIST Handwritten Digit Recognition - PyTorch Training Report
+MNIST手写数字识别 - PyTorch训练报告
+============================================================
+
+Configuration (配置):
+------------------------------
+Model Architecture: [784, 256, 128, 10]
+Activations: ['relu', 'relu']
+Epochs: 10
+Batch Size: 128
+Learning Rate: 0.001
+Validation Split: 0.1
+Training Time: 51.99 seconds
+Device Used: cuda
+
+Dataset Information (数据集信息):
+------------------------------
+Training samples: 54000
+Validation samples: 6000
+Test samples: 10000
+Input features: 784 (28x28 pixels)
+Number of classes: 10 (digits 0-9)
+
+Final Performance (最终性能):
+------------------------------
+Training Loss: 0.0113, Accuracy: 0.9965 (99.65%)
+Validation Loss: 0.0892, Accuracy: 0.9792 (97.92%)
+Test Loss: 0.0819, Accuracy: 0.9800 (98.00%)
+
+Per-Class Accuracy (每个类别准确率):
+------------------------------
+Digit 0: 0.9837 (98.37%)
+Digit 1: 0.9903 (99.03%)
+Digit 2: 0.9690 (96.90%)
+Digit 3: 0.9861 (98.61%)
+Digit 4: 0.9888 (98.88%)
+Digit 5: 0.9877 (98.77%)
+Digit 6: 0.9864 (98.64%)
+Digit 7: 0.9728 (97.28%)
+Digit 8: 0.9774 (97.74%)
+Digit 9: 0.9584 (95.84%)
+
+Training Progress (训练进度):
+------------------------------
+Best Training Accuracy: 0.9936
+Best Validation Accuracy: 0.9792
+Final Training Loss: 0.0214
+Final Validation Loss: 0.0892
