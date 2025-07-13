@@ -8,4 +8,5 @@ node_modules
 .conda
 **/data
 **/__pycache__
-deepStudyByCursor/02_MLP_Backpropagation/手写数字识别项目/results_pytorch
+*.pth
+*.txt
