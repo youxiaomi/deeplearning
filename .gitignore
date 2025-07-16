@@ -9,4 +9,4 @@ node_modules
 **/data
 **/__pycache__
 *.pth
-*.txt
+# *.txt

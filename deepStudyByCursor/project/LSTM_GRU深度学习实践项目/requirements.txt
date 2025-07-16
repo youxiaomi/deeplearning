@@ -1,0 +1,45 @@
+# PyTorch深度学习框架 | PyTorch Deep Learning Framework
+torch>=1.10.0
+torchvision>=0.11.0
+torchaudio>=0.10.0
+
+# 数据处理和科学计算 | Data Processing and Scientific Computing
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+
+# 机器学习工具 | Machine Learning Tools
+scikit-learn>=1.0.0
+
+# 可视化工具 | Visualization Tools
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# 文本处理 | Text Processing
+nltk>=3.6.0
+jieba>=0.42.0
+textblob>=0.17.0
+
+# 数据获取和处理 | Data Acquisition and Processing
+yfinance>=0.1.70
+requests>=2.26.0
+beautifulsoup4>=4.10.0
+
+# 进度条和日志 | Progress Bar and Logging
+tqdm>=4.62.0
+loguru>=0.5.0
+
+# Jupyter支持 | Jupyter Support
+jupyter>=1.0.0
+ipywidgets>=7.6.0
+
+# 模型保存和加载 | Model Saving and Loading
+pickle5>=0.0.11
+
+# 性能分析 | Performance Analysis
+psutil>=5.8.0
+memory-profiler>=0.60.0
+
+# 随机数种子固定 | Random Seed Fixing
+random2>=1.0.1 
