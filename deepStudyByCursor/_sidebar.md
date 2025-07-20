@@ -55,7 +55,7 @@
 * [第十八章：推荐系统 (Recommender Systems)]()
   * [18.1 推荐系统](./deepStudyByCursor/18_Recommender_Systems/Recommender_Systems.md)
 * [第十九章：深度学习数学基础 (Mathematics for Deep Learning)]()
-  * [19.1 数学基础完整版](./deepStudyByCursor/19_Mathematics_for_Deep_Learning/Appendix%20Mathematics%20for%20Deep%20Learning.md)
+  * [19.1 Mathematics_for_Deep_Learning](./deepStudyByCursor/19_Mathematics_for_Deep_Learning/Appendix%20Mathematics%20for%20Deep%20Learning.md)
   * [19.2 数学基础精简版](./deepStudyByCursor/19_Mathematics_for_Deep_Learning/数学基础.md)
 * [第二十章：深度学习工具与环境 (Tools for Deep Learning)]()
   * [20.1 深度学习工具指南](./deepStudyByCursor/20_Tools_for_Deep_Learning/Appendix%20Tools%20for%20Deep%20Learning.md)
