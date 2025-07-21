@@ -20,412 +20,435 @@ import torch
 import torch.nn as nn
 import numpy as np
 
-def multiple_choice_questions():
-    """Multiple choice questions about RNNs"""
-    print("=== Multiple Choice Questions ===")
-    print("=== 选择题 ===\n")
-    
-    questions = [
-        {
-            "question": "What is the main advantage of RNNs over traditional feedforward networks?",
-            "question_zh": "对于序列数据，RNN相比前馈网络的主要优势是什么？",
-            "options": [
-                "A) Faster computation",
-                "B) Memory of previous inputs through hidden states",
-                "C) Better gradient flow",
-                "D) Fewer parameters"
-            ],
-            "answer": "C",
-            "explanation": "RNNs maintain hidden states that carry information from previous time steps, allowing them to process sequences.",
-            "explanation_zh": "RNN维护隐藏状态，携带来自先前时间步的信息，使其能够处理序列。"
-        },
-        {
-            "question": "What is the role of hidden state h_t in RNNs?",
-            "question_zh": "RNN中的隐藏状态h_t的作用是什么？",
-            "options": [
-                "A) Store current input information",
-                "B) Act as network memory, carrying historical information",
-                "C) Control gradient flow",
-                "D) Reduce computational complexity"
-            ],
-            "answer": "B",
-            "explanation": "Hidden state is the core of RNN, passing information between time steps as network memory.",
-            "explanation_zh": "隐藏状态是RNN的核心，它在时间步之间传递信息，充当网络的记忆。"
-        },
-        {
-            "question": "How does the vanishing gradient problem mainly manifest in RNNs?",
-            "question_zh": "梯度消失问题在RNN中主要表现为什么？",
-            "options": [
-                "A) Training becomes slower",
-                "B) Cannot learn long-term dependencies",
-                "C) Memory usage increases",
-                "D) Accuracy decreases"
-            ],
-            "answer": "B",
-            "explanation": "Vanishing gradients make it difficult for RNNs to learn long-range dependencies.",
-            "explanation_zh": "梯度消失导致RNN难以学习长距离的依赖关系，这是RNN的主要限制。"
-        },
-        {
-            "question": "In the RNN formula h_t = tanh(W_hh * h_{t-1} + W_xh * x_t + b), what does W_hh represent?",
-            "question_zh": "在RNN的数学公式h_t = tanh(W_hh * h_{t-1} + W_xh * x_t + b)中，W_hh表示什么？",
-            "options": [
-                "A) Input-to-hidden weights",
-                "B) Hidden-to-output weights",
-                "C) Hidden-to-hidden weights",
-                "D) Bias term"
-            ],
-            "answer": "C",
-            "explanation": "W_hh是连接前一时间步隐藏状态到当前时间步隐藏状态的权重矩阵。",
-            "explanation_zh": "W_hh connects the previous hidden state to the current hidden state."
-        },
-        {
-            "question": "What is the advantage of bidirectional RNNs?",
-            "question_zh": "双向RNN的优势是什么？",
-            "options": [
-                "A) Faster training",
-                "B) Fewer parameters",
-                "C) Can utilize future information",
-                "D) Easier to converge"
-            ],
-            "answer": "C",
-            "explanation": "Bidirectional RNNs can utilize both past and future information.",
-            "explanation_zh": "双向RNN可以同时利用过去和未来的信息，提高模型性能。"
-        }
-    ]
-    
-    score = 0
-    for i, q in enumerate(questions, 1):
-        print(f"Question {i}: {q['question']}")
-        print(f"问题{i}：{q['question_zh']}")
-        for option in q['options']:
-            print(f"  {option}")
-        
-        user_answer = input("Your answer (A/B/C/D): ").upper().strip()
-        
-        if user_answer == q['answer']:
-            print("✓ Correct! 正确！")
-            print(f"Explanation: {q['explanation']}")
-            print(f"解释：{q['explanation_zh']}")
-            score += 1
-        else:
-            print(f"✗ Incorrect. The correct answer is {q['answer']}")
-            print(f"✗ 错误。正确答案是{q['answer']}")
-            print(f"Explanation: {q['explanation']}")
-            print(f"解释：{q['explanation_zh']}")
-        print("-" * 50)
-    
-    print(f"Score: {score}/{len(questions)}")
-    print(f"得分：{score}/{len(questions)}")
+# Quiz: Modern Convolutional Neural Networks
+# 测验：现代卷积神经网络
 
-def fill_in_blanks():
-    """Fill in the blank questions"""
-    print("\n=== Fill in the Blanks ===")
-    print("=== 填空题 ===\n")
-    
-    questions = [
-        {
-            "question": "The core idea of RNN is to share ______ at each time step, giving the network memory capability.",
-            "question_zh": "RNN的核心思想是在每个时间步共享______，使网络具有记忆能力。",
-            "answer": "参数/权重",
-            "explanation": "RNN的核心思想是在每个时间步共享参数/权重，使网络具有记忆能力。",
-            "explanation_zh": "RNN的核心思想是在每个时间步共享参数/权重，使网络具有记忆能力。"
-        },
-        {
-            "question": "When processing the sequence \"hello\", RNN processes characters one by one, and the hidden state h_3 at the 3rd time step contains information from the first ______ characters.",
-            "question_zh": "在处理序列\"hello\"时，RNN会逐个处理字符，第3个时间步的隐藏状态h_3包含了前______个字符的信息。",
-            "answer": "3",
-            "explanation": "在处理序列\"hello\"时，RNN会逐个处理字符，第3个时间步的隐藏状态h_3包含了前3个字符的信息。",
-            "explanation_zh": "在处理序列\"hello\"时，RNN会逐个处理字符，第3个时间步的隐藏状态h_3包含了前3个字符的信息。"
-        },
-        {
-            "question": "In Backpropagation Through Time (BPTT), gradients need to be backpropagated through ______ time steps.",
-            "question_zh": "时间反向传播（BPTT）算法中，梯度需要通过______个时间步进行反向传播。",
-            "answer": "多个/所有",
-            "explanation": "时间反向传播（BPTT）算法中，梯度需要通过多个/所有时间步进行反向传播。",
-            "explanation_zh": "时间反向传播（BPTT）算法中，梯度需要通过多个/所有时间步进行反向传播。"
-        },
-        {
-            "question": "To alleviate the gradient explosion problem, a commonly used technique is ______.",
-            "question_zh": "为了缓解梯度爆炸问题，常用的技术是______。",
-            "answer": "梯度裁剪",
-            "explanation": "为了缓解梯度爆炸问题，常用的技术是梯度裁剪。",
-            "explanation_zh": "为了缓解梯度爆炸问题，常用的技术是梯度裁剪。"
-        },
-        {
-            "question": "In language modeling tasks, the goal of RNN is to predict the ______ word in the sequence.",
-            "question_zh": "在语言模型任务中，RNN的目标是预测序列中的______词。",
-            "answer": "下一个",
-            "explanation": "在语言模型任务中，RNN的目标是预测序列中的下一个词。",
-            "explanation_zh": "在语言模型任务中，RNN的目标是预测序列中的下一个词。"
-        }
-    ]
-    
-    score = 0
-    for i, q in enumerate(questions, 1):
-        print(f"Question {i}: {q['question']}")
-        print(f"问题{i}：{q['question_zh']}")
-        
-        user_answer = input("Your answer: ").strip().lower()
-        correct_answers = [ans.strip().lower() for ans in q['answer'].split(',')]
-        
-        if any(ans in user_answer for ans in correct_answers):
-            print("✓ Correct! 正确！")
-            score += 1
-        else:
-            print(f"✗ Incorrect. The correct answer is: {q['answer']}")
-            print(f"✗ 错误。正确答案是：{q['answer']}")
-        
-        print(f"Explanation: {q['explanation']}")
-        print(f"解释：{q['explanation_zh']}")
-        print("-" * 50)
-    
-    print(f"Score: {score}/{len(questions)}")
-    print(f"得分：{score}/{len(questions)}")
+## Multiple Choice Questions 选择题
 
-def short_answer_questions():
-    """Short answer questions"""
-    print("\n=== Short Answer Questions ===")
-    print("=== 简答题 ===\n")
-    
-    questions = [
-        {
-            "question": "Explain why traditional feedforward neural networks are not suitable for processing sequential data.",
-            "question_zh": "解释为什么传统的前馈神经网络不适合处理序列数据？",
-            "sample_answer": "Traditional feedforward networks have fixed input sizes and lack memory mechanisms, making them unsuitable for processing variable-length sequential data. They cannot model temporal dependencies in the input sequence, which is crucial for sequential tasks like language modeling, machine translation, or speech recognition.",
-            "sample_answer_zh": "传统的前馈网络具有固定输入大小，缺乏记忆机制，使其不适合处理变长序列数据。它们无法在输入序列中建模时序依赖关系，这对于语言建模、机器翻译或语音识别等序列任务至关重要。"
-        },
-        {
-            "question": "Describe in detail the causes of the vanishing gradient problem in RNNs and its impact on model performance.",
-            "question_zh": "详细描述RNN中梯度消失问题的产生原因及其对模型性能的影响。",
-            "sample_answer": "The vanishing gradient problem occurs in RNNs when gradients are backpropagated through time by repeatedly multiplying by weight matrices. If weights are small, gradients shrink exponentially with sequence length, making it hard to learn long-term dependencies. This severely impacts model performance, leading to poor learning of long-term dependencies and potentially causing the model to fail to capture important patterns in the input sequence. The vanishing gradient problem is particularly problematic for RNNs with recurrent connections, as it can lead to the loss of information about past inputs, making it difficult to maintain context and generate coherent outputs for long sequences.",
-            "sample_answer_zh": "梯度消失问题发生在RNN中，当梯度通过时间反向传播时，需要重复乘以权重矩阵。如果权重很小，梯度会随序列长度呈指数收缩，使得难以学习长期依赖。这严重影响了模型性能，导致难以学习长距离依赖关系，并可能使模型无法捕捉输入序列中的重要模式。梯度消失问题是RNN中循环连接特别严重的问题，因为它可能导致关于过去输入的信息丢失，使得难以保持上下文并生成长序列的连贯输出。"
-        },
-        {
-            "question": "Compare unidirectional RNNs and bidirectional RNNs, and explain their respective application scenarios.",
-            "question_zh": "比较单向RNN和双向RNN的区别，并说明各自的适用场景。",
-            "sample_answer": "Unidirectional RNNs only use past information, making them suitable for real-time tasks or when processing a single input sequence. Bidirectional RNNs use full sequence information, making them suitable for batch processing tasks or when the entire input sequence is available. Bidirectional RNNs can utilize both past and future information, which can be particularly beneficial for tasks like language modeling, where the model needs to consider the context of the entire sentence or paragraph. However, bidirectional RNNs require more computational resources and memory than unidirectional RNNs.",
-            "sample_answer_zh": "单向RNN只能利用历史信息，使其适合实时任务或处理单个输入序列。双向RNN使用全序列信息，使其适合批处理任务或当整个输入序列可用时。双向RNN可以同时利用过去和未来的信息，这对于语言建模等任务特别有益，在这些任务中，模型需要考虑整个句子的上下文或段落。然而，双向RNN比单向RNN需要更多的计算资源和内存。"
-        },
-        {
-            "question": "Explain the working principle of Truncated Backpropagation Through Time and its advantages.",
-            "question_zh": "解释截断反向传播（Truncated BPTT）的工作原理及其优势。",
-            "sample_answer": "Truncated Backpropagation Through Time (BPTT) is a technique used to handle long sequences by limiting the number of time steps that gradients are backpropagated through. This reduces computational complexity and helps prevent gradient problems. The truncated BPTT approach divides the sequence into smaller chunks, backpropagating gradients through each chunk independently. This allows for efficient training of long sequences while maintaining gradient flow. The main advantage is that it reduces the computational load and helps handle long sequences without encountering gradient explosion or vanishing gradient problems.",
-            "sample_answer_zh": "截断反向传播（Truncated BPTT）是一种通过限制梯度反向传播的时间步数来处理长序列的技术。这减少了计算复杂度，并有助于防止梯度问题。截断BPTT方法将序列分成更小的块，独立地通过每个块反向传播梯度。这允许在保持梯度流动的同时，高效地训练长序列。主要优势是它减少了计算负载，并有助于处理长序列，而不会遇到梯度爆炸或梯度消失问题。"
-        }
-    ]
-    
-    for i, q in enumerate(questions, 1):
-        print(f"Question {i}: {q['question']}")
-        print(f"问题{i}：{q['question_zh']}")
-        print("\nPlease provide your answer:")
-        print("请提供您的答案：")
-        
-        user_answer = input().strip()
-        
-        print(f"\nSample Answer: {q['sample_answer']}")
-        print(f"参考答案：{q['sample_answer_zh']}")
-        print("-" * 50)
+### 1. AlexNet and Deep CNNs
 
-def programming_exercises():
-    """Programming exercises"""
-    print("\n=== Programming Exercises ===")
-    print("=== 编程练习 ===\n")
-    
-    print("Exercise 1: Implement a simple RNN cell")
-    print("练习1：实现一个简单的RNN单元")
-    print()
-    
-    class SimpleRNN(nn.Module):
-        def __init__(self, input_size, hidden_size, output_size):
-            super(SimpleRNN, self).__init__()
-            self.hidden_size = hidden_size
-            
-            # 定义权重矩阵
-            self.W_ih = nn.Linear(input_size, hidden_size)    # 输入到隐藏层
-            self.W_hh = nn.Linear(hidden_size, hidden_size)   # 隐藏层到隐藏层
-            self.W_ho = nn.Linear(hidden_size, output_size)   # 隐藏层到输出层
-        
-        def forward(self, input, hidden):
-            """
-            前向传播
-            Args:
-                input: 当前时间步输入 (batch_size, input_size)
-                hidden: 前一时间步隐藏状态 (batch_size, hidden_size)
-            Returns:
-                output: 当前时间步输出 (batch_size, output_size)
-                hidden: 当前时间步隐藏状态 (batch_size, hidden_size)
-            """
-            # 计算新的隐藏状态
-            hidden = torch.tanh(self.W_ih(input) + self.W_hh(hidden))
-            # 计算输出
-            output = self.W_ho(hidden)
-            return output, hidden
-        
-        def init_hidden(self, batch_size):
-            """初始化隐藏状态"""
-            return torch.zeros(batch_size, self.hidden_size)
-    
-    print("The SimpleRNN above demonstrates:")
-    print("- Combining input and hidden state")
-    print("- Computing new hidden state with tanh activation")
-    print("- Producing output at each time step")
-    print()
-    print("上面的SimpleRNN演示了：")
-    print("- 结合输入和隐藏状态")
-    print("- 用tanh激活计算新隐藏状态")
-    print("- 在每个时间步产生输出")
-    print("-" * 50)
-    
-    print("Exercise 2: Implement LSTM cell")
-    print("练习2：实现LSTM单元")
-    print()
-    
-    class LSTMCell(nn.Module):
-        def __init__(self, input_size, hidden_size):
-            super(LSTMCell, self).__init__()
-            self.input_size = input_size
-            self.hidden_size = hidden_size
-            
-            # LSTM的四个门：遗忘门、输入门、候选值、输出门
-            self.forget_gate = nn.Linear(input_size + hidden_size, hidden_size)
-            self.input_gate = nn.Linear(input_size + hidden_size, hidden_size)
-            self.candidate_gate = nn.Linear(input_size + hidden_size, hidden_size)
-            self.output_gate = nn.Linear(input_size + hidden_size, hidden_size)
-        
-        def forward(self, x, h_prev, c_prev):
-            """
-            LSTM前向传播
-            Args:
-                x: 当前输入 (batch_size, input_size)
-                h_prev: 前一时间步隐藏状态 (batch_size, hidden_size)
-                c_prev: 前一时间步细胞状态 (batch_size, hidden_size)
-            Returns:
-                h_new: 新的隐藏状态
-                c_new: 新的细胞状态
-            """
-            # 拼接输入和前一隐藏状态
-            combined = torch.cat([x, h_prev], dim=1)
-            
-            # 计算四个门
-            f_t = torch.sigmoid(self.forget_gate(combined))      # 遗忘门
-            i_t = torch.sigmoid(self.input_gate(combined))       # 输入门
-            c_tilde = torch.tanh(self.candidate_gate(combined))  # 候选值
-            o_t = torch.sigmoid(self.output_gate(combined))      # 输出门
-            
-            # 更新细胞状态
-            c_new = f_t * c_prev + i_t * c_tilde
-            
-            # 计算新的隐藏状态
-            h_new = o_t * torch.tanh(c_new)
-            
-            return h_new, c_new
-    
-    print("Key components of LSTM:")
-    print("- Forget gate: decides what to discard")
-    print("- Input gate: decides what new information to store")
-    print("- Output gate: controls what parts of cell state to output")
-    print("- Cell state: carries information across time steps")
-    print()
-    print("LSTM的关键组件：")
-    print("- 遗忘门：决定丢弃什么")
-    print("- 输入门：决定存储什么新信息")
-    print("- 输出门：控制细胞状态的哪些部分输出")
-    print("- 细胞状态：跨时间步携带信息")
-    print("-" * 50)
-    
-    print("Exercise 3: Sequence prediction task")
-    print("练习3：序列预测任务")
-    print()
-    
-    def create_sequence_data(seq_length=10, num_sequences=1000):
-        """
-        创建序列预测数据：预测正弦波
-        """
-        sequences = []
-        targets = []
-        
-        for _ in range(num_sequences):
-            # 随机起始点
-            # Create sequence: sum of two numbers
-            seq = torch.randint(0, 10, (seq_length,)).float()
-            target = seq.sum().item()
-            sequences.append(seq)
-            targets.append(target)
-        
-        return torch.stack(sequences), torch.tensor(targets)
-    
-    class SequencePredictor(nn.Module):
-        def __init__(self, input_size=1, hidden_size=64, num_layers=2):
-            super(SequencePredictor, self).__init__()
-            self.hidden_size = hidden_size
-            self.num_layers = num_layers
-            
-            self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)
-            self.fc = nn.Linear(hidden_size, 1)
-        
-        def forward(self, x):
-            # Initialize hidden state
-            h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size)
-            c0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size)
-            
-            # Forward propagate LSTM
-            out, _ = self.lstm(x.unsqueeze(-1), (h0, c0))
-            
-            # Decode the hidden state of the last time step
-            out = self.fc(out[:, -1, :])
-            return out.squeeze()
-    
-    # Demo
-    print("Example usage:")
-    print("示例用法：")
-    
-    # Create sample data
-    X, y = create_sequence_data(seq_length=5, num_sequences=10)
-    print(f"Input shape: {X.shape}")
-    print(f"Target shape: {y.shape}")
-    print(f"Sample sequence: {X[0]}")
-    print(f"Sample target (sum): {y[0]}")
-    
-    # Create model
-    model = SequencePredictor()
-    print(f"\nModel: {model}")
-    
-    # Forward pass
-    with torch.no_grad():
-        prediction = model(X[:1])
-        print(f"Prediction: {prediction.item():.2f}")
-        print(f"Actual: {y[0].item():.2f}")
+**Q1.1** What was the main breakthrough that AlexNet achieved?
+AlexNet取得的主要突破是什么？
 
-def main():
-    """Main function to run all quiz sections"""
-    print("Welcome to Chapter 4 Quiz: Recurrent Neural Networks")
-    print("欢迎来到第四章测验：循环神经网络")
-    print("=" * 60)
-    
-    while True:
-        print("\nChoose a section:")
-        print("选择一个部分：")
-        print("1. Multiple Choice Questions (选择题)")
-        print("2. Fill in the Blanks (填空题)")
-        print("3. Short Answer Questions (简答题)")
-        print("4. Programming Exercises (编程练习)")
-        print("5. Exit (退出)")
-        
-        choice = input("\nEnter your choice (1-5): ").strip()
-        
-        if choice == '1':
-            multiple_choice_questions()
-        elif choice == '2':
-            fill_in_blanks()
-        elif choice == '3':
-            short_answer_questions()
-        elif choice == '4':
-            programming_exercises()
-        elif choice == '5':
-            print("Thank you for taking the quiz! 谢谢参与测验！")
-            break
-        else:
-            print("Invalid choice. Please try again. 无效选择，请重试。")
+A) First use of convolutional layers
+B) Winning ImageNet competition and proving deep learning effectiveness  
+C) Introduction of batch normalization
+D) Using residual connections
 
-if __name__ == "__main__":
-    main() 
+**Answer: B**
+**解析**: AlexNet won the 2012 ImageNet competition with a significant margin, proving that deep learning could achieve state-of-the-art results in computer vision.
+AlexNet以显著优势赢得了2012年ImageNet竞赛，证明了深度学习能在计算机视觉中取得最先进的结果。
+
+**Q1.2** Which activation function did AlexNet popularize in deep learning?
+AlexNet在深度学习中推广了哪种激活函数？
+
+A) Sigmoid
+B) Tanh  
+C) ReLU
+D) Leaky ReLU
+
+**Answer: C**
+**解析**: AlexNet popularized ReLU activation, which helps with vanishing gradient problems and is computationally efficient.
+AlexNet推广了ReLU激活函数，它有助于解决梯度消失问题且计算效率高。
+
+### 2. VGG Networks
+
+**Q2.1** What is the key architectural principle of VGG networks?
+VGG网络的关键架构原则是什么？
+
+A) Using very large filters (11×11)
+B) Using only small 3×3 filters throughout the network
+C) Using 1×1 convolutions for dimensionality reduction
+D) Using skip connections
+
+**Answer: B**
+**解析**: VGG networks consistently use small 3×3 filters, showing that smaller filters can achieve the same receptive field as larger ones with fewer parameters.
+VGG网络始终使用小的3×3滤波器，表明小滤波器可以用更少的参数实现与大滤波器相同的感受野。
+
+**Q2.2** How many 3×3 convolutions are needed to get the same receptive field as one 5×5 convolution?
+需要多少个3×3卷积才能获得与一个5×5卷积相同的感受野？
+
+A) 1
+B) 2
+C) 3
+D) 4
+
+**Answer: B**
+**解析**: Two 3×3 convolutions have the same receptive field as one 5×5 convolution but with fewer parameters and more non-linearity.
+两个3×3卷积与一个5×5卷积具有相同的感受野，但参数更少，非线性更强。
+
+### 3. Network in Network (NiN)
+
+**Q3.1** What is the main innovation of Network in Network (NiN)?
+网络中的网络(NiN)的主要创新是什么？
+
+A) Using deeper networks
+B) Using 1×1 convolutions as "mlpconv" layers
+C) Using batch normalization
+D) Using residual connections
+
+**Answer: B**
+**解析**: NiN introduced 1×1 convolutions that act like multilayer perceptrons applied to each pixel, adding non-linearity and feature mixing.
+NiN引入了1×1卷积，它们像应用于每个像素的多层感知器，增加了非线性和特征混合。
+
+**Q3.2** What does NiN use instead of fully connected layers at the end?
+NiN在最后使用什么来替代全连接层？
+
+A) Max pooling
+B) Average pooling
+C) Global average pooling
+D) Global max pooling
+
+**Answer: C**
+**解析**: NiN uses global average pooling to replace fully connected layers, dramatically reducing the number of parameters.
+NiN使用全局平均池化来替代全连接层，大大减少了参数数量。
+
+### 4. GoogLeNet and Inception
+
+**Q4.1** What is the core idea behind Inception blocks?
+Inception块背后的核心思想是什么？
+
+A) Going deeper with more layers
+B) Using wider networks with more channels
+C) Applying multiple filter sizes in parallel
+D) Using only 1×1 convolutions
+
+**Answer: C**
+**解析**: Inception blocks apply different filter sizes (1×1, 3×3, 5×5) and pooling in parallel, then concatenate the results.
+Inception块并行应用不同的滤波器尺寸（1×1、3×3、5×5）和池化，然后拼接结果。
+
+**Q4.2** Why does GoogLeNet use auxiliary classifiers during training?
+为什么GoogLeNet在训练期间使用辅助分类器？
+
+A) To increase model capacity
+B) To help gradient flow in very deep networks
+C) To reduce overfitting
+D) To speed up training
+
+**Answer: B**
+**解析**: Auxiliary classifiers provide additional gradient signals to help train the very deep network by combating vanishing gradients.
+辅助分类器提供额外的梯度信号，通过对抗梯度消失来帮助训练非常深的网络。
+
+### 5. Batch Normalization
+
+**Q5.1** What problem does batch normalization primarily solve?
+批量归一化主要解决什么问题？
+
+A) Overfitting
+B) Internal covariate shift
+C) Computational efficiency
+D) Memory usage
+
+**Answer: B**
+**解析**: Batch normalization addresses internal covariate shift - the change in distribution of layer inputs during training.
+批量归一化解决内部协变量偏移——训练过程中层输入分布的变化。
+
+**Q5.2** In the batch normalization equation y = γx̂ + β, what are γ and β?
+在批量归一化方程y = γx̂ + β中，γ和β是什么？
+
+A) Fixed constants
+B) Learnable parameters
+C) Input statistics
+D) Activation functions
+
+**Answer: B**
+**解析**: γ (scale) and β (shift) are learnable parameters that allow the network to recover the original distribution if needed.
+γ（缩放）和β（偏移）是可学习参数，允许网络在需要时恢复原始分布。
+
+### 6. ResNet
+
+**Q6.1** What is the key innovation of ResNet?
+ResNet的关键创新是什么？
+
+A) Deeper networks
+B) Skip connections/residual learning
+C) Batch normalization
+D) 1×1 convolutions
+
+**Answer: B**
+**解析**: ResNet introduced skip connections that allow gradients to flow directly to earlier layers, enabling training of much deeper networks.
+ResNet引入了跳跃连接，允许梯度直接流向早期层，使训练更深网络成为可能。
+
+**Q6.2** In ResNet, what does the residual function F(x) learn?
+在ResNet中，残差函数F(x)学习什么？
+
+A) The identity mapping x
+B) The output H(x) directly
+C) The residual H(x) - x
+D) The gradient information
+
+**Answer: C**
+**解析**: The residual function F(x) learns the residual H(x) - x, where H(x) is the desired output. This makes learning identity mappings easier.
+残差函数F(x)学习残差H(x) - x，其中H(x)是期望输出。这使得学习恒等映射更容易。
+
+### 7. ResNeXt
+
+**Q7.1** What concept does ResNeXt introduce to improve upon ResNet?
+ResNeXt引入了什么概念来改进ResNet？
+
+A) Depth
+B) Width
+C) Cardinality (number of paths)
+D) Resolution
+
+**Answer: C**
+**解析**: ResNeXt introduces cardinality - the number of parallel paths in a block, using grouped convolutions to implement multiple branches efficiently.
+ResNeXt引入了基数——块中并行路径的数量，使用分组卷积有效地实现多个分支。
+
+**Q7.2** How does ResNeXt implement multiple branches efficiently?
+ResNeXt如何高效地实现多个分支？
+
+A) Using separate convolution layers
+B) Using grouped convolutions
+C) Using 1×1 convolutions only
+D) Using depth-wise convolutions
+
+**Answer: B**
+**解析**: ResNeXt uses grouped convolutions to implement multiple paths efficiently, reducing computational cost while maintaining model capacity.
+ResNeXt使用分组卷积高效地实现多条路径，在保持模型容量的同时降低计算成本。
+
+### 8. DenseNet
+
+**Q8.1** How are layers connected in DenseNet?
+DenseNet中的层是如何连接的？
+
+A) Each layer connects only to the next layer
+B) Each layer connects to the previous layer via addition
+C) Each layer connects to all subsequent layers via concatenation
+D) Layers are connected randomly
+
+**Answer: C**
+**解析**: In DenseNet, each layer connects to all subsequent layers through feature map concatenation, maximizing information flow.
+在DenseNet中，每层通过特征图拼接连接到所有后续层，最大化信息流。
+
+**Q8.2** What is the purpose of transition layers in DenseNet?
+DenseNet中过渡层的目的是什么？
+
+A) Add non-linearity
+B) Reduce spatial dimensions and control feature growth
+C) Increase network depth
+D) Improve gradient flow
+
+**Answer: B**
+**解析**: Transition layers use 1×1 convolutions and pooling to reduce spatial dimensions and control the growth of feature maps between dense blocks.
+过渡层使用1×1卷积和池化来减少空间维度并控制稠密块之间特征图的增长。
+
+## Short Answer Questions 简答题
+
+### Q9. Architecture Comparison 架构比较
+
+Compare the connection patterns in ResNet and DenseNet. What are the advantages and disadvantages of each approach?
+比较ResNet和DenseNet的连接模式。每种方法的优缺点是什么？
+
+**Answer:**
+**ResNet (Additive Skip Connections):**
+- Advantages: Memory efficient, faster training, easier optimization
+- Disadvantages: Information may be lost through addition
+
+**DenseNet (Concatenative Connections):**  
+- Advantages: Maximum information preservation, feature reuse, parameter efficiency
+- Disadvantages: High memory usage, slower training due to concatenations
+
+**解析:**
+**ResNet（加法跳跃连接）：**
+- 优势：内存效率高，训练更快，优化更容易
+- 劣势：通过加法可能丢失信息
+
+**DenseNet（拼接连接）：**
+- 优势：最大化信息保存，特征重用，参数效率高
+- 劣势：内存使用量大，由于拼接导致训练较慢
+
+### Q10. Design Principles 设计原则
+
+Explain the evolution of CNN design principles from AlexNet to modern architectures. What key insights drove each major advancement?
+解释从AlexNet到现代架构的CNN设计原则演变。什么关键洞察推动了每次重大进步？
+
+**Answer:**
+**Evolution of Design Principles:**
+
+1. **AlexNet → VGG**: Smaller filters are more efficient
+   - Insight: Multiple small filters > single large filter
+   
+2. **VGG → NiN**: 1×1 convolutions for feature mixing
+   - Insight: Network-in-network concept, global average pooling
+   
+3. **NiN → GoogLeNet**: Multi-scale feature extraction
+   - Insight: Parallel paths with different filter sizes
+   
+4. **GoogLeNet → ResNet**: Skip connections for deep networks
+   - Insight: Residual learning enables very deep networks
+   
+5. **ResNet → DenseNet**: Maximum information flow
+   - Insight: Dense connections maximize feature reuse
+
+**解析:**
+**设计原则演变：**
+
+1. **AlexNet → VGG**: 小滤波器更高效
+   - 洞察：多个小滤波器 > 单个大滤波器
+   
+2. **VGG → NiN**: 1×1卷积用于特征混合
+   - 洞察：网络中的网络概念，全局平均池化
+   
+3. **NiN → GoogLeNet**: 多尺度特征提取
+   - 洞察：不同滤波器尺寸的并行路径
+   
+4. **GoogLeNet → ResNet**: 跳跃连接用于深度网络
+   - 洞察：残差学习使得非常深的网络成为可能
+   
+5. **ResNet → DenseNet**: 最大化信息流
+   - 洞察：密集连接最大化特征重用
+
+## Programming Questions 编程题
+
+### Q11. Implementation Challenge 实现挑战
+
+Implement a simplified Inception block that takes an input tensor and applies 1×1, 3×3, and 5×5 convolutions in parallel, then concatenates the results.
+实现一个简化的Inception块，它接受输入张量并并行应用1×1、3×3和5×5卷积，然后拼接结果。
+
+**Answer:**
+```python
+import torch
+import torch.nn as nn
+
+class SimpleInceptionBlock(nn.Module):
+    def __init__(self, in_channels, out_1x1, out_3x3, out_5x5):
+        super().__init__()
+        
+        # 1×1 convolution path
+        self.branch1x1 = nn.Conv2d(in_channels, out_1x1, kernel_size=1)
+        
+        # 3×3 convolution path
+        self.branch3x3 = nn.Conv2d(in_channels, out_3x3, kernel_size=3, padding=1)
+        
+        # 5×5 convolution path  
+        self.branch5x5 = nn.Conv2d(in_channels, out_5x5, kernel_size=5, padding=2)
+        
+    def forward(self, x):
+        branch1x1 = torch.relu(self.branch1x1(x))
+        branch3x3 = torch.relu(self.branch3x3(x))
+        branch5x5 = torch.relu(self.branch5x5(x))
+        
+        # Concatenate along channel dimension
+        outputs = torch.cat([branch1x1, branch3x3, branch5x5], dim=1)
+        return outputs
+
+# Test the implementation
+model = SimpleInceptionBlock(64, 16, 32, 16)
+x = torch.randn(1, 64, 32, 32)
+output = model(x)
+print(f"Input shape: {x.shape}")
+print(f"Output shape: {output.shape}")  # Should be [1, 64, 32, 32]
+```
+
+### Q12. Architecture Analysis 架构分析
+
+Write a function that computes the number of parameters in a basic ResNet block vs a basic DenseNet layer, given the input channels and growth rate.
+编写一个函数，计算基本ResNet块与基本DenseNet层的参数数量，给定输入通道和增长率。
+
+**Answer:**
+```python
+def compare_parameters(in_channels, growth_rate=32):
+    """
+    Compare parameters between ResNet block and DenseNet layer
+    比较ResNet块和DenseNet层的参数数量
+    """
+    
+    # ResNet Basic Block parameters
+    # Two 3×3 convolutions: in_channels → in_channels → in_channels
+    resnet_params = (
+        in_channels * in_channels * 3 * 3 +  # First conv
+        in_channels * in_channels * 3 * 3    # Second conv
+    )
+    
+    # DenseNet Layer parameters (with bottleneck)
+    # 1×1 conv: in_channels → 4*growth_rate
+    # 3×3 conv: 4*growth_rate → growth_rate
+    bottleneck_channels = 4 * growth_rate
+    densenet_params = (
+        in_channels * bottleneck_channels * 1 * 1 +  # 1×1 conv
+        bottleneck_channels * growth_rate * 3 * 3    # 3×3 conv
+    )
+    
+    print(f"Input channels: {in_channels}")
+    print(f"Growth rate: {growth_rate}")
+    print(f"ResNet block parameters: {resnet_params:,}")
+    print(f"DenseNet layer parameters: {densenet_params:,}")
+    print(f"Ratio (ResNet/DenseNet): {resnet_params/densenet_params:.2f}")
+    
+    return resnet_params, densenet_params
+
+# Test with different configurations
+compare_parameters(256, 32)
+compare_parameters(512, 32)
+```
+
+## True/False Questions 判断题
+
+### Q13-Q20: Mark True (T) or False (F) 标记正确（T）或错误（F）
+
+**Q13.** Batch normalization is applied before the activation function in most modern networks.
+在大多数现代网络中，批量归一化在激活函数之前应用。
+
+**Answer: T**
+**解析**: The standard order is Conv → BatchNorm → ReLU, though pre-activation variants exist.
+标准顺序是卷积 → 批量归一化 → ReLU，尽管存在预激活变体。
+
+**Q14.** DenseNet typically requires more memory during training than ResNet.
+DenseNet在训练期间通常比ResNet需要更多内存。
+
+**Answer: T**
+**解析**: DenseNet's concatenative connections require storing all intermediate feature maps, leading to higher memory usage.
+DenseNet的拼接连接需要存储所有中间特征图，导致更高的内存使用。
+
+**Q15.** The growth rate in DenseNet refers to how fast the network depth increases.
+DenseNet中的增长率指的是网络深度增加的速度。
+
+**Answer: F**
+**解析**: Growth rate refers to the number of output channels each layer adds, not the depth increase.
+增长率指的是每层添加的输出通道数，而不是深度增加。
+
+**Q16.** Skip connections in ResNet only help with gradient flow and don't affect the model's representational capacity.
+ResNet中的跳跃连接只有助于梯度流，不影响模型的表示能力。
+
+**Answer: F**
+**解析**: Skip connections both help with gradient flow and enable the network to learn more complex functions by allowing identity mappings.
+跳跃连接既有助于梯度流，也通过允许恒等映射使网络能够学习更复杂的函数。
+
+**Q17.** Global average pooling in NiN reduces the risk of overfitting compared to fully connected layers.
+NiN中的全局平均池化与全连接层相比降低了过拟合风险。
+
+**Answer: T**
+**解析**: Global average pooling has no parameters to overfit, unlike fully connected layers which have many parameters.
+全局平均池化没有可过拟合的参数，不像具有许多参数的全连接层。
+
+**Q18.** Inception blocks process all input channels with each filter size.
+Inception块用每种滤波器尺寸处理所有输入通道。
+
+**Answer: F**
+**解析**: Inception blocks often use 1×1 convolutions for dimensionality reduction before 3×3 and 5×5 convolutions.
+Inception块通常在3×3和5×5卷积之前使用1×1卷积进行降维。
+
+**Q19.** Grouped convolutions in ResNeXt reduce computational cost while maintaining model capacity.
+ResNeXt中的分组卷积在保持模型容量的同时降低计算成本。
+
+**Answer: T**
+**解析**: Grouped convolutions reduce parameters and computation while the multiple groups maintain representational capacity.
+分组卷积减少参数和计算，而多个组保持表示能力。
+
+**Q20.** Transition layers in DenseNet only perform spatial downsampling.
+DenseNet中的过渡层只执行空间下采样。
+
+**Answer: F**
+**解析**: Transition layers perform both channel compression (via 1×1 conv) and spatial downsampling (via pooling).
+过渡层既执行通道压缩（通过1×1卷积）又执行空间下采样（通过池化）。
+
+---
+
+## Answer Key 答案
+
+**Multiple Choice:** 1.1-B, 1.2-C, 2.1-B, 2.2-B, 3.1-B, 3.2-C, 4.1-C, 4.2-B, 5.1-B, 5.2-B, 6.1-B, 6.2-C, 7.1-C, 7.2-B, 8.1-C, 8.2-B
+
+**True/False:** 13-T, 14-T, 15-F, 16-F, 17-T, 18-F, 19-T, 20-F
+
+**Total Score: ___/28** 

@@ -19,6 +19,7 @@
   * [3.1 卷积神经网络](./deepStudyByCursor/03_CNN/卷积神经网络.md)
 * [第四章：循环神经网络 (RNN)]()
   * [4.1 循环神经网络](./deepStudyByCursor/04_RNN/循环神经网络.md)
+  * [4.2 现代卷积神经网络](./deepStudyByCursor/04_RNN/Modern_Convolutional_Neural_Networks.md)
 * [第五章：长短期记忆网络 (LSTM) 与门控循环单元 (GRU)]()
   * [5.1 长短期记忆网络与门控循环单元](./deepStudyByCursor/05_LSTM_GRU/长短期记忆网络与门控循环单元.md)
 * [第六章：自编码器 (Autoencoders) 与生成对抗网络 (GANs)]()
