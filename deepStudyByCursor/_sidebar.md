@@ -20,6 +20,8 @@
 * [第四章：循环神经网络 (RNN)]()
   * [4.1 循环神经网络](./deepStudyByCursor/04_RNN/循环神经网络.md)
   * [4.2 现代卷积神经网络](./deepStudyByCursor/04_RNN/Modern_Convolutional_Neural_Networks.md)
+  * [4.3 残余网络知识点](./deepStudyByCursor/04_RNN/残余网络知识点.md)
+  * [4.3 辅助文档：残余网络知识点_quiz](./deepStudyByCursor/04_RNN/残余网络知识点_quiz.md)
 * [第五章：长短期记忆网络 (LSTM) 与门控循环单元 (GRU)]()
   * [5.1 长短期记忆网络与门控循环单元](./deepStudyByCursor/05_LSTM_GRU/长短期记忆网络与门控循环单元.md)
 * [第六章：自编码器 (Autoencoders) 与生成对抗网络 (GANs)]()
@@ -60,4 +62,7 @@
   * [19.2 数学基础精简版](./deepStudyByCursor/19_Mathematics_for_Deep_Learning/数学基础.md)
 * [第二十章：深度学习工具与环境 (Tools for Deep Learning)]()
   * [20.1 深度学习工具指南](./deepStudyByCursor/20_Tools_for_Deep_Learning/Appendix%20Tools%20for%20Deep%20Learning.md)
+* [第二十一章：无监督学习与半监督学习 (Unsupervised and Semi-Supervised Learning)]()
+  * [21.1 无监督学习与半监督学习](./deepStudyByCursor/21_Unsupervised_and_Semi_Supervised_Learning/无监督学习与半监督学习.md)
+  * [21.1 辅助文档：quiz](./deepStudyByCursor/21_Unsupervised_and_Semi_Supervised_Learning/quiz.md)
 

@@ -518,7 +518,404 @@ print(f"Input shape: {input_tensor.shape}")
 print(f"Output shape: {output.shape}")
 ```
 
-### 5.2 Atrous Convolution Implementation 空洞卷积实现
+### 5.2 SegNet Implementation SegNet实现
+
+```python
+import torchvision.models as models
+
+class SegNet(nn.Module):
+    """SegNet Architecture with Pooling Indices SegNet架构与池化索引"""
+    def __init__(self, n_classes):
+        super(SegNet, self).__init__()
+        
+        # VGG16 Encoder Layers (without classifier) VGG16编码器层（不含分类器）
+        vgg16 = models.vgg16(pretrained=True)
+        features = list(vgg16.features.children())
+        
+        # Encoder 编码器
+        self.enc_conv1 = nn.Sequential(*features[0:4])   # Conv Block 1
+        self.enc_conv2 = nn.Sequential(*features[5:9])   # Conv Block 2  
+        self.enc_conv3 = nn.Sequential(*features[10:16]) # Conv Block 3
+        self.enc_conv4 = nn.Sequential(*features[17:23]) # Conv Block 4
+        self.enc_conv5 = nn.Sequential(*features[24:30]) # Conv Block 5
+        
+        # Max pooling layers (we'll store indices) 最大池化层（我们将存储索引）
+        self.pool = nn.MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        
+        # Decoder 解码器
+        self.unpool = nn.MaxUnpool2d(kernel_size=2, stride=2)
+        
+        # Decoder conv blocks 解码器卷积块
+        self.dec_conv5 = nn.Sequential(
+            nn.Conv2d(512, 512, kernel_size=3, padding=1),
+            nn.BatchNorm2d(512),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(512, 512, kernel_size=3, padding=1),
+            nn.BatchNorm2d(512),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(512, 512, kernel_size=3, padding=1),
+            nn.BatchNorm2d(512),
+            nn.ReLU(inplace=True)
+        )
+        
+        self.dec_conv4 = nn.Sequential(
+            nn.Conv2d(512, 512, kernel_size=3, padding=1),
+            nn.BatchNorm2d(512),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(512, 512, kernel_size=3, padding=1),
+            nn.BatchNorm2d(512),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(512, 256, kernel_size=3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True)
+        )
+        
+        self.dec_conv3 = nn.Sequential(
+            nn.Conv2d(256, 256, kernel_size=3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(256, 256, kernel_size=3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(256, 128, kernel_size=3, padding=1),
+            nn.BatchNorm2d(128),
+            nn.ReLU(inplace=True)
+        )
+        
+        self.dec_conv2 = nn.Sequential(
+            nn.Conv2d(128, 128, kernel_size=3, padding=1),
+            nn.BatchNorm2d(128),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(128, 64, kernel_size=3, padding=1),
+            nn.BatchNorm2d(64),
+            nn.ReLU(inplace=True)
+        )
+        
+        self.dec_conv1 = nn.Sequential(
+            nn.Conv2d(64, 64, kernel_size=3, padding=1),
+            nn.BatchNorm2d(64),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(64, n_classes, kernel_size=3, padding=1)
+        )
+    
+    def forward(self, x):
+        # Encoder with pooling indices 带池化索引的编码器
+        x = self.enc_conv1(x)
+        x, indices1 = self.pool(x)
+        
+        x = self.enc_conv2(x)
+        x, indices2 = self.pool(x)
+        
+        x = self.enc_conv3(x)
+        x, indices3 = self.pool(x)
+        
+        x = self.enc_conv4(x)
+        x, indices4 = self.pool(x)
+        
+        x = self.enc_conv5(x)
+        x, indices5 = self.pool(x)
+        
+        # Decoder with unpooling 带反池化的解码器
+        x = self.unpool(x, indices5)
+        x = self.dec_conv5(x)
+        
+        x = self.unpool(x, indices4)
+        x = self.dec_conv4(x)
+        
+        x = self.unpool(x, indices3)
+        x = self.dec_conv3(x)
+        
+        x = self.unpool(x, indices2)
+        x = self.dec_conv2(x)
+        
+        x = self.unpool(x, indices1)
+        x = self.dec_conv1(x)
+        
+        return x
+
+# Example usage 使用示例
+segnet = SegNet(n_classes=21)
+input_tensor = torch.randn(1, 3, 224, 224)
+output = segnet(input_tensor)
+print(f"SegNet Input shape: {input_tensor.shape}")
+print(f"SegNet Output shape: {output.shape}")
+```
+
+### 5.3 RefineNet Implementation RefineNet实现
+
+```python
+class ResidualConvUnit(nn.Module):
+    """Residual Convolution Unit (RCU) 残差卷积单元"""
+    def __init__(self, in_channels, out_channels):
+        super(ResidualConvUnit, self).__init__()
+        self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1)
+        self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1)
+        self.relu = nn.ReLU(inplace=True)
+        
+        # Adjust channels if necessary 如有必要调整通道
+        self.adapt_channels = nn.Conv2d(in_channels, out_channels, kernel_size=1) if in_channels != out_channels else None
+        
+    def forward(self, x):
+        residual = x
+        if self.adapt_channels:
+            residual = self.adapt_channels(residual)
+            
+        out = self.relu(self.conv1(x))
+        out = self.conv2(out)
+        out += residual
+        out = self.relu(out)
+        return out
+
+class ChainedResidualPooling(nn.Module):
+    """Chained Residual Pooling (CRP) 链式残差池化"""
+    def __init__(self, in_channels):
+        super(ChainedResidualPooling, self).__init__()
+        self.pool = nn.MaxPool2d(kernel_size=5, stride=1, padding=2)
+        self.conv = nn.Conv2d(in_channels, in_channels, kernel_size=3, padding=1)
+        self.relu = nn.ReLU(inplace=True)
+        
+    def forward(self, x):
+        x_pool = self.pool(x)
+        x_pool = self.conv(x_pool)
+        x = x + x_pool
+        x = self.relu(x)
+        
+        # Second pooling 第二次池化
+        x_pool = self.pool(x)
+        x_pool = self.conv(x_pool)
+        x = x + x_pool
+        x = self.relu(x)
+        
+        return x
+
+class MultiResolutionFusion(nn.Module):
+    """Multi-Resolution Fusion (MRF) 多分辨率融合"""
+    def __init__(self, high_res_channels, low_res_channels, out_channels):
+        super(MultiResolutionFusion, self).__init__()
+        self.conv_high = nn.Conv2d(high_res_channels, out_channels, kernel_size=3, padding=1)
+        self.conv_low = nn.Conv2d(low_res_channels, out_channels, kernel_size=3, padding=1)
+        
+    def forward(self, high_res, low_res):
+        if low_res is not None:
+            # Upsample low resolution feature 上采样低分辨率特征
+            low_res = F.interpolate(low_res, size=high_res.shape[2:], mode='bilinear', align_corners=False)
+            low_res = self.conv_low(low_res)
+            high_res = self.conv_high(high_res)
+            return high_res + low_res
+        else:
+            return self.conv_high(high_res)
+
+class RefineNetBlock(nn.Module):
+    """RefineNet Block RefineNet块"""
+    def __init__(self, high_res_channels, low_res_channels=None, out_channels=256):
+        super(RefineNetBlock, self).__init__()
+        
+        # Multi-Resolution Fusion 多分辨率融合
+        self.mrf = MultiResolutionFusion(high_res_channels, low_res_channels, out_channels)
+        
+        # Chained Residual Pooling 链式残差池化
+        self.crp = ChainedResidualPooling(out_channels)
+        
+        # Residual Convolution Unit 残差卷积单元
+        self.rcu = ResidualConvUnit(out_channels, out_channels)
+        
+    def forward(self, high_res, low_res=None):
+        x = self.mrf(high_res, low_res)
+        x = self.crp(x)
+        x = self.rcu(x)
+        return x
+
+class RefineNet(nn.Module):
+    """RefineNet Architecture RefineNet架构"""
+    def __init__(self, n_classes):
+        super(RefineNet, self).__init__()
+        
+        # Backbone (ResNet50) 骨干网络（ResNet50）
+        resnet = models.resnet50(pretrained=True)
+        
+        # Encoder layers 编码器层
+        self.layer0 = nn.Sequential(resnet.conv1, resnet.bn1, resnet.relu, resnet.maxpool)
+        self.layer1 = resnet.layer1  # 256 channels
+        self.layer2 = resnet.layer2  # 512 channels  
+        self.layer3 = resnet.layer3  # 1024 channels
+        self.layer4 = resnet.layer4  # 2048 channels
+        
+        # RefineNet blocks RefineNet块
+        self.refine4 = RefineNetBlock(2048, None, 512)
+        self.refine3 = RefineNetBlock(1024, 512, 256)
+        self.refine2 = RefineNetBlock(512, 256, 256)
+        self.refine1 = RefineNetBlock(256, 256, 256)
+        
+        # Final classifier 最终分类器
+        self.classifier = nn.Conv2d(256, n_classes, kernel_size=1)
+        
+    def forward(self, x):
+        input_size = x.shape[2:]
+        
+        # Encoder 编码器
+        x = self.layer0(x)  # 1/4
+        layer1 = self.layer1(x)  # 1/4
+        layer2 = self.layer2(layer1)  # 1/8
+        layer3 = self.layer3(layer2)  # 1/16
+        layer4 = self.layer4(layer3)  # 1/32
+        
+        # RefineNet blocks RefineNet块
+        refine4 = self.refine4(layer4)
+        refine3 = self.refine3(layer3, refine4)
+        refine2 = self.refine2(layer2, refine3)
+        refine1 = self.refine1(layer1, refine2)
+        
+        # Upsample to original size 上采样到原始大小
+        output = F.interpolate(refine1, size=input_size, mode='bilinear', align_corners=False)
+        output = self.classifier(output)
+        
+        return output
+
+# Example usage 使用示例
+refinenet = RefineNet(n_classes=21)
+input_tensor = torch.randn(1, 3, 512, 512)
+output = refinenet(input_tensor)
+print(f"RefineNet Input shape: {input_tensor.shape}")
+print(f"RefineNet Output shape: {output.shape}")
+```
+
+### 5.4 PSPNet Implementation PSPNet实现
+
+```python
+class PyramidPoolingModule(nn.Module):
+    """Pyramid Pooling Module (PPM) 金字塔池化模块"""
+    def __init__(self, in_channels, out_channels, pool_sizes=[1, 2, 3, 6]):
+        super(PyramidPoolingModule, self).__init__()
+        self.pool_sizes = pool_sizes
+        self.in_channels = in_channels
+        self.out_channels = out_channels
+        
+        # Pooling branches 池化分支
+        self.pools = nn.ModuleList()
+        for pool_size in pool_sizes:
+            self.pools.append(nn.Sequential(
+                nn.AdaptiveAvgPool2d(pool_size),
+                nn.Conv2d(in_channels, out_channels, kernel_size=1),
+                nn.BatchNorm2d(out_channels),
+                nn.ReLU(inplace=True)
+            ))
+        
+        # Final convolution 最终卷积
+        total_channels = in_channels + len(pool_sizes) * out_channels
+        self.final_conv = nn.Sequential(
+            nn.Conv2d(total_channels, out_channels, kernel_size=3, padding=1),
+            nn.BatchNorm2d(out_channels),
+            nn.ReLU(inplace=True),
+            nn.Dropout(0.1)
+        )
+        
+    def forward(self, x):
+        input_size = x.shape[2:]
+        features = [x]
+        
+        # Apply different pooling sizes 应用不同的池化大小
+        for pool in self.pools:
+            pooled = pool(x)
+            upsampled = F.interpolate(pooled, size=input_size, mode='bilinear', align_corners=False)
+            features.append(upsampled)
+        
+        # Concatenate all features 连接所有特征
+        x = torch.cat(features, dim=1)
+        x = self.final_conv(x)
+        return x
+
+class PSPNet(nn.Module):
+    """PSPNet Architecture PSPNet架构"""
+    def __init__(self, n_classes, backbone='resnet50'):
+        super(PSPNet, self).__init__()
+        
+        # Backbone network 骨干网络
+        if backbone == 'resnet50':
+            resnet = models.resnet50(pretrained=True)
+            self.backbone_channels = 2048
+        elif backbone == 'resnet101':
+            resnet = models.resnet101(pretrained=True)
+            self.backbone_channels = 2048
+        else:
+            raise ValueError("Unsupported backbone")
+        
+        # Remove the final layers 移除最终层
+        self.backbone = nn.Sequential(*list(resnet.children())[:-2])
+        
+        # Modify stride of last block for denser features 修改最后一块的步幅以获得更密集的特征
+        self._modify_resnet_stride()
+        
+        # Pyramid Pooling Module 金字塔池化模块
+        self.ppm = PyramidPoolingModule(self.backbone_channels, 512)
+        
+        # Auxiliary classifier (for training) 辅助分类器（用于训练）
+        self.aux_classifier = nn.Sequential(
+            nn.Conv2d(1024, 256, kernel_size=3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.Dropout(0.1),
+            nn.Conv2d(256, n_classes, kernel_size=1)
+        )
+        
+        # Main classifier 主分类器
+        self.classifier = nn.Sequential(
+            nn.Conv2d(512, 256, kernel_size=3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.Dropout(0.1),
+            nn.Conv2d(256, n_classes, kernel_size=1)
+        )
+        
+    def _modify_resnet_stride(self):
+        """Modify ResNet to have stride 8 instead of 32 修改ResNet使步幅为8而不是32"""
+        # Replace stride 2 with stride 1 in the last two blocks
+        # 在最后两个块中将步幅2替换为步幅1
+        pass  # Implementation depends on specific requirements
+        
+    def forward(self, x):
+        input_size = x.shape[2:]
+        
+        # Extract features using backbone 使用骨干网络提取特征
+        features = []
+        x = self.backbone[0](x)  # conv1
+        x = self.backbone[1](x)  # bn1
+        x = self.backbone[2](x)  # relu
+        x = self.backbone[3](x)  # maxpool
+        
+        x = self.backbone[4](x)  # layer1
+        x = self.backbone[5](x)  # layer2
+        x = self.backbone[6](x)  # layer3
+        aux_x = x  # Save for auxiliary loss 保存用于辅助损失
+        x = self.backbone[7](x)  # layer4
+        
+        # Apply Pyramid Pooling Module 应用金字塔池化模块
+        x = self.ppm(x)
+        
+        # Main prediction 主预测
+        main_out = self.classifier(x)
+        main_out = F.interpolate(main_out, size=input_size, mode='bilinear', align_corners=False)
+        
+        if self.training:
+            # Auxiliary prediction (only during training) 辅助预测（仅在训练期间）
+            aux_out = self.aux_classifier(aux_x)
+            aux_out = F.interpolate(aux_out, size=input_size, mode='bilinear', align_corners=False)
+            return main_out, aux_out
+        else:
+            return main_out
+
+# Example usage 使用示例
+pspnet = PSPNet(n_classes=21, backbone='resnet50')
+input_tensor = torch.randn(1, 3, 473, 473)
+if pspnet.training:
+    main_out, aux_out = pspnet(input_tensor)
+    print(f"PSPNet Main Output shape: {main_out.shape}")
+    print(f"PSPNet Aux Output shape: {aux_out.shape}")
+else:
+    output = pspnet(input_tensor)
+    print(f"PSPNet Output shape: {output.shape}")
+```
+
+### 5.5 Atrous Convolution Implementation 空洞卷积实现
 
 ```python
 class AtrousConv(nn.Module):
@@ -585,7 +982,550 @@ class ASPP(nn.Module):
         return x
 ```
 
-### 5.3 Loss Functions Implementation 损失函数实现
+### 5.6 Mask R-CNN Implementation Mask R-CNN实现
+
+```python
+import torchvision
+from torchvision.models.detection import maskrcnn_resnet50_fpn
+from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
+from torchvision.models.detection.mask_rcnn import MaskRCNNPredictor
+
+class MaskRCNN(nn.Module):
+    """Mask R-CNN for Instance Segmentation 用于实例分割的Mask R-CNN"""
+    def __init__(self, num_classes):
+        super(MaskRCNN, self).__init__()
+        
+        # Load pre-trained Mask R-CNN model 加载预训练的Mask R-CNN模型
+        self.model = maskrcnn_resnet50_fpn(pretrained=True)
+        
+        # Replace the classifier 替换分类器
+        in_features = self.model.roi_heads.box_predictor.cls_score.in_features
+        self.model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
+        
+        # Replace the mask predictor 替换掩码预测器
+        in_features_mask = self.model.roi_heads.mask_predictor.conv5_mask.in_channels
+        hidden_layer = 256
+        self.model.roi_heads.mask_predictor = MaskRCNNPredictor(
+            in_features_mask, hidden_layer, num_classes
+        )
+    
+    def forward(self, images, targets=None):
+        """
+        Forward pass for Mask R-CNN
+        Args:
+            images: List of tensors, each of shape [C, H, W]
+            targets: List of dictionaries containing:
+                - boxes: tensor of shape [N, 4] (x1, y1, x2, y2)
+                - labels: tensor of shape [N]
+                - masks: tensor of shape [N, H, W]
+        """
+        return self.model(images, targets)
+
+# Custom Mask R-CNN components 自定义Mask R-CNN组件
+class MaskHead(nn.Module):
+    """Mask prediction head 掩码预测头"""
+    def __init__(self, in_channels, hidden_channels, num_classes):
+        super(MaskHead, self).__init__()
+        
+        self.conv1 = nn.Conv2d(in_channels, hidden_channels, 3, padding=1)
+        self.conv2 = nn.Conv2d(hidden_channels, hidden_channels, 3, padding=1)
+        self.conv3 = nn.Conv2d(hidden_channels, hidden_channels, 3, padding=1)
+        self.conv4 = nn.Conv2d(hidden_channels, hidden_channels, 3, padding=1)
+        
+        # Transpose convolution for upsampling 用于上采样的转置卷积
+        self.deconv = nn.ConvTranspose2d(hidden_channels, hidden_channels, 2, stride=2)
+        
+        # Final prediction layer 最终预测层
+        self.predictor = nn.Conv2d(hidden_channels, num_classes, 1)
+        
+        self.relu = nn.ReLU(inplace=True)
+        
+    def forward(self, x):
+        x = self.relu(self.conv1(x))
+        x = self.relu(self.conv2(x))
+        x = self.relu(self.conv3(x))
+        x = self.relu(self.conv4(x))
+        x = self.relu(self.deconv(x))
+        x = self.predictor(x)
+        return x
+
+# Example training setup for Mask R-CNN Mask R-CNN的训练设置示例
+def get_maskrcnn_model(num_classes):
+    """Get Mask R-CNN model for training 获取用于训练的Mask R-CNN模型"""
+    model = MaskRCNN(num_classes)
+    return model
+
+def collate_fn(batch):
+    """Custom collate function for Mask R-CNN dataloader Mask R-CNN数据加载器的自定义整理函数"""
+    return tuple(zip(*batch))
+
+# Example usage 使用示例
+num_classes = 2  # background + 1 object class
+maskrcnn_model = get_maskrcnn_model(num_classes)
+
+# Example input 示例输入
+images = [torch.randn(3, 800, 800)]
+targets = [{
+    'boxes': torch.tensor([[100, 100, 200, 200]], dtype=torch.float32),
+    'labels': torch.tensor([1], dtype=torch.int64),
+    'masks': torch.randint(0, 2, (1, 800, 800), dtype=torch.uint8)
+}]
+
+# Forward pass 前向传播
+maskrcnn_model.train()
+loss_dict = maskrcnn_model(images, targets)
+print(f"Mask R-CNN losses: {loss_dict}")
+```
+
+### 5.7 DenseNet for Segmentation Implementation 用于分割的DenseNet实现
+
+```python
+class DenseBlock(nn.Module):
+    """Dense Block for DenseNet 用于DenseNet的密集块"""
+    def __init__(self, num_layers, in_channels, growth_rate, bn_size=4, drop_rate=0.0):
+        super(DenseBlock, self).__init__()
+        self.layers = nn.ModuleList()
+        
+        for i in range(num_layers):
+            layer = DenseLayer(
+                in_channels + i * growth_rate,
+                growth_rate,
+                bn_size,
+                drop_rate
+            )
+            self.layers.append(layer)
+    
+    def forward(self, x):
+        features = [x]
+        for layer in self.layers:
+            new_feature = layer(torch.cat(features, 1))
+            features.append(new_feature)
+        return torch.cat(features, 1)
+
+class DenseLayer(nn.Module):
+    """Dense Layer 密集层"""
+    def __init__(self, in_channels, growth_rate, bn_size=4, drop_rate=0.0):
+        super(DenseLayer, self).__init__()
+        self.drop_rate = drop_rate
+        
+        # Bottleneck design: 1x1 conv -> 3x3 conv
+        # 瓶颈设计：1x1卷积 -> 3x3卷积
+        self.norm1 = nn.BatchNorm2d(in_channels)
+        self.relu1 = nn.ReLU(inplace=True)
+        self.conv1 = nn.Conv2d(in_channels, bn_size * growth_rate, kernel_size=1, bias=False)
+        
+        self.norm2 = nn.BatchNorm2d(bn_size * growth_rate)
+        self.relu2 = nn.ReLU(inplace=True)
+        self.conv2 = nn.Conv2d(bn_size * growth_rate, growth_rate, kernel_size=3, padding=1, bias=False)
+        
+        if drop_rate > 0:
+            self.dropout = nn.Dropout(drop_rate)
+    
+    def forward(self, x):
+        out = self.norm1(x)
+        out = self.relu1(out)
+        out = self.conv1(out)
+        
+        out = self.norm2(out)
+        out = self.relu2(out)
+        out = self.conv2(out)
+        
+        if self.drop_rate > 0:
+            out = self.dropout(out)
+        
+        return out
+
+class TransitionDown(nn.Module):
+    """Transition layer for downsampling 用于下采样的过渡层"""
+    def __init__(self, in_channels, out_channels):
+        super(TransitionDown, self).__init__()
+        self.norm = nn.BatchNorm2d(in_channels)
+        self.relu = nn.ReLU(inplace=True)
+        self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=1, bias=False)
+        self.pool = nn.AvgPool2d(kernel_size=2, stride=2)
+    
+    def forward(self, x):
+        out = self.norm(x)
+        out = self.relu(out)
+        out = self.conv(out)
+        out = self.pool(out)
+        return out
+
+class TransitionUp(nn.Module):
+    """Transition layer for upsampling 用于上采样的过渡层"""
+    def __init__(self, in_channels, out_channels):
+        super(TransitionUp, self).__init__()
+        self.convTrans = nn.ConvTranspose2d(in_channels, out_channels, kernel_size=3, stride=2, padding=0, bias=True)
+    
+    def forward(self, x, skip_connection):
+        out = self.convTrans(x)
+        # Crop to match skip connection size 裁剪以匹配跳跃连接大小
+        out = center_crop(out, skip_connection.size(2), skip_connection.size(3))
+        out = torch.cat([out, skip_connection], 1)
+        return out
+
+def center_crop(layer, max_height, max_width):
+    """Center crop to specified size 中心裁剪到指定大小"""
+    _, _, h, w = layer.size()
+    xy1 = (w - max_width) // 2
+    xy2 = (h - max_height) // 2
+    return layer[:, :, xy2:(xy2 + max_height), xy1:(xy1 + max_width)]
+
+class DenseUNet(nn.Module):
+    """DenseNet-based U-Net for Segmentation 基于DenseNet的分割U-Net"""
+    def __init__(self, n_classes, in_channels=3, growth_rate=32, block_config=(6, 12, 24, 16)):
+        super(DenseUNet, self).__init__()
+        
+        # Initial convolution 初始卷积
+        self.conv0 = nn.Conv2d(in_channels, 64, kernel_size=7, stride=2, padding=3, bias=False)
+        self.norm0 = nn.BatchNorm2d(64)
+        self.relu0 = nn.ReLU(inplace=True)
+        self.pool0 = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
+        
+        # Encoder path (DenseBlocks) 编码器路径（密集块）
+        num_features = 64
+        self.down_blocks = nn.ModuleList()
+        self.down_trans = nn.ModuleList()
+        
+        for i, num_layers in enumerate(block_config):
+            block = DenseBlock(num_layers, num_features, growth_rate)
+            self.down_blocks.append(block)
+            num_features += num_layers * growth_rate
+            
+            if i < len(block_config) - 1:  # No transition after last block
+                trans = TransitionDown(num_features, num_features // 2)
+                self.down_trans.append(trans)
+                num_features = num_features // 2
+        
+        # Decoder path 解码器路径
+        self.up_trans = nn.ModuleList()
+        self.up_blocks = nn.ModuleList()
+        
+        # Calculate feature numbers for decoder 计算解码器的特征数量
+        prev_features = num_features
+        for i in reversed(range(len(block_config) - 1)):
+            # Calculate skip connection features 计算跳跃连接特征
+            skip_features = 64
+            for j in range(i + 1):
+                skip_features += block_config[j] * growth_rate
+                if j < i:
+                    skip_features = skip_features // 2
+            
+            # Transition up 上采样过渡
+            trans_up = TransitionUp(prev_features, prev_features // 2)
+            self.up_trans.append(trans_up)
+            
+            # Dense block 密集块
+            combined_features = prev_features // 2 + skip_features
+            block = DenseBlock(block_config[i], combined_features, growth_rate)
+            self.up_blocks.append(block)
+            
+            prev_features = combined_features + block_config[i] * growth_rate
+        
+        # Final classifier 最终分类器
+        self.final_conv = nn.Conv2d(prev_features, n_classes, kernel_size=1)
+        
+    def forward(self, x):
+        # Initial layers 初始层
+        out = self.conv0(x)
+        out = self.norm0(out)
+        out = self.relu0(out)
+        out = self.pool0(out)
+        
+        # Encoder 编码器
+        skip_connections = []
+        for i, (down_block, down_trans) in enumerate(zip(self.down_blocks[:-1], self.down_trans)):
+            out = down_block(out)
+            skip_connections.append(out)
+            out = down_trans(out)
+        
+        # Bottleneck 瓶颈
+        out = self.down_blocks[-1](out)
+        
+        # Decoder 解码器
+        for i, (up_trans, up_block) in enumerate(zip(self.up_trans, self.up_blocks)):
+            skip = skip_connections[-(i+1)]
+            out = up_trans(out, skip)
+            out = up_block(out)
+        
+        # Final upsampling to original size 最终上采样到原始大小
+        out = F.interpolate(out, size=x.shape[2:], mode='bilinear', align_corners=False)
+        out = self.final_conv(out)
+        
+        return out
+
+# Example usage 使用示例
+denseunet = DenseUNet(n_classes=21, growth_rate=32)
+input_tensor = torch.randn(1, 3, 256, 256)
+output = denseunet(input_tensor)
+print(f"DenseUNet Input shape: {input_tensor.shape}")
+print(f"DenseUNet Output shape: {output.shape}")
+```
+
+### 5.8 Panoptic Segmentation Implementation 全景分割实现
+
+```python
+class PanopticHead(nn.Module):
+    """Panoptic Segmentation Head 全景分割头"""
+    def __init__(self, in_channels, num_things, num_stuff):
+        super(PanopticHead, self).__init__()
+        self.num_things = num_things  # Countable objects 可数对象
+        self.num_stuff = num_stuff    # Uncountable regions 不可数区域
+        
+        # Semantic segmentation branch 语义分割分支
+        self.semantic_head = nn.Sequential(
+            nn.Conv2d(in_channels, 256, 3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(256, 256, 3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(256, num_things + num_stuff, 1)
+        )
+        
+        # Instance embedding branch 实例嵌入分支
+        self.instance_head = nn.Sequential(
+            nn.Conv2d(in_channels, 256, 3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(256, 256, 3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(256, 128, 1)  # Instance embedding dimension
+        )
+        
+        # Center prediction for instances 实例的中心预测
+        self.center_head = nn.Sequential(
+            nn.Conv2d(in_channels, 256, 3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(256, 1, 1),
+            nn.Sigmoid()
+        )
+        
+    def forward(self, x):
+        semantic_logits = self.semantic_head(x)
+        instance_embeddings = self.instance_head(x)
+        center_predictions = self.center_head(x)
+        
+        return {
+            'semantic': semantic_logits,
+            'instance': instance_embeddings,
+            'center': center_predictions
+        }
+
+class PanopticSegmentationModel(nn.Module):
+    """Complete Panoptic Segmentation Model 完整的全景分割模型"""
+    def __init__(self, backbone, num_things=8, num_stuff=11):
+        super(PanopticSegmentationModel, self).__init__()
+        self.backbone = backbone
+        self.num_things = num_things
+        self.num_stuff = num_stuff
+        
+        # Get backbone output channels 获取骨干网络输出通道
+        if hasattr(backbone, 'backbone_channels'):
+            backbone_channels = backbone.backbone_channels
+        else:
+            backbone_channels = 2048  # Default for ResNet50
+        
+        # Feature Pyramid Network for multi-scale features 用于多尺度特征的特征金字塔网络
+        self.fpn = nn.ModuleDict({
+            'layer1': nn.Conv2d(256, 256, 1),
+            'layer2': nn.Conv2d(512, 256, 1),
+            'layer3': nn.Conv2d(1024, 256, 1),
+            'layer4': nn.Conv2d(backbone_channels, 256, 1)
+        })
+        
+        # Panoptic head 全景头
+        self.panoptic_head = PanopticHead(256, num_things, num_stuff)
+        
+    def forward(self, x):
+        input_size = x.shape[2:]
+        
+        # Extract multi-scale features 提取多尺度特征
+        features = self.backbone(x)
+        
+        # Apply FPN 应用FPN
+        fpn_features = []
+        for name, conv in self.fpn.items():
+            feat = conv(features[name])
+            # Upsample to common resolution 上采样到共同分辨率
+            feat = F.interpolate(feat, size=(input_size[0]//4, input_size[1]//4), 
+                               mode='bilinear', align_corners=False)
+            fpn_features.append(feat)
+        
+        # Combine features 组合特征
+        combined_features = sum(fpn_features)
+        
+        # Panoptic prediction 全景预测
+        panoptic_outputs = self.panoptic_head(combined_features)
+        
+        # Upsample to original resolution 上采样到原始分辨率
+        for key in panoptic_outputs:
+            panoptic_outputs[key] = F.interpolate(
+                panoptic_outputs[key], size=input_size, 
+                mode='bilinear', align_corners=False
+            )
+        
+        return panoptic_outputs
+
+def panoptic_fusion(semantic_logits, instance_embeddings, center_predictions, 
+                   num_things, threshold=0.5, min_size=1000):
+    """
+    Fuse semantic and instance predictions to create panoptic segmentation
+    融合语义和实例预测以创建全景分割
+    """
+    device = semantic_logits.device
+    batch_size, num_classes, height, width = semantic_logits.shape
+    
+    panoptic_maps = []
+    
+    for b in range(batch_size):
+        # Get semantic prediction 获取语义预测
+        semantic_pred = torch.argmax(semantic_logits[b], dim=0)
+        
+        # Get instance centers 获取实例中心
+        centers = center_predictions[b, 0] > threshold
+        center_coords = torch.nonzero(centers)
+        
+        # Initialize panoptic map 初始化全景图
+        panoptic_map = semantic_pred.clone()
+        instance_id = num_things + 1000  # Start instance IDs from 1000
+        
+        # Process each detected center 处理每个检测到的中心
+        for center in center_coords:
+            y, x = center[0], center[1]
+            center_embedding = instance_embeddings[b, :, y, x]
+            
+            # Calculate similarity with all pixels 计算与所有像素的相似性
+            all_embeddings = instance_embeddings[b].view(128, -1).t()
+            center_embedding = center_embedding.unsqueeze(0)
+            
+            # Cosine similarity 余弦相似性
+            similarities = F.cosine_similarity(all_embeddings, center_embedding, dim=1)
+            similarities = similarities.view(height, width)
+            
+            # Create instance mask 创建实例掩码
+            instance_mask = similarities > 0.7  # Similarity threshold
+            
+            # Only assign to "things" classes 仅分配给"物体"类别
+            things_mask = semantic_pred < num_things
+            final_mask = instance_mask & things_mask
+            
+            # Check minimum size 检查最小大小
+            if final_mask.sum() > min_size:
+                panoptic_map[final_mask] = instance_id
+                instance_id += 1
+        
+        panoptic_maps.append(panoptic_map)
+    
+    return torch.stack(panoptic_maps)
+
+class PanopticLoss(nn.Module):
+    """Combined loss for panoptic segmentation 全景分割的组合损失"""
+    def __init__(self, semantic_weight=1.0, center_weight=1.0, instance_weight=1.0):
+        super(PanopticLoss, self).__init__()
+        self.semantic_weight = semantic_weight
+        self.center_weight = center_weight
+        self.instance_weight = instance_weight
+        
+        self.semantic_loss = nn.CrossEntropyLoss()
+        self.center_loss = nn.BCELoss()
+        
+    def forward(self, predictions, targets):
+        """
+        Args:
+            predictions: Dict with 'semantic', 'instance', 'center'
+            targets: Dict with 'semantic', 'instance_centers', 'instance_ids'
+        """
+        # Semantic loss 语义损失
+        semantic_loss = self.semantic_loss(predictions['semantic'], targets['semantic'])
+        
+        # Center loss 中心损失
+        center_loss = self.center_loss(predictions['center'], targets['instance_centers'])
+        
+        # Instance embedding loss (simplified) 实例嵌入损失（简化）
+        instance_loss = self._instance_embedding_loss(
+            predictions['instance'], targets['instance_ids']
+        )
+        
+        total_loss = (self.semantic_weight * semantic_loss + 
+                     self.center_weight * center_loss +
+                     self.instance_weight * instance_loss)
+        
+        return {
+            'total_loss': total_loss,
+            'semantic_loss': semantic_loss,
+            'center_loss': center_loss,
+            'instance_loss': instance_loss
+        }
+    
+    def _instance_embedding_loss(self, embeddings, instance_ids):
+        """Instance embedding loss using discriminative loss 使用判别损失的实例嵌入损失"""
+        # Simplified implementation 简化实现
+        # In practice, this would implement the discriminative loss from
+        # "Semantic Instance Segmentation with a Discriminative Loss Function"
+        # 在实践中，这将实现来自"具有判别损失函数的语义实例分割"的判别损失
+        return torch.tensor(0.0, device=embeddings.device, requires_grad=True)
+
+# Example usage 使用示例
+def create_panoptic_model():
+    """Create a complete panoptic segmentation model 创建完整的全景分割模型"""
+    # Use ResNet50 as backbone 使用ResNet50作为骨干网络
+    backbone = models.resnet50(pretrained=True)
+    
+    # Remove final layers and create feature extractor 移除最终层并创建特征提取器
+    backbone_features = nn.Sequential(*list(backbone.children())[:-2])
+    
+    # Create panoptic model 创建全景模型
+    model = PanopticSegmentationModel(backbone_features, num_things=8, num_stuff=11)
+    
+    return model
+
+# Example training loop for panoptic segmentation 全景分割的示例训练循环
+def train_panoptic_model(model, dataloader, num_epochs=50):
+    """Training loop for panoptic segmentation 全景分割的训练循环"""
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = model.to(device)
+    
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
+    criterion = PanopticLoss()
+    
+    for epoch in range(num_epochs):
+        model.train()
+        total_loss = 0
+        
+        for batch_idx, (images, targets) in enumerate(dataloader):
+            images = images.to(device)
+            # Move targets to device 将目标移动到设备
+            for key in targets:
+                targets[key] = targets[key].to(device)
+            
+            optimizer.zero_grad()
+            predictions = model(images)
+            loss_dict = criterion(predictions, targets)
+            
+            loss = loss_dict['total_loss']
+            loss.backward()
+            optimizer.step()
+            
+            total_loss += loss.item()
+            
+            if batch_idx % 10 == 0:
+                print(f'Epoch {epoch}, Batch {batch_idx}, Loss: {loss.item():.4f}')
+        
+        print(f'Epoch {epoch}: Average Loss: {total_loss/len(dataloader):.4f}')
+
+# Create and test panoptic model 创建和测试全景模型
+panoptic_model = create_panoptic_model()
+input_tensor = torch.randn(1, 3, 512, 512)
+outputs = panoptic_model(input_tensor)
+print(f"Panoptic Semantic shape: {outputs['semantic'].shape}")
+print(f"Panoptic Instance shape: {outputs['instance'].shape}")
+print(f"Panoptic Center shape: {outputs['center'].shape}")
+```
+
+### 5.9 Loss Functions Implementation 损失函数实现
 
 ```python
 class DiceLoss(nn.Module):
@@ -625,7 +1565,7 @@ class CombinedLoss(nn.Module):
         return self.alpha * ce + (1 - self.alpha) * dice
 ```
 
-### 5.4 Training Loop 训练循环
+### 5.10 Training Loop 训练循环
 
 ```python
 import torch.optim as optim
