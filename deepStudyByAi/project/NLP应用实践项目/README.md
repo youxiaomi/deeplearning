@@ -64,7 +64,7 @@ pip install torch-crf
 2. **克隆项目 | Clone Project**
 ```bash
 # 进入项目目录
-cd deepStudyByCursor/project/NLP应用实践项目
+cd deepStudyByAi/project/NLP应用实践项目
 ```
 
 ### 学习路径 | Learning Path

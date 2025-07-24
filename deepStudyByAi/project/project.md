@@ -8,30 +8,30 @@
 
 **从数学公式到代码实现的第一步**
 
-- **目录:** `deepStudyByCursor/project/线性模型与感知机实践项目/`
+- **目录:** `deepStudyByAi/project/线性模型与感知机实践项目/`
 - **对应学习路线:** 第1章 - 线性模型与感知机基础
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/线性模型与感知机实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/线性模型与感知机实践项目/项目概述.md)
 
 #### 内容大纲:
 
 ##### 1.1 数学基础实现 (Mathematical Foundations Implementation)
-- **目录:** `deepStudyByCursor/project/线性模型与感知机实践项目/01_数学基础实现/`
-- **主要文档:** [线性回归数学实现.md](./deepStudyByCursor/project/线性模型与感知机实践项目/01_数学基础实现/线性回归数学实现.md)
-- **辅助文档:** [矩阵运算练习.md](./deepStudyByCursor/project/线性模型与感知机实践项目/01_数学基础实现/矩阵运算练习.md)
+- **目录:** `deepStudyByAi/project/线性模型与感知机实践项目/01_数学基础实现/`
+- **主要文档:** [线性回归数学实现.md](./deepStudyByAi/project/线性模型与感知机实践项目/01_数学基础实现/线性回归数学实现.md)
+- **辅助文档:** [矩阵运算练习.md](./deepStudyByAi/project/线性模型与感知机实践项目/01_数学基础实现/矩阵运算练习.md)
 
 ##### 1.2 感知机从零实现 (Perceptron from Scratch)
-- **目录:** `deepStudyByCursor/project/线性模型与感知机实践项目/02_感知机从零实现/`
-- **主要文档:** [感知机算法.md](./deepStudyByCursor/project/线性模型与感知机实践项目/02_感知机从零实现/感知机算法.md)
+- **目录:** `deepStudyByAi/project/线性模型与感知机实践项目/02_感知机从零实现/`
+- **主要文档:** [感知机算法.md](./deepStudyByAi/project/线性模型与感知机实践项目/02_感知机从零实现/感知机算法.md)
 
 ##### 1.3 PyTorch基础实现 (PyTorch Basic Implementation)
-- **目录:** `deepStudyByCursor/project/线性模型与感知机实践项目/03_PyTorch基础实现/`
-- **主要文档:** [线性模型PyTorch实现.md](./deepStudyByCursor/project/线性模型与感知机实践项目/03_PyTorch基础实现/线性模型PyTorch实现.md)
+- **目录:** `deepStudyByAi/project/线性模型与感知机实践项目/03_PyTorch基础实现/`
+- **主要文档:** [线性模型PyTorch实现.md](./deepStudyByAi/project/线性模型与感知机实践项目/03_PyTorch基础实现/线性模型PyTorch实现.md)
 
 ##### 1.4 实际应用项目 (Real-world Application Projects)
-- **目录:** `deepStudyByCursor/project/线性模型与感知机实践项目/04_实际应用项目/`
+- **目录:** `deepStudyByAi/project/线性模型与感知机实践项目/04_实际应用项目/`
 - **主要项目:** 
-  - [房价预测项目/](./deepStudyByCursor/project/线性模型与感知机实践项目/04_实际应用项目/房价预测项目/)
-  - [二分类问题解决方案/](./deepStudyByCursor/project/线性模型与感知机实践项目/04_实际应用项目/二分类问题解决方案/)
+  - [房价预测项目/](./deepStudyByAi/project/线性模型与感知机实践项目/04_实际应用项目/房价预测项目/)
+  - [二分类问题解决方案/](./deepStudyByAi/project/线性模型与感知机实践项目/04_实际应用项目/二分类问题解决方案/)
 
 ---
 
@@ -39,58 +39,58 @@
 
 **深度学习核心算法的实践之旅**
 
-- **目录:** `deepStudyByCursor/project/多层感知机与反向传播实践项目/`
+- **目录:** `deepStudyByAi/project/多层感知机与反向传播实践项目/`
 - **对应学习路线:** 第2章 - 多层感知机与反向传播
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/多层感知机与反向传播实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/多层感知机与反向传播实践项目/项目概述.md)
 
 #### 内容大纲:
 
 ##### 2.1 反向传播算法实现 (Backpropagation Algorithm Implementation)
-- **目录:** `deepStudyByCursor/project/多层感知机与反向传播实践项目/01_反向传播算法实现/`
-- **主要文档:** [反向传播数学推导与实现.md](./deepStudyByCursor/project/多层感知机与反向传播实践项目/01_反向传播算法实现/反向传播数学推导与实现.md)
-- **辅助文档:** [梯度计算验证.md](./deepStudyByCursor/project/多层感知机与反向传播实践项目/01_反向传播算法实现/梯度计算验证.md)
+- **目录:** `deepStudyByAi/project/多层感知机与反向传播实践项目/01_反向传播算法实现/`
+- **主要文档:** [反向传播数学推导与实现.md](./deepStudyByAi/project/多层感知机与反向传播实践项目/01_反向传播算法实现/反向传播数学推导与实现.md)
+- **辅助文档:** [梯度计算验证.md](./deepStudyByAi/project/多层感知机与反向传播实践项目/01_反向传播算法实现/梯度计算验证.md)
 
 ##### 2.2 MLP架构设计 (MLP Architecture Design)
-- **目录:** `deepStudyByCursor/project/多层感知机与反向传播实践项目/02_MLP架构设计/`
-- **主要文档:** [神经网络架构设计.md](./deepStudyByCursor/project/多层感知机与反向传播实践项目/02_MLP架构设计/神经网络架构设计.md)
+- **目录:** `deepStudyByAi/project/多层感知机与反向传播实践项目/02_MLP架构设计/`
+- **主要文档:** [神经网络架构设计.md](./deepStudyByAi/project/多层感知机与反向传播实践项目/02_MLP架构设计/神经网络架构设计.md)
 
 ##### 2.3 损失函数与优化器 (Loss Functions and Optimizers)
-- **目录:** `deepStudyByCursor/project/多层感知机与反向传播实践项目/03_损失函数与优化器/`
-- **主要文档:** [损失函数实现.md](./deepStudyByCursor/project/多层感知机与反向传播实践项目/03_损失函数与优化器/损失函数实现.md)
+- **目录:** `deepStudyByAi/project/多层感知机与反向传播实践项目/03_损失函数与优化器/`
+- **主要文档:** [损失函数实现.md](./deepStudyByAi/project/多层感知机与反向传播实践项目/03_损失函数与优化器/损失函数实现.md)
 
 ##### 2.4 完整项目实现 (Complete Project Implementation)
-- **目录:** `deepStudyByCursor/project/多层感知机与反向传播实践项目/04_完整项目实现/`
+- **目录:** `deepStudyByAi/project/多层感知机与反向传播实践项目/04_完整项目实现/`
 - **主要项目:** 
-  - [MNIST手写数字识别增强版/](./deepStudyByCursor/project/多层感知机与反向传播实践项目/04_完整项目实现/MNIST手写数字识别增强版/)
-  - [多分类问题解决方案/](./deepStudyByCursor/project/多层感知机与反向传播实践项目/04_完整项目实现/多分类问题解决方案/)
+  - [MNIST手写数字识别增强版/](./deepStudyByAi/project/多层感知机与反向传播实践项目/04_完整项目实现/MNIST手写数字识别增强版/)
+  - [多分类问题解决方案/](./deepStudyByAi/project/多层感知机与反向传播实践项目/04_完整项目实现/多分类问题解决方案/)
 
 ### 3. 实践项目：计算机视觉综合实践项目 (Computer Vision Comprehensive Practice Project)
 
 **让AI学会"看见"和理解视觉世界**
 
-- **目录:** `deepStudyByCursor/project/计算机视觉综合实践项目/`
+- **目录:** `deepStudyByAi/project/计算机视觉综合实践项目/`
 - **对应学习路线:** 第11章 - 计算机视觉
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/计算机视觉综合实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/计算机视觉综合实践项目/项目概述.md)
 
 #### 内容大纲:
 
 ##### 3.1 目标检测项目 (Object Detection Projects)
-- **目录:** `deepStudyByCursor/project/计算机视觉综合实践项目/01_目标检测项目/`
+- **目录:** `deepStudyByAi/project/计算机视觉综合实践项目/01_目标检测项目/`
 - **主要项目:**
-  - [YOLO目标检测/](./deepStudyByCursor/project/计算机视觉综合实践项目/01_目标检测项目/YOLO目标检测/)
-  - [R-CNN系列实现/](./deepStudyByCursor/project/计算机视觉综合实践项目/01_目标检测项目/R-CNN系列实现/)
+  - [YOLO目标检测/](./deepStudyByAi/project/计算机视觉综合实践项目/01_目标检测项目/YOLO目标检测/)
+  - [R-CNN系列实现/](./deepStudyByAi/project/计算机视觉综合实践项目/01_目标检测项目/R-CNN系列实现/)
 
 ##### 3.2 图像分割项目 (Image Segmentation Projects)
-- **目录:** `deepStudyByCursor/project/计算机视觉综合实践项目/02_图像分割项目/`
+- **目录:** `deepStudyByAi/project/计算机视觉综合实践项目/02_图像分割项目/`
 - **主要项目:**
-  - [语义分割FCN实现/](./deepStudyByCursor/project/计算机视觉综合实践项目/02_图像分割项目/语义分割FCN实现/)
-  - [实例分割Mask-RCNN/](./deepStudyByCursor/project/计算机视觉综合实践项目/02_图像分割项目/实例分割Mask-RCNN/)
+  - [语义分割FCN实现/](./deepStudyByAi/project/计算机视觉综合实践项目/02_图像分割项目/语义分割FCN实现/)
+  - [实例分割Mask-RCNN/](./deepStudyByAi/project/计算机视觉综合实践项目/02_图像分割项目/实例分割Mask-RCNN/)
 
 ##### 3.3 风格迁移项目 (Style Transfer Projects)
-- **目录:** `deepStudyByCursor/project/计算机视觉综合实践项目/03_风格迁移项目/`
+- **目录:** `deepStudyByAi/project/计算机视觉综合实践项目/03_风格迁移项目/`
 - **主要项目:**
-  - [神经风格迁移/](./deepStudyByCursor/project/计算机视觉综合实践项目/03_风格迁移项目/神经风格迁移/)
-  - [快速风格迁移/](./deepStudyByCursor/project/计算机视觉综合实践项目/03_风格迁移项目/快速风格迁移/)
+  - [神经风格迁移/](./deepStudyByAi/project/计算机视觉综合实践项目/03_风格迁移项目/神经风格迁移/)
+  - [快速风格迁移/](./deepStudyByAi/project/计算机视觉综合实践项目/03_风格迁移项目/快速风格迁移/)
 
 ---
 
@@ -98,23 +98,23 @@
 
 **掌握现代NLP的核心技术**
 
-- **目录:** `deepStudyByCursor/project/NLP预训练实践项目/`
+- **目录:** `deepStudyByAi/project/NLP预训练实践项目/`
 - **对应学习路线:** 第12章 - 自然语言处理：预训练
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/NLP预训练实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/NLP预训练实践项目/项目概述.md)
 
 #### 内容大纲:
 
 ##### 4.1 词嵌入项目 (Word Embeddings Projects)
-- **目录:** `deepStudyByCursor/project/NLP预训练实践项目/01_词嵌入项目/`
+- **目录:** `deepStudyByAi/project/NLP预训练实践项目/01_词嵌入项目/`
 - **主要项目:**
-  - [Word2Vec实现与应用/](./deepStudyByCursor/project/NLP预训练实践项目/01_词嵌入项目/Word2Vec实现与应用/)
-  - [GloVe词向量训练/](./deepStudyByCursor/project/NLP预训练实践项目/01_词嵌入项目/GloVe词向量训练/)
+  - [Word2Vec实现与应用/](./deepStudyByAi/project/NLP预训练实践项目/01_词嵌入项目/Word2Vec实现与应用/)
+  - [GloVe词向量训练/](./deepStudyByAi/project/NLP预训练实践项目/01_词嵌入项目/GloVe词向量训练/)
 
 ##### 4.2 BERT预训练项目 (BERT Pretraining Projects)
-- **目录:** `deepStudyByCursor/project/NLP预训练实践项目/02_BERT预训练项目/`
+- **目录:** `deepStudyByAi/project/NLP预训练实践项目/02_BERT预训练项目/`
 - **主要项目:**
-  - [BERT从零预训练/](./deepStudyByCursor/project/NLP预训练实践项目/02_BERT预训练项目/BERT从零预训练/)
-  - [BERT微调实践/](./deepStudyByCursor/project/NLP预训练实践项目/02_BERT预训练项目/BERT微调实践/)
+  - [BERT从零预训练/](./deepStudyByAi/project/NLP预训练实践项目/02_BERT预训练项目/BERT从零预训练/)
+  - [BERT微调实践/](./deepStudyByAi/project/NLP预训练实践项目/02_BERT预训练项目/BERT微调实践/)
 
 ---
 
@@ -122,29 +122,29 @@
 
 **将NLP技术应用到实际问题**
 
-- **目录:** `deepStudyByCursor/project/NLP应用实践项目/`
+- **目录:** `deepStudyByAi/project/NLP应用实践项目/`
 - **对应学习路线:** 第13章 - 自然语言处理应用
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/NLP应用实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/NLP应用实践项目/项目概述.md)
 
 #### 内容大纲:
 
 ##### 5.1 命名实体识别项目 (Named Entity Recognition Projects)
-- **目录:** `deepStudyByCursor/project/NLP应用实践项目/01_命名实体识别项目/`
+- **目录:** `deepStudyByAi/project/NLP应用实践项目/01_命名实体识别项目/`
 - **主要项目:**
-  - [中文NER系统/](./deepStudyByCursor/project/NLP应用实践项目/01_命名实体识别项目/中文NER系统/)
-  - [多语言NER模型/](./deepStudyByCursor/project/NLP应用实践项目/01_命名实体识别项目/多语言NER模型/)
+  - [中文NER系统/](./deepStudyByAi/project/NLP应用实践项目/01_命名实体识别项目/中文NER系统/)
+  - [多语言NER模型/](./deepStudyByAi/project/NLP应用实践项目/01_命名实体识别项目/多语言NER模型/)
 
 ##### 5.2 问答系统项目 (Question Answering Projects)
-- **目录:** `deepStudyByCursor/project/NLP应用实践项目/02_问答系统项目/`
+- **目录:** `deepStudyByAi/project/NLP应用实践项目/02_问答系统项目/`
 - **主要项目:**
-  - [阅读理解QA系统/](./deepStudyByCursor/project/NLP应用实践项目/02_问答系统项目/阅读理解QA系统/)
-  - [知识库问答/](./deepStudyByCursor/project/NLP应用实践项目/02_问答系统项目/知识库问答/)
+  - [阅读理解QA系统/](./deepStudyByAi/project/NLP应用实践项目/02_问答系统项目/阅读理解QA系统/)
+  - [知识库问答/](./deepStudyByAi/project/NLP应用实践项目/02_问答系统项目/知识库问答/)
 
 ##### 5.3 机器翻译项目 (Machine Translation Projects)
-- **目录:** `deepStudyByCursor/project/NLP应用实践项目/03_机器翻译项目/`
+- **目录:** `deepStudyByAi/project/NLP应用实践项目/03_机器翻译项目/`
 - **主要项目:**
-  - [序列到序列翻译/](./deepStudyByCursor/project/NLP应用实践项目/03_机器翻译项目/序列到序列翻译/)
-  - [注意力机制翻译/](./deepStudyByCursor/project/NLP应用实践项目/03_机器翻译项目/注意力机制翻译/)
+  - [序列到序列翻译/](./deepStudyByAi/project/NLP应用实践项目/03_机器翻译项目/序列到序列翻译/)
+  - [注意力机制翻译/](./deepStudyByAi/project/NLP应用实践项目/03_机器翻译项目/注意力机制翻译/)
 
 ---
 
@@ -152,23 +152,23 @@
 
 **让AI学会在环境中做决策**
 
-- **目录:** `deepStudyByCursor/project/强化学习实践项目/`
+- **目录:** `deepStudyByAi/project/强化学习实践项目/`
 - **对应学习路线:** 第14章 - 强化学习
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/强化学习实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/强化学习实践项目/项目概述.md)
 
 #### 内容大纲:
 
 ##### 6.1 基础强化学习算法 (Basic RL Algorithms)
-- **目录:** `deepStudyByCursor/project/强化学习实践项目/01_基础强化学习算法/`
+- **目录:** `deepStudyByAi/project/强化学习实践项目/01_基础强化学习算法/`
 - **主要项目:**
-  - [Q学习游戏AI/](./deepStudyByCursor/project/强化学习实践项目/01_基础强化学习算法/Q学习游戏AI/)
-  - [策略梯度算法/](./deepStudyByCursor/project/强化学习实践项目/01_基础强化学习算法/策略梯度算法/)
+  - [Q学习游戏AI/](./deepStudyByAi/project/强化学习实践项目/01_基础强化学习算法/Q学习游戏AI/)
+  - [策略梯度算法/](./deepStudyByAi/project/强化学习实践项目/01_基础强化学习算法/策略梯度算法/)
 
 ##### 6.2 深度强化学习 (Deep Reinforcement Learning)
-- **目录:** `deepStudyByCursor/project/强化学习实践项目/02_深度强化学习/`
+- **目录:** `deepStudyByAi/project/强化学习实践项目/02_深度强化学习/`
 - **主要项目:**
-  - [DQN实现/](./deepStudyByCursor/project/强化学习实践项目/02_深度强化学习/DQN实现/)
-  - [Actor-Critic算法/](./deepStudyByCursor/project/强化学习实践项目/02_深度强化学习/Actor-Critic算法/)
+  - [DQN实现/](./deepStudyByAi/project/强化学习实践项目/02_深度强化学习/DQN实现/)
+  - [Actor-Critic算法/](./deepStudyByAi/project/强化学习实践项目/02_深度强化学习/Actor-Critic算法/)
 
 ---
 
@@ -176,23 +176,23 @@
 
 **个性化推荐技术的实际应用**
 
-- **目录:** `deepStudyByCursor/project/推荐系统实践项目/`
+- **目录:** `deepStudyByAi/project/推荐系统实践项目/`
 - **对应学习路线:** 第18章 - 推荐系统
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/推荐系统实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/推荐系统实践项目/项目概述.md)
 
 #### 内容大纲:
 
 ##### 7.1 协同过滤推荐 (Collaborative Filtering)
-- **目录:** `deepStudyByCursor/project/推荐系统实践项目/01_协同过滤推荐/`
+- **目录:** `deepStudyByAi/project/推荐系统实践项目/01_协同过滤推荐/`
 - **主要项目:**
-  - [矩阵分解推荐/](./deepStudyByCursor/project/推荐系统实践项目/01_协同过滤推荐/矩阵分解推荐/)
-  - [深度协同过滤/](./deepStudyByCursor/project/推荐系统实践项目/01_协同过滤推荐/深度协同过滤/)
+  - [矩阵分解推荐/](./deepStudyByAi/project/推荐系统实践项目/01_协同过滤推荐/矩阵分解推荐/)
+  - [深度协同过滤/](./deepStudyByAi/project/推荐系统实践项目/01_协同过滤推荐/深度协同过滤/)
 
 ##### 7.2 内容推荐系统 (Content-based Recommendation)
-- **目录:** `deepStudyByCursor/project/推荐系统实践项目/02_内容推荐系统/`
+- **目录:** `deepStudyByAi/project/推荐系统实践项目/02_内容推荐系统/`
 - **主要项目:**
-  - [新闻推荐系统/](./deepStudyByCursor/project/推荐系统实践项目/02_内容推荐系统/新闻推荐系统/)
-  - [电影推荐引擎/](./deepStudyByCursor/project/推荐系统实践项目/02_内容推荐系统/电影推荐引擎/)
+  - [新闻推荐系统/](./deepStudyByAi/project/推荐系统实践项目/02_内容推荐系统/新闻推荐系统/)
+  - [电影推荐引擎/](./deepStudyByAi/project/推荐系统实践项目/02_内容推荐系统/电影推荐引擎/)
 
 ---
 
@@ -200,17 +200,17 @@
 
 **掌握深度学习训练的核心技术**
 
-- **目录:** `deepStudyByCursor/project/优化算法实践项目/`
+- **目录:** `deepStudyByAi/project/优化算法实践项目/`
 - **对应学习路线:** 第9章 - 优化算法
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/优化算法实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/优化算法实践项目/项目概述.md)
 
 #### 内容大纲:
 
 ##### 8.1 优化器实现与比较 (Optimizer Implementation and Comparison)
-- **目录:** `deepStudyByCursor/project/优化算法实践项目/01_优化器实现与比较/`
+- **目录:** `deepStudyByAi/project/优化算法实践项目/01_优化器实现与比较/`
 - **主要项目:**
-  - [SGD到Adam优化器实现/](./deepStudyByCursor/project/优化算法实践项目/01_优化器实现与比较/SGD到Adam优化器实现/)
-  - [学习率调度策略/](./deepStudyByCursor/project/优化算法实践项目/01_优化器实现与比较/学习率调度策略/)
+  - [SGD到Adam优化器实现/](./deepStudyByAi/project/优化算法实践项目/01_优化器实现与比较/SGD到Adam优化器实现/)
+  - [学习率调度策略/](./deepStudyByAi/project/优化算法实践项目/01_优化器实现与比较/学习率调度策略/)
 
 ---
 
@@ -218,17 +218,17 @@
 
 **自动化模型调参的艺术**
 
-- **目录:** `deepStudyByCursor/project/超参数优化实践项目/`
+- **目录:** `deepStudyByAi/project/超参数优化实践项目/`
 - **对应学习路线:** 第16章 - 超参数优化
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/超参数优化实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/超参数优化实践项目/项目概述.md)
 
 #### 内容大纲:
 
 ##### 9.1 贝叶斯优化实现 (Bayesian Optimization Implementation)
-- **目录:** `deepStudyByCursor/project/超参数优化实践项目/01_贝叶斯优化实现/`
+- **目录:** `deepStudyByAi/project/超参数优化实践项目/01_贝叶斯优化实现/`
 - **主要项目:**
-  - [Optuna自动调参/](./deepStudyByCursor/project/超参数优化实践项目/01_贝叶斯优化实现/Optuna自动调参/)
-  - [神经架构搜索NAS/](./deepStudyByCursor/project/超参数优化实践项目/01_贝叶斯优化实现/神经架构搜索NAS/)
+  - [Optuna自动调参/](./deepStudyByAi/project/超参数优化实践项目/01_贝叶斯优化实现/Optuna自动调参/)
+  - [神经架构搜索NAS/](./deepStudyByAi/project/超参数优化实践项目/01_贝叶斯优化实现/神经架构搜索NAS/)
 
 ---
 
@@ -236,32 +236,32 @@
 
 **从数学到实践的图像识别之旅**
 
-- **目录:** `deepStudyByCursor/project/CNN深度学习实践项目/`
+- **目录:** `deepStudyByAi/project/CNN深度学习实践项目/`
 - **对应学习路线:** 第3章 - 卷积神经网络
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/CNN深度学习实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/CNN深度学习实践项目/项目概述.md)
 
 #### 内容大纲:
 
 ##### 9.1 数学基础 (Mathematical Foundations)
-- **目录:** `deepStudyByCursor/project/CNN深度学习实践项目/01_数学基础/`
-- **主要文档:** [卷积运算.md](./deepStudyByCursor/project/CNN深度学习实践项目/01_数学基础/卷积运算.md)
-- **辅助文档:** [quiz.md](./deepStudyByCursor/project/CNN深度学习实践项目/01_数学基础/quiz.md)
+- **目录:** `deepStudyByAi/project/CNN深度学习实践项目/01_数学基础/`
+- **主要文档:** [卷积运算.md](./deepStudyByAi/project/CNN深度学习实践项目/01_数学基础/卷积运算.md)
+- **辅助文档:** [quiz.md](./deepStudyByAi/project/CNN深度学习实践项目/01_数学基础/quiz.md)
 
 ##### 9.2 CNN基础组件 (Basic CNN Components)
-- **目录:** `deepStudyByCursor/project/CNN深度学习实践项目/02_CNN基础组件/`
-- **主要文档:** [池化层.md](./deepStudyByCursor/project/CNN深度学习实践项目/02_CNN基础组件/池化层.md)，[激活函数.md](./deepStudyByCursor/project/CNN深度学习实践项目/02_CNN基础组件/激活函数.md)
+- **目录:** `deepStudyByAi/project/CNN深度学习实践项目/02_CNN基础组件/`
+- **主要文档:** [池化层.md](./deepStudyByAi/project/CNN深度学习实践项目/02_CNN基础组件/池化层.md)，[激活函数.md](./deepStudyByAi/project/CNN深度学习实践项目/02_CNN基础组件/激活函数.md)
 
 ##### 9.3 完整CNN架构 (Complete CNN Architecture)
-- **目录:** `deepStudyByCursor/project/CNN深度学习实践项目/03_完整CNN架构/`
+- **目录:** `deepStudyByAi/project/CNN深度学习实践项目/03_完整CNN架构/`
 - **主要文档:** 暂无，待补充
 
 ##### 9.4 PyTorch实现 (PyTorch Implementation)
-- **目录:** `deepStudyByCursor/project/CNN深度学习实践项目/04_PyTorch实现/`
-- **主要文档:** [基础CNN模型.md](./deepStudyByCursor/project/CNN深度学习实践项目/04_PyTorch实现/基础CNN模型.md)
+- **目录:** `deepStudyByAi/project/CNN深度学习实践项目/04_PyTorch实现/`
+- **主要文档:** [基础CNN模型.md](./deepStudyByAi/project/CNN深度学习实践项目/04_PyTorch实现/基础CNN模型.md)
 
 ##### 9.5 实际项目 (Real-world Projects)
-- **目录:** `deepStudyByCursor/project/CNN深度学习实践项目/05_实际项目/`
-- **主要项目:** [CIFAR10图像分类器/](./deepStudyByCursor/project/CNN深度学习实践项目/05_实际项目/CIFAR10图像分类器/)
+- **目录:** `deepStudyByAi/project/CNN深度学习实践项目/05_实际项目/`
+- **主要项目:** [CIFAR10图像分类器/](./deepStudyByAi/project/CNN深度学习实践项目/05_实际项目/CIFAR10图像分类器/)
 
 ---
 
@@ -269,34 +269,34 @@
 
 **从数学到实践的序列处理之旅**
 
-- **目录:** `deepStudyByCursor/project/RNN深度学习实践项目/`
+- **目录:** `deepStudyByAi/project/RNN深度学习实践项目/`
 - **对应学习路线:** 第4章 - 循环神经网络
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/RNN深度学习实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/RNN深度学习实践项目/项目概述.md)
 
 #### 内容大纲:
 
 ##### 11.1 数学基础 (Mathematical Foundations)
-- **目录:** `deepStudyByCursor/project/RNN深度学习实践项目/01_数学基础/`
-- **主要文档:** [RNN数学原理.md](./deepStudyByCursor/project/RNN深度学习实践项目/01_数学基础/RNN数学原理.md)
-- **辅助文档:** [quiz.md](./deepStudyByCursor/project/RNN深度学习实践项目/01_数学基础/quiz.md)
+- **目录:** `deepStudyByAi/project/RNN深度学习实践项目/01_数学基础/`
+- **主要文档:** [RNN数学原理.md](./deepStudyByAi/project/RNN深度学习实践项目/01_数学基础/RNN数学原理.md)
+- **辅助文档:** [quiz.md](./deepStudyByAi/project/RNN深度学习实践项目/01_数学基础/quiz.md)
 
 ##### 11.2 RNN基础组件 (Basic RNN Components)
-- **目录:** `deepStudyByCursor/project/RNN深度学习实践项目/02_RNN基础组件/`
-- **主要文档:** [RNN单元结构.md](./deepStudyByCursor/project/RNN深度学习实践项目/02_RNN基础组件/RNN单元结构.md)，[隐藏状态传递.md](./deepStudyByCursor/project/RNN深度学习实践项目/02_RNN基础组件/隐藏状态传递.md)
+- **目录:** `deepStudyByAi/project/RNN深度学习实践项目/02_RNN基础组件/`
+- **主要文档:** [RNN单元结构.md](./deepStudyByAi/project/RNN深度学习实践项目/02_RNN基础组件/RNN单元结构.md)，[隐藏状态传递.md](./deepStudyByAi/project/RNN深度学习实践项目/02_RNN基础组件/隐藏状态传递.md)
 
 ##### 11.3 完整RNN架构 (Complete RNN Architecture)
-- **目录:** `deepStudyByCursor/project/RNN深度学习实践项目/03_完整RNN架构/`
+- **目录:** `deepStudyByAi/project/RNN深度学习实践项目/03_完整RNN架构/`
 - **主要文档:** 待补充
 
 ##### 11.4 PyTorch实现 (PyTorch Implementation)
-- **目录:** `deepStudyByCursor/project/RNN深度学习实践项目/04_PyTorch实现/`
-- **主要文档:** [基础RNN模型.md](./deepStudyByCursor/project/RNN深度学习实践项目/04_PyTorch实现/基础RNN模型.md)
+- **目录:** `deepStudyByAi/project/RNN深度学习实践项目/04_PyTorch实现/`
+- **主要文档:** [基础RNN模型.md](./deepStudyByAi/project/RNN深度学习实践项目/04_PyTorch实现/基础RNN模型.md)
 
 ##### 11.5 实际项目 (Real-world Projects)
-- **目录:** `deepStudyByCursor/project/RNN深度学习实践项目/05_实际项目/`
-- **主要项目:** [文本情感分析/](./deepStudyByCursor/project/RNN深度学习实践项目/05_实际项目/文本情感分析/)
-  - **项目介绍:** [项目介绍.md](./deepStudyByCursor/project/RNN深度学习实践项目/05_实际项目/文本情感分析/项目介绍.md)
-  - **完整实现:** [完整示例.py](./deepStudyByCursor/project/RNN深度学习实践项目/05_实际项目/文本情感分析/完整示例.py)
+- **目录:** `deepStudyByAi/project/RNN深度学习实践项目/05_实际项目/`
+- **主要项目:** [文本情感分析/](./deepStudyByAi/project/RNN深度学习实践项目/05_实际项目/文本情感分析/)
+  - **项目介绍:** [项目介绍.md](./deepStudyByAi/project/RNN深度学习实践项目/05_实际项目/文本情感分析/项目介绍.md)
+  - **完整实现:** [完整示例.py](./deepStudyByAi/project/RNN深度学习实践项目/05_实际项目/文本情感分析/完整示例.py)
 
 ---
 
@@ -304,9 +304,9 @@
 
 **掌握高级序列建模技术**
 
-- **目录:** `deepStudyByCursor/project/LSTM_GRU深度学习实践项目/`
+- **目录:** `deepStudyByAi/project/LSTM_GRU深度学习实践项目/`
 - **对应学习路线:** 第5章 - 长短期记忆网络与门控循环单元
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/LSTM_GRU深度学习实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/LSTM_GRU深度学习实践项目/项目概述.md)
 
 ---
 
@@ -314,9 +314,9 @@
 
 **创造与降维的艺术实践**
 
-- **目录:** `deepStudyByCursor/project/自编码器与生成对抗网络实践项目/`
+- **目录:** `deepStudyByAi/project/自编码器与生成对抗网络实践项目/`
 - **对应学习路线:** 第6章 - 自编码器与生成对抗网络
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/自编码器与生成对抗网络实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/自编码器与生成对抗网络实践项目/项目概述.md)
 
 ---
 
@@ -324,9 +324,9 @@
 
 **现代深度学习的核心架构实践**
 
-- **目录:** `deepStudyByCursor/project/注意力机制与Transformer实践项目/`
+- **目录:** `deepStudyByAi/project/注意力机制与Transformer实践项目/`
 - **对应学习路线:** 第7章 - 注意力机制与Transformer
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/注意力机制与Transformer实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/注意力机制与Transformer实践项目/项目概述.md)
 
 ---
 
@@ -334,9 +334,9 @@
 
 **完整的机器学习工程实践**
 
-- **目录:** `deepStudyByCursor/project/模型训练评估与部署实践项目/`
+- **目录:** `deepStudyByAi/project/模型训练评估与部署实践项目/`
 - **对应学习路线:** 第8章 - 深度学习模型的训练、评估与部署
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/模型训练评估与部署实践项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/模型训练评估与部署实践项目/项目概述.md)
 
 ---
 
@@ -344,9 +344,9 @@
 
 **经典入门项目的深度实践**
 
-- **目录:** `deepStudyByCursor/project/手写数字识别项目/`
+- **目录:** `deepStudyByAi/project/手写数字识别项目/`
 - **对应学习路线:** 多章节综合应用
-- **项目概述:** [项目概述.md](./deepStudyByCursor/project/手写数字识别项目/项目概述.md)
+- **项目概述:** [项目概述.md](./deepStudyByAi/project/手写数字识别项目/项目概述.md)
 
 ---
 
