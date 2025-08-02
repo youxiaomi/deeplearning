@@ -450,9 +450,9 @@ def main():
             ]
         },
         {
-            "text": "习近平主席在北京人民大会堂会见了美国总统拜登",
+            "text": "小芳领导人在北京人民大会堂会见了美国总统拜登",
             "entities": [
-                {"start": 0, "end": 3, "type": "PER", "text": "习近平"},
+                {"start": 0, "end": 3, "type": "PER", "text": "小芳"},
                 {"start": 6, "end": 12, "type": "LOC", "text": "北京人民大会堂"},
                 {"start": 16, "end": 18, "type": "LOC", "text": "美国"},
                 {"start": 20, "end": 22, "type": "PER", "text": "拜登"}

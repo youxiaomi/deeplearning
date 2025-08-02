@@ -429,8 +429,8 @@ def basic_functionality_tests():
         # 标准实体识别
         # Standard entity recognition
         {
-            'text': '习近平主席在北京会见了美国总统拜登',
-            'expected': [('习近平', 'PER'), ('北京', 'LOC'), ('美国', 'LOC'), ('拜登', 'PER')]
+            'text': '小芳领导人在北京会见了美国总统拜登',
+            'expected': [('小芳', 'PER'), ('北京', 'LOC'), ('美国', 'LOC'), ('拜登', 'PER')]
         },
         
         # 嵌套实体

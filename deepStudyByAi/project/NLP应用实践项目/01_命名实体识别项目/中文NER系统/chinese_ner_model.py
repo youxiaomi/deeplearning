@@ -626,9 +626,9 @@ def main():
             ]
         },
         {
-            "text": "习近平主席在北京会见了美国总统",
+            "text": "小芳领导人在北京会见了美国总统",
             "entities": [
-                {"start": 0, "end": 3, "type": "PER", "text": "习近平"},
+                {"start": 0, "end": 3, "type": "PER", "text": "小芳"},
                 {"start": 6, "end": 8, "type": "LOC", "text": "北京"},
                 {"start": 11, "end": 13, "type": "LOC", "text": "美国"}
             ]
