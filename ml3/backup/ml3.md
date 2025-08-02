@@ -2,9 +2,9 @@
 
 {0}------------------------------------------------
 
-![](_page_0_Picture_0.jpeg)
+![](img/_page_0_Picture_0.jpeg)
 
-![](_page_0_Picture_1.jpeg)
+![](img/_page_0_Picture_1.jpeg)
 
 # Hands-On **Machine Learning** with Scikit-Learn, **Keras & TensorFlow**
 
@@ -12,7 +12,7 @@
 
 powered by
 
-![](_page_0_Picture_5.jpeg)
+![](img/_page_0_Picture_5.jpeg)
 
 Aurélien Géron
 
@@ -44,7 +44,7 @@ Aurélien Géron is a machine learning consultant. A former Googler, he led YouT
 
 DATA SCIENCE / MACHINE LEARNING
 
-![](_page_1_Picture_15.jpeg)
+![](img/_page_1_Picture_15.jpeg)
 
 Twitter: @oreillymedia linkedin.com/company/oreilly-media youtube.com/oreillymedia
 
@@ -587,7 +587,7 @@ The book favors a hands-on approach, growing an intuitive understanding of machi
 
 {18}------------------------------------------------
 
-![](_page_18_Picture_0.jpeg)
+![](img/_page_18_Picture_0.jpeg)
 
 While you can read this book without picking up your laptop, I highly recommend you experiment with the code examples.
 
@@ -595,7 +595,7 @@ While you can read this book without picking up your laptop, I highly recommend 
 
 All the code examples in this book are open source and available online at https://git hub.com/ageron/handson-ml3, as Jupyter notebooks. These are interactive documents containing text, images, and executable code snippets (Python in our case). The easiest and quickest way to get started is to run these notebooks using Google Colab: this is a free service that allows you to run any Jupyter notebook directly online, without having to install anything on your machine. All you need is a web browser and a Google account.
 
-![](_page_18_Picture_4.jpeg)
+![](img/_page_18_Picture_4.jpeg)
 
 In this book, I will assume that you are using Google Colab, but I have also tested the notebooks on other online platforms such as Kaggle and Binder, so you can use those if you prefer. Alternatively, you can install the required libraries and tools (or the Docker image for this book) and run the notebooks directly on your own machine. See the instructions at https://homl.info/install.
 
@@ -644,7 +644,7 @@ Part II, "Neural Networks and Deep Learning", covers the following topics:
 
 The first part is based mostly on Scikit-Learn, while the second part uses TensorFlow and Keras.
 
-![](_page_20_Picture_7.jpeg)
+![](img/_page_20_Picture_7.jpeg)
 
 Don't jump into deep waters too hastily: while deep learning is no doubt one of the most exciting areas in machine learning, you should master the fundamentals first. Moreover, most problems can be solved quite well using simpler techniques such as random forests and ensemble methods (discussed in Part I). deep learning is best suited for complex problems such as image recognition, speech recognition, or natural language processing, and it requires a lot of data, computing power, and patience (unless you can leverage a pretrained neural network, as you will see).
 
@@ -726,11 +726,11 @@ Punctuation
 
 To avoid any confusion, punctutation appears outside of quotes throughout the book. My apologies to the purists.
 
-![](_page_23_Picture_14.jpeg)
+![](img/_page_23_Picture_14.jpeg)
 
 This element signifies a tip or suggestion.
 
-![](_page_23_Picture_16.jpeg)
+![](img/_page_23_Picture_16.jpeg)
 
 This element signifies a general note.
 
@@ -738,7 +738,7 @@ This element signifies a general note.
 
 This element indicates a warning or caution.
 
-![](_page_24_Picture_1.jpeg)
+![](img/_page_24_Picture_1.jpeg)
 
 ### **O'Reilly Online Learning**
 
@@ -810,7 +810,7 @@ This chapter introduces a lot of fundamental concepts (and jargon) that every da
 
 clear to you before we continue on to the rest of the book. So grab a coffee and let's get started!
 
-![](_page_31_Picture_1.jpeg)
+![](img/_page_31_Picture_1.jpeg)
 
 If you are already familiar with machine learning basics, you may want to skip directly to Chapter 2. If you are not sure, try to answer all the questions listed at the end of the chapter before moving on.
 
@@ -846,7 +846,7 @@ Consider how you would write a spam filter using traditional programming techniq
 - 2. You would write a detection algorithm for each of the patterns that you noticed, and your program would flag emails as spam if a number of these patterns were detected.
 - 3. You would test your program and repeat steps 1 and 2 until it was good enough to launch.
 
-![](_page_32_Figure_5.jpeg)
+![](img/_page_32_Figure_5.jpeg)
 
 Figure 1-1. The traditional approach
 
@@ -856,7 +856,7 @@ In contrast, a spam filter based on machine learning techniques automatically le
 
 {33}------------------------------------------------
 
-![](_page_33_Figure_0.jpeg)
+![](img/_page_33_Figure_0.jpeg)
 
 Figure 1-2. The machine learning approach
 
@@ -864,7 +864,7 @@ What if spammers notice that all their emails containing "4U" are blocked? They 
 
 In contrast, a spam filter based on machine learning techniques automatically notices that "For U" has become unusually frequent in spam flagged by users, and it starts flagging them without your intervention (Figure 1-3).
 
-![](_page_33_Figure_4.jpeg)
+![](img/_page_33_Figure_4.jpeg)
 
 Figure 1-3. Automatically adapting to change
 
@@ -876,7 +876,7 @@ this technique will not scale to thousands of words spoken by millions of very d
 
 Finally, machine learning can help humans learn (Figure 1-4). ML models can be inspected to see what they have learned (although for some models this can be tricky). For instance, once a spam filter has been trained on enough spam, it can easily be inspected to reveal the list of words and combinations of words that it believes are the best predictors of spam. Sometimes this will reveal unsuspected correlations or new trends, and thereby lead to a better understanding of the problem. Digging into large amounts of data to discover hidden patterns is called *data* mining, and machine learning excels at it.
 
-![](_page_34_Figure_2.jpeg)
+![](img/_page_34_Figure_2.jpeg)
 
 Figure 1-4. Machine learning can help humans learn
 
@@ -939,7 +939,7 @@ This is often tackled using reinforcement learning (RL; see Chapter 18), which i
 
 This list could go on and on, but hopefully it gives you a sense of the incredible breadth and complexity of the tasks that machine learning can tackle, and the types of techniques that you would use for each task.
 
-## **Types of Machine Learning Systems**
+### **Types of Machine Learning Systems**
 
 There are so many different types of machine learning systems that it is useful to classify them in broad categories, based on the following criteria:
 
@@ -961,7 +961,7 @@ ML systems can be classified according to the amount and type of supervision the
 
 In *supervised learning*, the training set you feed to the algorithm includes the desired solutions, called *labels* (Figure 1-5).
 
-![](_page_37_Figure_5.jpeg)
+![](img/_page_37_Figure_5.jpeg)
 
 Figure 1-5. A labeled training set for spam classification (an example of supervised learning)
 
@@ -977,11 +977,11 @@ Note that some regression models can be used for classification as well, and vic
 
 output a value that corresponds to the probability of belonging to a given class (e.g., 20% chance of being spam).
 
-![](_page_38_Figure_1.jpeg)
+![](img/_page_38_Figure_1.jpeg)
 
 Figure 1-6. A regression problem: predict a value, given an input feature (there are usually multiple input features, and sometimes multiple output values)
 
-![](_page_38_Picture_3.jpeg)
+![](img/_page_38_Picture_3.jpeg)
 
 The words target and label are generally treated as synonyms in supervised learning, but target is more common in regression tasks and label is more common in classification tasks. Moreover, features are sometimes called predictors or attributes. These terms may refer to individual samples (e.g., "this car's mileage feature is equal to 15,000") or to all samples (e.g., "the mileage feature is strongly correlated with price").
 
@@ -993,11 +993,11 @@ For example, say you have a lot of data about your blog's visitors. You may want
 
 {39}------------------------------------------------
 
-![](_page_39_Picture_0.jpeg)
+![](img/_page_39_Picture_0.jpeg)
 
 Figure 1-7. An unlabeled training set for unsupervised learning
 
-![](_page_39_Figure_2.jpeg)
+![](img/_page_39_Figure_2.jpeg)
 
 Figure 1-8. Clustering
 
@@ -1007,11 +1007,11 @@ A related task is *dimensionality reduction*, in which the goal is to simplify t
 
 {40}------------------------------------------------
 
-![](_page_40_Figure_0.jpeg)
+![](img/_page_40_Figure_0.jpeg)
 
 Figure 1-9. Example of a t-SNE visualization highlighting semantic clusters<sup>2</sup>
 
-![](_page_40_Picture_2.jpeg)
+![](img/_page_40_Picture_2.jpeg)
 
 It is often a good idea to try to reduce the number of dimensions in your training data using a dimensionality reduction algorithm before you feed it to another machine learning algorithm (such as a supervised learning algorithm). It will run much faster, the data will take up less disk and memory space, and in some cases it may also perform better.
 
@@ -1023,7 +1023,7 @@ Yet another important unsupervised task is *anomaly detection*—for example, de
 
 novelty detection algorithm should not treat new pictures of Chihuahuas as novelties. On the other hand, anomaly detection algorithms may consider these dogs as so rare and so different from other dogs that they would likely classify them as anomalies (no offense to Chihuahuas).
 
-![](_page_41_Figure_1.jpeg)
+![](img/_page_41_Figure_1.jpeg)
 
 Figure 1-10. Anomaly detection
 
@@ -1033,7 +1033,7 @@ Finally, another common unsupervised task is *association rule learning*, in whi
 
 Since labeling data is usually time-consuming and costly, you will often have plenty of unlabeled instances, and few labeled instances. Some algorithms can deal with data that's partially labeled. This is called semi-supervised learning (Figure 1-11).
 
-![](_page_41_Figure_6.jpeg)
+![](img/_page_41_Figure_6.jpeg)
 
 Figure 1-11. Semi-supervised learning with two classes (triangles and squares): the unlabeled examples (circles) help classify a new instance (the cross) into the triangle class rather than the square class, even though it is closer to the labeled squares
 
@@ -1049,7 +1049,7 @@ Another approach to machine learning involves actually generating a fully labele
 
 For example, if you have a large dataset of unlabeled images, you can randomly mask a small part of each image and then train a model to recover the original image (Figure 1-12). During training, the masked images are used as the inputs to the model, and the original images are used as the labels.
 
-![](_page_42_Figure_5.jpeg)
+![](img/_page_42_Figure_5.jpeg)
 
 Figure 1-12. Self-supervised learning example: input (left) and target (right)
 
@@ -1061,7 +1061,7 @@ The resulting model may be quite useful in itself—for example, to repair damag
 
 For example, suppose that what you really want is to have a pet classification model: given a picture of any pet, it will tell you what species it belongs to. If you have a large dataset of unlabeled photos of pets, you can start by training an image-repairing model using self-supervised learning. Once it's performing well, it should be able to distinguish different pet species: when it repairs an image of a cat whose face is masked, it must know not to add a dog's face. Assuming your model's architecture allows it (and most neural network architectures do), it is then possible to tweak the model so that it predicts pet species instead of repairing images. The final step consists of fine-tuning the model on a labeled dataset: the model already knows what cats, dogs, and other pet species look like, so this step is only needed so the model can learn the mapping between the species it already knows and the labels we expect from it.
 
-![](_page_43_Picture_2.jpeg)
+![](img/_page_43_Picture_2.jpeg)
 
 Transferring knowledge from one task to another is called transfer learning, and it's one of the most important techniques in machine learning today, especially when using deep neural networks (i.e., neural networks composed of many layers of neurons). We will discuss this in detail in Part II.
 
@@ -1073,7 +1073,7 @@ Reinforcement learning is a very different beast. The learning system, called an
 
 {44}------------------------------------------------
 
-![](_page_44_Figure_0.jpeg)
+![](img/_page_44_Figure_0.jpeg)
 
 Figure 1-13. Reinforcement learning
 
@@ -1091,7 +1091,7 @@ In batch learning, the system is incapable of learning incrementally: it must be
 
 Unfortunately, a model's performance tends to decay slowly over time, simply because the world continues to evolve while the model remains unchanged. This phenomenon is often called *model rot* or *data drift*. The solution is to regularly retrain the model on up-to-date data. How often you need to do that depends on the use case; if the model classifies pictures of cats and dogs, its performance will decay very slowly, but if the model deals with fast-evolving systems, for example making predictions on the financial market, then it is likely to decay quite fast.
 
-![](_page_45_Picture_3.jpeg)
+![](img/_page_45_Picture_3.jpeg)
 
 Even a model trained to classify pictures of cats and dogs may need to be retrained regularly, not because cats and dogs will mutate overnight, but because cameras keep changing, along with image formats, sharpness, brightness, and size ratios. Moreover, people may love different breeds next year, or they may decide to dress their pets with tiny hats-who knows?
 
@@ -1111,7 +1111,7 @@ A better option in all these cases is to use algorithms that are capable of lear
 
 In online learning, you train the system incrementally by feeding it data instances sequentially, either individually or in small groups called mini-batches. Each learning step is fast and cheap, so the system can learn about new data on the fly, as it arrives (see Figure 1-14).
 
-![](_page_46_Figure_4.jpeg)
+![](img/_page_46_Figure_4.jpeg)
 
 Figure 1-14. In online learning, a model is trained and launched into production, and then it keeps learning as new data comes in
 
@@ -1121,13 +1121,13 @@ Additionally, online learning algorithms can be used to train models on huge dat
 
 {47}------------------------------------------------
 
-![](_page_47_Figure_0.jpeg)
+![](img/_page_47_Figure_0.jpeg)
 
 Figure 1-15. Using online learning to handle huge datasets
 
 One important parameter of online learning systems is how fast they should adapt to changing data: this is called the *learning rate*. If you set a high learning rate, then your system will rapidly adapt to new data, but it will also tend to quickly forget the old data (and you don't want a spam filter to flag only the latest kinds of spam it was shown). Conversely, if you set a low learning rate, the system will have more inertia; that is, it will learn more slowly, but it will also be less sensitive to noise in the new data or to sequences of nonrepresentative data points (outliers).
 
-![](_page_47_Picture_3.jpeg)
+![](img/_page_47_Picture_3.jpeg)
 
 Out-of-core learning is usually done offline (i.e., not on the live system), so online learning can be a confusing name. Think of it as incremental learning.
 
@@ -1149,7 +1149,7 @@ Instead of just flagging emails that are identical to known spam emails, your sp
 
 This is called *instance-based learning*: the system learns the examples by heart, then generalizes to new cases by using a similarity measure to compare them to the learned examples (or a subset of them). For example, in Figure 1-16 the new instance would be classified as a triangle because the majority of the most similar instances belong to that class.
 
-![](_page_48_Figure_7.jpeg)
+![](img/_page_48_Figure_7.jpeg)
 
 Figure 1-16. Instance-based learning
 
@@ -1159,7 +1159,7 @@ Figure 1-16. Instance-based learning
 
 Another way to generalize from a set of examples is to build a model of these examples and then use that model to make predictions. This is called model-based learning (Figure 1-17).
 
-![](_page_49_Figure_2.jpeg)
+![](img/_page_49_Figure_2.jpeg)
 
 Figure 1-17. Model-based learning
 
@@ -1181,7 +1181,7 @@ Let's plot the data for these countries (Figure 1-18).
 
 {50}------------------------------------------------
 
-![](_page_50_Figure_0.jpeg)
+![](img/_page_50_Figure_0.jpeg)
 
 Figure 1-18. Do you see a trend here?
 
@@ -1191,7 +1191,7 @@ Equation 1-1. A simple linear model life\_satisfaction =  $\theta_0 + \theta_1 \
 
 This model has two *model parameters*,  $\theta_0$  and  $\theta_1$ .<sup>4</sup> By tweaking these parameters, you can make your model represent any linear function, as shown in Figure 1-19.
 
-![](_page_50_Figure_5.jpeg)
+![](img/_page_50_Figure_5.jpeg)
 
 Figure 1-19. A few possible linear models
 
@@ -1203,13 +1203,13 @@ Before you can use your model, you need to define the parameter values  $\theta_
 
 This is where the linear regression algorithm comes in: you feed it your training examples, and it finds the parameters that make the linear model fit best to your data. This is called *training* the model. In our case, the algorithm finds that the optimal parameter values are  $\theta_0$  = 3.75 and  $\theta_1$  = 6.78 × 10<sup>-5</sup>.
 
-![](_page_51_Picture_2.jpeg)
+![](img/_page_51_Picture_2.jpeg)
 
 Confusingly, the word "model" can refer to a type of model (e.g., linear regression), to a fully specified model architecture (e.g., linear regression with one input and one output), or to the final trained model ready to be used for predictions (e.g., linear regression with one input and one output, using  $\theta_0 = 3.75$  and  $\theta_1 = 6.78 \times 10^{-5}$ ). Model selection consists in choosing the type of model and fully specifying its architecture. Training a model means running an algorithm to find the model parameters that will make it best fit the training data, and hopefully make good predictions on new data.
 
 Now the model fits the training data as closely as possible (for a linear model), as you can see in Figure 1-20.
 
-![](_page_51_Figure_5.jpeg)
+![](img/_page_51_Figure_5.jpeg)
 
 Figure 1-20. The linear model that fits the training data best
 
@@ -1244,7 +1244,7 @@ print(model.predict(X new)) # output: [6.30165767]
 
 {53}------------------------------------------------
 
-![](_page_53_Picture_0.jpeg)
+![](img/_page_53_Picture_0.jpeg)
 
 If you had used an instance-based learning algorithm instead, you would have found that Israel has the closest GDP per capita to that of Cyprus (\$38,341), and since the OECD data tells us that Israelis' life satisfaction is 7.2, you would have predicted a life satisfaction of 7.2 for Cyprus. If you zoom out a bit and look at the two next-closest countries, you will find Lithuania and Slovenia, both with a life satisfaction of 5.9. Averaging these three values, you get 6.33, which is pretty close to your model-based prediction. This simple algorithm is called *k-nearest neighbors* regression (in this example,  $k = 3$ ).
 
@@ -1277,7 +1277,7 @@ We have covered a lot of ground so far: you now know what machine learning is re
 
 {54}------------------------------------------------
 
-## **Main Challenges of Machine Learning**
+### **Main Challenges of Machine Learning**
 
 In short, since your main task is to select a model and train it on some data, the two things that can go wrong are "bad model" and "bad data". Let's start with examples of bad data.
 
@@ -1301,7 +1301,7 @@ The idea that data matters more than algorithms for complex problems was further
 
 {55}------------------------------------------------
 
-![](_page_55_Figure_0.jpeg)
+![](img/_page_55_Figure_0.jpeg)
 
 #### **Nonrepresentative Training Data**
 
@@ -1317,7 +1317,7 @@ By using a nonrepresentative training set, you trained a model that is unlikely 
 
 {56}------------------------------------------------
 
-![](_page_56_Figure_0.jpeg)
+![](img/_page_56_Figure_0.jpeg)
 
 Figure 1-22. A more representative training sample
 
@@ -1363,13 +1363,13 @@ means that the model performs well on the training data, but it does not general
 
 Figure 1-23 shows an example of a high-degree polynomial life satisfaction model that strongly overfits the training data. Even though it performs much better on the training data than the simple linear model, would you really trust its predictions?
 
-![](_page_58_Figure_2.jpeg)
+![](img/_page_58_Figure_2.jpeg)
 
 Figure 1-23. Overfitting the training data
 
 Complex models such as deep neural networks can detect subtle patterns in the data, but if the training set is noisy, or if it is too small, which introduces sampling noise, then the model is likely to detect patterns in the noise itself (as in the taxi driver example). Obviously these patterns will not generalize to new instances. For example, say you feed your life satisfaction model many more attributes, including uninformative ones such as the country's name. In that case, a complex model may detect patterns like the fact that all countries in the training data with a  $w$  in their name have a life satisfaction greater than 7: New Zealand (7.3), Norway (7.6), Sweden  $(7.3)$ , and Switzerland  $(7.5)$ . How confident are you that the w-satisfaction rule generalizes to Rwanda or Zimbabwe? Obviously this pattern occurred in the training data by pure chance, but the model has no way to tell whether a pattern is real or simply the result of noise in the data.
 
-![](_page_58_Picture_5.jpeg)
+![](img/_page_58_Picture_5.jpeg)
 
 Overfitting happens when the model is too complex relative to the amount and noisiness of the training data. Here are possible solutions:
 
@@ -1383,7 +1383,7 @@ Constraining a model to make it simpler and reduce the risk of overfitting is ca
 
 Figure 1-24 shows three models. The dotted line represents the original model that was trained on the countries represented as circles (without the countries represented as squares), the solid line is our second model trained with all countries (circles and squares), and the dashed line is a model trained with the same data as the first model but with a regularization constraint. You can see that regularization forced the model to have a smaller slope: this model does not fit the training data (circles) as well as the first model, but it actually generalizes better to new examples that it did not see during training (squares).
 
-![](_page_59_Figure_2.jpeg)
+![](img/_page_59_Figure_2.jpeg)
 
 Figure 1-24. Regularization reduces the risk of overfitting
 
@@ -1416,7 +1416,7 @@ There's just one last important topic to cover: once you have trained a model, y
 
 {61}------------------------------------------------
 
-## **Testing and Validating**
+### **Testing and Validating**
 
 The only way to know how well a model will generalize to new cases is to actually try it out on new cases. One way to do that is to put your model in production and monitor how well it performs. This works well, but if your model is horribly bad, your users will complain—not the best idea.
 
@@ -1424,7 +1424,7 @@ A better option is to split your data into two sets: the *training set* and the 
 
 If the training error is low (i.e., your model makes few mistakes on the training set) but the generalization error is high, it means that your model is overfitting the training data.
 
-![](_page_61_Picture_4.jpeg)
+![](img/_page_61_Picture_4.jpeg)
 
 It is common to use 80% of the data for training and hold out 20% for testing. However, this depends on the size of the dataset: if it contains 10 million instances, then holding out 1% means your test set will contain 100,000 instances, probably more than enough to get a good estimate of the generalization error.
 
@@ -1442,7 +1442,7 @@ A common solution to this problem is called *holdout validation* (Figure 1-25): 
 
 select the best one. The new held-out set is called the *validation set* (or the *devel*opment set, or dev set). More specifically, you train multiple models with various hyperparameters on the reduced training set (i.e., the full training set minus the validation set), and you select the model that performs best on the validation set. After this holdout validation process, you train the best model on the full training set (including the validation set), and this gives you the final model. Lastly, you evaluate this final model on the test set to get an estimate of the generalization error.
 
-![](_page_62_Figure_1.jpeg)
+![](img/_page_62_Figure_1.jpeg)
 
 Figure 1-25. Model selection using holdout validation
 
@@ -1460,7 +1460,7 @@ In this case, the most important rule to remember is that both the validation se
 
 One solution is to hold out some of the training pictures (from the web) in yet another set that Andrew Ng dubbed the train-dev set (Figure 1-26). After the model is trained (on the training set, *not* on the train-dev set), you can evaluate it on the train-dev set. If the model performs poorly, then it must have overfit the training set, so you should try to simplify or regularize the model, get more training data, and clean up the training data. But if it performs well on the train-dev set, then you can evaluate the model on the dev set. If it performs poorly, then the problem must be coming from the data mismatch. You can try to tackle this problem by preprocessing the web images to make them look more like the pictures that will be taken by the mobile app, and then retraining the model. Once you have a model that performs well on both the train-dev set and the dev set, you can evaluate it one last time on the test set to know how well it is likely to perform in production.
 
-![](_page_63_Figure_3.jpeg)
+![](img/_page_63_Figure_3.jpeg)
 
 Figure 1-26. When real data is scarce (right), you may use similar abundant data (left) for training and hold out some of it in a train-dev set to evaluate overfitting; the real data is then used to evaluate data mismatch (dev set) and to evaluate the final model's performance (test set)
 
@@ -1542,7 +1542,7 @@ When you are learning about machine learning, it is best to experiment with real
 
 In this chapter we'll use the California Housing Prices dataset from the StatLib repository<sup>1</sup> (see Figure 2-1). This dataset is based on data from the 1990 California census. It is not exactly recent (a nice house in the Bay Area was still affordable at the time), but it has many qualities for learning, so we will pretend it is recent data. For teaching purposes I've added a categorical attribute and removed a few features.
 
-![](_page_67_Figure_12.jpeg)
+![](img/_page_67_Figure_12.jpeg)
 
 Figure 2-1. California housing prices
 
@@ -1550,13 +1550,13 @@ Figure 2-1. California housing prices
 
 {68}------------------------------------------------
 
-## **Look at the Big Picture**
+### **Look at the Big Picture**
 
 Welcome to the Machine Learning Housing Corporation! Your first task is to use California census data to build a model of housing prices in the state. This data includes metrics such as the population, median income, and median housing price for each block group in California. Block groups are the smallest geographical unit for which the US Census Bureau publishes sample data (a block group typically has a population of 600 to 3,000 people). I will call them "districts" for short.
 
 Your model should learn from this data and be able to predict the median housing price in any district, given all the other metrics.
 
-![](_page_68_Picture_3.jpeg)
+![](img/_page_68_Picture_3.jpeg)
 
 Since you are a well-organized data scientist, the first thing you should do is pull out your machine learning project checklist. You can start with the one in Appendix A; it should work reasonably well for most machine learning projects, but make sure to adapt it to your needs. In this chapter we will go through many checklist items, but we will also skip a few, either because they are self-explanatory or because they will be discussed in later chapters.
 
@@ -1572,7 +1572,7 @@ The next question to ask your boss is what the current solution looks like (if a
 
 {69}------------------------------------------------
 
-![](_page_69_Figure_0.jpeg)
+![](img/_page_69_Figure_0.jpeg)
 
 Figure 2-2. A machine learning pipeline for real estate investments
 
@@ -1592,7 +1592,7 @@ With all this information, you are now ready to start designing your system. Fir
 
 Have you found the answers? Let's see. This is clearly a typical supervised learning task, since the model can be trained with *labeled* examples (each instance comes with the expected output, i.e., the district's median housing price). It is a typical regression task, since the model will be asked to predict a value. More specifically, this is a *multiple regression* problem, since the system will use multiple features to make a prediction (the district's population, the median income, etc.). It is also a *univariate regression* problem, since we are only trying to predict a single value for each district. If we were trying to predict multiple values per district, it would be a *multivariate regression* problem. Finally, there is no continuous flow of data coming into the system, there is no particular need to adjust to changing data rapidly, and the data is small enough to fit in memory, so plain batch learning should do just fine.
 
-![](_page_70_Picture_2.jpeg)
+![](img/_page_70_Picture_2.jpeg)
 
 If the data were huge, you could either split your batch learning work across multiple servers (using the MapReduce technique) or use an online learning technique.
 
@@ -1720,7 +1720,7 @@ If you're not logged in to your Google account, you'll be asked to log in now (i
 
 Colab will then allocate a new *runtime* for you: this is a free virtual machine located on Google's servers that contains a bunch of tools and Python libraries, including everything you'll need for most chapters (in some chapters, you'll need to run a command to install additional libraries). This will take a few seconds. Next, Colab will automatically connect to this runtime and use it to execute your new code cell. Importantly, the code runs on the runtime, *not* on your machine. The code's output will be displayed under the cell. Congrats, you've run some Python code on Colab!
 
-![](_page_75_Picture_3.jpeg)
+![](img/_page_75_Picture_3.jpeg)
 
 To insert a new code cell, you can also type Ctrl-M (or Cmd-M on macOS) followed by A (to insert above the active cell) or B (to insert below). There are many other keyboard shortcuts available: you can view and edit them by typing Ctrl-M (or Cmd-M) then H. If you choose to run the notebooks on Kaggle or on your own machine using JupyterLab or an IDE such as Visual Studio Code with the Jupyter extension, you will see some minor differencesruntimes are called kernels, the user interface and keyboard shortcuts are slightly different, etc.—but switching from one Jupyter environment to another is not too hard.
 
@@ -1730,13 +1730,13 @@ You can make changes to a Colab notebook, and they will persist for as long as y
 
 {76}------------------------------------------------
 
-![](_page_76_Picture_0.jpeg)
+![](img/_page_76_Picture_0.jpeg)
 
 Google Colab is meant only for interactive use: you can play around in the notebooks and tweak the code as you like, but you cannot let the notebooks run unattended for a long period of time, or else the runtime will be shut down and all of its data will be lost.
 
 If the notebook generates data that you care about, make sure you download this data before the runtime shuts down. To do this, click the Files icon (see step 1 in Figure 2-5), find the file you want to download, click the vertical dots next to it (step 2), and click Download (step 3). Alternatively, you can mount your Google Drive on the runtime, allowing the notebook to read and write files directly to Google Drive as if it were a local directory. For this, click the Files icon (step 1), then click the Google Drive icon (circled in Figure 2-5) and follow the on-screen instructions.
 
-![](_page_76_Figure_3.jpeg)
+![](img/_page_76_Figure_3.jpeg)
 
 Figure 2-5. Downloading a file from a Google Colab runtime (steps 1 to 3), or mounting your Google Drive (circled icon)
 
@@ -1750,7 +1750,7 @@ Jupyter notebooks are interactive, and that's a great thing: you can run each ce
 
 run a cell. If this happens, the subsequent code cells are likely to fail. For example, the very first code cell in each notebook contains setup code (such as imports), so make sure you run it first, or else nothing will work.
 
-![](_page_77_Picture_1.jpeg)
+![](img/_page_77_Picture_1.jpeg)
 
 If you ever run into a weird error, try restarting the runtime (by selecting Runtime  $\rightarrow$  "Restart runtime" from the menu) and then run all the cells again from the beginning of the notebook. This often solves the problem. If not, it's likely that one of the changes you made broke the notebook: just revert to the original notebook and try again. If it still fails, please file an issue on GitHub.
 
@@ -1855,7 +1855,7 @@ dtypes: float64(9), object(1)
 memory usage: 1.6+ MB
 ```
 
-![](_page_79_Picture_5.jpeg)
+![](img/_page_79_Picture_5.jpeg)
 
 In this book, when a code example contains a mix of code and outputs, as is the case here, it is formatted like in the Python interpreter, for better readability: the code lines are prefixed with >>> (or ... for indented blocks), and the outputs have no prefix.
 
@@ -1902,7 +1902,7 @@ indicates the value below which a given percentage of observations in a group of
 
 Another quick way to get a feel of the type of data you are dealing with is to plot a histogram for each numerical attribute. A histogram shows the number of instances (on the vertical axis) that have a given value range (on the horizontal axis). You can either plot this one attribute at a time, or you can call the hist() method on the whole dataset (as shown in the following code example), and it will plot a histogram for each numerical attribute (see Figure 2-8):
 
-![](_page_81_Figure_2.jpeg)
+![](img/_page_81_Figure_2.jpeg)
 
 Figure 2-8. A histogram for each numerical attribute
 
@@ -1923,7 +1923,7 @@ Looking at these histograms, you notice a few things:
 
 You should now have a better understanding of the kind of data you're dealing with.
 
-![](_page_82_Picture_8.jpeg)
+![](img/_page_82_Picture_8.jpeg)
 
 Wait! Before you look at the data any further, you need to create a test set, put it aside, and never look at it.
 
@@ -2027,7 +2027,7 @@ Now you are ready to do stratified sampling based on the income category. Scikit
 
 {86}------------------------------------------------
 
-![](_page_86_Figure_0.jpeg)
+![](img/_page_86_Figure_0.jpeg)
 
 Figure 2-9. Histogram of income categories
 
@@ -2087,7 +2087,7 @@ for set_ in (strat_train_set, strat_test_set):
 
 We spent quite a bit of time on test set generation for a good reason: this is an often neglected but critical part of a machine learning project. Moreover, many of these ideas will be useful later when we discuss cross-validation. Now it's time to move on to the next stage: exploring the data.
 
-## **Explore and Visualize the Data to Gain Insights**
+### **Explore and Visualize the Data to Gain Insights**
 
 So far you have only taken a quick glance at the data to get a general understanding of the kind of data you are manipulating. Now the goal is to go into a little more depth.
 
@@ -2110,7 +2110,7 @@ housing.plot(kind="scatter", x="longitude", y="latitude", grid=True)
 plt.show()
 ```
 
-![](_page_88_Figure_5.jpeg)
+![](img/_page_88_Figure_5.jpeg)
 
 Figure 2-11. A geographical scatterplot of the data
 
@@ -2127,7 +2127,7 @@ Our brains are very good at spotting patterns in pictures, but you may need to p
 
 {89}------------------------------------------------
 
-![](_page_89_Figure_0.jpeg)
+![](img/_page_89_Figure_0.jpeg)
 
 Figure 2-12. A better visualization that highlights high-density areas
 
@@ -2154,7 +2154,7 @@ coastal districts are not too high, so it is not a simple rule.
 
 {90}------------------------------------------------
 
-![](_page_90_Figure_0.jpeg)
+![](img/_page_90_Figure_0.jpeg)
 
 Figure 2-13. California housing prices: red is expensive, blue is cheap, larger circles indicate areas with a larger population
 
@@ -2202,7 +2202,7 @@ scatter_matrix(housing[attributes], figsize=(12, 8))
 plt.show()
 ```
 
-![](_page_91_Figure_3.jpeg)
+![](img/_page_91_Figure_3.jpeg)
 
 Figure 2-14. This scatter matrix plots every numerical attribute against every other numerical attribute, plus a histogram of each numerical attribute's values on the main diagonal (top left to bottom right)
 
@@ -2217,9 +2217,9 @@ housing.plot(kind="scatter", x="median_income", y="median_house_value",
              alpha=0.1, grid=True)
 ```
 
-![](_page_92_Figure_3.jpeg)
+![](img/_page_92_Figure_3.jpeg)
 
-![](_page_92_Figure_4.jpeg)
+![](img/_page_92_Figure_4.jpeg)
 
 Figure 2-15. Median income versus median house value
 
@@ -2227,11 +2227,11 @@ This plot reveals a few things. First, the correlation is indeed quite strong; y
 
 {93}------------------------------------------------
 
-![](_page_93_Picture_0.jpeg)
+![](img/_page_93_Picture_0.jpeg)
 
 The correlation coefficient only measures linear correlations ("as  $x$ goes up, y generally goes up/down"). It may completely miss out on nonlinear relationships (e.g., "as  $x$  approaches 0,  $y$  generally goes up"). Figure 2-16 shows a variety of datasets along with their correlation coefficient. Note how all the plots of the bottom row have a correlation coefficient equal to 0, despite the fact that their axes are clearly *not* independent: these are examples of nonlinear relationships. Also, the second row shows examples where the correlation coefficient is equal to 1 or  $-1$ ; notice that this has nothing to do with the slope. For example, your height in inches has a correlation coefficient of 1 with your height in feet or in nanometers.
 
-![](_page_93_Figure_2.jpeg)
+![](img/_page_93_Figure_2.jpeg)
 
 Figure 2-16. Standard correlation coefficient of various datasets (source: Wikipedia; public domain image)
 
@@ -2280,7 +2280,7 @@ Hey, not bad! The new bedrooms ratio attribute is much more correlated with the 
 
 This round of exploration does not have to be absolutely thorough; the point is to start off on the right foot and quickly gain insights that will help you get a first reasonably good prototype. But this is an iterative process: once you get a prototype up and running, you can analyze its output to gain more insights and come back to this exploration step.
 
-## **Prepare the Data for Machine Learning Algorithms**
+### **Prepare the Data for Machine Learning Algorithms**
 
 It's time to prepare the data for your machine learning algorithms. Instead of doing this manually, you should write functions for this purpose, for several good reasons:
 
@@ -2354,7 +2354,7 @@ X = imputer.trainsform(housing_number)
 
 Missing values can also be replaced with the mean value (strategy="mean"), or with the most frequent value (strategy="most\_frequent"), or with a constant value (strategy="constant", fill\_value=...). The last two strategies support nonnumerical data.
 
-![](_page_96_Picture_9.jpeg)
+![](img/_page_96_Picture_9.jpeg)
 
 There are also more powerful imputers available in the sklearn. impute package (both for numerical features only):
 
@@ -2544,7 +2544,7 @@ But OneHotEncoder is smarter: it will detect the unknown category and raise an e
 array([[0., 0., 0., 0., 0.],[0., 0., 1., 0., 0.]
 ```
 
-![](_page_101_Picture_6.jpeg)
+![](img/_page_101_Picture_6.jpeg)
 
 If a categorical attribute has a large number of possible categories (e.g., country code, profession, species), then one-hot encoding will result in a large number of input features. This may slow down training and degrade performance. If this happens, you may want to replace the categorical input with useful numerical features related to the categories: for example, you could replace the ocean proximity feature with the distance to the ocean (similarly, a country code could be replaced with the country's population and GDP per capita). Alternatively, you can use one of the encoders provided by the category encoders package on GitHub. Or, when dealing with neural networks, you can replace each category with a learnable, low-dimensional vector called an embedding. This is an example of representation learning (see Chapters 13 and 17 for more details).
 
@@ -2571,7 +2571,7 @@ One of the most important transformations you need to apply to your data is *fea
 
 There are two common ways to get all attributes to have the same scale: *min-max* scaling and standardization.
 
-![](_page_102_Picture_5.jpeg)
+![](img/_page_102_Picture_5.jpeg)
 
 As with all estimators, it is important to fit the scalers to the training data only: never use fit() or fit\_transform() for anything else than the training set. Once you have a trained scaler, you can then use it to transform() any other set, including the validation set, the test set, and new data. Note that while the training set values will always be scaled to the specified range, if new data contains outliers, these may end up scaled outside the range. If you want to avoid this, just set the clip hyperparameter to True.
 
@@ -2597,7 +2597,7 @@ from sklearn.preprocessing import StandardScaler
 std\_scatter = StandardScale( )housing_num_std_scaled = std_scaler.fit_transform(housing_num)
 ```
 
-![](_page_103_Picture_6.jpeg)
+![](img/_page_103_Picture_6.jpeg)
 
 If you want to scale a sparse matrix without converting it to a dense matrix first, you can use a StandardScaler with its with\_mean hyperparameter set to False: it will only divide the data by the standard deviation, without subtracting the mean (as this would break sparsity).
 
@@ -2607,7 +2607,7 @@ When a feature's distribution has a *heavy tail* (i.e., when values far from the
 
 exponentially less frequent. Figure 2-17 shows how much better this feature looks when you compute its log: it's very close to a Gaussian distribution (i.e., bell-shaped).
 
-![](_page_104_Figure_1.jpeg)
+![](img/_page_104_Figure_1.jpeg)
 
 Figure 2-17. Transforming a feature to make it closer to a Gaussian distribution
 
@@ -2629,7 +2629,7 @@ age_simil_35 = rbf_kernel(housing[["housing_median_age"]], [[35]], gamma=0.1)
 
 Figure 2-18 shows this new feature as a function of the housing median age (solid line). It also shows what the feature would look like if you used a smaller gamma value. As the chart shows, the new age similarity feature peaks at 35, right around the spike in the housing median age distribution: if this particular age group is well correlated with lower prices, there's a good chance that this new feature will help.
 
-![](_page_105_Figure_3.jpeg)
+![](img/_page_105_Figure_3.jpeg)
 
 Figure 2-18. Gaussian RBF feature measuring the similarity between the housing median age and 35
 
@@ -2750,7 +2750,7 @@ class ClusterSimilarity(BaseEstimator, TransformerMixin):
        return [f"Cluster {i} similarity" for i in range(self.n_clusters)]
 ```
 
-![](_page_109_Picture_2.jpeg)
+![](img/_page_109_Picture_2.jpeg)
 
 You can check whether your custom estimator respects Scikit-Learn's API by passing an instance to check\_estimator() from the sklearn.utils.estimator\_checks package. For the full API, check out https://scikit-learn.org/stable/developers.
 
@@ -2773,7 +2773,7 @@ array([[0. , 0.14, 0. , 0. , 0. , 0. , 0.08, 0. , 0.99, 0. , 0.6],[0.63, 0. , 0.
 
 Figure 2-19 shows the 10 cluster centers found by k-means. The districts are colored according to their geographic similarity to their closest cluster center. As you can see, most clusters are located in highly populated and expensive areas.
 
-![](_page_110_Figure_2.jpeg)
+![](img/_page_110_Figure_2.jpeg)
 
 Figure 2-19. Gaussian RBF similarity to the nearest cluster center
 
@@ -2792,7 +2792,7 @@ num pipeline = Pipeline(\lceil("impute", SimpleImputer(strategy="median")),
 
 The Pipeline constructor takes a list of name/estimator pairs (2-tuples) defining a sequence of steps. The names can be anything you like, as long as they are unique and don't contain double underscores (\_). They will be useful later, when we discuss hyperparameter tuning. The estimators must all be transformers (i.e., they must have a fit\_transform() method), except for the last one, which can be anything: a transformer, a predictor, or any other type of estimator.
 
-![](_page_111_Picture_1.jpeg)
+![](img/_page_111_Picture_1.jpeg)
 
 In a Jupyter notebook, if you import sklearn and run sklearn. set\_config(display="diagram"), all Scikit-Learn estimators will be rendered as interactive diagrams. This is particularly useful for visualizing pipelines. To visualize num pipeline, run a cell with num pipeline as the last line. Clicking an estimator will show more details.
 
@@ -2849,7 +2849,7 @@ First we import the ColumnTransformer class, then we define the list of numerica
 
 {113}------------------------------------------------
 
-![](_page_113_Picture_0.jpeg)
+![](img/_page_113_Picture_0.jpeg)
 
 Instead of using a transformer, you can specify the string "drop" if you want the columns to be dropped, or you can specify "passthrough" if you want the columns to be left untouched. By default, the remaining columns (i.e., the ones that were not listed) will be dropped, but you can set the remainder hyperparameter to any transformer (or to "passthrough") if you want these columns to be handled differently.
 
@@ -2870,7 +2870,7 @@ housing prepared = preprocessing.fit transform(housing)
 
 Great! We have a preprocessing pipeline that takes the entire training dataset and applies each transformer to the appropriate columns, then concatenates the transformed columns horizontally (transformers must never change the number of rows). Once again this returns a NumPy array, but you can get the column names using preprocessing.get\_feature\_names\_out() and wrap the data in a nice DataFrame as we did before.
 
-![](_page_113_Picture_7.jpeg)
+![](img/_page_113_Picture_7.jpeg)
 
 The OneHotEncoder returns a sparse matrix and the num pipeline returns a dense matrix. When there is such a mix of sparse and dense matrices, the ColumnTransformer estimates the density of the final matrix (i.e., the ratio of nonzero cells), and it returns a sparse matrix if the density is lower than a given threshold (by default, sparse threshold=0.3). In this example, it returns a dense matrix.
 
@@ -2931,7 +2931,7 @@ array(['bedrooms__ratio', 'rooms_per_house__ratio',
        'remainder__housing_median_age'], dtype=object)
 ```
 
-## **Select and Train a Model**
+### **Select and Train a Model**
 
 At last! You framed the problem, you got the data and explored it, you sampled a training set and a test set, and you wrote a preprocessing pipeline to automatically clean up and prepare your data for machine learning algorithms. You are now ready to select and train a machine learning model.
 
@@ -3003,7 +3003,7 @@ tree_rmses = -cross_val_score(tree_reg, housing, housing_labels,
                               scoring="neg root mean squared error", cv=10)
 ```
 
-![](_page_117_Picture_2.jpeg)
+![](img/_page_117_Picture_2.jpeg)
 
 Scikit-Learn's cross-validation features expect a utility function (greater is better) rather than a cost function (lower is better), so the scoring function is actually the opposite of the RMSE. It's a negative value, so you need to switch the sign of the output to get the RMSE scores.
 
@@ -3099,7 +3099,7 @@ grid search.fit(housing, housing labels)
 
 Notice that you can refer to any hyperparameter of any estimator in a pipeline, even if this estimator is nested deep inside several pipelines and column transformers. For example, when Scikit-Learn sees "preprocessing geo n clusters", it splits this string at the double underscores, then it looks for an estimator named "preprocessing" in the pipeline and finds the preprocessing ColumnTransformer. Next, it looks for a transformer named "geo" inside this ColumnTransformer and finds the ClusterSimilarity transformer we used on the latitude and longitude attributes. Then it finds this transformer's n\_clusters hyperparameter. Similarly, random\_forest\_max\_features refers to the max\_features hyperparameter of the estimator named "random\_forest", which is of course the RandomForest model (the max\_features hyperparameter will be explained in Chapter 7).
 
-![](_page_119_Picture_3.jpeg)
+![](img/_page_119_Picture_3.jpeg)
 
 Wrapping preprocessing steps in a Scikit-Learn pipeline allows you to tune the preprocessing hyperparameters along with the model hyperparameters. This is a good thing since they often interact. For example, perhaps increasing n\_clusters requires increasing max features as well. If fitting the pipeline transformers is computationally expensive, you can set the pipeline's memory hyperparameter to the path of a caching directory: when you first fit the pipeline, Scikit-Learn will save the fitted transformers to this directory. If you then fit the pipeline again with the same hyperparameters, Scikit-Learn will just load the cached transformers.
 
@@ -3116,7 +3116,7 @@ combinations of hyperparameter values, and it will train the pipeline 3 times pe
 
 In this example, the best model is obtained by setting n clusters to 15 and setting max features to 8.
 
-![](_page_120_Picture_3.jpeg)
+![](img/_page_120_Picture_3.jpeg)
 
 Since 15 is the maximum value that was evaluated for n clusters, you should probably try searching again with higher values; the score may continue to improve.
 
@@ -3212,7 +3212,7 @@ Let's sort these importance scores in descending order and display them next to 
 
 With this information, you may want to try dropping some of the less useful features (e.g., apparently only one ocean proximity category is really useful, so you could try dropping the others).
 
-![](_page_122_Picture_8.jpeg)
+![](img/_page_122_Picture_8.jpeg)
 
 The sklearn.feature\_selection.SelectFromModel transformer can automatically drop the least useful features for you: when you fit it, it trains a model (typically a random forest), looks at its fea ture importances attribute, and selects the most useful features. Then when you call transform(), it drops the other features.
 
@@ -3264,7 +3264,7 @@ import joblib
 joblib.dump(final_model, "my_california_housing_model.pkl")
 ```
 
-![](_page_124_Picture_6.jpeg)
+![](img/_page_124_Picture_6.jpeg)
 
 It's often a good idea to save every model you experiment with so that you can come back easily to any model you want. You may also save the cross-validation scores and perhaps the actual predictions on the validation set. This will allow you to easily compare scores across model types, and compare the types of errors they make.
 
@@ -3284,7 +3284,7 @@ predictions = final_model_reloaded.predict(new_data)
 
 For example, perhaps the model will be used within a website: the user will type in some data about a new district and click the Estimate Price button. This will send a query containing the data to the web server, which will forward it to your web application, and finally your code will simply call the model's predict() method (you want to load the model upon server startup, rather than every time the model is used). Alternatively, you can wrap the model within a dedicated web service that your web application can query through a REST API<sup>13</sup> (see Figure 2-20). This makes it easier to upgrade your model to new versions without interrupting the main application. It also simplifies scaling, since you can start as many web services as needed and load-balance the requests coming from your web application across these web services. Moreover, it allows your web application to use any programming language, not just Python.
 
-![](_page_125_Figure_2.jpeg)
+![](img/_page_125_Figure_2.jpeg)
 
 Figure 2-20. A model deployed as a web service and used by a web application
 
@@ -3319,7 +3319,7 @@ Finally, make sure you keep backups of every model you create and have the proce
 
 As you can see, machine learning involves quite a lot of infrastructure. Chapter 19 discusses some aspects of this, but it's a very broad topic called ML Operations (MLOps), which deserves its own book. So don't be surprised if your first ML project takes a lot of effort and time to build and deploy to production. Fortunately, once all the infrastructure is in place, going from idea to production will be much faster.
 
-## Try It Out!
+### Try It Out!
 
 Hopefully this chapter gave you a good idea of what a machine learning project looks like as well as showing you some of the tools you can use to train a great system. As you can see, much of the work is in the data preparation step: building monitoring tools, setting up human evaluation pipelines, and automating regular model training. The machine learning algorithms are important, of course, but it is probably preferable to be comfortable with the overall process and know three or four algorithms well rather than to spend all your time exploring advanced algorithms.
 
@@ -3403,7 +3403,7 @@ some_digit = X[0]plot digit(some digit)
 plt.show()
 ```
 
-![](_page_132_Picture_1.jpeg)
+![](img/_page_132_Picture_1.jpeg)
 
 Figure 3-1. Example of an MNIST image
 
@@ -3429,7 +3429,7 @@ The training set is already shuffled for us, which is good because this guarante
 
 {133}------------------------------------------------
 
-![](_page_133_Picture_0.jpeg)
+![](img/_page_133_Picture_0.jpeg)
 
 Figure 3-2. Digits from the MNIST dataset
 
@@ -3578,7 +3578,7 @@ FN is, of course, the number of false negatives.
 
 If you are confused about the confusion matrix, Figure 3-3 may help.
 
-![](_page_137_Figure_5.jpeg)
+![](img/_page_137_Figure_5.jpeg)
 
 Figure 3-3. An illustrated confusion matrix showing examples of true negatives (top left), false positives (top right), false negatives (lower left), and true positives (lower right)
 
@@ -3618,7 +3618,7 @@ To understand this trade-off, let's look at how the SGDClassifier makes its clas
 
 find 4 true positives (actual 5s) on the right of that threshold, and 1 false positive (actually a 6). Therefore, with that threshold, the precision is 80% (4 out of 5). But out of 6 actual 5s, the classifier only detects 4, so the recall is 67% (4 out of 6). If you raise the threshold (move it to the arrow on the right), the false positive (the 6) becomes a true negative, thereby increasing the precision (up to 100% in this case), but one true positive becomes a false negative, decreasing recall down to 50%. Conversely, lowering the threshold increases recall and reduces precision.
 
-![](_page_139_Figure_1.jpeg)
+![](img/_page_139_Figure_1.jpeg)
 
 Figure 3-4. The precision/recall trade-off: images are ranked by their classifier score, and those above the chosen decision threshold are considered positive; the higher the threshold, the lower the recall, but (in general) the higher the precision
 
@@ -3673,11 +3673,11 @@ plt.vlines(threshold, 0, 1.0, "k", "dotted", label="threshold")
 plt.show()
 ```
 
-![](_page_140_Figure_7.jpeg)
+![](img/_page_140_Figure_7.jpeg)
 
 Figure 3-5. Precision and recall versus the decision threshold
 
-![](_page_140_Picture_9.jpeg)
+![](img/_page_140_Picture_9.jpeg)
 
 You may wonder why the precision curve is bumpier than the recall curve in Figure 3-5. The reason is that precision may sometimes go down when you raise the threshold (although in general it will go up). To understand why, look back at Figure 3-4 and notice what happens when you start from the central threshold and move it just one digit to the right: precision goes from 4/5 (80%) down to 3/4 (75%). On the other hand, recall can only go down when the threshold is increased, which explains why its curve looks smooth.
 
@@ -3691,7 +3691,7 @@ plt.plot(recalls, precisions, linewidth=2, label="Precision/Recall curve")
 plt.show()
 ```
 
-![](_page_141_Figure_2.jpeg)
+![](img/_page_141_Figure_2.jpeg)
 
 Figure 3-6. Precision versus recall
 
@@ -3726,7 +3726,7 @@ Let's check these predictions' precision and recall:
 
 Great, you have a 90% precision classifier! As you can see, it is fairly easy to create a classifier with virtually any precision you want: just set a high enough threshold, and you're done. But wait, not so fast-a high-precision classifier is not very useful if its recall is too low! For many applications, 48% recall wouldn't be great at all.
 
-![](_page_142_Picture_5.jpeg)
+![](img/_page_142_Picture_5.jpeg)
 
 If someone says, "Let's reach 99% precision", you should ask, "At what recall?"
 
@@ -3760,7 +3760,7 @@ plt.plot([0, 1], [0, 1], 'k:', label="Random classifier's ROC curve")plt.plot([f
 plt.show()
 ```
 
-![](_page_143_Figure_2.jpeg)
+![](img/_page_143_Figure_2.jpeg)
 
 Figure 3-7. A ROC curve plotting the false positive rate against the true positive rate for all possible thresholds; the black circle highlights the chosen ratio (at 90% precision and 48% recall)
 
@@ -3776,7 +3776,7 @@ One way to compare classifiers is to measure the *area under the curve* (AUC). A
 
 {144}------------------------------------------------
 
-![](_page_144_Picture_0.jpeg)
+![](img/_page_144_Picture_0.jpeg)
 
 Since the ROC curve is so similar to the precision/recall (PR) curve, you may wonder how to decide which one to use. As a rule of thumb, you should prefer the PR curve whenever the positive class is rare or when you care more about the false positives than the false negatives. Otherwise, use the ROC curve. For example, looking at the previous ROC curve (and the ROC AUC score), you may think that the classifier is really good. But this is mostly because there are few positives (5s) compared to the negatives (non-5s). In contrast, the PR curve makes it clear that the classifier has room for improvement: the curve could really be closer to the top-right corner (see Figure 3-6 again).
 
@@ -3810,7 +3810,7 @@ The model predicts that the first image is positive with 89% probability, and it
 
 {145}------------------------------------------------
 
-![](_page_145_Picture_0.jpeg)
+![](img/_page_145_Picture_0.jpeg)
 
 These are estimated probabilities, not actual probabilities. For example, if you look at all the images that the model classified as positive with an estimated probability between 50% and 60%, roughly 94% of them are actually positive. So, the model's estimated probabilities were much too low in this case-but models can be overconfident as well. The sklearn.calibration package contains tools to calibrate the estimated probabilities and make them much closer to actual probabilities. See the extra material section in this chapter's notebook for more details.
 
@@ -3831,7 +3831,7 @@ plt.plot(recalls, precisions, "--", linewidth=2, label="SGD")
 plt.show()
 ```
 
-![](_page_145_Figure_6.jpeg)
+![](img/_page_145_Figure_6.jpeg)
 
 Figure 3-8. Comparing PR curves: the random forest classifier is superior to the SGD classifier because its PR curve is much closer to the top-right corner, and it has a greater  $AUC$ 
 
@@ -3850,7 +3850,7 @@ Try measuring the precision and recall scores: you should find about 99.1% preci
 
 You now know how to train binary classifiers, choose the appropriate metric for your task, evaluate your classifiers using cross-validation, select the precision/recall trade-off that fits your needs, and use several metrics and curves to compare various models. You're ready to try to detect more than just the 5s.
 
-## **Multiclass Classification**
+### **Multiclass Classification**
 
 Whereas binary classifiers distinguish between two classes, *multiclass classifiers* (also called *multinomial classifiers*) can distinguish between more than two classes.
 
@@ -3962,7 +3962,7 @@ array([0.8983, 0.891, 0.9018])
 
 {149}------------------------------------------------
 
-## **Error Analysis**
+### **Error Analysis**
 
 If this were a real project, you would now follow the steps in your machine learning project checklist (see Appendix A). You'd explore data preparation options, try out multiple models, shortlist the best ones, fine-tune their hyperparameters using Grid SearchCV, and automate as much as possible. Here, we will assume that you have found a promising model and you want to find ways to improve it. One way to do this is to analyze the types of errors it makes.
 
@@ -4001,11 +4001,11 @@ sample\_weight = (y_train\_pred != y_train)ConfusionMatrixDisplay.from_predictio
 
 plt.show()
 
-![](_page_150_Figure_2.jpeg)
+![](img/_page_150_Figure_2.jpeg)
 
 Figure 3-9. Confusion matrix (left) and the same CM normalized by row (right)
 
-![](_page_150_Figure_4.jpeg)
+![](img/_page_150_Figure_4.jpeg)
 
 Figure 3-10. Confusion matrix with errors only, normalized by row (left) and by column  $(right)$ 
 
@@ -4030,7 +4030,7 @@ X_bbb = X_ttrain[(y_ttrain == cl_b) & (y_ttrain_pred == cl_b)]
 [...] # plot all images in X_aa, X_ab, X_ba, X_bb in a confusion matrix style
 ```
 
-![](_page_151_Figure_5.jpeg)
+![](img/_page_151_Figure_5.jpeg)
 
 Figure 3-11. Some images of 3s and 5s organized like a confusion matrix
 
@@ -4101,13 +4101,13 @@ Now we can use this ChainClassifier to make predictions:
 array([[0., 1.]])
 ```
 
-## **Multioutput Classification**
+### **Multioutput Classification**
 
 The last type of classification task we'll discuss here is called multioutput-multiclass classification (or just multioutput classification). It is a generalization of multilabel classification where each label can be multiclass (i.e., it can have more than two possible values).
 
 To illustrate this, let's build a system that removes noise from images. It will take as input a noisy digit image, and it will (hopefully) output a clean digit image, represented as an array of pixel intensities, just like the MNIST images. Notice that the classifier's output is multilabel (one label per pixel) and each label can have multiple values (pixel intensity ranges from 0 to 255). This is thus an example of a multioutput classification system.
 
-![](_page_154_Picture_7.jpeg)
+![](img/_page_154_Picture_7.jpeg)
 
 The line between classification and regression is sometimes blurry, such as in this example. Arguably, predicting pixel intensity is more akin to regression than to classification. Moreover, multioutput systems are not limited to classification tasks; you could even have a system that outputs multiple labels per instance, including both class labels and value labels.
 
@@ -4127,7 +4127,7 @@ y_train_model = X_trainy_t = x_t
 
 Let's take a peek at the first image from the test set (Figure 3-12). Yes, we're snooping on the test data, so you should be frowning right now.
 
-![](_page_155_Figure_2.jpeg)
+![](img/_page_155_Figure_2.jpeg)
 
 Figure 3-12. A noisy image (left) and the target clean image (right)
 
@@ -4140,7 +4140,7 @@ clean\_digit = knn_clf.predict([X_test_model0]])plot digit(clean digit)
 plt.show()
 ```
 
-![](_page_155_Picture_6.jpeg)
+![](img/_page_155_Picture_6.jpeg)
 
 Figure 3-13. The cleaned-up image
 
@@ -4194,7 +4194,7 @@ Next we will look at polynomial regression, a more complex model that can fit no
 
 Finally, we will examine two more models that are commonly used for classification tasks: logistic regression and softmax regression.
 
-![](_page_159_Picture_3.jpeg)
+![](img/_page_159_Picture_3.jpeg)
 
 There will be quite a few math equations in this chapter, using basic notions of linear algebra and calculus. To understand these equations, you will need to know what vectors and matrices are; how to transpose them, multiply them, and inverse them; and what partial derivatives are. If you are unfamiliar with these concepts, please go through the linear algebra and calculus introductory tutorials available as Jupyter notebooks in the online supplemental material. For those who are truly allergic to mathematics, you should still go through this chapter and simply skip the equations; hopefully, the text will be sufficient to help you understand most of the concepts.
 
@@ -4239,7 +4239,7 @@ In this equation:
 - **x** is the instance's *feature vector*, containing  $x_0$  to  $x_n$ , with  $x_0$  always equal to 1.
 - $\theta$  · **x** is the dot product of the vectors  $\theta$  and **x**, which is equal to  $\theta_0 x_0 + \theta_1 x_1 + \theta_2 x_2$  $+ ... + \theta_{n} x_{n}$
 
-![](_page_160_Picture_10.jpeg)
+![](img/_page_160_Picture_10.jpeg)
 
 In machine learning, vectors are often represented as column vectors, which are 2D arrays with a single column. If  $\theta$  and x are column vectors, then the prediction is  $\hat{y} = \theta^T x$ , where  $\theta^T$  is the *transpose* of  $\theta$  (a row vector instead of a column vector) and  $\theta^{\mathsf{T}}\mathbf{x}$ is the matrix multiplication of  $\theta^{\dagger}$  and **x**. It is of course the same prediction, except that it is now represented as a single-cell matrix rather than a scalar value. In this book I will use this notation to avoid switching between dot products and matrix multiplications.
 
@@ -4247,7 +4247,7 @@ OK, that's the linear regression model—but how do we train it? Well, recall th
 
 {161}------------------------------------------------
 
-![](_page_161_Picture_0.jpeg)
+![](img/_page_161_Picture_0.jpeg)
 
 Learning algorithms will often optimize a different loss function during training than the performance measure used to evaluate the final model. This is generally because the function is easier to optimize and/or because it has extra terms needed during training only (e.g., for regularization). A good performance metric is as close as possible to the final business objective. A good training loss is easy to optimize and strongly correlated with the metric. For example, classifiers are often trained using a cost function such as the log loss (as you will see later in this chapter) but evaluated using precision/recall. The log loss is easy to minimize, and doing so will usually improve precision/recall.
 
@@ -4280,7 +4280,7 @@ In this equation:
 
 Let's generate some linear-looking data to test this equation on (Figure  $4-1$ ):
 
-![](_page_162_Figure_1.jpeg)
+![](img/_page_162_Figure_1.jpeg)
 
 Figure 4-1. A randomly generated linear dataset
 
@@ -4292,7 +4292,7 @@ X b = add dummy feature(X) # add x0 = 1 to each instance
 theta_best = np.linalg.inv(X_b.T @ X_b) @ X_b.T @ y
 ```
 
-![](_page_162_Picture_5.jpeg)
+![](img/_page_162_Picture_5.jpeg)
 
 The @ operator performs matrix multiplication. If A and B are NumPy arrays, then A @ B is equivalent to np.matmul(A, B). Many other libraries, like TensorFlow, PyTorch, and JAX, support the @ operator as well. However, you cannot use @ on pure Python arrays (i.e., lists of lists).
 
@@ -4331,7 +4331,7 @@ plt.plot(X, y, "b.")[...] # beautify the figure: add labels, axis, grid, and leg
 plt.show()
 ```
 
-![](_page_163_Figure_8.jpeg)
+![](img/_page_163_Figure_8.jpeg)
 
 Figure 4-2. Linear regression model predictions
 
@@ -4374,7 +4374,7 @@ The Normal equation computes the inverse of  $X^{\dagger} X$ , which is an  $(n 
 
 The SVD approach used by Scikit-Learn's LinearRegression class is about  $O(n^2)$ . If you double the number of features, you multiply the computation time by roughly 4.
 
-![](_page_165_Picture_1.jpeg)
+![](img/_page_165_Picture_1.jpeg)
 
 Both the Normal equation and the SVD approach get very slow when the number of features grows large (e.g., 100,000). On the positive side, both are linear with regard to the number of instances in the training set (they are  $O(m)$ ), so they handle large training sets efficiently, provided they can fit in memory.
 
@@ -4382,7 +4382,7 @@ Also, once you have trained your linear regression model (using the Normal equat
 
 Now we will look at a very different way to train a linear regression model, which is better suited for cases where there are a large number of features or too many training instances to fit in memory.
 
-## **Gradient Descent**
+### **Gradient Descent**
 
 Gradient descent is a generic optimization algorithm capable of finding optimal solutions to a wide range of problems. The general idea of gradient descent is to tweak parameters iteratively in order to minimize a cost function.
 
@@ -4392,13 +4392,13 @@ In practice, you start by filling  $\theta$  with random values (this is called 
 
 {166}------------------------------------------------
 
-![](_page_166_Figure_0.jpeg)
+![](img/_page_166_Figure_0.jpeg)
 
 Figure 4-3. In this depiction of gradient descent, the model parameters are initialized randomly and get tweaked repeatedly to minimize the cost function; the learning step size is proportional to the slope of the cost function, so the steps gradually get smaller as the cost approaches the minimum
 
 An important parameter in gradient descent is the size of the steps, determined by the learning rate hyperparameter. If the learning rate is too small, then the algorithm will have to go through many iterations to converge, which will take a long time (see Figure 4-4).
 
-![](_page_166_Figure_3.jpeg)
+![](img/_page_166_Figure_3.jpeg)
 
 Figure 4-4. Learning rate too small
 
@@ -4406,13 +4406,13 @@ Figure 4-4. Learning rate too small
 
 On the other hand, if the learning rate is too high, you might jump across the valley and end up on the other side, possibly even higher up than you were before. This might make the algorithm diverge, with larger and larger values, failing to find a good solution (see Figure 4-5).
 
-![](_page_167_Figure_1.jpeg)
+![](img/_page_167_Figure_1.jpeg)
 
 Figure 4-5. Learning rate too high
 
 Additionally, not all cost functions look like nice, regular bowls. There may be holes, ridges, plateaus, and all sorts of irregular terrain, making convergence to the minimum difficult. Figure 4-6 shows the two main challenges with gradient descent. If the random initialization starts the algorithm on the left, then it will converge to a local minimum, which is not as good as the *global minimum*. If it starts on the right, then it will take a very long time to cross the plateau. And if you stop too early, you will never reach the global minimum.
 
-![](_page_167_Figure_4.jpeg)
+![](img/_page_167_Figure_4.jpeg)
 
 Figure 4-6. Gradient descent pitfalls
 
@@ -4422,13 +4422,13 @@ Fortunately, the MSE cost function for a linear regression model happens to be a
 
 While the cost function has the shape of a bowl, it can be an elongated bowl if the features have very different scales. Figure 4-7 shows gradient descent on a training set where features 1 and 2 have the same scale (on the left), and on a training set where feature 1 has much smaller values than feature 2 (on the right).<sup>3</sup>
 
-![](_page_168_Figure_2.jpeg)
+![](img/_page_168_Figure_2.jpeg)
 
 Figure 4-7. Gradient descent with (left) and without (right) feature scaling
 
 As you can see, on the left the gradient descent algorithm goes straight toward the minimum, thereby reaching it quickly, whereas on the right it first goes in a direction almost orthogonal to the direction of the global minimum, and it ends with a long march down an almost flat valley. It will eventually reach the minimum, but it will take a long time.
 
-![](_page_168_Picture_5.jpeg)
+![](img/_page_168_Picture_5.jpeg)
 
 When using gradient descent, you should ensure that all features have a similar scale (e.g., using Scikit-Learn's StandardScaler class), or else it will take much longer to converge.
 
@@ -4460,7 +4460,7 @@ $$
 
 {170}------------------------------------------------
 
-![](_page_170_Picture_0.jpeg)
+![](img/_page_170_Picture_0.jpeg)
 
 Notice that this formula involves calculations over the full training set  $X$ , at each gradient descent step! This is why the algorithm is called batch gradient descent: it uses the whole batch of training data at every step (actually, full gradient descent would probably be a better name). As a result, it is terribly slow on very large training sets (we will look at some much faster gradient descent algorithms shortly). However, gradient descent scales well with the number of features; training a linear regression model when there are hundreds of thousands of features is much faster using gradient descent than using the Normal equation or SVD decomposition.
 
@@ -4497,7 +4497,7 @@ Hey, that's exactly what the Normal equation found! Gradient descent worked perf
 
 {171}------------------------------------------------
 
-![](_page_171_Figure_0.jpeg)
+![](img/_page_171_Figure_0.jpeg)
 
 Figure 4-8. Gradient descent with various learning rates
 
@@ -4519,7 +4519,7 @@ The main problem with batch gradient descent is the fact that it uses the whole 
 
 On the other hand, due to its stochastic (i.e., random) nature, this algorithm is much less regular than batch gradient descent: instead of gently decreasing until it reaches the minimum, the cost function will bounce up and down, decreasing only on average. Over time it will end up very close to the minimum, but once it gets there it will continue to bounce around, never settling down (see Figure 4-9). Once the algorithm stops, the final parameter values will be good, but not optimal.
 
-![](_page_172_Figure_3.jpeg)
+![](img/_page_172_Figure_3.jpeg)
 
 Figure 4-9. With stochastic gradient descent, each training step is much faster but also much more stochastic than when using batch gradient descent
 
@@ -4552,11 +4552,11 @@ Note that since instances are picked randomly, some instances may be picked seve
 
 {174}------------------------------------------------
 
-![](_page_174_Figure_0.jpeg)
+![](img/_page_174_Figure_0.jpeg)
 
 Figure 4-10. The first 20 steps of stochastic gradient descent
 
-![](_page_174_Picture_2.jpeg)
+![](img/_page_174_Picture_2.jpeg)
 
 When using stochastic gradient descent, the training instances must be independent and identically distributed (IID) to ensure that the parameters get pulled toward the global optimum, on average. A simple way to ensure this is to shuffle the instances during training (e.g., pick each instance randomly, or shuffle the training set at the beginning of each epoch). If you do not shuffle the instances—for example, if the instances are sorted by label then SGD will start by optimizing for one label, then the next, and so on, and it will not settle close to the global minimum.
 
@@ -4578,7 +4578,7 @@ Once again, you find a solution quite close to the one returned by the Normal eq
 (array([4.21278812]), array([2.77270267]))
 ```
 
-![](_page_175_Picture_2.jpeg)
+![](img/_page_175_Picture_2.jpeg)
 
 All Scikit-Learn estimators can be trained using the fit() method, but some estimators also have a partial fit() method that you can call to run a single round of training on one or more instances (it ignores hyperparameters like max\_iter or tol). Repeatedly calling partial\_fit() will gradually train the model. This is useful when you need more control over the training process. Other models have a warm\_start hyperparameter instead (and some have both): if you set warm\_start=True, calling the fit() method on a trained model will not reset the model; it will just continue training where it left off, respecting hyperparameters like max\_iter and tol. Note that fit() resets the iteration counter used by the learning schedule, while partial fit() does not.
 
@@ -4590,7 +4590,7 @@ The algorithm's progress in parameter space is less erratic than with stochastic
 
 {176}------------------------------------------------
 
-![](_page_176_Figure_0.jpeg)
+![](img/_page_176_Figure_0.jpeg)
 
 Figure 4-11. Gradient descent paths in parameter space
 
@@ -4618,7 +4618,7 @@ What if your data is more complex than a straight line? Surprisingly, you can us
 
 Let's look at an example. First, we'll generate some nonlinear data (see Figure 4-12), based on a simple *quadratic equation*—that's an equation of the form  $y = ax^2 + bx +$  $c$ -plus some noise:
 
-![](_page_177_Figure_1.jpeg)
+![](img/_page_177_Figure_1.jpeg)
 
 Figure 4-12. Generated nonlinear and noisy dataset
 
@@ -4645,7 +4645,7 @@ X\_poly now contains the original feature of X plus the square of this feature. 
 
 {178}------------------------------------------------
 
-![](_page_178_Figure_0.jpeg)
+![](img/_page_178_Figure_0.jpeg)
 
 Figure 4-13. Polynomial regression model predictions
 
@@ -4653,7 +4653,7 @@ Not bad: the model estimates  $\hat{y} = 0.56x_1^2 + 0.93x_1 + 1.78$  when in fa
 
 Note that when there are multiple features, polynomial regression is capable of finding relationships between features, which is something a plain linear regression model cannot do. This is made possible by the fact that PolynomialFeatures also adds all combinations of features up to the given degree. For example, if there were two features a and b, PolynomialFeatures with degree=3 would not only add the features  $a^2$ ,  $a^3$ ,  $b^2$ , and  $b^3$ , but also the combinations ab,  $a^2b$ , and ab<sup>2</sup>.
 
-![](_page_178_Picture_4.jpeg)
+![](img/_page_178_Picture_4.jpeg)
 
 PolynomialFeatures( $degree=d$ ) transforms an array containing  $n$ features into an array containing  $(n + d)! / d!n!$  features, where n! is the *factorial* of *n*, equal to  $1 \times 2 \times 3 \times \cdots \times n$ . Beware of the combinatorial explosion of the number of features!
 
@@ -4663,7 +4663,7 @@ If you perform high-degree polynomial regression, you will likely fit the traini
 
 {179}------------------------------------------------
 
-![](_page_179_Figure_0.jpeg)
+![](img/_page_179_Figure_0.jpeg)
 
 Figure 4-14. High-degree polynomial regression
 
@@ -4679,7 +4679,7 @@ Scikit-Learn has a useful learning curve() function to help with this: it trains
 
 measured for each size and for each cross-validation fold. Let's use this function to look at the learning curves of the plain linear regression model (see Figure 4-15):
 
-![](_page_180_Figure_1.jpeg)
+![](img/_page_180_Figure_1.jpeg)
 
 Figure 4-15. Learning curves
 
@@ -4709,7 +4709,7 @@ This model is underfitting. To see why, first let's look at the training error. 
 
 These learning curves are typical of a model that's underfitting. Both curves have reached a plateau; they are close and fairly high.
 
-![](_page_181_Picture_1.jpeg)
+![](img/_page_181_Picture_1.jpeg)
 
 If your model is underfitting the training data, adding more training examples will not help. You need to use a better model or come up with better features.
 
@@ -4726,7 +4726,7 @@ train_sizes, train_scores, valid_scores = learning_curve(
 [...] # same as earlier
 ```
 
-![](_page_181_Figure_5.jpeg)
+![](img/_page_181_Figure_5.jpeg)
 
 Figure 4-16. Learning curves for the 10th-degree polynomial model
 
@@ -4739,7 +4739,7 @@ These learning curves look a bit like the previous ones, but there are two very 
 
 hallmark of an overfitting model. If you used a much larger training set, however, the two curves would continue to get closer.
 
-![](_page_182_Picture_1.jpeg)
+![](img/_page_182_Picture_1.jpeg)
 
 One way to improve an overfitting model is to feed it more training data until the validation error reaches the training error.
 
@@ -4761,7 +4761,7 @@ This part is due to the noisiness of the data itself. The only way to reduce thi
 
 Increasing a model's complexity will typically increase its variance and reduce its bias. Conversely, reducing a model's complexity increases its bias and reduces its variance. This is why it is called a trade-off.
 
-## **Regularized Linear Models**
+### **Regularized Linear Models**
 
 As you saw in Chapters 1 and 2, a good way to reduce overfitting is to regularize the model (i.e., to constrain it): the fewer degrees of freedom it has, the harder it will be for it to overfit the data. A simple way to regularize a polynomial model is to reduce the number of polynomial degrees.
 
@@ -4783,7 +4783,7 @@ Equation 4-8. Ridge regression cost function
 
 Note that the bias term  $\theta_0$  is not regularized (the sum starts at  $i = 1$ , not 0). If we define w as the vector of feature weights ( $\theta_1$  to  $\theta_n$ ), then the regularization term is equal to  $\alpha(\|\mathbf{w}\|_{2})^2$  / m, where  $\|\mathbf{w}\|_{2}$  represents the  $\ell_2$  norm of the weight vector.<sup>8</sup> For batch gradient descent, just add  $2\alpha w / m$  to the part of the MSE gradient vector that corresponds to the feature weights, without adding anything to the gradient of the bias term (see Equation  $4-6$ ).
 
-![](_page_183_Picture_7.jpeg)
+![](img/_page_183_Picture_7.jpeg)
 
 It is important to scale the data (e.g., using a StandardScaler) before performing ridge regression, as it is sensitive to the scale of the input features. This is true of most regularized models.
 
@@ -4797,7 +4797,7 @@ Figure 4-17 shows several ridge models that were trained on some very noisy line
 
 PolynomialFeatures(degree=10), then it is scaled using a StandardScaler, and finally the ridge models are applied to the resulting features: this is polynomial regression with ridge regularization. Note how increasing  $\alpha$  leads to flatter (i.e., less extreme, more reasonable) predictions, thus reducing the model's variance but increasing its bias.
 
-![](_page_184_Figure_1.jpeg)
+![](img/_page_184_Figure_1.jpeg)
 
 Figure 4-17. Linear (left) and a polynomial (right) models, both with various levels of ridge regularization
 
@@ -4833,7 +4833,7 @@ array([1.55302613])
 
 The penalty hyperparameter sets the type of regularization term to use. Specifying "12" indicates that you want SGD to add a regularization term to the MSE cost function equal to alpha times the square of the  $\ell_2$  norm of the weight vector. This is just like ridge regression, except there's no division by  $m$  in this case; that's why we passed alpha=0.1 / m, to get the same result as Ridge(alpha=0.1).
 
-![](_page_185_Picture_3.jpeg)
+![](img/_page_185_Picture_3.jpeg)
 
 The RidgeCV class also performs ridge regression, but it automatically tunes hyperparameters using cross-validation. It's roughly equivalent to using GridSearchCV, but it's optimized for ridge regression and runs much faster. Several other estimators (mostly linear) also have efficient CV variants, such as LassoCV and FlasticNetCV.
 
@@ -4851,7 +4851,7 @@ Figure 4-18 shows the same thing as Figure 4-17 but replaces the ridge models wi
 
 {186}------------------------------------------------
 
-![](_page_186_Figure_0.jpeg)
+![](img/_page_186_Figure_0.jpeg)
 
 Figure 4-18. Linear (left) and polynomial (right) models, both using various levels of lasso regularization
 
@@ -4861,13 +4861,13 @@ You can get a sense of why this is the case by looking at Figure 4-19: the axes 
 
 {187}------------------------------------------------
 
-![](_page_187_Figure_0.jpeg)
+![](img/_page_187_Figure_0.jpeg)
 
 Figure 4-19. Lasso versus ridge regularization
 
 The two bottom plots show the same thing but with an  $\ell_2$  penalty instead. In the bottom-left plot, you can see that the  $\ell_2$  loss decreases as we get closer to the origin, so gradient descent just takes a straight path toward that point. In the bottom-right plot, the contours represent ridge regression's cost function (i.e., an MSE cost function plus an  $\ell$ , loss). As you can see, the gradients get smaller as the parameters approach the global optimum, so gradient descent naturally slows down. This limits the bouncing around, which helps ridge converge faster than lasso regression. Also note that the optimal parameters (represented by the red square) get closer and closer to the origin when you increase  $\alpha$ , but they never get eliminated entirely.
 
-![](_page_187_Picture_3.jpeg)
+![](img/_page_187_Picture_3.jpeg)
 
 To keep gradient descent from bouncing around the optimum at the end when using lasso regression, you need to gradually reduce the learning rate during training. It will still bounce around the optimum, but the steps will get smaller and smaller, so it will converge.
 
@@ -4925,13 +4925,13 @@ array([1.54333232])
 
 A very different way to regularize iterative learning algorithms such as gradient descent is to stop training as soon as the validation error reaches a minimum. This is called early stopping. Figure 4-20 shows a complex model (in this case, a high-degree polynomial regression model) being trained with batch gradient descent on the quadratic dataset we used earlier. As the epochs go by, the algorithm learns, and its prediction error (RMSE) on the training set goes down, along with its prediction error on the validation set. After a while, though, the validation error stops decreasing and starts to go back up. This indicates that the model has started to overfit the training data. With early stopping you just stop training as soon as the validation error reaches the minimum. It is such a simple and efficient regularization technique that Geoffrey Hinton called it a "beautiful free lunch".
 
-![](_page_189_Figure_5.jpeg)
+![](img/_page_189_Figure_5.jpeg)
 
 Figure 4-20. Early stopping regularization
 
 {190}------------------------------------------------
 
-![](_page_190_Picture_0.jpeg)
+![](img/_page_190_Picture_0.jpeg)
 
 With stochastic and mini-batch gradient descent, the curves are not so smooth, and it may be hard to know whether you have reached the minimum or not. One solution is to stop only after the validation error has been above the minimum for some time (when you are confident that the model will not do any better), then roll back the model parameters to the point where the validation error was at a minimum.
 
@@ -4959,7 +4959,7 @@ This code first adds the polynomial features and scales all the input features, 
 
 {191}------------------------------------------------
 
-## **Logistic Regression**
+### **Logistic Regression**
 
 As discussed in Chapter 1, some regression algorithms can be used for classification (and vice versa). Logistic regression (also called *logit regression*) is commonly used to estimate the probability that an instance belongs to a particular class (e.g., what is the probability that this email is spam?). If the estimated probability is greater than a given threshold (typically 50%), then the model predicts that the instance belongs to that class (called the *positive class*, labeled "1"), and otherwise it predicts that it does not (i.e., it belongs to the *negative class*, labeled "0"). This makes it a binary classifier.
 
@@ -4979,7 +4979,7 @@ $$
 \sigma(t) = \frac{1}{1 + \exp(-t)}
 $$
 
-![](_page_191_Figure_9.jpeg)
+![](img/_page_191_Figure_9.jpeg)
 
 Figure 4-21. Logistic function
 
@@ -4993,7 +4993,7 @@ Equation 4-15. Logistic regression model prediction using a 50% threshold probab
 
 Notice that  $\sigma(t) < 0.5$  when  $t < 0$ , and  $\sigma(t) \ge 0.5$  when  $t \ge 0$ , so a logistic regression model using the default threshold of 50% probability predicts 1 if  $\theta^{\dagger}$  x is positive and 0 if it is negative.
 
-![](_page_192_Picture_4.jpeg)
+![](img/_page_192_Picture_4.jpeg)
 
 The score  $t$  is often called the *logit*. The name comes from the fact that the logit function, defined as  $logit(p) = log(p / (1 - p))$ , is the inverse of the logistic function. Indeed, if you compute the logit of the estimated probability  $p$ , you will find that the result is t. The logit is also called the *log-odds*, since it is the log of the ratio between the estimated probability for the positive class and the estimated probability for the negative class.
 
@@ -5017,7 +5017,7 @@ Equation 4-17. Logistic regression cost function (log loss)
 
  $J(\mathbf{\Theta}) = -\frac{1}{m} \sum_{i=1}^{m} \left[ y^{(i)} log(\hat{p}^{(i)}) + (1 - y^{(i)}) log(1 - \hat{p}^{(i)}) \right]$ 
 
-![](_page_193_Picture_3.jpeg)
+![](img/_page_193_Picture_3.jpeg)
 
 The log loss was not just pulled out of a hat. It can be shown mathematically (using Bayesian inference) that minimizing this loss will result in the model with the maximum likelihood of being optimal, assuming that the instances follow a Gaussian distribution around the mean of their class. When you use the log loss, this is the implicit assumption you are making. The more wrong this assumption is, the more biased the model will be. Similarly, when we used the MSE to train linear regression models, we were implicitly assuming that the data was purely linear, plus some Gaussian noise. So, if the data is not linear (e.g., if it's quadratic) or if the noise is not Gaussian (e.g., if outliers are not exponentially rare), then the model will be biased.
 
@@ -5037,7 +5037,7 @@ This equation looks very much like Equation 4-5: for each instance it computes t
 
 We can use the iris dataset to illustrate logistic regression. This is a famous dataset that contains the sepal and petal length and width of 150 iris flowers of three different species: Iris setosa, Iris versicolor, and Iris virginica (see Figure 4-22).
 
-![](_page_194_Picture_2.jpeg)
+![](img/_page_194_Picture_2.jpeg)
 
 Figure 4-22. Flowers of three iris plant species<sup>12</sup>
 
@@ -5084,7 +5084,7 @@ plt.plot([decision_boundary, decision_boundary], [0, 1], "k:", linewidth=2,
 plt.show()
 ```
 
-![](_page_195_Figure_4.jpeg)
+![](img/_page_195_Figure_4.jpeg)
 
 Figure 4-23. Estimated probabilities and decision boundary
 
@@ -5104,11 +5104,11 @@ confident that it is not an *Iris virginica* (high probability for the "Not Iris
 
 Figure 4-24 shows the same dataset, but this time displaying two features: petal width and length. Once trained, the logistic regression classifier can, based on these two features, estimate the probability that a new flower is an Iris virginica. The dashed line represents the points where the model estimates a 50% probability: this is the model's decision boundary. Note that it is a linear boundary.<sup>14</sup> Each parallel line represents the points where the model outputs a specific probability, from 15% (bottom left) to 90% (top right). All the flowers beyond the top-right line have over 90% chance of being Iris virginica, according to the model.
 
-![](_page_196_Figure_3.jpeg)
+![](img/_page_196_Figure_3.jpeg)
 
 Figure 4-24. Linear decision boundary
 
-![](_page_196_Picture_5.jpeg)
+![](img/_page_196_Picture_5.jpeg)
 
 The hyperparameter controlling the regularization strength of a Scikit-Learn LogisticRegression model is not alpha (as in other linear models), but its inverse: C. The higher the value of C, the less the model is regularized.
 
@@ -5156,7 +5156,7 @@ Equation 4-21. Softmax regression classifier prediction
 
 The *argmax* operator returns the value of a variable that maximizes a function. In this equation, it returns the value of k that maximizes the estimated probability  $\sigma(s(x))_k$ .
 
-![](_page_198_Picture_4.jpeg)
+![](img/_page_198_Picture_4.jpeg)
 
 The softmax regression classifier predicts only one class at a time (i.e., it is multiclass, not multioutput), so it should be used only with mutually exclusive classes, such as different species of plants. You cannot use it to recognize multiple people in one picture.
 
@@ -5212,13 +5212,13 @@ Figure 4-25 shows the resulting decision boundaries, represented by the backgrou
 
 curved lines (e.g., the line labeled with 0.30 represents the 30% probability boundary). Notice that the model can predict a class that has an estimated probability below 50%. For example, at the point where all decision boundaries meet, all classes have an equal estimated probability of 33%.
 
-![](_page_200_Figure_1.jpeg)
+![](img/_page_200_Figure_1.jpeg)
 
 Figure 4-25. Softmax regression decision boundaries
 
 In this chapter, you learned various ways to train linear models, both for regression and for classification. You used a closed-form equation to solve linear regression, as well as gradient descent, and you learned how various penalties can be added to the cost function during training to regularize the model. Along the way, you also learned how to plot learning curves and analyze them, and how to implement early stopping. Finally, you learned how logistic regression and softmax regression work. We've opened up the first machine learning black boxes! In the next chapters we will open many more, starting with support vector machines.
 
-## **Exercises**
+### **Exercises**
 
 - 1. Which linear regression training algorithm can you use if you have a training set with millions of features?
 - 2. Suppose the features in your training set have very different scales. Which algorithms might suffer from this, and how? What can you do about it?
@@ -5255,17 +5255,17 @@ The fundamental idea behind SVMs is best explained with some visuals. Figure 5-1
 
 {203}------------------------------------------------
 
-![](_page_203_Figure_0.jpeg)
+![](img/_page_203_Figure_0.jpeg)
 
 Figure 5-1. Large margin classification
 
 Notice that adding more training instances "off the street" will not affect the decision boundary at all: it is fully determined (or "supported") by the instances located on the edge of the street. These instances are called the *support vectors* (they are circled in Figure  $5-1$ ).
 
-![](_page_203_Picture_3.jpeg)
+![](img/_page_203_Picture_3.jpeg)
 
 SVMs are sensitive to the feature scales, as you can see in Figure 5-2. In the left plot, the vertical scale is much larger than the horizontal scale, so the widest possible street is close to horizontal. After feature scaling (e.g., using Scikit-Learn's StandardScaler), the decision boundary in the right plot looks much better.
 
-![](_page_203_Figure_5.jpeg)
+![](img/_page_203_Figure_5.jpeg)
 
 Figure 5-2. Sensitivity to feature scales
 
@@ -5275,7 +5275,7 @@ If we strictly impose that all instances must be off the street and on the corre
 
 {204}------------------------------------------------
 
-![](_page_204_Figure_0.jpeg)
+![](img/_page_204_Figure_0.jpeg)
 
 Figure 5-3. Hard margin sensitivity to outliers
 
@@ -5283,11 +5283,11 @@ To avoid these issues, we need to use a more flexible model. The objective is to
 
 When creating an SVM model using Scikit-Learn, you can specify several hyperparameters, including the regularization hyperparameter C. If you set it to a low value, then you end up with the model on the left of Figure 5-4. With a high value, you get the model on the right. As you can see, reducing C makes the street larger, but it also leads to more margin violations. In other words, reducing C results in more instances supporting the street, so there's less risk of overfitting. But if you reduce it too much, then the model ends up underfitting, as seems to be the case here: the model with C=100 looks like it will generalize better than the one with C=1.
 
-![](_page_204_Figure_4.jpeg)
+![](img/_page_204_Figure_4.jpeg)
 
 Figure 5-4. Large margin (left) versus fewer margin violations (right)
 
-![](_page_204_Picture_6.jpeg)
+![](img/_page_204_Picture_6.jpeg)
 
 If your SVM model is overfitting, you can try regularizing it by reducing C.
 
@@ -5330,7 +5330,7 @@ Although linear SVM classifiers are efficient and often work surprisingly well, 
 
 {206}------------------------------------------------
 
-![](_page_206_Figure_0.jpeg)
+![](img/_page_206_Figure_0.jpeg)
 
 Figure 5-5. Adding features to make a dataset linearly separable
 
@@ -5346,7 +5346,7 @@ X, y = make_moons(n_samples=100, noise=0.15, random_state=42)polynomial_svm_clf 
 \lambdapolynomial_svm_clf.fit(X, y)
 ```
 
-![](_page_206_Figure_4.jpeg)
+![](img/_page_206_Figure_4.jpeg)
 
 Figure 5-6. Linear SVM classifier using polynomial features
 
@@ -5367,11 +5367,11 @@ poly_kernel_svm_clf.fit(X, y)
 
 This code trains an SVM classifier using a third-degree polynomial kernel, represented on the left in Figure 5-7. On the right is another SVM classifier using a 10th-degree polynomial kernel. Obviously, if your model is overfitting, you might want to reduce the polynomial degree. Conversely, if it is underfitting, you can try increasing it. The hyperparameter coef0 controls how much the model is influenced by high-degree terms versus low-degree terms.
 
-![](_page_207_Figure_5.jpeg)
+![](img/_page_207_Figure_5.jpeg)
 
 Figure 5-7. SVM classifiers with a polynomial kernel
 
-![](_page_207_Picture_7.jpeg)
+![](img/_page_207_Picture_7.jpeg)
 
 Although hyperparameters will generally be tuned automatically (e.g., using randomized search), it's good to have a sense of what each hyperparameter actually does and how it may interact with other hyperparameters: this way, you can narrow the search to a much smaller space.
 
@@ -5383,7 +5383,7 @@ Another technique to tackle nonlinear problems is to add features computed using
 
 Now we are ready to compute the new features. For example, let's look at the instance  $x_1 = -1$ : it is located at a distance of 1 from the first landmark and 2 from the second landmark. Therefore, its new features are  $x_2 = \exp(-0.3 \times 1^2) \approx 0.74$  and  $x_3 = \exp(-0.3$  $\times$  2<sup>2</sup>)  $\approx$  0.30. The plot on the right in Figure 5-8 shows the transformed dataset (dropping the original features). As you can see, it is now linearly separable.
 
-![](_page_208_Figure_3.jpeg)
+![](img/_page_208_Figure_3.jpeg)
 
 Figure 5-8. Similarity features using the Gaussian RBF
 
@@ -5404,7 +5404,7 @@ rbf_kernel_svm_clf = make_pipeline(StandardScaler(),
 
 This model is represented at the bottom left in Figure 5-9. The other plots show models trained with different values of hyperparameters gamma  $(y)$  and C. Increasing gamma makes the bell-shaped curve narrower (see the lefthand plots in Figure 5-8). As a result, each instance's range of influence is smaller: the decision boundary ends up being more irregular, wiggling around individual instances. Conversely, a small gamma value makes the bell-shaped curve wider: instances have a larger range of influence, and the decision boundary ends up smoother. So  $\gamma$  acts like a regularization hyperparameter: if your model is overfitting, you should reduce  $y$ ; if it is underfitting, you should increase  $\gamma$  (similar to the C hyperparameter).
 
-![](_page_209_Figure_3.jpeg)
+![](img/_page_209_Figure_3.jpeg)
 
 Figure 5-9. SVM classifiers using an RBF kernel
 
@@ -5412,7 +5412,7 @@ Other kernels exist but are used much more rarely. Some kernels are specialized 
 
 {210}------------------------------------------------
 
-![](_page_210_Picture_0.jpeg)
+![](img/_page_210_Picture_0.jpeg)
 
 With so many kernels to choose from, how can you decide which one to use? As a rule of thumb, you should always try the linear kernel first. The LinearSVC class is much faster than SVC(kernel="linear"), especially if the training set is very large. If it is not too large, you should also try kernelized SVMs, starting with the Gaussian RBF kernel; it often works really well. Then, if you have spare time and computing power, you can experiment with a few other kernels using hyperparameter search. If there are kernels specialized for your training set's data structure, make sure to give them a try too.
 
@@ -5444,7 +5444,7 @@ Now let's see how the SVM algorithms can also be used for linear and nonlinear r
 
 To use SVMs for regression instead of classification, the trick is to tweak the objective: instead of trying to fit the largest possible street between two classes while limiting margin violations, SVM regression tries to fit as many instances as possible on the street while limiting margin violations (i.e., instances off the street). The width of the street is controlled by a hyperparameter,  $\epsilon$ . Figure 5-10 shows two linear SVM regression models trained on some linear data, one with a small margin ( $\epsilon$  = 0.5) and the other with a larger margin ( $\epsilon$  = 1.2).
 
-![](_page_211_Figure_5.jpeg)
+![](img/_page_211_Figure_5.jpeg)
 
 Figure 5-10. SVM regression
 
@@ -5463,7 +5463,7 @@ svm_reg.fit(X, y)
 
 To tackle nonlinear regression tasks, you can use a kernelized SVM model. Figure 5-11 shows SVM regression on a random quadratic training set, using a seconddegree polynomial kernel. There is some regularization in the left plot (i.e., a small C value), and much less in the right plot (i.e., a large C value).
 
-![](_page_212_Figure_2.jpeg)
+![](img/_page_212_Figure_2.jpeg)
 
 Figure 5-11. SVM regression using a second-degree polynomial kernel
 
@@ -5478,7 +5478,7 @@ svm_poly_reg = make_pipeline(StandardScaler(),
 
 The SVR class is the regression equivalent of the SVC class, and the LinearSVR class is the regression equivalent of the LinearSVC class. The LinearSVR class scales linearly with the size of the training set (just like the Linear SVC class), while the SVR class gets much too slow when the training set grows very large (just like the SVC class).
 
-![](_page_212_Picture_7.jpeg)
+![](img/_page_212_Picture_7.jpeg)
 
 SVMs can also be used for novelty detection, as you will see in Chapter 9.
 
@@ -5486,11 +5486,11 @@ SVMs can also be used for novelty detection, as you will see in Chapter 9.
 
 The rest of this chapter explains how SVMs make predictions and how their training algorithms work, starting with linear SVM classifiers. If you are just getting started with machine learning, you can safely skip this and go straight to the exercises at the end of this chapter, and come back later when you want to get a deeper understanding of SVMs.
 
-## **Under the Hood of Linear SVM Classifiers**
+### **Under the Hood of Linear SVM Classifiers**
 
 A linear SVM classifier predicts the class of a new instance x by first computing the decision function  $\mathbf{\theta}^{\dagger} \mathbf{x} = \theta_0 x_0 + \cdots + \theta_n x_n$ , where  $x_0$  is the bias feature (always equal to 1). If the result is positive, then the predicted class  $\hat{y}$  is the positive class (1); otherwise it is the negative class (0). This is exactly like LogisticRegression (discussed in Chapter 4).
 
-![](_page_213_Picture_3.jpeg)
+![](img/_page_213_Picture_3.jpeg)
 
 Up to now, I have used the convention of putting all the model parameters in one vector  $\theta$ , including the bias term  $\theta_0$  and the input feature weights  $\theta_1$  to  $\theta_n$ . This required adding a bias input  $x_0 = 1$  to all instances. Another very common convention is to separate the bias term b (equal to  $\theta_0$ ) and the feature weights vector **w** (containing  $\theta_1$  to  $\theta_n$ ). In this case, no bias feature needs to be added to the input feature vectors, and the linear SVM's decision function is equal to  $\mathbf{w}^{\mathsf{T}} \mathbf{x} + b = w_1 x_1 + \cdots + w_n x_n + b$ . I will use this convention throughout the rest of this book.
 
@@ -5498,7 +5498,7 @@ So, making predictions with a linear SVM classifier is quite straightforward. Ho
 
 {214}------------------------------------------------
 
-![](_page_214_Figure_0.jpeg)
+![](img/_page_214_Figure_0.jpeg)
 
 Figure 5-12. A smaller weight vector results in a larger margin
 
@@ -5512,7 +5512,7 @@ $$
 \begin{array}{ll}\text{minimize} & \frac{1}{2} \mathbf{w}^\mathsf{T} \mathbf{w} \\ \text{subject to} & t^{(i)} \big( \mathbf{w}^\mathsf{T} \mathbf{x}^{(i)} + b \big) \ge 1 \quad \text{for } i = 1, 2, \cdots, m \end{array}
 $$
 
-![](_page_214_Picture_6.jpeg)
+![](img/_page_214_Picture_6.jpeg)
 
 We are minimizing  $\frac{1}{2} \mathbf{w}^T \mathbf{w}$ , which is equal to  $\frac{1}{2} \|\mathbf{w}\|^2$ , rather than minimizing  $\| \mathbf{w} \|$  (the norm of **w**). Indeed,  $\frac{1}{2} \| \mathbf{w} \|^{2}$  has a nice, simple derivative (it is just w), while  $\parallel w \parallel$  is not differentiable at  $\mathbf{w} = 0$ . Optimization algorithms often work much better on differentiable functions.
 
@@ -5537,7 +5537,7 @@ Using a QP solver is one way to train an SVM. Another is to use gradient descent
 
 {216}------------------------------------------------
 
-![](_page_216_Figure_0.jpeg)
+![](img/_page_216_Figure_0.jpeg)
 
 Figure 5-13. The hinge loss (left) and the squared hinge loss (right)
 
@@ -5643,7 +5643,7 @@ $$
 
 If you are starting to get a headache, that's perfectly normal: it's an unfortunate side effect of the kernel trick.
 
-![](_page_220_Picture_3.jpeg)
+![](img/_page_220_Picture_3.jpeg)
 
 It is also possible to implement online kernelized SVMs, capable of incremental learning, as described in the papers "Incremental and Decremental Support Vector Machine Learning"7 and "Fast Kernel Classifiers with Online and Active Learning".<sup>8</sup> These kernelized SVMs are implemented in Matlab and C++. But for large-scale nonlinear problems, you may want to consider using random forests (see Chapter 7) or neural networks (see Part II).
 
@@ -5719,19 +5719,19 @@ Graphviz is an open source graph visualization software package. It also include
 
 Your first decision tree looks like Figure 6-1.
 
-![](_page_223_Figure_6.jpeg)
+![](img/_page_223_Figure_6.jpeg)
 
 Figure 6-1. Iris decision tree
 
 {224}------------------------------------------------
 
-## **Making Predictions**
+### **Making Predictions**
 
 Let's see how the tree represented in Figure 6-1 makes predictions. Suppose you find an iris flower and you want to classify it based on its petals. You start at the root node (depth 0, at the top): this node asks whether the flower's petal length is smaller than 2.45 cm. If it is, then you move down to the root's left child node (depth 1, left). In this case, it is a *leaf node* (i.e., it does not have any child nodes), so it does not ask any questions: simply look at the predicted class for that node, and the decision tree predicts that your flower is an Iris setosa (class=setosa).
 
 Now suppose you find another flower, and this time the petal length is greater than 2.45 cm. You again start at the root but now move down to its right child node (depth 1, right). This is not a leaf node, it's a *split node*, so it asks another question: is the petal width smaller than 1.75 cm? If it is, then your flower is most likely an Iris versicolor (depth 2, left). If not, it is likely an *Iris virginica* (depth 2, right). It's really that simple.
 
-![](_page_224_Picture_3.jpeg)
+![](img/_page_224_Picture_3.jpeg)
 
 One of the many qualities of decision trees is that they require very little data preparation. In fact, they don't require feature scaling or centering at all.
 
@@ -5750,17 +5750,17 @@ In this equation:
 - $G_i$  is the Gini impurity of the  $i^{\text{th}}$  node.
 - $p_{i,k}$  is the ratio of class k instances among the training instances in the  $i^{\text{th}}$  node.
 
-![](_page_225_Picture_3.jpeg)
+![](img/_page_225_Picture_3.jpeg)
 
 Scikit-Learn uses the CART algorithm, which produces only binary trees, meaning trees where split nodes always have exactly two children (i.e., questions only have yes/no answers). However, other algorithms, such as ID3, can produce decision trees with nodes that have more than two children.
 
 Figure 6-2 shows this decision tree's decision boundaries. The thick vertical line represents the decision boundary of the root node (depth 0): petal length  $= 2.45$ cm. Since the lefthand area is pure (only *Iris setosa*), it cannot be split any further. However, the righthand area is impure, so the depth-1 right node splits it at petal width  $= 1.75$  cm (represented by the dashed line). Since max depth was set to 2, the decision tree stops right there. If you set max\_depth to 3, then the two depth-2 nodes would each add another decision boundary (represented by the two vertical dotted lines).
 
-![](_page_225_Figure_6.jpeg)
+![](img/_page_225_Figure_6.jpeg)
 
 Figure 6-2. Decision tree decision boundaries
 
-![](_page_225_Picture_8.jpeg)
+![](img/_page_225_Picture_8.jpeg)
 
 The tree structure, including all the information shown in Figure 6-1, is available via the classifier's tree\_ attribute. Type help(tree\_clf.tree\_) for details, and see the this chapter's notebook for an example.
 
@@ -5770,7 +5770,7 @@ The tree structure, including all the information shown in Figure 6-1, is availa
 
 Decision trees are intuitive, and their decisions are easy to interpret. Such models are often called *white box models*. In contrast, as you will see, random forests and neural networks are generally considered *black box models*. They make great predictions, and you can easily check the calculations that they performed to make these predictions; nevertheless, it is usually hard to explain in simple terms why the predictions were made. For example, if a neural network says that a particular person appears in a picture, it is hard to know what contributed to this prediction: Did the model recognize that person's eves? Their mouth? Their nose? Their shoes? Or even the couch that they were sitting on? Conversely, decision trees provide nice, simple classification rules that can even be applied manually if need be (e.g., for flower classification). The field of interpretable ML aims at creating ML systems that can explain their decisions in a way humans can understand. This is important in many domains—for example, to ensure the system does not make unfair decisions.
 
-## **Estimating Class Probabilities**
+### **Estimating Class Probabilities**
 
 A decision tree can also estimate the probability that an instance belongs to a particular class k. First it traverses the tree to find the leaf node for this instance, and then it returns the ratio of training instances of class  $k$  in this node. For example, suppose you have found a flower whose petals are 5 cm long and 1.5 cm wide. The corresponding leaf node is the depth-2 left node, so the decision tree outputs the following probabilities: 0% for Iris setosa (0/54), 90.7% for Iris versicolor (49/54), and 9.3% for Iris virginica (5/54). And if you ask it to predict the class, it outputs Iris versicolor (class 1) because it has the highest probability. Let's check this:
 
@@ -5782,7 +5782,7 @@ array([1])
 
 Perfect! Notice that the estimated probabilities would be identical anywhere else in the bottom-right rectangle of Figure 6-2—for example, if the petals were 6 cm long and 1.5 cm wide (even though it seems obvious that it would most likely be an Iris virginica in this case).
 
-## **The CART Training Algorithm**
+### **The CART Training Algorithm**
 
 Scikit-Learn uses the *Classification and Regression Tree* (CART) algorithm to train decision trees (also called "growing" trees). The algorithm works by first splitting the training set into two subsets using a single feature k and a threshold  $t_k$  (e.g., "petal length  $\leq$  2.45 cm"). How does it choose k and  $t_k$ ? It searches for the pair  $(k, t_k)$ 
 
@@ -5803,13 +5803,13 @@ $$
 
 Once the CART algorithm has successfully split the training set in two, it splits the subsets using the same logic, then the sub-subsets, and so on, recursively. It stops recursing once it reaches the maximum depth (defined by the max\_depth hyperparameter), or if it cannot find a split that will reduce impurity. A few other hyperparameters (described in a moment) control additional stopping conditions: min\_samples\_split, min\_samples\_leaf, min\_weight\_fraction\_leaf, and max leaf nodes.
 
-![](_page_227_Picture_4.jpeg)
+![](img/_page_227_Picture_4.jpeg)
 
 As you can see, the CART algorithm is a greedy algorithm: it greedily searches for an optimum split at the top level, then repeats the process at each subsequent level. It does not check whether or not the split will lead to the lowest possible impurity several levels down. A greedy algorithm often produces a solution that's reasonably good but not guaranteed to be optimal.
 
 Unfortunately, finding the optimal tree is known to be an NPcomplete problem.<sup>1</sup> It requires  $O(\exp(m))$  time, making the problem intractable even for small training sets. This is why we must settle for a "reasonably good" solution when training decision trees.
 
-## **Computational Complexity**
+### **Computational Complexity**
 
 Making predictions requires traversing the decision tree from the root to a leaf. Decision trees generally are approximately balanced, so traversing the decision tree requires going through roughly  $O(log_2(m))$  nodes, where  $log_2(m)$  is the *binary logarithm* of *m*, equal to  $log(m) / log(2)$ . Since each node only requires checking the
 
@@ -5833,7 +5833,7 @@ $$
 
 So, should you use Gini impurity or entropy? The truth is, most of the time it does not make a big difference: they lead to similar trees. Gini impurity is slightly faster to compute, so it is a good default. However, when they differ, Gini impurity tends to isolate the most frequent class in its own branch of the tree, while entropy tends to produce slightly more balanced trees.<sup>2</sup>
 
-## **Regularization Hyperparameters**
+### **Regularization Hyperparameters**
 
 Decision trees make very few assumptions about the training data (as opposed to linear models, which assume that the data is linear, for example). If left unconstrained, the tree structure will adapt itself to the training data, fitting it very closely—indeed, most likely overfitting it. Such a model is often called a *nonparametric model*, not
 
@@ -5877,7 +5877,7 @@ Same as min samples leaf but expressed as a fraction of the total number of weig
 
 Increasing min\_\* hyperparameters or reducing max\_\* hyperparameters will regularize the model.
 
-![](_page_229_Picture_14.jpeg)
+![](img/_page_229_Picture_14.jpeg)
 
 Other algorithms work by first training the decision tree without restrictions, then *pruning* (deleting) unnecessary nodes. A node whose children are all leaf nodes is considered unnecessary if the purity improvement it provides is not statistically significant. Standard statistical tests, such as the  $\chi^2$  test (chi-squared test), are used to estimate the probability that the improvement is purely the result of chance (which is called the *null hypothesis*). If this probability, called the *p-value*, is higher than a given threshold (typically 5%, controlled by a hyperparameter), then the node is considered unnecessary and its children are deleted. The pruning continues until all unnecessary nodes have been pruned.
 
@@ -5894,7 +5894,7 @@ tree clf1.fit(X moons, y moons)
 tree_clf2.fit(X_moons, y_moons)
 ```
 
-![](_page_230_Figure_2.jpeg)
+![](img/_page_230_Figure_2.jpeg)
 
 Figure 6-3. Decision boundaries of an unregularized tree (left) and a regularized tree  $(right)$ 
 
@@ -5929,7 +5929,7 @@ tree_reg.fit(X_quad, y_quad)
 
 The resulting tree is represented in Figure 6-4.
 
-![](_page_231_Figure_4.jpeg)
+![](img/_page_231_Figure_4.jpeg)
 
 Figure 6-4. A decision tree for regression
 
@@ -5939,7 +5939,7 @@ This tree looks very similar to the classification tree you built earlier. The m
 
 This model's predictions are represented on the left in Figure 6-5. If you set max depth=3, you get the predictions represented on the right. Notice how the predicted value for each region is always the average target value of the instances in that region. The algorithm splits each region in a way that makes most training instances as close as possible to that predicted value.
 
-![](_page_232_Figure_1.jpeg)
+![](img/_page_232_Figure_1.jpeg)
 
 Figure 6-5. Predictions of two decision tree regression models
 
@@ -5955,7 +5955,7 @@ Just like for classification tasks, decision trees are prone to overfitting when
 
 {233}------------------------------------------------
 
-![](_page_233_Figure_0.jpeg)
+![](img/_page_233_Figure_0.jpeg)
 
 Figure 6-6. Predictions of an unregularized regression tree (left) and a regularized tree (right)
 
@@ -5963,7 +5963,7 @@ Figure 6-6. Predictions of an unregularized regression tree (left) and a regular
 
 Hopefully by now you are convinced that decision trees have a lot going for them: they are relatively easy to understand and interpret, simple to use, versatile, and powerful. However, they do have a few limitations. First, as you may have noticed, decision trees love orthogonal decision boundaries (all splits are perpendicular to an axis), which makes them sensitive to the data's orientation. For example, Figure 6-7 shows a simple linearly separable dataset: on the left, a decision tree can split it easily, while on the right, after the dataset is rotated by 45°, the decision boundary looks unnecessarily convoluted. Although both decision trees fit the training set perfectly, it is very likely that the model on the right will not generalize well.
 
-![](_page_233_Figure_4.jpeg)
+![](img/_page_233_Figure_4.jpeg)
 
 Figure 6-7. Sensitivity to training set rotation
 
@@ -5985,7 +5985,7 @@ tree_clf_pca = DecisionTreeClassifier(max_depth=2, random_state=42)
 tree clf pca.fit(X iris rotated, y iris)
 ```
 
-![](_page_234_Figure_3.jpeg)
+![](img/_page_234_Figure_3.jpeg)
 
 Figure 6-8. A tree's decision boundaries on the scaled and PCA-rotated iris dataset
 
@@ -5995,7 +5995,7 @@ More generally, the main issue with decision trees is that they have quite a hig
 
 {235}------------------------------------------------
 
-![](_page_235_Figure_0.jpeg)
+![](img/_page_235_Figure_0.jpeg)
 
 Figure 6-9. Retraining the same model on the same data may produce a very different model
 
@@ -6041,17 +6041,17 @@ In this chapter we will examine the most popular ensemble methods, including vot
 
 {239}------------------------------------------------
 
-## **Voting Classifiers**
+### **Voting Classifiers**
 
 Suppose you have trained a few classifiers, each one achieving about 80% accuracy. You may have a logistic regression classifier, an SVM classifier, a random forest classifier, a k-nearest neighbors classifier, and perhaps a few more (see Figure 7-1).
 
-![](_page_239_Figure_2.jpeg)
+![](img/_page_239_Figure_2.jpeg)
 
 Figure 7-1. Training diverse classifiers
 
 A very simple way to create an even better classifier is to aggregate the predictions of each classifier: the class that gets the most votes is the ensemble's prediction. This majority-vote classifier is called a *hard voting* classifier (see Figure 7-2).
 
-![](_page_239_Figure_5.jpeg)
+![](img/_page_239_Figure_5.jpeg)
 
 Figure 7-2. Hard voting classifier predictions
 
@@ -6061,7 +6061,7 @@ Somewhat surprisingly, this voting classifier often achieves a higher accuracy t
 
 How is this possible? The following analogy can help shed some light on this mystery. Suppose you have a slightly biased coin that has a 51% chance of coming up heads and 49% chance of coming up tails. If you toss it 1,000 times, you will generally get more or less 510 heads and 490 tails, and hence a majority of heads. If you do the math, you will find that the probability of obtaining a majority of heads after 1,000 tosses is close to 75%. The more you toss the coin, the higher the probability (e.g., with 10,000 tosses, the probability climbs over 97%). This is due to the law of large *numbers*: as you keep tossing the coin, the ratio of heads gets closer and closer to the probability of heads (51%). Figure 7-3 shows 10 series of biased coin tosses. You can see that as the number of tosses increases, the ratio of heads approaches 51%. Eventually all 10 series end up so close to 51% that they are consistently above 50%.
 
-![](_page_240_Figure_2.jpeg)
+![](img/_page_240_Figure_2.jpeg)
 
 Figure 7-3. The law of large numbers
 
@@ -6069,7 +6069,7 @@ Similarly, suppose you build an ensemble containing 1,000 classifiers that are i
 
 {241}------------------------------------------------
 
-![](_page_241_Picture_0.jpeg)
+![](img/_page_241_Picture_0.jpeg)
 
 Ensemble methods work best when the predictors are as independent from one another as possible. One way to get diverse classifiers is to train them using very different algorithms. This increases the chance that they will make very different types of errors, improving the ensemble's accuracy.
 
@@ -6144,7 +6144,7 @@ One way to get a diverse set of classifiers is to use very different training al
 
 In other words, both bagging and pasting allow training instances to be sampled several times across multiple predictors, but only bagging allows training instances to be sampled several times for the same predictor. This sampling and training process is represented in Figure 7-4.
 
-![](_page_243_Figure_1.jpeg)
+![](img/_page_243_Figure_1.jpeg)
 
 Figure 7-4. Bagging and pasting involve training several predictors on different random samples of the training set
 
@@ -6168,7 +6168,7 @@ bag_clf = BaggingClassifier(DecisionTreeClassifier(), n_estimators=500,
 bag clf.fit(X train, y train)
 ```
 
-![](_page_244_Picture_3.jpeg)
+![](img/_page_244_Picture_3.jpeg)
 
 A BaggingClassifier automatically performs soft voting instead of hard voting if the base classifier can estimate class probabilities (i.e., if it has a predict\_proba() method), which is the case with decision tree classifiers.
 
@@ -6180,7 +6180,7 @@ Bagging introduces a bit more diversity in the subsets that each predictor is tr
 
 {245}------------------------------------------------
 
-![](_page_245_Figure_0.jpeg)
+![](img/_page_245_Figure_0.jpeg)
 
 Figure 7-5. A single decision tree (left) versus a bagging ensemble of 500 trees (right)
 
@@ -6237,7 +6237,7 @@ Sampling features results in even more predictor diversity, trading a bit more b
 
 {247}------------------------------------------------
 
-## **Random Forests**
+### **Random Forests**
 
 As we have discussed, a random forest<sup>10</sup> is an ensemble of decision trees, generally trained via the bagging method (or sometimes pasting), typically with max\_samples set to the size of the training set. Instead of building a BaggingClassifier and passing it a DecisionTreeClassifier, you can use the RandomForestClassifier class, which is more convenient and optimized for decision trees<sup>11</sup> (similarly, there is a RandomForestRegressor class for regression tasks). The following code trains a random forest classifier with 500 trees, each limited to maximum 16 leaf nodes, using all available CPU cores:
 
@@ -6272,7 +6272,7 @@ A forest of such extremely random trees is called an extremely randomized trees<
 
 You can create an extra-trees classifier using Scikit-Learn's ExtraTreesClassifier class. Its API is identical to the RandomForestClassifier class, except bootstrap defaults to False. Similarly, the ExtraTreesRegressor class has the same API as the RandomForestRegressor class, except bootstrap defaults to False.
 
-![](_page_248_Picture_2.jpeg)
+![](img/_page_248_Picture_2.jpeg)
 
 It is hard to tell in advance whether a RandomForestClassifier will perform better or worse than an ExtraTreesClassifier. Generally, the only way to know is to try both and compare them using cross-validation.
 
@@ -6303,13 +6303,13 @@ Scikit-Learn computes this score automatically for each feature after training, 
 
 Similarly, if you train a random forest classifier on the MNIST dataset (introduced in Chapter 3) and plot each pixel's importance, you get the image represented in Figure 7-6.
 
-![](_page_249_Figure_2.jpeg)
+![](img/_page_249_Figure_2.jpeg)
 
 Figure 7-6. MNIST pixel importance (according to a random forest classifier)
 
 Random forests are very handy to get a quick understanding of what features actually matter, in particular if you need to perform feature selection.
 
-## **Boosting**
+### **Boosting**
 
 Boosting (originally called hypothesis boosting) refers to any ensemble method that can combine several weak learners into a strong learner. The general idea of most boosting methods is to train predictors sequentially, each trying to correct its predecessor. There are many boosting methods available, but by far the most popular are AdaBoost<sup>13</sup> (short for adaptive boosting) and gradient boosting. Let's start with AdaBoost.
 
@@ -6325,7 +6325,7 @@ For example, when training an AdaBoost classifier, the algorithm first trains a 
 
 Figure 7-8 shows the decision boundaries of five consecutive predictors on the moons dataset (in this example, each predictor is a highly regularized SVM classifier with an RBF kernel).<sup>14</sup> The first classifier gets many instances wrong, so their weights get boosted. The second classifier therefore does a better job on these instances, and so on. The plot on the right represents the same sequence of predictors, except that the learning rate is halved (i.e., the misclassified instance weights are boosted much less at every iteration). As you can see, this sequential learning technique has some similarities with gradient descent, except that instead of tweaking a single predictor's parameters to minimize a cost function, AdaBoost adds predictors to the ensemble, gradually making it better.
 
-![](_page_250_Picture_2.jpeg)
+![](img/_page_250_Picture_2.jpeg)
 
 Figure 7-7. AdaBoost sequential training with instance weight updates
 
@@ -6335,11 +6335,11 @@ Figure 7-7. AdaBoost sequential training with instance weight updates
 
 Once all predictors are trained, the ensemble makes predictions very much like bagging or pasting, except that predictors have different weights depending on their overall accuracy on the weighted training set.
 
-![](_page_251_Figure_1.jpeg)
+![](img/_page_251_Figure_1.jpeg)
 
 Figure 7-8. Decision boundaries of consecutive predictors
 
-![](_page_251_Picture_3.jpeg)
+![](img/_page_251_Picture_3.jpeg)
 
 There is one important drawback to this sequential learning technique: training cannot be parallelized since each predictor can only be trained after the previous predictor has been trained and evaluated. As a result, it does not scale as well as bagging or pasting.
 
@@ -6404,7 +6404,7 @@ ada clf = AdaBoostClassifier(
 ada clf.fit(X train, y train)
 ```
 
-![](_page_253_Picture_2.jpeg)
+![](img/_page_253_Picture_2.jpeg)
 
 If your AdaBoost ensemble is overfitting the training set, you can try reducing the number of estimators or more strongly regularizing the base estimator.
 
@@ -6461,7 +6461,7 @@ qbrt.fit(X, y)
 
 {255}------------------------------------------------
 
-![](_page_255_Figure_0.jpeg)
+![](img/_page_255_Figure_0.jpeg)
 
 Figure 7-9. In this depiction of gradient boosting, the first predictor (top left) is trained normally, then each consecutive predictor (middle left and lower left) is trained on the previous predictor's residuals; the right column shows the resulting ensemble's predictions
 
@@ -6469,7 +6469,7 @@ The learning rate hyperparameter scales the contribution of each tree. If you se
 
 {256}------------------------------------------------
 
-![](_page_256_Figure_0.jpeg)
+![](img/_page_256_Figure_0.jpeg)
 
 Figure 7-10. GBRT ensembles with not enough predictors (left) and just enough (right)
 
@@ -6524,17 +6524,17 @@ hgb_reg.fit(housing, housing_labels)
 
 The whole pipeline is just as short as the imports! No need for an imputer, scaler, or a one-hot encoder, so it's really convenient. Note that categorical\_features must be set to the categorical column indices (or a Boolean array). Without any hyperparameter tuning, this model yields an RMSE of about 47,600, which is not too bad.
 
-![](_page_258_Picture_3.jpeg)
+![](img/_page_258_Picture_3.jpeg)
 
 Several other optimized implementations of gradient boosting are available in the Python ML ecosystem: in particular, XGBoost, Cat-Boost, and LightGBM. These libraries have been around for several years. They are all specialized for gradient boosting, their APIs are very similar to Scikit-Learn's, and they provide many additional features, including GPU acceleration; you should definitely check them out! Moreover, the TensorFlow Random Forests library provides optimized implementations of a variety of random forest algorithms, including plain random forests, extra-trees, GBRT, and several more.
 
 {259}------------------------------------------------
 
-## **Stacking**
+### **Stacking**
 
 The last ensemble method we will discuss in this chapter is called *stacking* (short for stacked generalization).<sup>18</sup> It is based on a simple idea: instead of using trivial functions (such as hard voting) to aggregate the predictions of all predictors in an ensemble, why don't we train a model to perform this aggregation? Figure 7-11 shows such an ensemble performing a regression task on a new instance. Each of the bottom three predictors predicts a different value (3.1, 2.7, and 2.9), and then the final predictor (called a *blender*, or a *meta learner*) takes these predictions as inputs and makes the final prediction (3.0).
 
-![](_page_259_Figure_2.jpeg)
+![](img/_page_259_Figure_2.jpeg)
 
 Figure 7-11. Aggregating predictions using a blending predictor
 
@@ -6546,7 +6546,7 @@ To train the blender, you first need to build the blending training set. You can
 
 can be used as the input features to train the blender; and the targets can simply be copied from the original training set. Note that regardless of the number of features in the original training set (just one in this example), the blending training set will contain one input feature per predictor (three in this example). Once the blender is trained, the base predictors are retrained one last time on the full original training set.
 
-![](_page_260_Figure_1.jpeg)
+![](img/_page_260_Figure_1.jpeg)
 
 Figure 7-12. Training the blender in a stacking ensemble
 
@@ -6554,7 +6554,7 @@ It is actually possible to train several different blenders this way (e.g., one 
 
 {261}------------------------------------------------
 
-![](_page_261_Figure_0.jpeg)
+![](img/_page_261_Figure_0.jpeg)
 
 Figure 7-13. Predictions in a multilayer stacking ensemble
 
@@ -6607,7 +6607,7 @@ Many machine learning problems involve thousands or even millions of features fo
 
 Fortunately, in real-world problems, it is often possible to reduce the number of features considerably, turning an intractable problem into a tractable one. For example, consider the MNIST images (introduced in Chapter 3): the pixels on the image borders are almost always white, so you could completely drop these pixels from the training set without losing much information. As we saw in the previous chapter, (Figure 7-6) confirms that these pixels are utterly unimportant for the classification task. Additionally, two neighboring pixels are often highly correlated: if you merge them into a single pixel (e.g., by taking the mean of the two pixel intensities), you will not lose much information.
 
-![](_page_264_Picture_3.jpeg)
+![](img/_page_264_Picture_3.jpeg)
 
 Reducing dimensionality does cause some information loss, just like compressing an image to JPEG can degrade its quality, so even though it will speed up training, it may make your system perform slightly worse. It also makes your pipelines a bit more complex and thus harder to maintain. Therefore, I recommend you first try to train your system with the original data before considering using dimensionality reduction. In some cases, reducing the dimensionality of the training data may filter out some noise and unnecessary details and thus result in higher performance, but in general it won't; it will just speed up training.
 
@@ -6617,11 +6617,11 @@ Apart from speeding up training, dimensionality reduction is also extremely usef
 
 In this chapter we will first discuss the curse of dimensionality and get a sense of what goes on in high-dimensional space. Then we will consider the two main approaches to dimensionality reduction (projection and manifold learning), and we will go through three of the most popular dimensionality reduction techniques: PCA, random projection, and locally linear embedding (LLE).
 
-## **The Curse of Dimensionality**
+### **The Curse of Dimensionality**
 
 We are so used to living in three dimensions<sup>1</sup> that our intuition fails us when we try to imagine a high-dimensional space. Even a basic 4D hypercube is incredibly hard to picture in our minds (see Figure 8-1), let alone a 200-dimensional ellipsoid bent in a 1,000-dimensional space.
 
-![](_page_265_Figure_4.jpeg)
+![](img/_page_265_Figure_4.jpeg)
 
 Figure 8-1. Point, segment, square, cube, and tesseract (0D to 4D hypercubes)<sup>2</sup>
 
@@ -6651,13 +6651,13 @@ In most real-world problems, training instances are *not* spread out uniformly a
 
 {267}------------------------------------------------
 
-![](_page_267_Figure_0.jpeg)
+![](img/_page_267_Figure_0.jpeg)
 
 Figure 8-2. A 3D dataset lying close to a 2D subspace
 
 Notice that all training instances lie close to a plane: this is a lower-dimensional (2D) subspace of the higher-dimensional (3D) space. If we project every training instance perpendicularly onto this subspace (as represented by the short dashed lines connecting the instances to the plane), we get the new 2D dataset shown in Figure 8-3. Ta-da! We have just reduced the dataset's dimensionality from 3D to 2D. Note that the axes correspond to new features  $z_1$  and  $z_2$ : they are the coordinates of the projections on the plane.
 
-![](_page_267_Figure_3.jpeg)
+![](img/_page_267_Figure_3.jpeg)
 
 Figure 8-3. The new 2D dataset after projection
 
@@ -6667,13 +6667,13 @@ Figure 8-3. The new 2D dataset after projection
 
 However, projection is not always the best approach to dimensionality reduction. In many cases the subspace may twist and turn, such as in the famous Swiss roll toy dataset represented in Figure 8-4.
 
-![](_page_268_Figure_2.jpeg)
+![](img/_page_268_Figure_2.jpeg)
 
 Figure 8-4. Swiss roll dataset
 
 Simply projecting onto a plane (e.g., by dropping  $x_3$ ) would squash different layers of the Swiss roll together, as shown on the left side of Figure 8-5. What you probably want instead is to unroll the Swiss roll to obtain the 2D dataset on the right side of Figure 8-5.
 
-![](_page_268_Figure_5.jpeg)
+![](img/_page_268_Figure_5.jpeg)
 
 Figure 8-5. Squashing by projecting onto a plane (left) versus unrolling the Swiss roll  $(right)$ 
 
@@ -6695,11 +6695,11 @@ Hopefully you now have a good sense of what the curse of dimensionality is and h
 
 {270}------------------------------------------------
 
-![](_page_270_Figure_0.jpeg)
+![](img/_page_270_Figure_0.jpeg)
 
 Figure 8-6. The decision boundary may not always be simpler with lower dimensions
 
-## **PCA**
+### **PCA**
 
 *Principal component analysis* (PCA) is by far the most popular dimensionality reduction algorithm. First it identifies the hyperplane that lies closest to the data, and then it projects the data onto it, just like in Figure 8-2.
 
@@ -6709,7 +6709,7 @@ Before you can project the training set onto a lower-dimensional hyperplane, you
 
 {271}------------------------------------------------
 
-![](_page_271_Figure_0.jpeg)
+![](img/_page_271_Figure_0.jpeg)
 
 Figure 8-7. Selecting the subspace on which to project
 
@@ -6725,7 +6725,7 @@ The  $i<sup>th</sup>$  axis is called the  $i<sup>th</sup>$  principal component
 
 {272}------------------------------------------------
 
-![](_page_272_Picture_0.jpeg)
+![](img/_page_272_Picture_0.jpeg)
 
 For each principal component, PCA finds a zero-centered unit vector pointing in the direction of the PC. Since two opposing unit vectors lie on the same axis, the direction of the unit vectors returned by PCA is not stable: if you perturb the training set slightly and run PCA again, the unit vectors may point in the opposite direction as the original vectors. However, they will generally still lie on the same axes. In some cases, a pair of unit vectors may even rotate or swap (if the variances along these two axes are very close), but the plane they define will generally remain the same.
 
@@ -6745,7 +6745,7 @@ U, s, Vt = np. linalg. svd(X centered)
 c1 = Vt[0]c2 = Vt[1]
 ```
 
-![](_page_272_Picture_7.jpeg)
+![](img/_page_272_Picture_7.jpeg)
 
 PCA assumes that the dataset is centered around the origin. As you will see, Scikit-Learn's PCA classes take care of centering the data for you. If you implement PCA yourself (as in the preceding example), or if you use other libraries, don't forget to center the data first.
 
@@ -6825,7 +6825,7 @@ Yet another option is to plot the explained variance as a function of the number
 
 {275}------------------------------------------------
 
-![](_page_275_Figure_0.jpeg)
+![](img/_page_275_Figure_0.jpeg)
 
 Figure 8-8. Explained variance as a function of the number of dimensions
 
@@ -6871,7 +6871,7 @@ X_recovered = pca.inverse_transform(X_reduced)
 
 Figure 8-9 shows a few digits from the original training set (on the left), and the corresponding digits after compression and decompression. You can see that there is a slight image quality loss, but the digits are still mostly intact.
 
-![](_page_276_Figure_7.jpeg)
+![](img/_page_276_Figure_7.jpeg)
 
 Figure 8-9. MNIST compression that preserves 95% of the variance
 
@@ -6892,7 +6892,7 @@ rnd pca = PCA(n components=154, svd solver="randomized", random state=42)
 X_reduced = rnd_pca.fit_transform(X_train)
 ```
 
-![](_page_277_Picture_6.jpeg)
+![](img/_page_277_Picture_6.jpeg)
 
 By default, svd solver is actually set to "auto": Scikit-Learn automatically uses the randomized PCA algorithm if  $max(m, n)$ 500 and n\_components is an integer smaller than 80% of min( $m$ ,  $n$ ), or else it uses the full SVD approach. So the preceding code would use the randomized PCA algorithm even if you removed the svd\_solver="randomized" argument, since  $154 < 0.8 \times 784$ . If you want to force Scikit-Learn to use full SVD for a slightly more precise result, you can set the svd\_solver hyperparameter to "full".
 
@@ -6933,7 +6933,7 @@ inc_pca = IncrementalPCA(n_components=154, batch_size=batch_size)
 inc pca.fit(X mmap)
 ```
 
-![](_page_278_Picture_6.jpeg)
+![](img/_page_278_Picture_6.jpeg)
 
 Only the raw binary data is saved to disk, so you need to specify the data type and shape of the array when you load it. If you omit the shape, np. memmap() returns a 1D array.
 
@@ -6941,7 +6941,7 @@ For very high-dimensional datasets, PCA can be too slow. As you saw earlier, eve
 
 {279}------------------------------------------------
 
-## **Random Projection**
+### **Random Projection**
 
 As its name suggests, the random projection algorithm projects the data to a lowerdimensional space using a random linear projection. This may sound crazy, but it turns out that such a random projection is actually very likely to preserve distances fairly well, as was demonstrated mathematically by William B. Johnson and Joram Lindenstrauss in a famous lemma. So, two similar instances will remain similar after the projection, and two very different instances will remain very different.
 
@@ -6992,7 +6992,7 @@ components pinv = np.linalq.pinv(qaussian rnd proj.components)
 X_recovered = X_reduced @ components_pinv.T
 ```
 
-![](_page_280_Picture_7.jpeg)
+![](img/_page_280_Picture_7.jpeg)
 
 Computing the pseudo-inverse may take a very long time if the components matrix is large, as the computational complexity of pinv() is  $O(dn^2)$  if  $d < n$ , or  $O(nd^2)$  otherwise.
 
@@ -7000,11 +7000,11 @@ Computing the pseudo-inverse may take a very long time if the components matrix 
 
 In summary, random projection is a simple, fast, memory-efficient, and surprisingly powerful dimensionality reduction algorithm that you should keep in mind, especially when you deal with high-dimensional datasets.
 
-![](_page_281_Picture_1.jpeg)
+![](img/_page_281_Picture_1.jpeg)
 
 Random projection is not always used to reduce the dimensionality of large datasets. For example, a 2017 paper<sup>7</sup> by Sanjoy Dasgupta et al. showed that the brain of a fruit fly implements an analog of random projection to map dense low-dimensional olfactory inputs to sparse high-dimensional binary outputs: for each odor, only a small fraction of the output neurons get activated, but similar odors activate many of the same neurons. This is similar to a well-known algorithm called locality sensitive hashing (LSH), which is typically used in search engines to group similar documents.
 
-## LLE
+### LLE
 
 Locally linear embedding (LLE)<sup>8</sup> is a nonlinear dimensionality reduction (NLDR) technique. It is a manifold learning technique that does not rely on projections, unlike PCA and random projection. In a nutshell, LLE works by first measuring how each training instance linearly relates to its nearest neighbors, and then looking for a low-dimensional representation of the training set where these local relationships are best preserved (more details shortly). This approach makes it particularly good at unrolling twisted manifolds, especially when there is not too much noise.
 
@@ -7029,7 +7029,7 @@ The resulting 2D dataset is shown in Figure 8-10. As you can see, the Swiss roll
 
 However, distances are not preserved on a larger scale: the unrolled Swiss roll should be a rectangle, not this kind of stretched and twisted band. Nevertheless, LLE did a pretty good job of modeling the manifold.
 
-![](_page_282_Figure_1.jpeg)
+![](img/_page_282_Figure_1.jpeg)
 
 Figure 8-10. Unrolled Swiss roll using LLE
 
@@ -7090,7 +7090,7 @@ sklearn.manifold.TSNE
 
 Figure 8-11 shows the results of MDS, Isomap, and t-SNE on the Swiss roll. MDS manages to flatten the Swiss roll without losing its global curvature, while Isomap drops it entirely. Depending on the downstream task, preserving the large-scale structure may be good or bad. t-SNE does a reasonable job of flattening the Swiss roll, preserving a bit of curvature, and it also amplifies clusters, tearing the roll apart. Again, this might be good or bad, depending on the downstream task.
 
-![](_page_284_Figure_3.jpeg)
+![](img/_page_284_Figure_3.jpeg)
 
 Figure 8-11. Using various techniques to reduce the Swiss roll to 2D
 
@@ -7138,7 +7138,7 @@ This is the task of estimating the *probability density function* (PDF) of the r
 
 Ready for some cake? We will start with two clustering algorithms, k-means and DBSCAN, then we'll discuss Gaussian mixture models and see how they can be used for density estimation, clustering, and anomaly detection.
 
-## **Clustering Algorithms: k-means and DBSCAN**
+### **Clustering Algorithms: k-means and DBSCAN**
 
 As you enjoy a hike in the mountains, you stumble upon a plant you have never seen before. You look around and you notice a few more. They are not identical, yet they are sufficiently similar for you to know that they most likely belong to the same species (or at least the same genus). You may need a botanist to tell you what species that is, but you certainly don't need an expert to identify groups of similar-looking objects. This is called *clustering*: it is the task of identifying similar instances and assigning them to *clusters*, or groups of similar instances.
 
@@ -7148,7 +7148,7 @@ Just like in classification, each instance gets assigned to a group. However, un
 
 them can easily detect the lower-left cluster. It is also quite easy to see with our own eyes, but it is not so obvious that the upper-right cluster is composed of two distinct subclusters. That said, the dataset has two additional features (sepal length and width) that are not represented here, and clustering algorithms can make good use of all features, so in fact they identify the three clusters fairly well (e.g., using a Gaussian mixture model, only 5 instances out of 150 are assigned to the wrong cluster).
 
-![](_page_288_Figure_1.jpeg)
+![](img/_page_288_Figure_1.jpeg)
 
 Figure 9-1. Classification (left) versus clustering (right)
 
@@ -7198,7 +7198,7 @@ In this section, we will look at two popular clustering algorithms, k-means and 
 
 Consider the unlabeled dataset represented in Figure 9-2: you can clearly see five blobs of instances. The  $k$ -means algorithm is a simple algorithm capable of clustering this kind of dataset very quickly and efficiently, often in just a few iterations. It was proposed by Stuart Lloyd at Bell Labs in 1957 as a technique for pulse-code modulation, but it was only published outside of the company in 1982.<sup>1</sup> In 1965, Edward W. Forgy had published virtually the same algorithm, so  $k$ -means is sometimes referred to as the Lloyd-Forgy algorithm.
 
-![](_page_290_Figure_2.jpeg)
+![](img/_page_290_Figure_2.jpeg)
 
 Figure 9-2. An unlabeled dataset composed of five blobs of instances
 
@@ -7247,7 +7247,7 @@ array([1, 1, 2, 2], dtype=int32)
 
 If you plot the cluster's decision boundaries, you get a Voronoi tessellation: see Figure 9-3, where each centroid is represented with an X.
 
-![](_page_291_Figure_7.jpeg)
+![](img/_page_291_Figure_7.jpeg)
 
 Figure 9-3. k-means decision boundaries (Voronoi tessellation)
 
@@ -7272,19 +7272,19 @@ So, how does the algorithm work? Well, suppose you were given the centroids. You
 
 You can see the algorithm in action in Figure 9-4: the centroids are initialized randomly (top left), then the instances are labeled (top right), then the centroids are updated (center left), the instances are relabeled (center right), and so on. As you can see, in just three iterations the algorithm has reached a clustering that seems close to optimal.
 
-![](_page_292_Picture_6.jpeg)
+![](img/_page_292_Picture_6.jpeg)
 
 The computational complexity of the algorithm is generally linear with regard to the number of instances  $m$ , the number of clusters  $k$ , and the number of dimensions  $n$ . However, this is only true when the data has a clustering structure. If it does not, then in the worst-case scenario the complexity can increase exponentially with the number of instances. In practice, this rarely happens, and k-means is generally one of the fastest clustering algorithms.
 
 {293}------------------------------------------------
 
-![](_page_293_Figure_0.jpeg)
+![](img/_page_293_Figure_0.jpeg)
 
 Figure 9-4. The k-means algorithm
 
 Although the algorithm is guaranteed to converge, it may not converge to the right solution (i.e., it may converge to a local optimum): whether it does or not depends on the centroid initialization. Figure 9-5 shows two suboptimal solutions that the algorithm can converge to if you are not lucky with the random initialization step.
 
-![](_page_293_Figure_3.jpeg)
+![](img/_page_293_Figure_3.jpeg)
 
 Figure 9-5. Suboptimal solutions due to unlucky centroid initializations
 
@@ -7353,7 +7353,7 @@ If the dataset does not fit in memory, the simplest option is to use the memmap 
 
 Although the mini-batch k-means algorithm is much faster than the regular k-means algorithm, its inertia is generally slightly worse. You can see this in Figure 9-6: the plot on the left compares the inertias of mini-batch k-means and regular k-means models trained on the previous five-blobs dataset using various numbers of clusters k. The difference between the two curves is small, but visible. In the plot on the right, you can see that mini-batch k-means is roughly 3.5 times faster than regular k-means on this dataset
 
-![](_page_296_Figure_1.jpeg)
+![](img/_page_296_Figure_1.jpeg)
 
 Figure 9-6. Mini-batch k-means has a higher inertia than k-means (left) but it is much faster (right), especially as k increases
 
@@ -7365,11 +7365,11 @@ You might be thinking that you could just pick the model with the lowest inertia
 
 {297}------------------------------------------------
 
-![](_page_297_Figure_0.jpeg)
+![](img/_page_297_Figure_0.jpeg)
 
 Figure 9-7. Bad choices for the number of clusters: when k is too small, separate clusters get merged (left), and when k is too large, some clusters get chopped into multiple pieces  $(right)$ 
 
-![](_page_297_Figure_2.jpeg)
+![](img/_page_297_Figure_2.jpeg)
 
 Figure 9-8. Plotting the inertia as a function of the number of clusters k
 
@@ -7391,7 +7391,7 @@ To compute the silhouette score, you can use Scikit-Learn's silhouette score() f
 
 Let's compare the silhouette scores for different numbers of clusters (see Figure 9-9).
 
-![](_page_298_Figure_4.jpeg)
+![](img/_page_298_Figure_4.jpeg)
 
 Figure 9-9. Selecting the number of clusters k using the silhouette score
 
@@ -7403,7 +7403,7 @@ The vertical dashed lines represent the mean silhouette score for each number of
 
 {299}------------------------------------------------
 
-![](_page_299_Figure_0.jpeg)
+![](img/_page_299_Figure_0.jpeg)
 
 Figure 9-10. Analyzing the silhouette diagrams for various values of k
 
@@ -7415,11 +7415,11 @@ As you can see, neither of these solutions is any good. The solution on the left
 
 {300}------------------------------------------------
 
-![](_page_300_Figure_0.jpeg)
+![](img/_page_300_Figure_0.jpeg)
 
 Figure 9-11. k-means fails to cluster these ellipsoidal blobs properly
 
-![](_page_300_Picture_2.jpeg)
+![](img/_page_300_Picture_2.jpeg)
 
 It is important to scale the input features (see Chapter 2) before you run k-means, or the clusters may be very stretched and k-means will perform poorly. Scaling the features does not guarantee that all the clusters will be nice and spherical, but it generally helps  $k$ -means.
 
@@ -7460,7 +7460,7 @@ This outputs the image shown in the upper right of Figure 9-12. You can experime
 
 {302}------------------------------------------------
 
-![](_page_302_Picture_0.jpeg)
+![](img/_page_302_Picture_0.jpeg)
 
 Figure 9-12. Image segmentation using k-means with various numbers of color clusters
 
@@ -7505,7 +7505,7 @@ representative\_digit\_idx = np.argvin(X\_digits\_dist, axis=0)X_representative_
 
 Figure 9-13 shows the 50 representative images.
 
-![](_page_303_Figure_5.jpeg)
+![](img/_page_303_Figure_5.jpeg)
 
 Figure 9-13. Fifty representative digit images (one per cluster)
 
@@ -7576,7 +7576,7 @@ Nice! With just 50 labeled instances (only 5 examples per class on average!) we 
 
 {305}------------------------------------------------
 
-![](_page_305_Picture_0.jpeg)
+![](img/_page_305_Picture_0.jpeg)
 
 Scikit-Learn also offers two classes that can propagate labels automatically: LabelSpreading and LabelPropagation in the sklearn.semi supervised package. Both classes construct a similarity matrix between all the instances, and iteratively propagate labels from labeled instances to similar unlabeled instances. There's also a very different class called SelfTrainingClassifier in the same package: you give it a base classifier (such as a RandomForest Classifier) and it trains it on the labeled instances, then uses it to predict labels for the unlabeled samples. It then updates the training set with the labels it is most confident about, and repeats this process of training and labeling until it cannot add labels anymore. These techniques are not magic bullets, but they can occasionally give your model a little boost.
 
@@ -7632,7 +7632,7 @@ array([[-0.02137124, 0.40618608],
 
 This clustering is represented in the lefthand plot of Figure 9-14. As you can see, it identified quite a lot of anomalies, plus seven different clusters. How disappointing! Fortunately, if we widen each instance's neighborhood by increasing eps to 0.2, we get the clustering on the right, which looks perfect. Let's continue with this model.
 
-![](_page_307_Figure_1.jpeg)
+![](img/_page_307_Figure_1.jpeg)
 
 Figure 9-14. DBSCAN clustering using two different neighborhood radiuses
 
@@ -7666,13 +7666,13 @@ The decision boundary is represented in Figure 9-15 (the crosses represent the f
 array([-1, 0, 1, -1])
 ```
 
-![](_page_308_Figure_2.jpeg)
+![](img/_page_308_Figure_2.jpeg)
 
 Figure 9-15. Decision boundary between two clusters
 
 In short, DBSCAN is a very simple yet powerful algorithm capable of identifying any number of clusters of any shape. It is robust to outliers, and it has just two hyperparameters (eps and min samples). If the density varies significantly across the clusters, however, or if there's no sufficiently low-density region around some clusters, DBSCAN can struggle to capture all the clusters properly. Moreover, its computational complexity is roughly  $O(m^2n)$ , so it does not scale well to large datasets.
 
-![](_page_308_Picture_5.jpeg)
+![](img/_page_308_Picture_5.jpeg)
 
 You may also want to try hierarchical DBSCAN (HDBSCAN), which is implemented in the scikit-learn-contrib project, as it is usually better than DBSCAN at finding clusters of varying densities.
 
@@ -7706,7 +7706,7 @@ This algorithm takes a similarity matrix between the instances and creates a low
 
 Now let's dive into Gaussian mixture models, which can be used for density estimation, clustering, and anomaly detection.
 
-## **Gaussian Mixtures**
+### **Gaussian Mixtures**
 
 A Gaussian mixture model (GMM) is a probabilistic model that assumes that the instances were generated from a mixture of several Gaussian distributions whose parameters are unknown. All the instances generated from a single Gaussian distribution form a cluster that typically looks like an ellipsoid. Each cluster can have a different ellipsoidal shape, size, density, and orientation, just like in Figure 9-11. When you observe an instance, you know it was generated from one of the Gaussian distributions, but you are not told which one, and you do not know what the parameters of these distributions are.
 
@@ -7744,7 +7744,7 @@ Great, it worked fine! Indeed, two of the three clusters were generated with 500
 
 orientation ( $\Sigma^{(1)}$  to  $\Sigma^{(k)}$ ), as well as their relative weights ( $\phi^{(1)}$  to  $\phi^{(k)}$ ). Unlike k-means, though, EM uses soft cluster assignments, not hard assignments. For each instance, during the expectation step, the algorithm estimates the probability that it belongs to each cluster (based on the current cluster parameters). Then, during the maximization step, each cluster is updated using all the instances in the dataset, with each instance weighted by the estimated probability that it belongs to that cluster. These probabilities are called the *responsibilities* of the clusters for the instances. During the maximization step, each cluster's update will mostly be impacted by the instances it is most responsible for.
 
-![](_page_312_Picture_1.jpeg)
+![](img/_page_312_Picture_1.jpeg)
 
 Unfortunately, just like  $k$ -means, EM can end up converging to poor solutions, so it needs to be run several times, keeping only the best solution. This is why we set n init to 10. Be careful: by default n\_init is set to 1.
 
@@ -7796,7 +7796,7 @@ If you compute the exponential of these scores, you get the value of the PDF at 
 
 Figure 9-16 shows the cluster means, the decision boundaries (dashed lines), and the density contours of this model.
 
-![](_page_313_Figure_5.jpeg)
+![](img/_page_313_Figure_5.jpeg)
 
 Figure 9-16. Cluster means, decision boundaries, and density contours of a trained Gaussian mixture model
 
@@ -7818,13 +7818,13 @@ All clusters must have the same ellipsoidal shape, size, and orientation (i.e., 
 
 By default, covariance\_type is equal to "full", which means that each cluster can take on any shape, size, and orientation (it has its own unconstrained covariance matrix). Figure 9-17 plots the solutions found by the EM algorithm when covariance\_type is set to "tied" or "spherical".
 
-![](_page_314_Figure_8.jpeg)
+![](img/_page_314_Figure_8.jpeg)
 
 Figure 9-17. Gaussian mixtures for tied clusters (left) and spherical clusters (right)
 
 {315}------------------------------------------------
 
-![](_page_315_Picture_0.jpeg)
+![](img/_page_315_Picture_0.jpeg)
 
 The computational complexity of training a GaussianMixture model depends on the number of instances  $m$ , the number of dimensions  $n$ , the number of clusters  $k$ , and the constraints on the covariance matrices. If covariance type is "spherical" or "diag", it is  $O(kmn)$ , assuming the data has a clustering structure. If covariance type is "tied" or "full", it is  $O(kmn^2 + kn^3)$ , so it will not scale to large numbers of features.
 
@@ -7842,13 +7842,13 @@ densities = gm.score samples(X)density_{threshold} = np.percentile(densities, 2)
 
 A closely related task is *novelty detection*: it differs from anomaly detection in that the algorithm is assumed to be trained on a "clean" dataset, uncontaminated by outliers, whereas anomaly detection does not make this assumption. Indeed, outlier detection is often used to clean up a dataset.
 
-![](_page_315_Picture_8.jpeg)
+![](img/_page_315_Picture_8.jpeg)
 
 Gaussian mixture models try to fit all the data, including the outliers; if you have too many of them this will bias the model's view of "normality", and some outliers may wrongly be considered as normal. If this happens, you can try to fit the model once, use it to detect and remove the most extreme outliers, then fit the model again on the cleaned-up dataset. Another approach is to use robust covariance estimation methods (see the EllipticEnvelope class).
 
 {316}------------------------------------------------
 
-![](_page_316_Figure_0.jpeg)
+![](img/_page_316_Figure_0.jpeg)
 
 Figure 9-18. Anomaly detection using a Gaussian mixture model
 
@@ -7885,7 +7885,7 @@ The terms "probability" and "likelihood" are often used interchangeably in every
 
 Consider a 1D mixture model of two Gaussian distributions centered at  $-4$  and  $+1$ . For simplicity, this toy model has a single parameter  $\theta$  that controls the standard deviations of both distributions. The top-left contour plot in Figure 9-19 shows the entire model  $f(x; \theta)$  as a function of both x and  $\theta$ . To estimate the probability distribution of a future outcome x, you need to set the model parameter  $\theta$ . For example, if you set  $\theta$ to 1.3 (the horizontal line), you get the probability density function  $f(x; \theta=1.3)$  shown in the lower-left plot. Say you want to estimate the probability that  $x$  will fall between  $-2$  and  $+2$ . You must calculate the integral of the PDF on this range (i.e., the surface of the shaded region). But what if you don't know  $\theta$ , and instead if you have observed a single instance  $x=2.5$  (the vertical line in the upper-left plot)? In this case, you get the likelihood function  $\mathcal{L}(\theta|x=2.5)=f(x=2.5;\theta)$ , represented in the upper-right plot.
 
-![](_page_317_Figure_4.jpeg)
+![](img/_page_317_Figure_4.jpeg)
 
 Figure 9-19. A model's parametric function (top left), and some derived functions: a PDF (lower left), a likelihood function (top right), and a log likelihood function (lower right)
 
@@ -7911,7 +7911,7 @@ Figure 9-20 shows the BIC for different numbers of clusters k. As you can see, b
 
 {319}------------------------------------------------
 
-![](_page_319_Figure_0.jpeg)
+![](img/_page_319_Figure_0.jpeg)
 
 Figure 9-20. AIC and BIC for different numbers of clusters k
 
@@ -7935,7 +7935,7 @@ Oops! The algorithm desperately searched for ellipsoids, so it found eight diffe
 
 {320}------------------------------------------------
 
-![](_page_320_Figure_0.jpeg)
+![](img/_page_320_Figure_0.jpeg)
 
 Figure 9-21. Fitting a Gaussian mixture to nonellipsoidal clusters
 
@@ -7992,7 +7992,7 @@ Solutions to these exercises are available at the end of this chapter's notebook
 
 {324}------------------------------------------------
 
-## **PART II Neural Networks and Deep Learning**
+### **PART II Neural Networks and Deep Learning**
 
 {325}------------------------------------------------
 
@@ -8043,13 +8043,13 @@ Before we discuss artificial neurons, let's take a quick look at a biological ne
 
 {329}------------------------------------------------
 
-![](_page_329_Figure_0.jpeg)
+![](img/_page_329_Figure_0.jpeg)
 
 Figure 10-1. A biological neuron<sup>4</sup>
 
 Thus, individual biological neurons seem to behave in a simple way, but they're organized in a vast network of billions, with each neuron typically connected to thousands of other neurons. Highly complex computations can be performed by a network of fairly simple neurons, much like a complex anthill can emerge from the combined efforts of simple ants. The architecture of biological neural networks  $(BNNs)^5$  is the subject of active research, but some parts of the brain have been mapped. These efforts show that neurons are often organized in consecutive layers, especially in the cerebral cortex (the outer layer of the brain), as shown in Figure 10-2.
 
-![](_page_329_Picture_3.jpeg)
+![](img/_page_329_Picture_3.jpeg)
 
 Figure 10-2. Multiple layers in a biological neural network (human cortex) $\delta$ 
 
@@ -8065,7 +8065,7 @@ Figure 10-2. Multiple layers in a biological neural network (human cortex) $\del
 
 McCulloch and Pitts proposed a very simple model of the biological neuron, which later became known as an *artificial neuron*: it has one or more binary (on/off) inputs and one binary output. The artificial neuron activates its output when more than a certain number of its inputs are active. In their paper, McCulloch and Pitts showed that even with such a simplified model it is possible to build a network of artificial neurons that can compute any logical proposition you want. To see how such a network works, let's build a few ANNs that perform various logical computations (see Figure 10-3), assuming that a neuron is activated when at least two of its input connections are active.
 
-![](_page_330_Figure_2.jpeg)
+![](img/_page_330_Figure_2.jpeg)
 
 Figure 10-3. ANNs performing simple logical computations
 
@@ -8084,7 +8084,7 @@ You can imagine how these networks can be combined to compute complex logical ex
 
 The *perceptron* is one of the simplest ANN architectures, invented in 1957 by Frank Rosenblatt. It is based on a slightly different artificial neuron (see Figure 10-4) called a threshold logic unit (TLU), or sometimes a linear threshold unit (LTU). The inputs and output are numbers (instead of binary on/off values), and each input connection is associated with a weight. The TLU first computes a linear function of its inputs:  $z =$  $w_1 x_1 + w_2 x_2 + \cdots + w_n x_n + b = \mathbf{w}^{\mathsf{T}} \mathbf{x} + b$ . Then it applies a step function to the result:  $h_w(\mathbf{x})$  = step(z). So it's almost like logistic regression, except it uses a step function instead of the logistic function (Chapter 4). Just like in logistic regression, the model parameters are the input weights w and the bias term b.
 
-![](_page_331_Figure_2.jpeg)
+![](img/_page_331_Figure_2.jpeg)
 
 Figure 10-4. TLU: an artificial neuron that computes a weighted sum of its inputs  $w^{\dagger} x$ , plus a bias term b, then applies a step function
 
@@ -8100,7 +8100,7 @@ A single TLU can be used for simple linear binary classification. It computes a 
 
 A perceptron is composed of one or more TLUs organized in a single layer, where every TLU is connected to every input. Such a layer is called a *fully connected layer*, or a dense layer. The inputs constitute the input layer. And since the layer of TLUs produces the final outputs, it is called the *output layer*. For example, a perceptron with two inputs and three outputs is represented in Figure 10-5.
 
-![](_page_332_Figure_2.jpeg)
+![](img/_page_332_Figure_2.jpeg)
 
 Figure 10-5. Architecture of a perceptron with two inputs and three output neurons
 
@@ -8119,7 +8119,7 @@ In this equation:
 - The bias vector **b** contains all the bias terms: one per neuron.
 - The function  $\phi$  is called the *activation function*: when the artificial neurons are TLUs, it is a step function (we will discuss other activation functions shortly).
 
-![](_page_333_Picture_5.jpeg)
+![](img/_page_333_Picture_5.jpeg)
 
 In mathematics, the sum of a matrix and a vector is undefined. However, in data science, we allow "broadcasting": adding a vector to a matrix means adding it to every row in the matrix. So,  $XW + b$ first multiplies  $X$  by W—which results in a matrix with one row per instance and one column per output—then adds the vector **b** to every row of that matrix, which adds each bias term to the corresponding output, for every instance. Moreover,  $\phi$  is then applied itemwise to each item in the resulting matrix.
 
@@ -8163,11 +8163,11 @@ dropped neural networks altogether in favor of higher-level problems such as log
 
 It turns out that some of the limitations of perceptrons can be eliminated by stacking multiple perceptrons. The resulting ANN is called a *multilayer perceptron* (MLP). An MLP can solve the XOR problem, as you can verify by computing the output of the MLP represented on the right side of Figure 10-6: with inputs  $(0, 0)$  or  $(1, 1)$ , the network outputs 0, and with inputs  $(0, 1)$  or  $(1, 0)$  it outputs 1. Try verifying that this network indeed solves the XOR problem!<sup>8</sup>
 
-![](_page_335_Figure_2.jpeg)
+![](img/_page_335_Figure_2.jpeg)
 
 Figure 10-6. XOR classification problem and an MLP that solves it
 
-![](_page_335_Picture_4.jpeg)
+![](img/_page_335_Picture_4.jpeg)
 
 Contrary to logistic regression classifiers, perceptrons do not output a class probability. This is one reason to prefer logistic regression over perceptrons. Moreover, perceptrons do not use any regularization by default, and training stops as soon as there are no more prediction errors on the training set, so the model typically does not generalize as well as logistic regression or a linear SVM classifier. However, perceptrons may train a bit faster.
 
@@ -8179,11 +8179,11 @@ Contrary to logistic regression classifiers, perceptrons do not output a class p
 
 An MLP is composed of one input layer, one or more layers of TLUs called *hidden* layers, and one final layer of TLUs called the output layer (see Figure 10-7). The layers close to the input layer are usually called the lower layers, and the ones close to the outputs are usually called the *upper layers*.
 
-![](_page_336_Figure_2.jpeg)
+![](img/_page_336_Figure_2.jpeg)
 
 Figure 10-7. Architecture of a multilayer perceptron with two inputs, one hidden layer of four neurons, and three output neurons
 
-![](_page_336_Picture_4.jpeg)
+![](img/_page_336_Picture_4.jpeg)
 
 The signal flows only in one direction (from the inputs to the outputs), so this architecture is an example of a feedforward neural network (FNN).
 
@@ -8197,7 +8197,7 @@ For many years researchers struggled to find a way to train MLPs, without succes
 
 Then, in 1970, a researcher named Seppo Linnainmaa introduced in his master's thesis a technique to compute all the gradients automatically and efficiently. This algorithm is now called reverse-mode automatic differentiation (or reverse-mode autodiff for short). In just two passes through the network (one forward, one backward), it is able to compute the gradients of the neural network's error with regard to every single model parameter. In other words, it can find out how each connection weight and each bias should be tweaked in order to reduce the neural network's error. These gradients can then be used to perform a gradient descent step. If you repeat this process of computing the gradients automatically and taking a gradient descent step, the neural network's error will gradually drop until it eventually reaches a minimum. This combination of reverse-mode autodiff and gradient descent is now called backpropagation (or backprop for short).
 
-![](_page_337_Picture_2.jpeg)
+![](img/_page_337_Picture_2.jpeg)
 
 There are various autodiff techniques, with different pros and cons. Reverse-mode autodiff is well suited when the function to differentiate has many variables (e.g., connection weights and biases) and few outputs (e.g., one loss). If you want to learn more about autodiff, check out Appendix B.
 
@@ -8216,7 +8216,7 @@ Let's run through how backpropagation works again in a bit more detail:
 - The algorithm then measures how much of these error contributions came from each connection in the layer below, again using the chain rule, working backward until it reaches the input layer. As explained earlier, this reverse pass efficiently measures the error gradient across all the connection weights and biases in the network by propagating the error gradient backward through the network (hence the name of the algorithm).
 - Finally, the algorithm performs a gradient descent step to tweak all the connection weights in the network, using the error gradients it just computed.
 
-![](_page_338_Picture_7.jpeg)
+![](img/_page_338_Picture_7.jpeg)
 
 It is important to initialize all the hidden layers' connection weights randomly, or else training will fail. For example, if you initialize all weights and biases to zero, then all neurons in a given layer will be perfectly identical, and thus backpropagation will affect them in exactly the same way, so they will remain identical. In other words, despite having hundreds of neurons per layer, your model will act as if it had only one neuron per layer: it won't be too smart. If instead you randomly initialize the weights, you break the symmetry and allow backpropagation to train a diverse team of neurons.
 
@@ -8240,7 +8240,7 @@ These popular activation functions and their derivatives are represented in Figu
 
 {340}------------------------------------------------
 
-![](_page_340_Figure_0.jpeg)
+![](img/_page_340_Figure_0.jpeg)
 
 Figure 10-8. Activation functions (left) and their derivatives (right)
 
@@ -8276,7 +8276,7 @@ We get a validation RMSE of about 0.505, which is comparable to what you would g
 
 Note that this MLP does not use any activation function for the output layer, so it's free to output any value it wants. This is generally fine, but if you want to guarantee that the output will always be positive, then you should use the ReLU activation function in the output layer, or the *softplus* activation function, which is a smooth variant of ReLU: softplus(z) =  $log(1 + exp(z))$ . Softplus is close to 0 when z is negative, and close to  $z$  when  $z$  is positive. Finally, if you want to guarantee that the predictions will always fall within a given range of values, then you should use the sigmoid function or the hyperbolic tangent, and scale the targets to the appropriate range: 0 to 1 for sigmoid and -1 to 1 for tanh. Sadly, the MLPRegressor class does not support activation functions in the output layer.
 
-![](_page_341_Picture_3.jpeg)
+![](img/_page_341_Picture_3.jpeg)
 
 Building and training a standard MLP with Scikit-Learn in just a few lines of code is very convenient, but the neural net features are limited. This is why we will switch to Keras in the second part of this chapter.
 
@@ -8309,7 +8309,7 @@ Regarding the loss function, since we are predicting probability distributions, 
 
 {343}------------------------------------------------
 
-![](_page_343_Figure_0.jpeg)
+![](img/_page_343_Figure_0.jpeg)
 
 Figure 10-9. A modern MLP (including ReLU and softmax) for classification
 
@@ -8326,7 +8326,7 @@ Table 10-2 summarizes the typical architecture of a classification MLP.
 
 Table 10-2. Typical classification MLP architecture
 
-![](_page_343_Picture_6.jpeg)
+![](img/_page_343_Picture_6.jpeg)
 
 Before we go on, I recommend you go through exercise 1 at the end of this chapter. You will play with various neural network architectures and visualize their outputs using the TensorFlow playground. This will be very useful to better understand MLPs, including the effects of all the hyperparameters (number of layers and neurons, activation functions, and more).
 
@@ -8338,13 +8338,13 @@ Now you have all the concepts you need to start implementing MLPs with Keras!
 
 Keras is TensorFlow's high-level deep learning API: it allows you to build, train, evaluate, and execute all sorts of neural networks. The original Keras library was developed by François Chollet as part of a research project<sup>12</sup> and was released as a standalone open source project in March 2015. It quickly gained popularity, owing to its ease of use, flexibility, and beautiful design.
 
-![](_page_344_Picture_3.jpeg)
+![](img/_page_344_Picture_3.jpeg)
 
 Keras used to support multiple backends, including TensorFlow, PlaidML, Theano, and Microsoft Cognitive Toolkit (CNTK) (the last two are sadly deprecated), but since version 2.4, Keras is TensorFlow-only. Similarly, TensorFlow used to include multiple high-level APIs, but Keras was officially chosen as its preferred high-level API when TensorFlow 2 came out. Installing TensorFlow will automatically install Keras as well, and Keras will not work without TensorFlow installed. In short, Keras and TensorFlow fell in love and got married. Other popular deep learning libraries include PyTorch by Facebook and JAX by Google.<sup>13</sup>
 
 Now let's use Keras! We will start by building an MLP for image classification.
 
-![](_page_344_Picture_6.jpeg)
+![](img/_page_344_Picture_6.jpeg)
 
 Colab runtimes come with recent versions of TensorFlow and Keras preinstalled. However, if you want to install them on your own machine, please see the installation instructions at https:// homl.info/install.
 
@@ -8372,7 +8372,7 @@ X_train, y_train = X_ttrain_full[:-5000], y_train_full[:-5000]
 X_valid, y_valid = X_train-full[-5000:], y_train_full[-5000:]
 ```
 
-![](_page_345_Picture_6.jpeg)
+![](img/_page_345_Picture_6.jpeg)
 
 TensorFlow is usually imported as tf, and the Keras API is available via tf.keras.
 
@@ -8408,7 +8408,7 @@ For example, the first image in the training set represents an ankle boot:
 
 Figure 10-10 shows some samples from the Fashion MNIST dataset.
 
-![](_page_346_Figure_4.jpeg)
+![](img/_page_346_Figure_4.jpeg)
 
 Figure 10-10. Samples from Fashion MNIST
 
@@ -8438,7 +8438,7 @@ Let's go through this code line by line:
 - Then we add a second Dense hidden layer with 100 neurons, also using the ReLU activation function.
 - Finally, we add a Dense output layer with 10 neurons (one per class), using the softmax activation function because the classes are exclusive.
 
-![](_page_347_Picture_5.jpeg)
+![](img/_page_347_Picture_5.jpeg)
 
 Specifying activation="relu" is equivalent to specifying activation=tf.keras.activations.relu. Other activation functions are available in the tf.keras.activations package. We will use many of them in this book; see https://keras.io/api/layers/activa tions for the full list. We will also define our own custom activation functions in Chapter 12.
 
@@ -8477,7 +8477,7 @@ Each layer in a model must have a unique name (e.g., "dense\_2"). You can set th
 
 {349}------------------------------------------------
 
-![](_page_349_Picture_0.jpeg)
+![](img/_page_349_Picture_0.jpeg)
 
 All global state managed by Keras is stored in a Keras session, which you can clear using tf.keras.backend.clear\_session(). In particular, this resets the name counters.
 
@@ -8513,7 +8513,7 @@ Notice that the Dense layer initialized the connection weights randomly (which i
 
 {350}------------------------------------------------
 
-![](_page_350_Picture_0.jpeg)
+![](img/_page_350_Picture_0.jpeg)
 
 The shape of the weight matrix depends on the number of inputs, which is why we specified the input\_shape when creating the model. If you do not specify the input shape, it's OK: Keras will simply wait until it knows the input shape before it actually builds the model parameters. This will happen either when you feed it some data (e.g., during training), or when you call its build() method. Until the model parameters are built, you will not be able to do certain things, such as display the model summary or save the model. So, if you know the input shape when creating the model, it is best to specify it.
 
@@ -8527,7 +8527,7 @@ model.compile(loss="sparse_categorical_crossentropy",
               metrics = ['accuracy"]
 ```
 
-![](_page_350_Picture_5.jpeg)
+![](img/_page_350_Picture_5.jpeg)
 
 Using loss="sparse\_categorical\_crossentropy" is the equivalent of using loss=tf.keras.losses.sparse\_categorical\_ crossentropy. Similarly, using optimizer="sgd" is the equivalent of using optimizer=tf.keras.optimizers.SGD(), and using metrics=["accuracy"] is the equivalent of using metrics= [tf.keras.metrics.sparse categorical accuracy] (when using this loss). We will use many other losses, optimizers, and metrics in this book; for the full lists, see https://keras.io/api/losses, https:// keras.io/api/optimizers, and https://keras.io/api/metrics.
 
@@ -8535,13 +8535,13 @@ This code requires explanation. We use the "sparse categorical crossentropy" los
 
 {351}------------------------------------------------
 
-![](_page_351_Picture_0.jpeg)
+![](img/_page_351_Picture_0.jpeg)
 
 If you want to convert sparse labels (i.e., class indices) to one-hot vector labels, use the tf.keras.utils.to\_categorical() function. To go the other way round, use the np.argmax() function with axis=1.
 
 Regarding the optimizer, "sgd" means that we will train the model using stochastic gradient descent. In other words, Keras will perform the backpropagation algorithm described earlier (i.e., reverse-mode autodiff plus gradient descent). We will discuss more efficient optimizers in Chapter 11. They improve gradient descent, not autodiff.
 
-![](_page_351_Picture_3.jpeg)
+![](img/_page_351_Picture_3.jpeg)
 
 When using the SGD optimizer, it is important to tune the learning rate. So, you will generally want to use optimizer=tf.keras. optimizers. SGD(learning\_rate=\_???\_) to set the learning rate, rather than optimizer="sgd", which defaults to a learning rate of  $0.01$ .
 
@@ -8572,13 +8572,13 @@ We pass it the input features  $(X_t$ train) and the target classes  $(y_t$ trai
 
 is probably overfitting the training set, or there is a bug, such as a data mismatch between the training set and the validation set.
 
-![](_page_352_Picture_1.jpeg)
+![](img/_page_352_Picture_1.jpeg)
 
 Shape errors are quite common, especially when getting started, so you should familiarize yourself with the error messages: try fitting a model with inputs and/or labels of the wrong shape, and see the errors you get. Similarly, try compiling the model with loss="categorical crossentropy" instead of loss="sparse\_categorical\_crossentropy". Or you can remove the Flatten layer.
 
 And that's it! The neural network is trained. At each epoch during training, Keras displays the number of mini-batches processed so far on the left side of the progress bar. The batch size is 32 by default, and since the training set has 55,000 images, the model goes through 1,719 batches per epoch: 1,718 of size 32, and 1 of size 24. After the progress bar, you can see the mean training time per sample, and the loss and accuracy (or any other extra metrics you asked for) on both the training set and the validation set. Notice that the training loss went down, which is a good sign, and the validation accuracy reached 88.94% after 30 epochs. That's slightly below the training accuracy, so there is a little bit of overfitting going on, but not a huge amount.
 
-![](_page_352_Picture_4.jpeg)
+![](img/_page_352_Picture_4.jpeg)
 
 Instead of passing a validation set using the validation\_data argument, you could set validation split to the ratio of the training set that you want Keras to use for validation. For example, validation split=0.1 tells Keras to use the last 10% of the data (before shuffling) for validation.
 
@@ -8599,7 +8599,7 @@ pd.DataFrame(history.history).plot(
 plt.show()
 ```
 
-![](_page_353_Figure_2.jpeg)
+![](img/_page_353_Figure_2.jpeg)
 
 Figure 10-11. Learning curves: the mean training loss and accuracy measured over each epoch, and the mean validation loss and accuracy measured at the end of each epoch
 
@@ -8655,7 +8655,7 @@ Here, the classifier actually classified all three images correctly (these image
 array([9, 2, 1], dtype=uint8)
 ```
 
-![](_page_355_Picture_4.jpeg)
+![](img/_page_355_Picture_4.jpeg)
 
 Figure 10-12. Correctly classified Fashion MNIST images
 
@@ -8687,7 +8687,7 @@ mse test, rmse test = model.evaluate(X test, y test)
 X_new = X_test[:3]y pred = model.predict(X new)
 ```
 
-![](_page_356_Picture_2.jpeg)
+![](img/_page_356_Picture_2.jpeg)
 
 The Normalization layer learns the feature means and standard deviations in the training data when you call the adapt() method. Yet when you display the model's summary, these statistics are listed as non-trainable. This is because these parameters are not affected by gradient descent.
 
@@ -8705,7 +8705,7 @@ One example of a nonsequential neural network is a Wide  $\&$  Deep neural netwo
 
 contrast, a regular MLP forces all the data to flow through the full stack of layers; thus, simple patterns in the data may end up being distorted by this sequence of transformations.
 
-![](_page_357_Figure_1.jpeg)
+![](img/_page_357_Figure_1.jpeg)
 
 Figure 10-13. Wide & Deep neural network
 
@@ -8750,7 +8750,7 @@ concat = tf.keras.layers.concatenate([norm_wide, hidden2])
 output = tf.keras.layers.Dense(1)(concat)model = tf.keras.Model(inputs=[input_wide, input_deep], outputs=[output])
 ```
 
-![](_page_359_Figure_1.jpeg)
+![](img/_page_359_Figure_1.jpeg)
 
 Figure 10-14. Handling multiple inputs
 
@@ -8778,7 +8778,7 @@ mse_test = model.evaluate((X_test_wide, X_test_deep), y_test)
 y pred = model.predict((X_new_wide, X_new(deep))
 ```
 
-![](_page_360_Picture_2.jpeg)
+![](img/_page_360_Picture_2.jpeg)
 
 Instead of passing a tuple (X\_train\_wide, X\_train\_deep), you can pass a dictionary {"input wide": X train wide, "input\_deep": X\_train\_deep}, if you set name="input\_wide" and name="input deep" when creating the inputs. This is highly recommended when there are many inputs, to clarify the code and avoid getting the order wrong.
 
@@ -8790,7 +8790,7 @@ There are also many use cases in which you may want to have multiple outputs:
 
 {361}------------------------------------------------
 
-![](_page_361_Figure_0.jpeg)
+![](img/_page_361_Figure_0.jpeg)
 
 network learns something useful on its own, without relying on the rest of the network
 
@@ -8814,7 +8814,7 @@ model.compile(loss=("mse", "mse"), loss_weights=(0.9, 0.1), optimizer=optimizer,
 
 {362}------------------------------------------------
 
-![](_page_362_Picture_0.jpeg)
+![](img/_page_362_Picture_0.jpeg)
 
 Instead of passing a tuple loss=("mse", "mse"), you can pass a dictionary loss={"output": "mse", "aux output": "mse"}, assuming you created the output layers with name="output" and name="aux\_output". Just like for the inputs, this clarifies the code and avoids errors when there are several outputs. You can also pass a dictionary for loss weights.
 
@@ -8835,7 +8835,7 @@ eval results = model.evaluate((X test wide, X test deep), (y test, y test))
 weighted_sum_of_losses, main_loss, aux_loss, main_rmse, aux_rmse = eval_results
 ```
 
-![](_page_362_Picture_6.jpeg)
+![](img/_page_362_Picture_6.jpeg)
 
 If you set return dict=True, then evaluate() will return a dictionary instead of a big tuple.
 
@@ -8893,7 +8893,7 @@ Now that we have a model instance, we can compile it, adapt its normalization la
 
 The big difference with this API is that you can include pretty much anything you want in the call() method: for loops, if statements, low-level TensorFlow operations—your imagination is the limit (see Chapter 12)! This makes it a great API when experimenting with new ideas, especially for researchers. However, this extra flexibility does come at a cost: your model's architecture is hidden within the call() method, so Keras cannot easily inspect it; the model cannot be cloned using tf.keras.models.clone\_model(); and when you call the summary() method, you only get a list of layers, without any information on how they are connected to each other. Moreover, Keras cannot check types and shapes ahead of time, and it is easier to make mistakes. So unless you really need that extra flexibility, you should probably stick to the sequential API or the functional API.
 
-![](_page_364_Picture_2.jpeg)
+![](img/_page_364_Picture_2.jpeg)
 
 Keras models can be used just like regular layers, so you can easily combine them to build complex architectures.
 
@@ -8915,7 +8915,7 @@ When you set save format="tf",<sup>18</sup> Keras saves the model using TensorFl
 
 model is very large. Lastly, the *assets* directory may contain extra files, such as data samples, feature names, class names, and so on. By default, the *assets* directory is empty. Since the optimizer is also saved, including its hyperparameters and any state it may have, after loading the model you can continue training if you want.
 
-![](_page_365_Picture_1.jpeg)
+![](img/_page_365_Picture_1.jpeg)
 
 If you set save\_format="h5" or use a filename that ends with .h5, .hdf5, or .keras, then Keras will save the model to a single file using a Keras-specific format based on the HDF5 format. However, most TensorFlow deployment tools require the SavedModel format instead.
 
@@ -8954,7 +8954,7 @@ history = model.fit([...], callbacks=[checkpoint_cb, early_stopping_cb])
 
 The number of epochs can be set to a large value since training will stop automatically when there is no more progress (just make sure the learning rate is not too small, or else it might keep making slow progress until the end). The EarlyStopping callback will store the weights of the best model in RAM, and it will restore them for you at the end of training.
 
-![](_page_366_Picture_4.jpeg)
+![](img/_page_366_Picture_4.jpeg)
 
 Many other callbacks are available in the tf.keras.callbacks package.
 
@@ -9035,13 +9035,13 @@ Now that you have the event files ready, it's time to start the TensorBoard serv
 %tensorboard --logdir=./my logs
 ```
 
-![](_page_369_Picture_2.jpeg)
+![](img/_page_369_Picture_2.jpeg)
 
 If you're running everything on your own machine, it's possible to start TensorBoard by executing tensorboard --logdir=./my logs in a terminal. You must first activate the Conda environment in which you installed TensorBoard, and go to the handson-ml3 directory. Once the server is started, visit http://localhost:6006.
 
 Now you should see TensorBoard's user interface. Click the SCALARS tab to view the learning curves (see Figure 10-16). At the bottom left, select the logs you want to visualize (e.g., the training logs from the first and second run), and click the epoch loss scalar. Notice that the training loss went down nicely during both runs, but in the second run it went down a bit faster thanks to the higher learning rate.
 
-![](_page_369_Figure_5.jpeg)
+![](img/_page_369_Figure_5.jpeg)
 
 Figure 10-16. Visualizing learning curves with TensorBoard
 
@@ -9064,7 +9064,7 @@ test\_logdir = get_run\_logdir()writer = tf.summary.create_file.write(r(str(test
 
 If you run this code and click the refresh button in TensorBoard, you will see several tabs appear: IMAGES, AUDIO, DISTRIBUTIONS, HISTOGRAMS, and TEXT. Try clicking the IMAGES tab, and use the slider above each image to view the images at different time steps. Similarly, go to the AUDIO tab and try listening to the audio at different time steps. As you can see, TensorBoard is a useful tool even beyond TensorFlow or deep learning.
 
-![](_page_370_Picture_4.jpeg)
+![](img/_page_370_Picture_4.jpeg)
 
 You can share your results online by publishing them to https:// tensorboard.dev. For this, just run !tensorboard dev upload -- logdir ./my\_logs. The first time, it will ask you to accept the terms and conditions and authenticate. Then your logs will be uploaded, and you will get a permanent link to view your results in a TensorBoard interface.
 
@@ -9249,7 +9249,7 @@ as well in most cases, or even better; plus, there is only one hyperparameter to
 
 Just like the number of layers, you can try increasing the number of neurons gradually until the network starts overfitting. Alternatively, you can try building a model with slightly more layers and neurons than you actually need, then use early stopping and other regularization techniques to prevent it from overfitting too much. Vincent Vanhoucke, a scientist at Google, has dubbed this the "stretch pants" approach: instead of wasting time looking for pants that perfectly match your size, just use large stretch pants that will shrink down to the right size. With this approach, you avoid bottleneck layers that could ruin your model. Indeed, if a layer has too few neurons, it will not have enough representational power to preserve all the useful information from the inputs (e.g., a layer with two neurons can only output 2D data, so if it gets 3D data as input, some information will be lost). No matter how big and powerful the rest of the network is, that information will never be recovered.
 
-![](_page_378_Picture_2.jpeg)
+![](img/_page_378_Picture_2.jpeg)
 
 In general you will get more bang for your buck by increasing the number of layers instead of the number of neurons per layer.
 
@@ -9287,7 +9287,7 @@ In most cases, the number of training iterations does not actually need to be tw
 
 {380}------------------------------------------------
 
-![](_page_380_Picture_0.jpeg)
+![](img/_page_380_Picture_0.jpeg)
 
 The optimal learning rate depends on the other hyperparameters especially the batch size-so if you modify any hyperparameter, make sure to update the learning rate as well.
 
@@ -9353,7 +9353,7 @@ With these tools, you will be able to train very deep nets. Welcome to deep lear
 
 {385}------------------------------------------------
 
-## The Vanishing/Exploding Gradients Problems
+### The Vanishing/Exploding Gradients Problems
 
 As discussed in Chapter 10, the backpropagation algorithm's second phase works by going from the output layer to the input layer, propagating the error gradient along the way. Once the algorithm has computed the gradient of the cost function with regard to each parameter in the network, it uses these gradients to update each parameter with a gradient descent step.
 
@@ -9367,7 +9367,7 @@ Looking at the sigmoid activation function (see Figure 11-1), you can see that w
 
 {386}------------------------------------------------
 
-![](_page_386_Figure_0.jpeg)
+![](img/_page_386_Figure_0.jpeg)
 
 Figure 11-1. Sigmoid activation function saturation
 
@@ -9436,7 +9436,7 @@ The leaky ReLU activation function is defined as LeakyReLU<sub> $\alpha$ </sub> 
 
 outperformed the strict ReLU activation function. In fact, setting  $\alpha = 0.2$  (a huge leak) seemed to result in better performance than  $\alpha = 0.01$  (a small leak). The paper also evaluated the randomized leaky ReLU (RReLU), where  $\alpha$  is picked randomly in a given range during training and is fixed to an average value during testing. RReLU also performed fairly well and seemed to act as a regularizer, reducing the risk of overfitting the training set. Finally, the paper evaluated the parametric leaky ReLU (PReLU), where  $\alpha$  is authorized to be learned during training: instead of being a hyperparameter, it becomes a parameter that can be modified by backpropagation like any other parameter. PReLU was reported to strongly outperform ReLU on large image datasets, but on smaller datasets it runs the risk of overfitting the training set.
 
-![](_page_389_Figure_1.jpeg)
+![](img/_page_389_Figure_1.jpeg)
 
 Figure 11-2. Leaky ReLU: like ReLU, but with a small slope for negative values
 
@@ -9484,7 +9484,7 @@ Using ELU with Keras is as easy as setting activation="elu", and like with other
 
 {391}------------------------------------------------
 
-![](_page_391_Figure_0.jpeg)
+![](img/_page_391_Figure_0.jpeg)
 
 Figure 11-3. ELU and SELU activation functions
 
@@ -9511,7 +9511,7 @@ Equation 11-3. GELU activation function
 
 As you can see in Figure 11-4, GELU resembles ReLU: it approaches 0 when its input  $z$  is very negative, and it approaches  $z$  when  $z$  is very positive. However, whereas all the activation functions we've discussed so far were both convex and monotonic,<sup>9</sup> the GELU activation function is neither: from left to right, it starts by going straight, then it wiggles down, reaches a low point around  $-0.17$  (near  $z \approx -0.75$ ), and finally bounces up and ends up going straight toward the top right. This fairly complex shape and the fact that it has a curvature at every point may explain why it works so well, especially for complex tasks: gradient descent may find it easier to fit complex patterns. In practice, it often outperforms every other activation function discussed so far. However, it is a bit more computationally intensive, and the performance boost it provides is not always sufficient to justify the extra cost. That said, it is possible to show that it is approximately equal to  $z\sigma(1.702\ z)$ , where  $\sigma$  is the sigmoid function: using this approximation also works very well, and it has the advantage of being much faster to compute.
 
-![](_page_392_Figure_5.jpeg)
+![](img/_page_392_Figure_5.jpeg)
 
 Figure 11-4. GELU, Swish, parametrized Swish, and Mish activation functions
 
@@ -9525,7 +9525,7 @@ The GELU paper also introduced the *sigmoid linear unit* (SiLU) activation funct
 
 Another quite similar activation function is Mish, which was introduced in a 2019 paper by Diganta Misra.<sup>11</sup> It is defined as mish( $z$ ) =  $z$ tanh(softplus( $z$ )), where soft $plus(z) = log(1 + exp(z))$ . Just like GELU and Swish, it is a smooth, nonconvex, and nonmonotonic variant of ReLU, and once again the author ran many experiments and found that Mish generally outperformed other activation functions-even Swish and GELU, by a tiny margin. Figure 11-4 shows GELU, Swish (both with the default  $\beta$  $= 1$  and with  $\beta = 0.6$ ), and lastly Mish. As you can see, Mish overlaps almost perfectly with Swish when  $z$  is negative, and almost perfectly with GELU when  $z$  is positive.
 
-![](_page_393_Picture_2.jpeg)
+![](img/_page_393_Picture_2.jpeg)
 
 So, which activation function should you use for the hidden layers of your deep neural networks? ReLU remains a good default for simple tasks: it's often just as good as the more sophisticated activation functions, plus it's very fast to compute, and many libraries and hardware accelerators provide ReLU-specific optimizations. However, Swish is probably a better default for more complex tasks, and you can even try parametrized Swish with a learnable  $\beta$ parameter for the most complex tasks. Mish may give you slightly better results, but it requires a bit more compute. If you care a lot about runtime latency, then you may prefer leaky ReLU, or parametrized leaky ReLU for more complex tasks. For deep MLPs, give SELU a try, but make sure to respect the constraints listed earlier. If you have spare time and computing power, you can use cross-validation to evaluate other activation functions as well.
 
@@ -9601,7 +9601,7 @@ Batch normalization does, however, add some complexity to the model (although it
 
 {397}------------------------------------------------
 
-![](_page_397_Picture_0.jpeg)
+![](img/_page_397_Picture_0.jpeg)
 
 You may find that training is rather slow, because each epoch takes much more time when you use batch normalization. This is usually counterbalanced by the fact that convergence is much faster with BN, so it will take fewer epochs to reach the same performance. All in all, wall time will usually be shorter (this is the time measured by the clock on your wall).
 
@@ -9696,19 +9696,19 @@ optimize = tf.keras.optimizers.SGD(clipvalue=1.0)model.compile([...], optimizer=
 
 This optimizer will clip every component of the gradient vector to a value between -1.0 and 1.0. This means that all the partial derivatives of the loss (with regard to each and every trainable parameter) will be clipped between -1.0 and 1.0. The threshold is a hyperparameter you can tune. Note that it may change the orientation of the gradient vector. For instance, if the original gradient vector is [0.9, 100.0], it points mostly in the direction of the second axis; but once you clip it by value, you get [0.9, 1.0], which points roughly at the diagonal between the two axes. In practice, this approach works well. If you want to ensure that gradient clipping does not change the direction of the gradient vector, you should clip by norm by setting clipnorm instead of clipvalue. This will clip the whole gradient if its  $\ell_2$  norm is greater than the threshold you picked. For example, if you set clipnorm=1.0, then the vector  $[0.9, 100.0]$  will be clipped to  $[0.00899964, 0.9999595]$ , preserving its orientation but almost eliminating the first component. If you observe that the gradients explode during training (you can track the size of the gradients using TensorBoard), you may want to try clipping by value or clipping by norm, with different thresholds, and see which option performs best on the validation set.
 
-## **Reusing Pretrained Layers**
+### **Reusing Pretrained Layers**
 
 It is generally not a good idea to train a very large DNN from scratch without first trying to find an existing neural network that accomplishes a similar task to the one you are trying to tackle (I will discuss how to find them in Chapter 14). If you find such as neural network, then you can generally reuse most of its layers, except for the top ones. This technique is called *transfer learning*. It will not only speed up training considerably, but also requires significantly less training data.
 
 Suppose you have access to a DNN that was trained to classify pictures into 100 different categories, including animals, plants, vehicles, and everyday objects, and you now want to train a DNN to classify specific types of vehicles. These tasks are very similar, even partly overlapping, so you should try to reuse parts of the first network (see Figure  $11-5$ ).
 
-![](_page_400_Picture_6.jpeg)
+![](img/_page_400_Picture_6.jpeg)
 
 If the input pictures for your new task don't have the same size as the ones used in the original task, you will usually have to add a preprocessing step to resize them to the size expected by the original model. More generally, transfer learning will work best when the inputs have similar low-level features.
 
 {401}------------------------------------------------
 
-![](_page_401_Figure_0.jpeg)
+![](img/_page_401_Figure_0.jpeg)
 
 Figure 11-5. Reusing pretrained layers
 
@@ -9716,7 +9716,7 @@ The output layer of the original model should usually be replaced because it is 
 
 Similarly, the upper hidden layers of the original model are less likely to be as useful as the lower layers, since the high-level features that are most useful for the new task may differ significantly from the ones that were most useful for the original task. You want to find the right number of layers to reuse.
 
-![](_page_401_Picture_4.jpeg)
+![](img/_page_401_Picture_4.jpeg)
 
 The more similar the tasks are, the more layers you will want to reuse (starting with the lower layers). For very similar tasks, try to keep all the hidden layers and just replace the output layer.
 
@@ -9748,7 +9748,7 @@ model A clone = tf.keras.models.clone model(model A)
 model_A_clone.set_weights(model_A.get_weights())
 ```
 
-![](_page_402_Picture_7.jpeg)
+![](img/_page_402_Picture_7.jpeg)
 
 tf.keras.models.clone\_model() only clones the architecture, not the weights. If you don't copy them manually using set\_weights(), they will be initialized randomly when the cloned model is first used.
 
@@ -9762,7 +9762,7 @@ model B on A.compile(loss="binary crossentropy", optimizer=optimizer,
                      metrics=["accuracy"])
 ```
 
-![](_page_403_Picture_1.jpeg)
+![](img/_page_403_Picture_1.jpeg)
 
 You must always compile your model after you freeze or unfreeze layers.
 
@@ -9801,7 +9801,7 @@ Note that in the early days of deep learning it was difficult to train deep mode
 
 {405}------------------------------------------------
 
-![](_page_405_Figure_0.jpeg)
+![](img/_page_405_Figure_0.jpeg)
 
 Figure 11-6. In unsupervised training, a model is trained on all data, including the unlabeled data, using an unsupervised learning technique, then it is fine-tuned for the final task on just the labeled data using a supervised learning technique; the unsupervised part may train one layer at a time as shown here, or it may train the full model directly
 
@@ -9817,7 +9817,7 @@ For natural language processing (NLP) applications, you can download a corpus of
 
 sentence "What \_\_\_\_\_ you saying?" is probably "are" or "were"). If you can train a model to reach good performance on this task, then it will already know quite a lot about language, and you can certainly reuse it for your actual task and fine-tune it on your labeled data (we will discuss more pretraining tasks in Chapter 15).
 
-![](_page_406_Picture_1.jpeg)
+![](img/_page_406_Picture_1.jpeg)
 
 Self-supervised learning is when you automatically generate the labels from the data itself, as in the text-masking example, then you train a model on the resulting "labeled" dataset using supervised learning techniques.
 
@@ -9846,7 +9846,7 @@ Equation 11-5. Momentum algorithm
 
 You can verify that if the gradient remains constant, the terminal velocity (i.e., the maximum size of the weight updates) is equal to that gradient multiplied by the learning rate  $\eta$  multiplied by 1 / (1 –  $\beta$ ) (ignoring the sign). For example, if  $\beta = 0.9$ , then the terminal velocity is equal to 10 times the gradient times the learning rate, so momentum optimization ends up going 10 times faster than gradient descent! This allows momentum optimization to escape from plateaus much faster than gradient descent. We saw in Chapter 4 that when the inputs have very different scales, the cost function will look like an elongated bowl (see Figure 4-7). Gradient descent goes down the steep slope quite fast, but then it takes a very long time to go down the valley. In contrast, momentum optimization will roll down the valley faster and faster until it reaches the bottom (the optimum). In deep neural networks that don't use batch normalization, the upper layers will often end up having inputs with very different scales, so using momentum optimization helps a lot. It can also help roll past local optima.
 
-![](_page_407_Picture_5.jpeg)
+![](img/_page_407_Picture_5.jpeg)
 
 Due to the momentum, the optimizer may overshoot a bit, then come back, overshoot again, and oscillate like this many times before stabilizing at the minimum. This is one of the reasons it's good to have a bit of friction in the system: it gets rid of these oscillations and thus speeds up convergence.
 
@@ -9871,7 +9871,7 @@ Equation 11-6. Nesterov accelerated gradient algorithm
 
 This small tweak works because in general the momentum vector will be pointing in the right direction (i.e., toward the optimum), so it will be slightly more accurate to use the gradient measured a bit farther in that direction rather than the gradient at the original position, as you can see in Figure 11-7 (where  $\nabla$ <sub>1</sub> represents the gradient of the cost function measured at the starting point  $\theta$ , and  $\nabla$ , represents the gradient at the point located at  $\theta + \beta m$ ).
 
-![](_page_408_Figure_6.jpeg)
+![](img/_page_408_Figure_6.jpeg)
 
 Figure 11-7. Regular versus Nesterov momentum optimization: the former applies the gradients computed before the momentum step, while the latter applies the gradients computed after
 
@@ -9909,7 +9909,7 @@ In short, this algorithm decays the learning rate, but it does so faster for ste
 
 {410}------------------------------------------------
 
-![](_page_410_Figure_0.jpeg)
+![](img/_page_410_Figure_0.jpeg)
 
 Figure 11-8. AdaGrad versus gradient descent: the former can correct its direction earlier to point to the optimum
 
@@ -9984,7 +9984,7 @@ optimizer = tf.keras.optimizers.Adam(learning_rate=0.001, beta_1=0.9,
 
 Since Adam is an adaptive learning rate algorithm, like AdaGrad and RMSProp, it requires less tuning of the learning rate hyperparameter  $\eta$ . You can often use the default value  $\eta = 0.001$ , making Adam even easier to use than gradient descent.
 
-![](_page_412_Picture_4.jpeg)
+![](img/_page_412_Picture_4.jpeg)
 
 If you are starting to feel overwhelmed by all these different techniques and are wondering how to choose the right ones for your task, don't worry: some practical guidelines are provided at the end of this chapter.
 
@@ -10008,7 +10008,7 @@ Nadam optimization is Adam optimization plus the Nesterov trick, so it will ofte
 
  $\text{AdamW}^{22}$  is a variant of Adam that integrates a regularization technique called *weight decay.* Weight decay reduces the size of the model's weights at each training iteration by multiplying them by a decay factor such as 0.99. This may remind you of  $\ell_2$  regularization (introduced in Chapter 4), which also aims to keep the weights small, and indeed it can be shown mathematically that  $\ell_2$  regularization is equivalent to weight decay when using SGD. However, when using Adam or its variants,  $\ell_2$ regularization and weight decay are not equivalent: in practice, combining Adam with  $\ell_2$  regularization results in models that often don't generalize as well as those produced by SGD. AdamW fixes this issue by properly combining Adam with weight decay.
 
-![](_page_413_Picture_4.jpeg)
+![](img/_page_413_Picture_4.jpeg)
 
 Adaptive optimization methods (including RMSProp, Adam, Ada-Max, Nadam, and AdamW optimization) are often great, converging fast to a good solution. However, a 2017 paper<sup>23</sup> by Ashia C. Wilson et al. showed that they can lead to solutions that generalize poorly on some datasets. So when you are disappointed by your model's performance, try using NAG instead: your dataset may just be allergic to adaptive gradients. Also check out the latest research, because it's moving fast.
 
@@ -10054,11 +10054,11 @@ Table 11-2. Optimizer comparison
 
 {415}------------------------------------------------
 
-## **Learning Rate Scheduling**
+### **Learning Rate Scheduling**
 
 Finding a good learning rate is very important. If you set it much too high, training may diverge (as discussed in "Gradient Descent" on page 138). If you set it too low, training will eventually converge to the optimum, but it will take a very long time. If you set it slightly too high, it will make progress very quickly at first, but it will end up dancing around the optimum and never really settling down. If you have a limited computing budget, you may have to interrupt training before it has converged properly, yielding a suboptimal solution (see Figure 11-9).
 
-![](_page_415_Figure_2.jpeg)
+![](img/_page_415_Figure_2.jpeg)
 
 Figure 11-9. Learning curves for various learning rates  $\eta$ 
 
@@ -10133,7 +10133,7 @@ history = model.fit(X_train, y_train, [...], callbacks=[lr_scheduler])
 
 The LearningRateScheduler will update the optimizer's learning rate attribute at the beginning of each epoch. Updating the learning rate once per epoch is usually enough, but if you want it to be updated more often, for example at every step, you can always write your own callback (see the "Exponential Scheduling" section of this chapter's notebook for an example). Updating the learning rate at every step may help if there are many steps per epoch. Alternatively, you can use the tf.keras. optimizers.schedules approach, described shortly.
 
-![](_page_418_Picture_1.jpeg)
+![](img/_page_418_Picture_1.jpeg)
 
 After training, history.history["lr"] gives you access to the list of learning rates used during training.
 
@@ -10184,7 +10184,7 @@ As for 1 cycle, Keras does not support it, but it's possible to implement it in 
 
 To sum up, exponential decay, performance scheduling, and 1 cycle can considerably speed up convergence, so give them a try!
 
-## **Avoiding Overfitting Through Regularization**
+### **Avoiding Overfitting Through Regularization**
 
 With four parameters I can fit an elephant and with five I can make him wiggle his trunk.
 
@@ -10226,7 +10226,7 @@ RegularizedDense = partial(tf.keras.layers.Dense,
 
 {421}------------------------------------------------
 
-![](_page_421_Picture_0.jpeg)
+![](img/_page_421_Picture_0.jpeg)
 
 As we saw earlier,  $\ell_2$  regularization is fine when using SGD, momentum optimization, and Nesterov momentum optimization, but not with Adam and its variants. If you want to use Adam with weight decay, then do not use  $\ell_2$  regularization: use AdamW instead.
 
@@ -10244,7 +10244,7 @@ It's surprising at first that this destructive technique works at all. Would a c
 
 {422}------------------------------------------------
 
-![](_page_422_Figure_0.jpeg)
+![](img/_page_422_Figure_0.jpeg)
 
 Figure 11-10. With dropout regularization, at each training iteration a random subset of all neurons in one or more layers—except the output layer—are "dropped out"; these neurons output 0 at this iteration (represented by the dashed arrows)
 
@@ -10252,7 +10252,7 @@ Another way to understand the power of dropout is to realize that a unique neura
 
 {423}------------------------------------------------
 
-![](_page_423_Picture_0.jpeg)
+![](img/_page_423_Picture_0.jpeg)
 
 In practice, you can usually apply dropout only to the neurons in the top one to three layers (excluding the output layer).
 
@@ -10273,7 +10273,7 @@ model = tf.keras.Sequential(tf.keras.layers.Flatten(input_shape=[28, 28]),
 \left| \right\rangle[...] # compile and train the model
 ```
 
-![](_page_423_Picture_5.jpeg)
+![](img/_page_423_Picture_5.jpeg)
 
 Since dropout is only active during training, comparing the training loss and the validation loss can be misleading. In particular, a model may be overfitting the training set and yet have similar training and validation losses. So, make sure to evaluate the training loss without dropout (e.g., after training).
 
@@ -10283,7 +10283,7 @@ If you observe that the model is overfitting, you can increase the dropout rate.
 
 Dropout does tend to significantly slow down convergence, but it often results in a better model when tuned properly. So, it is generally well worth the extra time and effort, especially for large models.
 
-![](_page_424_Picture_1.jpeg)
+![](img/_page_424_Picture_1.jpeg)
 
 If you want to regularize a self-normalizing network based on the SELU activation function (as discussed earlier), you should use alpha dropout: this is a variant of dropout that preserves the mean and standard deviation of its inputs. It was introduced in the same paper as SELU, as regular dropout would break self-normalization.
 
@@ -10347,7 +10347,7 @@ Apparently there's quite a lot of variance in the probability estimates for clas
 
 {426}------------------------------------------------
 
-![](_page_426_Picture_0.jpeg)
+![](img/_page_426_Picture_0.jpeg)
 
 The number of Monte Carlo samples you use (100 in this example) is a hyperparameter you can tweak. The higher it is, the more accurate the predictions and their uncertainty estimates will be. However, if you double it, inference time will also be doubled. Moreover, above a certain number of samples, you will notice little improvement. Your job is to find the right trade-off between latency and accuracy, depending on your application.
 
@@ -10471,7 +10471,7 @@ So what does TensorFlow offer? Here's a summary:
 
 TensorFlow offers many more features built on top of these core features: the most important is of course Keras,<sup>2</sup> but it also has data loading and preprocessing ops (tf.data, tf.io, etc.), image processing ops (tf.image), signal processing ops (tf.signal), and more (see Figure 12-1 for an overview of TensorFlow's Python API).
 
-![](_page_431_Picture_8.jpeg)
+![](img/_page_431_Picture_8.jpeg)
 
 We will cover many of the packages and functions of the Tensor-Flow API, but it's impossible to cover them all, so you should really take some time to browse through the API; you will find that it is quite rich and well documented.
 
@@ -10487,7 +10487,7 @@ At the lowest level, each TensorFlow operation (op for short) is implemented usi
 
 parallel across many GPU threads. TPUs are even faster: they are custom ASIC chips built specifically for deep learning operations<sup>4</sup> (we will discuss how to use TensorFlow with GPUs or TPUs in Chapter 19).
 
-![](_page_432_Figure_1.jpeg)
+![](img/_page_432_Figure_1.jpeg)
 
 Figure 12-1. TensorFlow's Python API
 
@@ -10499,13 +10499,13 @@ TensorFlow runs not only on Windows, Linux, and macOS, but also on mobile device
 
 {433}------------------------------------------------
 
-![](_page_433_Figure_0.jpeg)
+![](img/_page_433_Figure_0.jpeg)
 
 Figure 12-2. TensorFlow's architecture
 
 There's more to TensorFlow than the library. TensorFlow is at the center of an extensive ecosystem of libraries. First, there's TensorBoard for visualization (see Chapter 10). Next, there's TensorFlow Extended (TFX), which is a set of libraries built by Google to productionize TensorFlow projects: it includes tools for data validation, preprocessing, model analysis, and serving (with TF Serving; see Chapter 19). Google's TensorFlow Hub provides a way to easily download and reuse pretrained neural networks. You can also get many neural network architectures, some of them pretrained, in TensorFlow's model garden. Check out the TensorFlow Resources and https://github.com/jtoy/awesome-tensorflow for more TensorFlow-based projects. You will find hundreds of TensorFlow projects on GitHub, so it is often easy to find existing code for whatever you are trying to do.
 
-![](_page_433_Picture_3.jpeg)
+![](img/_page_433_Picture_3.jpeg)
 
 More and more ML papers are released along with their implementations, and sometimes even with pretrained models. Check out https://paperswithcode.com to easily find them.
 
@@ -10515,7 +10515,7 @@ OK, it's time to start coding!
 
 {434}------------------------------------------------
 
-## **Using TensorFlow like NumPy**
+### **Using TensorFlow like NumPy**
 
 TensorFlow's API revolves around *tensors*, which flow from operation to operation hence the name TensorFlow. A tensor is very similar to a NumPy ndarray: it is usually a multidimensional array, but it can also hold a scalar (a simple value, such as 42). These tensors will be important when we create custom cost functions, custom metrics, custom layers, and more, so let's see how to create and manipulate them.
 
@@ -10567,7 +10567,7 @@ array([14., 32.],[32., 77.]], dtype=float32)>
 
 Note that writing  $t + 10$  is equivalent to calling  $tf.add(t, 10)$  (indeed, Python calls the magic method t. \_\_add\_(10), which just calls tf.add(t, 10)). Other operators, like - and \*, are also supported. The @ operator was added in Python 3.5, for matrix multiplication: it is equivalent to calling the tf.matmul() function.
 
-![](_page_435_Picture_1.jpeg)
+![](img/_page_435_Picture_1.jpeg)
 
 Many functions and classes have aliases. For example, tf.add() and tf.math.add() are the same function. This allows TensorFlow to have concise names for the most common operations<sup>5</sup> while preserving well-organized packages.
 
@@ -10578,7 +10578,7 @@ A tensor can also hold a scalar value. In this case, the shape is empty:
 <tf.Tensor: shape=(), dtype=int32, numpy=42>
 ```
 
-![](_page_435_Picture_5.jpeg)
+![](img/_page_435_Picture_5.jpeg)
 
 The Keras API has its own low-level API, located in tf.keras.backend. This package is usually imported as K, for conciseness. It used to include functions like K.square(), K.exp(), and K.sqrt(), which you may run across in existing code: this was useful to write portable code back when Keras supported multiple backends, but now that Keras is TensorFlow-only, you should call TensorFlow's low-level API directly (e.g., tf. square() instead of K.square()). Technically K.square() and its friends are still there for backward compatibility, but the documentation of the tf.keras.backend package only lists a handful of utility functions, such as clear\_session() (mentioned in Chapter 10).
 
@@ -10606,7 +10606,7 @@ array([[1., 2., 3.],[4., 5., 6.]], dtype=float32)
 array([[1., 4., 9.],[16., 25., 36.], dtype=float32)
 ```
 
-![](_page_436_Picture_4.jpeg)
+![](img/_page_436_Picture_4.jpeg)
 
 Notice that NumPy uses 64-bit precision by default, while Tensor-Flow uses 32-bit. This is because 32-bit precision is generally more than enough for neural networks, plus it runs faster and uses less RAM. So when you create a tensor from a NumPy array, make sure to set dtype=tf.float32.
 
@@ -10654,7 +10654,7 @@ Direct assignment will not work:
 \Rightarrow \lor [1] = [7, 8, 9.][...] TypeError: 'ResourceVariable' object does not support item assignment
 ```
 
-![](_page_437_Picture_7.jpeg)
+![](img/_page_437_Picture_7.jpeg)
 
 In practice you will rarely have to create variables manually; Keras provides an add weight() method that will take care of it for you, as you'll see. Moreover, model parameters will generally be updated directly by the optimizers, so you will rarely need to update variables manually.
 
@@ -10692,7 +10692,7 @@ With tensors, operations, variables, and various data structures at your disposa
 
 {439}------------------------------------------------
 
-## **Customizing Models and Training Algorithms**
+### **Customizing Models and Training Algorithms**
 
 You'll start by creating a custom loss function, which is a straightforward and common use case.
 
@@ -10706,7 +10706,7 @@ def huber fn(y true, y pred):
     linear_loss = tf-abs(error) - 0.5return tf.where(is_small_error, squared_loss, linear_loss)
 ```
 
-![](_page_439_Picture_5.jpeg)
+![](img/_page_439_Picture_5.jpeg)
 
 For better performance, you should use a vectorized implementation, as in this example. Moreover, if you want to benefit from TensorFlow's graph optimization features, you should use only TensorFlow operations.
 
@@ -10736,7 +10736,7 @@ model = tf.keras.models.load model("my model with a custom loss",
                                    custom objects={"huber fn": huber fn})
 ```
 
-![](_page_440_Picture_5.jpeg)
+![](img/_page_440_Picture_5.jpeg)
 
 If you decorate the huber\_fn() function with @keras.utils. register keras\_serializable(), it will automatically be available to the load model() function: there's no need to include it in the custom objects dictionary.
 
@@ -10916,7 +10916,7 @@ Let's walk through this code:<sup>9</sup>
 - We also implement the get config() method to ensure the threshold gets saved along with the model.
 - The default implementation of the reset\_states() method resets all variables to 0.0 (but you can override it if needed).
 
-![](_page_446_Picture_2.jpeg)
+![](img/_page_446_Picture_2.jpeg)
 
 Keras will take care of variable persistence seamlessly; no action is required.
 
@@ -10971,7 +10971,7 @@ the parent's build() method: this tells Keras that the layer is built (it just s
 
 You can now use a MyDense layer just like any other layer!
 
-![](_page_448_Picture_4.jpeg)
+![](img/_page_448_Picture_4.jpeg)
 
 Keras automatically infers the output shape, except when the layer is dynamic (as you will see shortly). In this (rare) case, you need to implement the compute\_output\_shape() method, which must return a TensorShape object.
 
@@ -11007,7 +11007,7 @@ With that, you can now build any custom layer you need! Now let's look at how to
 
 We already looked at creating custom model classes in Chapter 10, when we discussed the subclassing API.<sup>11</sup> It's straightforward: subclass the tf.keras. Model class, create layers and variables in the constructor, and implement the call() method to do whatever you want the model to do. For example, suppose we want to build the model represented in Figure 12-3.
 
-![](_page_449_Figure_4.jpeg)
+![](img/_page_449_Figure_4.jpeg)
 
 Figure 12-3. Custom model example: an arbitrary model with a custom ResidualBlock layer containing a skip connection
 
@@ -11053,7 +11053,7 @@ class and the ResidualRegressor class. Alternatively, you can save and load the 
 
 The Model class is a subclass of the Layer class, so models can be defined and used exactly like layers. But a model has some extra functionalities, including of course its compile(), fit(), evaluate(), and predict() methods (and a few variants), plus the get\_layer() method (which can return any of the model's layers by name or by index) and the save() method (and support for tf.keras.models.load\_model() and tf.keras.models.clone\_model()).
 
-![](_page_451_Picture_2.jpeg)
+![](img/_page_451_Picture_2.jpeg)
 
 If models provide more functionality than layers, why not just define every layer as a model? Well, technically you could, but it is usually cleaner to distinguish the internal components of your model (i.e., layers or reusable blocks of layers) from the model itself (i.e., the object you will train). The former should subclass the Laver class, while the latter should subclass the Model class.
 
@@ -11157,7 +11157,7 @@ We first define two variables w1 and w2, then we create a tf.GradientTape contex
 
 Perfect! Not only is the result accurate (the precision is only limited by the floatingpoint errors), but the gradient() method only goes through the recorded computations once (in reverse order), no matter how many variables there are, so it is incredibly efficient. It's like magic!
 
-![](_page_454_Picture_6.jpeg)
+![](img/_page_454_Picture_6.jpeg)
 
 In order to save memory, only put the strict minimum inside the tf.GradientTape() block. Alternatively, pause recording by creating a with tape.stop\_recording() block inside the tf.Gradient Tape() block.
 
@@ -11257,7 +11257,7 @@ You may also like to write custom training loops simply to feel more confident t
 
 {458}------------------------------------------------
 
-![](_page_458_Picture_0.jpeg)
+![](img/_page_458_Picture_0.jpeg)
 
 Unless you're learning or you really need the extra flexibility, you should prefer using the fit() method rather than implementing your own training loop, especially if you work in a team.
 
@@ -11339,7 +11339,7 @@ for variable in model.variables:
         variable.assign(variable.constraint(variable))
 ```
 
-![](_page_460_Picture_2.jpeg)
+![](img/_page_460_Picture_2.jpeg)
 
 Don't forget to set training=True when calling the model in the training loop, especially if your model behaves differently during training and testing (e.g., if it uses BatchNormalization or Dropout). If it's a custom model, make sure to propagate the training argument to the layers that your model calls.
 
@@ -11347,7 +11347,7 @@ As you can see, there are quite a lot of things you need to get right, and it's 
 
 Now that you know how to customize any part of your models<sup>15</sup> and training algorithms, let's see how you can use TensorFlow's automatic graph generation feature: it can speed up your custom code considerably, and it will also make it portable to any platform supported by TensorFlow (see Chapter 19).
 
-## **TensorFlow Functions and Graphs**
+### **TensorFlow Functions and Graphs**
 
 Back in TensorFlow 1, graphs were unavoidable (as were the complexities that came with them) because they were a central part of TensorFlow's API. Since TensorFlow 2 (released in 2019), graphs are still there, but not as central, and they're much (much!) simpler to use. To show just how simple, let's start with a trivial function that computes the cube of its input:
 
@@ -11408,13 +11408,13 @@ Moreover, if you set jit\_compile=True when calling tf.function(), then Tensor-F
 
 When you write a custom loss function, a custom metric, a custom layer, or any other custom function and you use it in a Keras model (as we've done throughout this chapter), Keras automatically converts your function into a TF function-no need to use tf. function(). So most of the time, the magic is 100% transparent. And if you want Keras to use XLA, you just need to set jit\_compile=True when calling the compile() method. Easy!
 
-![](_page_462_Picture_1.jpeg)
+![](img/_page_462_Picture_1.jpeg)
 
 You can tell Keras not to convert your Python functions to TF functions by setting dynamic=True when creating a custom layer or a custom model. Alternatively, you can set run eagerly=True when calling the model's compile() method.
 
 By default, a TF function generates a new graph for every unique set of input shapes and data types and caches it for subsequent calls. For example, if you call tf\_cube(tf.constant(10)), a graph will be generated for int32 tensors of shape []. Then if you call tf\_cube(tf.constant(20)), the same graph will be reused. But if you then call tf\_cube(tf.constant([10, 20])), a new graph will be generated for int32 tensors of shape [2]. This is how TF functions handle polymorphism (i.e., varying argument types and shapes). However, this is only true for tensor arguments: if you pass numerical Python values to a TF function, a new graph will be generated for every distinct value: for example, calling tf\_cube(10) and tf\_cube(20) will generate two graphs.
 
-![](_page_462_Picture_4.jpeg)
+![](img/_page_462_Picture_4.jpeg)
 
 If you call a TF function many times with different numerical Python values, then many graphs will be generated, slowing down your program and using up a lot of RAM (you must delete the TF function to release it). Python values should be reserved for arguments that will have few unique values, such as hyperparameters like the number of neurons per layer. This allows TensorFlow to better optimize each variant of your model.
 
@@ -11426,7 +11426,7 @@ So how does TensorFlow generate graphs? It starts by analyzing the Python functi
 
 such as tf.while loop() for loops and tf.cond() for if statements. For example, in Figure 12-4, AutoGraph analyzes the source code of the sum\_squares() Python function, and it generates the tf\_sum\_squares() function. In this function, the for loop is replaced by the definition of the loop body() function (containing the body of the original for loop), followed by a call to the for\_stmt() function. This call will build the appropriate tf.while\_loop() operation in the computation graph.
 
-![](_page_463_Figure_1.jpeg)
+![](img/_page_463_Figure_1.jpeg)
 
 Figure 12-4. How TensorFlow generates graphs using AutoGraph and tracing
 
@@ -11436,7 +11436,7 @@ Next, TensorFlow calls this "upgraded" function, but instead of passing the argu
 
 and the arrows represent tensors (both the generated function and the graph are simplified).
 
-![](_page_464_Picture_1.jpeg)
+![](img/_page_464_Picture_1.jpeg)
 
 In order to view the generated function's source code, you can call tf.autograph.to\_code(sum\_squares.python\_function). The code is not meant to be pretty, but it can sometimes help for debugging.
 
@@ -11509,7 +11509,7 @@ As you will see, both APIs can be used jointly—for example, to benefit from th
 
 In this chapter, we will first cover the tf.data API and the TFRecord format. Then we will explore the Keras preprocessing layers and how to use them with the tf.data API. Lastly, we will take a quick look at a few related libraries that you may find useful for loading and preprocessing data, such as TensorFlow Datasets and TensorFlow Hub. So, let's get started!
 
-## The tf.data API
+### The tf.data API
 
 The whole tf.data API revolves around the concept of a tf.data.Dataset: this represents a sequence of data items. Usually you will use datasets that gradually read data from disk, but for simplicity let's create a dataset from a simple data tensor using tf.data.Dataset.from\_tensor\_slices():
 
@@ -11535,7 +11535,7 @@ tf.Tensor(1, shape=(), dtype=int32)
 
 {470}------------------------------------------------
 
-![](_page_470_Picture_0.jpeg)
+![](img/_page_470_Picture_0.jpeg)
 
 The tf.data API is a streaming API: you can very efficiently iterate through a dataset's items, but the API is not designed for indexing or slicing.
 
@@ -11570,13 +11570,13 @@ Then we call the batch() method on this new dataset, and again this creates a ne
 
 {471}------------------------------------------------
 
-![](_page_471_Figure_0.jpeg)
+![](img/_page_471_Figure_0.jpeg)
 
 Figure 13-1. Chaining dataset transformations
 
 Finally, we iterate over the items of this final dataset. The batch() method had to output a final batch of size two instead of seven, but you can call batch() with drop\_remainder=True if you want it to drop this final batch, such that all batches have the exact same size.
 
-![](_page_471_Picture_3.jpeg)
+![](img/_page_471_Picture_3.jpeg)
 
 The dataset methods do not modify datasets-they create new ones. So make sure to keep a reference to these new datasets (e.g., with dataset  $= \ldots$ , or else nothing will happen.
 
@@ -11633,7 +11633,7 @@ tf.Tensor([7 5 0 8 9 6], shape=(6, ), dtype=int64)
 
 {473}------------------------------------------------
 
-![](_page_473_Picture_0.jpeg)
+![](img/_page_473_Picture_0.jpeg)
 
 If you call repeat() on a shuffled dataset, by default it will generate a new order at every iteration. This is generally a good idea, but if you prefer to reuse the same order at each iteration (e.g., for tests or debugging), you can set reshuffle\_each\_iteration=False when calling shuffle().
 
@@ -11694,7 +11694,7 @@ These are the first rows (ignoring the header row) of five CSV files, chosen ran
 
 {475}------------------------------------------------
 
-![](_page_475_Picture_0.jpeg)
+![](img/_page_475_Picture_0.jpeg)
 
 It's possible to pass a list of filepaths to the TextLineDataset constructor: it will go through each file in order, line by line. If you also set the num parallel reads argument to a number greater than one, then the dataset will read that number of files in parallel and interleave their lines (without having to call the interleave() method). However, it will not shuffle the files, nor will it skip the header lines.
 
@@ -11754,7 +11754,7 @@ Note that we use the prefetch() method on the very last line. This is important 
 
 {477}------------------------------------------------
 
-![](_page_477_Figure_0.jpeg)
+![](img/_page_477_Figure_0.jpeg)
 
 Figure 13-2. Loading and preprocessing data from multiple CSV files
 
@@ -11770,11 +11770,11 @@ If we also ensure that loading and preprocessing are multithreaded (by setting n
 
 {478}------------------------------------------------
 
-![](_page_478_Figure_0.jpeg)
+![](img/_page_478_Figure_0.jpeg)
 
 Figure 13-3. With prefetching, the CPU and the GPU work in parallel: as the GPU works on one batch, the CPU works on the next
 
-![](_page_478_Picture_2.jpeg)
+![](img/_page_478_Picture_2.jpeg)
 
 If you plan to purchase a GPU card, its processing power and its memory size are of course very important (in particular, a large amount of RAM is crucial for large computer vision or natural language processing models). Just as important for good performance is the GPU's memory bandwidth; this is the number of gigabytes of data it can get into or out of its RAM per second.
 
@@ -11844,7 +11844,7 @@ In Keras, the steps per execution argument of the compile() method lets you defi
 
 Congratulations, you now know how to build powerful input pipelines using the tf.data API! However, so far we've been using CSV files, which are common, simple, and convenient but not really efficient, and do not support large or complex data structures (such as images or audio) very well. So, let's see how to use TFRecords instead.
 
-![](_page_480_Picture_3.jpeg)
+![](img/_page_480_Picture_3.jpeg)
 
 If you are happy with CSV files (or whatever other format you are using), you do not have to use TFRecords. As the saying goes, if it ain't broke, don't fix it! TFRecords are useful when the bottleneck during training is loading and parsing the data.
 
@@ -11875,7 +11875,7 @@ tf.Tensor(b'This is the first record', shape=(), dtype=string)
 tf.Tensor(b'And this is the second record', shape=(), dtype=string)
 ```
 
-![](_page_481_Picture_4.jpeg)
+![](img/_page_481_Picture_4.jpeg)
 
 By default, a TFRecordDataset will read files one by one, but you can make it read multiple files in parallel and interleave their records by passing the constructor a list of filepaths and setting num\_parallel\_reads to a number greater than one. Alternatively, you could obtain the same result by using list files() and interleave() as we did earlier to read multiple CSV files.
 
@@ -11966,7 +11966,7 @@ message Example { Features features = 1; };
 
 The definitions of BytesList, FloatList, and Int64List are straightforward enough. Note that [packed = true] is used for repeated numerical fields, for a more efficient encoding. A Feature contains either a BytesList, a FloatList, or an Int64List. A Features (with an s) contains a dictionary that maps a feature name to the corresponding feature value. And finally, an Example contains only a Features object.
 
-![](_page_483_Picture_5.jpeg)
+![](img/_page_483_Picture_5.jpeg)
 
 Why was Example even defined, since it contains no more than a Features object? Well, TensorFlow's developers may one day decide to add more fields to it. As long as the new Example definition still contains the features field, with the same ID, it will be backward compatible. This extensibility is one of the great features of protobufs.
 
@@ -12066,7 +12066,7 @@ parsed content = tf.RaggedTensor.from sparse(parsed feature lists["content"])
 
 Now that you know how to efficiently store, load, parse, and preprocess the data using the tf.data API, TFRecords, and protobufs, it's time to turn our attention to the Keras preprocessing layers.
 
-## **Keras Preprocessing Layers**
+### **Keras Preprocessing Layers**
 
 Preparing your data for a neural network typically requires normalizing the numerical features, encoding the categorical features and text, cropping and resizing images, and more. There are several options for this:
 
@@ -12094,7 +12094,7 @@ norm layer.adapt(X train) # computes the mean and variance of every feature
 model.fit(X_train, y_train, validation_data=(X_valid, y_valid), epochs=5)
 ```
 
-![](_page_487_Picture_7.jpeg)
+![](img/_page_487_Picture_7.jpeg)
 
 The data sample passed to the adapt() method must be large enough to be representative of your dataset, but it does not have to be the full training set: for the Normalization layer, a few hundred instances randomly sampled from the training set will generally be sufficient to get a good estimate of the feature means and variances.
 
@@ -12104,7 +12104,7 @@ Since we included the Normalization layer inside the model, we can now deploy th
 
 the risk of preprocessing mismatch, which happens when people try to maintain different preprocessing code for training and production but update one and forget to update the other. The production model then ends up receiving data preprocessed in a way it doesn't expect. If they're lucky, they get a clear bug. If not, the model's accuracy just silently degrades.
 
-![](_page_488_Figure_1.jpeg)
+![](img/_page_488_Figure_1.jpeg)
 
 Figure 13-4. Including preprocessing layers inside a model
 
@@ -12134,7 +12134,7 @@ y pred = final model(X new) # preprocesses the data and makes predictions
 
 {489}------------------------------------------------
 
-![](_page_489_Figure_0.jpeg)
+![](img/_page_489_Figure_0.jpeg)
 
 Figure 13-5. Preprocessing the data just once before training using preprocessing layers, then deploying these layers inside the final model
 
@@ -12246,7 +12246,7 @@ Conveniently, if you set output\_mode="one\_hot" when creating the StringLookup 
 array([[0., 1., 0., 0.],[0., 0., 0., 1.].[0., 0., 0., 1.],[1., 0., 0., 0.]], dtype=float32)>
 ```
 
-![](_page_492_Picture_6.jpeg)
+![](img/_page_492_Picture_6.jpeg)
 
 Keras also includes an IntegerLookup layer that acts much like the StringLookup layer but takes integers as input, rather than strings.
 
@@ -12291,7 +12291,7 @@ we use 2D embeddings, but the number of dimensions is a hyperparameter you can t
 
 Since these embeddings are trainable, they will gradually improve during training; and as they represent fairly similar categories in this case, gradient descent will certainly end up pushing them closer together, while it will tend to move them away from the "INLAND" category's embedding (see Figure 13-6). Indeed, the better the representation, the easier it will be for the neural network to make accurate predictions, so training tends to make embeddings useful representations of the categories. This is called *representation learning* (you will see other types of representation learning in Chapter 17).
 
-![](_page_494_Figure_2.jpeg)
+![](img/_page_494_Figure_2.jpeg)
 
 Figure 13-6. Embeddings will gradually improve during training
 
@@ -12309,7 +12309,7 @@ This allowed them to learn embeddings on a very large corpus of text: they train
 
 It's not just about proximity, though: word embeddings were also organized along meaningful axes in the embedding space. Here is a famous example: if you compute King – Man + Woman (adding and subtracting the embedding vectors of these words), then the result will be very close to the embedding of the word Queen (see Figure 13-7). In other words, the word embeddings encode the concept of gender! Similarly, you can compute *Madrid – Spain + France*, and the result is close to *Paris*, which seems to show that the notion of capital city was also encoded in the embeddings.
 
-![](_page_495_Figure_2.jpeg)
+![](img/_page_495_Figure_2.jpeg)
 
 Figure 13-7. Word embeddings of similar words tend to be close, and some axes seem to encode meaningful concepts
 
@@ -12333,7 +12333,7 @@ array([[-0.04663396, 0.01846724],[-0.02736737, -0.02768031],[-0.04663396, 0.0184
 
 As you can see, category 2 gets encoded (twice) as the 2D vector [-0.04663396, 0.01846724], while category 4 gets encoded as [-0.02736737, -0.02768031]. Since the layer is not trained yet, these encodings are just random.
 
-![](_page_496_Picture_3.jpeg)
+![](img/_page_496_Picture_3.jpeg)
 
 An Embedding layer is initialized randomly, so it does not make sense to use it outside of a model as a standalone preprocessing layer unless you initialize it with pretrained weights.
 
@@ -12356,7 +12356,7 @@ Note that the number of rows in the embedding matrix needs to be equal to the vo
 
 {497}------------------------------------------------
 
-![](_page_497_Picture_0.jpeg)
+![](img/_page_497_Picture_0.jpeg)
 
 In this example we used 2D embeddings, but as a rule of thumb embeddings typically have 10 to 300 dimensions, depending on the task, the vocabulary size, and the size of your training set. You will have to tune this hyperparameter.
 
@@ -12380,7 +12380,7 @@ As you saw in Chapter 10, since the Input layers are named "num" and "cat", we c
 
 {498}------------------------------------------------
 
-![](_page_498_Picture_0.jpeg)
+![](img/_page_498_Picture_0.jpeg)
 
 One-hot encoding followed by a Dense layer (with no activation function and no biases) is equivalent to an Embedding layer. However, the Embedding layer uses way fewer computations as it avoids many multiplications by zero-the performance difference becomes clear when the size of the embedding matrix grows. The Dense layer's weight matrix plays the role of the embedding matrix. For example, using one-hot vectors of size 20 and a Dense layer with 10 units is equivalent to using an Embedding layer with input\_dim=20 and output\_dim=10. As a result, it would be wasteful to use more embedding dimensions than the number of units in the layer that follows the Embedding layer.
 
@@ -12403,7 +12403,7 @@ The two sentences "Be good!" and "Question: be or be?" were encoded as [2, 1, 0,
 
 {499}------------------------------------------------
 
-![](_page_499_Picture_0.jpeg)
+![](img/_page_499_Picture_0.jpeg)
 
 The TextVectorization layer has many options. For example, you can preserve the case and punctuation if you want, by setting standardize=None, or you can pass any standardization function you please as the standardize argument. You can prevent splitting by setting split=None, or you can pass your own splitting function instead. You can set the output sequence length argument to ensure that the output sequences all get cropped or padded to the desired length, or you can set ragged=True to get a ragged tensor instead of a regular tensor. Please check out the documentation for more options.
 
@@ -12477,7 +12477,7 @@ cropped images = crop image layer(images)
 
 Keras also includes several layers for data augmentation, such as RandomCrop, RandomFlip, RandomTranslation, RandomRotation, RandomZoom, RandomHeight, RandomWidth, and RandomContrast. These layers are only active during training, and they randomly apply some transformation to the input images (their names are self-explanatory). Data augmentation will artificially increase the size of the training set, which often leads to improved performance, as long as the transformed images look like realistic (nonaugmented) images. We'll cover image processing more closely in the next chapter.
 
-![](_page_502_Picture_2.jpeg)
+![](img/_page_502_Picture_2.jpeg)
 
 Under the hood, the Keras preprocessing layers are based on TensorFlow's low-level API. For example, the Normalization layer uses tf.nn.moments() to compute both the mean and variance, the Discretization layer uses tf.raw\_ops.Bucketize(), CategoricalEncoding uses tf.math.bincount(), IntegerLookup and StringLookup use the tf.lookup package, Hashing and TextVectorization use several ops from the tf.strings package, Embedding uses tf.nn.embedding lookup(), and the image preprocessing layers use the ops from the tf. image package. If the Keras preprocessing API isn't sufficient for your needs, you may occasionally need to use TensorFlow's low-level API directly.
 
@@ -12503,7 +12503,7 @@ for batch in mnist_train.shuffle(10\_{000}, seed=42).batch(32).prefetch(1):
     images = batch["image"]labels = batch['label"]# [...] do something with the images and labels
 ```
 
-![](_page_503_Picture_4.jpeg)
+![](img/_page_503_Picture_4.jpeg)
 
 The load() function can shuffle the files it downloads: just set shuffle files=True. However, this may be insufficient, so it's best to shuffle the training data some more.
 
@@ -12581,7 +12581,7 @@ In this chapter we will explore where CNNs came from, what their building blocks
 
 David H. Hubel and Torsten Wiesel performed a series of experiments on cats in  $1958<sup>1</sup>$  and  $1959<sup>2</sup>$  (and a few years later on monkeys<sup>3</sup>), giving crucial insights into the structure of the visual cortex (the authors received the Nobel Prize in Physiology or Medicine in 1981 for their work). In particular, they showed that many neurons in the visual cortex have a small local receptive field, meaning they react only to visual stimuli located in a limited region of the visual field (see Figure 14-1, in which the local receptive fields of five neurons are represented by dashed circles). The receptive fields of different neurons may overlap, and together they tile the whole visual field.
 
-![](_page_507_Picture_3.jpeg)
+![](img/_page_507_Picture_3.jpeg)
 
 Figure 14-1. Biological neurons in the visual cortex respond to specific patterns in small regions of the visual field called receptive fields; as the visual signal makes its way through consecutive brain modules, neurons respond to more complex patterns in larger receptive fields
 
@@ -12597,7 +12597,7 @@ Moreover, the authors showed that some neurons react only to images of horizonta
 
 These studies of the visual cortex inspired the neocognitron,<sup>4</sup> introduced in 1980, which gradually evolved into what we now call convolutional neural networks. An important milestone was a 1998 paper<sup>5</sup> by Yann LeCun et al. that introduced the famous LeNet-5 architecture, which became widely used by banks to recognize handwritten digits on checks. This architecture has some building blocks that you already know, such as fully connected layers and sigmoid activation functions, but it also introduces two new building blocks: convolutional layers and pooling layers. Let's look at them now.
 
-![](_page_508_Picture_2.jpeg)
+![](img/_page_508_Picture_2.jpeg)
 
 Why not simply use a deep neural network with fully connected layers for image recognition tasks? Unfortunately, although this works fine for small images (e.g., MNIST), it breaks down for larger images because of the huge number of parameters it requires. For example, a  $100 \times 100$ -pixel image has 10,000 pixels, and if the first layer has just 1,000 neurons (which already severely restricts the amount of information transmitted to the next layer), this means a total of 10 million connections. And that's just the first layer. CNNs solve this problem using partially connected layers and weight sharing.
 
@@ -12615,11 +12615,11 @@ The most important building block of a CNN is the *convolutional layer*.<sup>6</
 
 receptive fields (see Figure 14-2). In turn, each neuron in the second convolutional layer is connected only to neurons located within a small rectangle in the first layer. This architecture allows the network to concentrate on small low-level features in the first hidden layer, then assemble them into larger higher-level features in the next hidden layer, and so on. This hierarchical structure is common in real-world images, which is one of the reasons why CNNs work so well for image recognition.
 
-![](_page_509_Figure_1.jpeg)
+![](img/_page_509_Figure_1.jpeg)
 
 Figure 14-2. CNN layers with rectangular local receptive fields
 
-![](_page_509_Picture_3.jpeg)
+![](img/_page_509_Picture_3.jpeg)
 
 All the multilayer neural networks we've looked at so far had layers composed of a long line of neurons, and we had to flatten input images to 1D before feeding them to the neural network. In a CNN each layer is represented in 2D, which makes it easier to match neurons with their corresponding inputs.
 
@@ -12629,13 +12629,13 @@ It is also possible to connect a large input layer to a much smaller layer by sp
 
 {510}------------------------------------------------
 
-![](_page_510_Figure_0.jpeg)
+![](img/_page_510_Figure_0.jpeg)
 
-![](_page_510_Figure_1.jpeg)
+![](img/_page_510_Figure_1.jpeg)
 
 Figure 14-3. Connections between layers and zero padding
 
-![](_page_510_Figure_3.jpeg)
+![](img/_page_510_Figure_3.jpeg)
 
 Figure 14-4. Reducing dimensionality using a stride of 2
 
@@ -12645,7 +12645,7 @@ Figure 14-4. Reducing dimensionality using a stride of 2
 
 A neuron's weights can be represented as a small image the size of the receptive field. For example, Figure 14-5 shows two possible sets of weights, called *filters* (or convolution kernels, or just kernels). The first one is represented as a black square with a vertical white line in the middle (it's a  $7 \times 7$  matrix full of 0s except for the central column, which is full of 1s); neurons using these weights will ignore everything in their receptive field except for the central vertical line (since all inputs will be multiplied by 0, except for the ones in the central vertical line). The second filter is a black square with a horizontal white line in the middle. Neurons using these weights will ignore everything in their receptive field except for the central horizontal line.
 
-![](_page_511_Figure_2.jpeg)
+![](img/_page_511_Figure_2.jpeg)
 
 Figure 14-5. Applying two different filters to get two feature maps
 
@@ -12657,13 +12657,13 @@ Now if all neurons in a layer use the same vertical line filter (and the same bi
 
 Up to now, for simplicity, I have represented the output of each convolutional layer as a 2D layer, but in reality a convolutional layer has multiple filters (you decide how many) and outputs one feature map per filter, so it is more accurately represented in 3D (see Figure 14-6). It has one neuron per pixel in each feature map, and all neurons within a given feature map share the same parameters (*i.e.*, the same kernel and bias term). Neurons in different feature maps use different parameters. A neuron's receptive field is the same as described earlier, but it extends across all the feature maps of the previous layer. In short, a convolutional layer simultaneously applies multiple trainable filters to its inputs, making it capable of detecting multiple features anywhere in its inputs.
 
-![](_page_512_Figure_2.jpeg)
+![](img/_page_512_Figure_2.jpeg)
 
 Figure 14-6. Two convolutional layers with multiple filters each (kernels), processing a color image with three color channels; each convolutional layer outputs one feature map per filter
 
 {513}------------------------------------------------
 
-![](_page_513_Picture_0.jpeg)
+![](img/_page_513_Picture_0.jpeg)
 
 The fact that all neurons in a feature map share the same parameters dramatically reduces the number of parameters in the model. Once the CNN has learned to recognize a pattern in one location, it can recognize it in any other location. In contrast, once a fully connected neural network has learned to recognize a pattern in one location, it can only recognize it in that particular location.
 
@@ -12717,7 +12717,7 @@ conv_layer = tf.keras.layers.Conv2D(filters=32, kernel_size=7)
 fmaps = conv_{\text{layer}}(images)
 ```
 
-![](_page_514_Picture_10.jpeg)
+![](img/_page_514_Picture_10.jpeg)
 
 When we talk about a 2D convolutional layer, "2D" refers to the number of *spatial* dimensions (height and width), but as you can see, the layer takes 4D inputs: as we saw, the two additional dimensions are the batch size (first dimension) and the channels (last dimension).
 
@@ -12732,7 +12732,7 @@ TensorShape([2, 64, 114, 32])
 
 The output shape is similar to the input shape, with two main differences. First, there are 32 channels instead of 3. This is because we set filters=32, so we get 32 output feature maps: instead of the intensity of red, green, and blue at each location, we now have the intensity of each feature at each location. Second, the height and width have both shrunk by 6 pixels. This is due to the fact that the Conv2D layer does not use any zero-padding by default, which means that we lose a few pixels on the sides of the output feature maps, depending on the size of the filters. In this case, since the kernel size is 7, we lose 6 pixels horizontally and 6 pixels vertically (i.e., 3 pixels on each side).
 
-![](_page_515_Picture_3.jpeg)
+![](img/_page_515_Picture_3.jpeg)
 
 The default option is surprisingly named padding="valid", which actually means no zero-padding at all! This name comes from the fact that in this case every neuron's receptive field lies strictly within *valid* positions inside the input (it does not go out of bounds). It's not a Keras naming quirk: everyone uses this odd nomenclature.
 
@@ -12752,11 +12752,11 @@ If the stride is greater than 1 (in any direction), then the output size will no
 
 {516}------------------------------------------------
 
-![](_page_516_Figure_0.jpeg)
+![](img/_page_516_Figure_0.jpeg)
 
 Figure 14-7. The two padding options, when strides=1
 
-![](_page_516_Figure_2.jpeg)
+![](img/_page_516_Figure_2.jpeg)
 
 Figure 14-8. With strides greater than 1, the output is much smaller even when using "same" padding (and "valid" padding may ignore some inputs)
 
@@ -12796,7 +12796,7 @@ the bias terms), which is fairly small compared to a fully connected layer.<sup>
 
 During inference (i.e., when making a prediction for a new instance) the RAM occupied by one layer can be released as soon as the next layer has been computed, so you only need as much RAM as required by two consecutive layers. But during training everything computed during the forward pass needs to be preserved for the reverse pass, so the amount of RAM needed is (at least) the total amount of RAM required by all layers.
 
-![](_page_518_Picture_2.jpeg)
+![](img/_page_518_Picture_2.jpeg)
 
 If training crashes because of an out-of-memory error, you can try reducing the mini-batch size. Alternatively, you can try reducing dimensionality using a stride, removing a few layers, using 16-bit floats instead of 32-bit floats, or distributing the CNN across multiple devices (you will see how to do this in Chapter 19).
 
@@ -12816,11 +12816,11 @@ Just like in convolutional layers, each neuron in a pooling layer is connected t
 
 we use a 2  $\times$  2 *pooling kernel*,<sup>9</sup> with a stride of 2 and no padding. Only the max input value in each receptive field makes it to the next layer, while the other inputs are dropped. For example, in the lower-left receptive field in Figure 14-9, the input values are 1, 5, 3, 2, so only the max value, 5, is propagated to the next layer. Because of the stride of 2, the output image has half the height and half the width of the input image (rounded down since we use no padding).
 
-![](_page_519_Picture_1.jpeg)
+![](img/_page_519_Picture_1.jpeg)
 
 Figure 14-9. Max pooling layer ( $2 \times 2$  pooling kernel, stride 2, no padding)
 
-![](_page_519_Picture_3.jpeg)
+![](img/_page_519_Picture_3.jpeg)
 
 A pooling layer typically works on every input channel independently, so the output depth (i.e., the number of channels) is the same as the input depth.
 
@@ -12832,7 +12832,7 @@ Other than reducing computations, memory usage, and the number of parameters, a 
 
 However, max pooling has some downsides too. It's obviously very destructive: even with a tiny  $2 \times 2$  kernel and a stride of 2, the output will be two times smaller in both directions (so its area will be four times smaller), simply dropping 75% of the input values. And in some applications, invariance is not desirable. Take semantic segmentation (the task of classifying each pixel in an image according to the object that pixel belongs to, which we'll explore later in this chapter): obviously, if the input image is translated by one pixel to the right, the output should also be translated by one pixel to the right. The goal in this case is *equivariance*, not invariance: a small change to the inputs should lead to a corresponding small change in the output.
 
-![](_page_520_Figure_1.jpeg)
+![](img/_page_520_Figure_1.jpeg)
 
 Figure 14-10. Invariance to small translations
 
@@ -12852,7 +12852,7 @@ next layers get a cleaner signal to work with. Moreover, max pooling offers stro
 
 Note that max pooling and average pooling can be performed along the depth dimension instead of the spatial dimensions, although it's not as common. This can allow the CNN to learn to be invariant to various features. For example, it could learn multiple filters, each detecting a different rotation of the same pattern (such as handwritten digits; see Figure 14-11), and the depthwise max pooling layer would ensure that the output is the same regardless of the rotation. The CNN could similarly learn to be invariant to anything: thickness, brightness, skew, color, and so on.
 
-![](_page_521_Figure_2.jpeg)
+![](img/_page_521_Figure_2.jpeg)
 
 Figure 14-11. Depthwise max pooling can help the CNN learn to be invariant (to rotation in this case)
 
@@ -12897,17 +12897,17 @@ array([[0.64338624, 0.5971759, 0.5824972],
 
 Now you know all the building blocks to create convolutional neural networks. Let's see how to assemble them.
 
-## **CNN Architectures**
+### **CNN Architectures**
 
 Typical CNN architectures stack a few convolutional layers (each one generally followed by a ReLU layer), then a pooling layer, then another few convolutional layers (+ReLU), then another pooling layer, and so on. The image gets smaller and smaller as it progresses through the network, but it also typically gets deeper and deeper (i.e., with more feature maps), thanks to the convolutional layers (see Figure 14-12). At the top of the stack, a regular feedforward neural network is added, composed of a few fully connected layers (+ReLUs), and the final layer outputs the prediction (e.g., a softmax layer that outputs estimated class probabilities).
 
 {523}------------------------------------------------
 
-![](_page_523_Figure_0.jpeg)
+![](img/_page_523_Figure_0.jpeg)
 
 Figure 14-12. Typical CNN architecture
 
-![](_page_523_Picture_2.jpeg)
+![](img/_page_523_Picture_2.jpeg)
 
 A common mistake is to use convolution kernels that are too large. For example, instead of using a convolutional layer with a 5  $\times$ 5 kernel, stack two layers with  $3 \times 3$  kernels: it will use fewer parameters and require fewer computations, and it will usually perform better. One exception is for the first convolutional layer: it can typically have a large kernel (e.g.,  $5 \times 5$ ), usually with a stride of 2 or more. This will reduce the spatial dimension of the image without losing too much information, and since the input image only has three channels in general, it will not be too costly.
 
@@ -13013,7 +13013,7 @@ Data augmentation artificially increases the size of the training set by generat
 
 For example, you can slightly shift, rotate, and resize every picture in the training set by various amounts and add the resulting pictures to the training set (see Figure 14-13). To do this, you can use Keras's data augmentation layers, introduced in Chapter 13 (e.g., RandomCrop, RandomRotation, etc.). This forces the model to be more tolerant to variations in the position, orientation, and size of the objects in the pictures. To produce a model that's more tolerant of different lighting conditions, you can similarly generate many images with various contrasts. In general, you can also flip the pictures horizontally (except for text, and other asymmetrical objects). By combining these transformations, you can greatly increase your training set size.
 
-![](_page_527_Picture_3.jpeg)
+![](img/_page_527_Picture_3.jpeg)
 
 Figure 14-13. Generating new training instances from existing ones
 
@@ -13052,7 +13052,7 @@ The GoogLeNet architecture was developed by Christian Szegedy et al. from Google
 
 Figure 14-14 shows the architecture of an inception module. The notation " $3 \times 3 +$  $1(S)$ " means that the layer uses a  $3 \times 3$  kernel, stride 1, and "same" padding. The input signal is first fed to four different layers in parallel. All convolutional layers use the ReLU activation function. Note that the top convolutional layers use different kernel sizes (1  $\times$  1, 3  $\times$  3, and 5  $\times$  5), allowing them to capture patterns at different scales. Also note that every single layer uses a stride of 1 and "same" padding (even the max pooling layer), so their outputs all have the same height and width as their inputs. This makes it possible to concatenate all the outputs along the depth dimension in the final *depth concatenation layer* (i.e., to stack the feature maps from all four top convolutional layers). It can be implemented using Keras's Concatenate layer, using the default  $axis = -1$ 
 
-![](_page_529_Figure_3.jpeg)
+![](img/_page_529_Figure_3.jpeg)
 
 Figure 14-14. Inception module
 
@@ -13086,7 +13086,7 @@ Let's go through this network:
 - Next, the global average pooling layer outputs the mean of each feature map: this drops any remaining spatial information, which is fine because there is not much spatial information left at that point. Indeed, GoogLeNet input images are typically expected to be  $224 \times 224$  pixels, so after 5 max pooling layers, each dividing the height and width by 2, the feature maps are down to  $7 \times 7$ . Moreover, this is a classification task, not localization, so it doesn't matter where the object is. Thanks to the dimensionality reduction brought by this layer, there is no need to have several fully connected layers at the top of the CNN (like in AlexNet), and this considerably reduces the number of parameters in the network and limits the risk of overfitting.
 - The last layers are self-explanatory: dropout for regularization, then a fully connected layer with 1,000 units (since there are 1,000 classes) and a softmax activation function to output estimated class probabilities.
 
-![](_page_531_Figure_3.jpeg)
+![](img/_page_531_Figure_3.jpeg)
 
 Figure 14-15. GoogLeNet architecture
 
@@ -13112,7 +13112,7 @@ When training a neural network, the goal is to make it model a target function  
 
 {533}------------------------------------------------
 
-![](_page_533_Figure_0.jpeg)
+![](img/_page_533_Figure_0.jpeg)
 
 Figure 14-16. Residual learning
 
@@ -13124,11 +13124,11 @@ Now let's look at ResNet's architecture (see Figure 14-18). It is surprisingly s
 
 {534}------------------------------------------------
 
-![](_page_534_Figure_0.jpeg)
+![](img/_page_534_Figure_0.jpeg)
 
 Figure 14-17. Regular deep neural network (left) and deep residual network (right)
 
-![](_page_534_Figure_2.jpeg)
+![](img/_page_534_Figure_2.jpeg)
 
 Figure 14-18. ResNet architecture
 
@@ -13136,13 +13136,13 @@ Figure 14-18. ResNet architecture
 
 Note that the number of feature maps is doubled every few residual units, at the same time as their height and width are halved (using a convolutional layer with stride 2). When this happens, the inputs cannot be added directly to the outputs of the residual unit because they don't have the same shape (for example, this problem affects the skip connection represented by the dashed arrow in Figure 14-18). To solve this problem, the inputs are passed through a  $1 \times 1$  convolutional layer with stride 2 and the right number of output feature maps (see Figure 14-19).
 
-![](_page_535_Figure_1.jpeg)
+![](img/_page_535_Figure_1.jpeg)
 
 Figure 14-19. Skip connection when changing feature map size and depth
 
 Different variations of the architecture exist, with different numbers of layers. ResNet-34 is a ResNet with 34 layers (only counting the convolutional layers and the fully connected layer)<sup>17</sup> containing 3 RUs that output 64 feature maps, 4 RUs with 128 maps, 6 RUs with 256 maps, and 3 RUs with 512 maps. We will implement this architecture later in this chapter.
 
-![](_page_535_Picture_4.jpeg)
+![](img/_page_535_Picture_4.jpeg)
 
 Google's Inception-v4<sup>18</sup> architecture merged the ideas of GoogLe-Net and ResNet and achieved a top-five error rate of close to 3% on ImageNet classification.
 
@@ -13170,11 +13170,11 @@ You might wonder why Xception is considered a variant of GoogLeNet, since it con
 
 {537}------------------------------------------------
 
-![](_page_537_Figure_0.jpeg)
+![](img/_page_537_Figure_0.jpeg)
 
 Figure 14-20. Depthwise separable convolutional layer
 
-![](_page_537_Picture_2.jpeg)
+![](img/_page_537_Picture_2.jpeg)
 
 Separable convolutional layers use fewer parameters, less memory, and fewer computations than regular convolutional layers, and they often perform better. Consider using them by default, except after layers with few channels (such as the input channel). In Keras, just use SeparableConv2D instead of Conv2D: it's a drop-in replacement. Keras also offers a DepthwiseConv2D layer that implements the first part of a depthwise separable convolutional layer (i.e., applying one spatial filter per input feature map).
 
@@ -13186,13 +13186,13 @@ The winning architecture in the ILSVRC 2017 challenge was the Squeeze-and-Excita
 
 {538}------------------------------------------------
 
-![](_page_538_Figure_0.jpeg)
+![](img/_page_538_Figure_0.jpeg)
 
 Figure 14-21. SE-Inception module (left) and SE-ResNet unit (right)
 
 An SE block analyzes the output of the unit it is attached to, focusing exclusively on the depth dimension (it does not look for any spatial pattern), and it learns which features are usually most active together. It then uses this information to recalibrate the feature maps, as shown in Figure 14-22. For example, an SE block may learn that mouths, noses, and eyes usually appear together in pictures: if you see a mouth and a nose, you should expect to see eyes as well. So, if the block sees a strong activation in the mouth and nose feature maps, but only mild activation in the eye feature map, it will boost the eye feature map (more accurately, it will reduce irrelevant feature maps). If the eyes were somewhat confused with something else, this feature map recalibration will help resolve the ambiguity.
 
-![](_page_538_Figure_3.jpeg)
+![](img/_page_538_Figure_3.jpeg)
 
 Figure 14-22. An SE block performs feature map recalibration
 
@@ -13200,7 +13200,7 @@ An SE block is composed of just three layers: a global average pooling layer, a 
 
 {539}------------------------------------------------
 
-![](_page_539_Figure_0.jpeg)
+![](img/_page_539_Figure_0.jpeg)
 
 Figure 14-23. SE block architecture
 
@@ -13331,7 +13331,7 @@ The only tricky part in this code is the loop that adds the ResidualUnit layers 
 
 It is amazing that in about 40 lines of code, we can build the model that won the ILSVRC 2015 challenge! This demonstrates both the elegance of the ResNet model and the expressiveness of the Keras API. Implementing the other CNN architectures is a bit longer, but not much harder. However, Keras comes with several of these architectures built in, so why not use them instead?
 
-## **Using Pretrained Models from Keras**
+### **Using Pretrained Models from Keras**
 
 In general, you won't have to implement standard models like GoogLeNet or ResNet manually, since pretrained networks are readily available with a single line of code in the tf.keras.applications package.
 
@@ -13441,7 +13441,7 @@ data augmentation = tf.keras. Sequential(\lceiltf.keras.layers.RandomFlip(mode="
 \mathbf{I}
 ```
 
-![](_page_546_Picture_5.jpeg)
+![](img/_page_546_Picture_5.jpeg)
 
 The tf.keras.preprocessing.image.ImageDataGenerator class makes it easy to load images from disk and augment them in various ways: you can shift each image, rotate it, rescale it, flip it horizontally or vertically, shear it, or apply any transformation function you want to it. This is very convenient for simple projects. However, a tf.data pipeline is not much more complicated, and it's generally faster. Moreover, if you have a GPU and you include the preprocessing or data augmentation layers inside your model, they will benefit from GPU acceleration during training.
 
@@ -13464,7 +13464,7 @@ for layer in base model. layers:
     layer.trainable = False
 ```
 
-![](_page_547_Picture_3.jpeg)
+![](img/_page_547_Picture_3.jpeg)
 
 Since our model uses the base model's layers directly, rather than the base model object itself, setting base model.trainable=False would have no effect.
 
@@ -13477,7 +13477,7 @@ model.compile(loss="sparse categorical crossentropy", optimizer=optimizer,
 history = model.fit(train_set, validation_data=valid_set, epochs=3)
 ```
 
-![](_page_547_Picture_7.jpeg)
+![](img/_page_547_Picture_7.jpeg)
 
 If you are running in Colab, make sure the runtime is using a GPU: select Runtime  $\rightarrow$  "Change runtime type", choose "GPU" in the "Hardware accelerator" drop-down menu, then click Save. It's possible to train the model without a GPU, but it will be terribly slow (minutes per epoch, as opposed to seconds).
 
@@ -13503,7 +13503,7 @@ This model should reach around 92% accuracy on the test set, in just a few minut
 
 and train for quite a bit longer, you should be able to reach 95% to 97%. With that, you can start training amazing image classifiers on your own images and classes! But there's more to computer vision than just classification. For example, what if you also want to know where the flower is in a picture? Let's look at this now.
 
-## **Classification and Localization**
+### **Classification and Localization**
 
 Localizing an object in a picture can be expressed as a regression task, as discussed in Chapter 10: to predict a bounding box around the object, a common approach is to predict the horizontal and vertical coordinates of the object's center, as well as its height and width. This means we have four numbers to predict. It does not require much change to the model; we just need to add a second dense output layer with four units (typically on top of the global average pooling layer), and it can be trained using the MSE loss:
 
@@ -13530,7 +13530,7 @@ yourself: with the right tools, it will only take a few days, and you'll also ga
 
 Now let's suppose you've obtained the bounding boxes for every image in the flowers dataset (for now we will assume there is a single bounding box per image). You then need to create a dataset whose items will be batches of preprocessed images along with their class labels and their bounding boxes. Each item should be a tuple of the form (images, (class labels, bounding boxes)). Then you are ready to train your model!
 
-![](_page_549_Picture_2.jpeg)
+![](img/_page_549_Picture_2.jpeg)
 
 The bounding boxes should be normalized so that the horizontal and vertical coordinates, as well as the height and width, all range from 0 to 1. Also, it is common to predict the square root of the height and width rather than the height and width directly: this way, a 10-pixel error for a large bounding box will not be penalized as much as a 10-pixel error for a small bounding box.
 
@@ -13538,23 +13538,23 @@ The MSE often works fairly well as a cost function to train the model, but it is
 
 Classifying and localizing a single object is nice, but what if the images contain multiple objects (as is often the case in the flowers dataset)?
 
-![](_page_549_Picture_6.jpeg)
+![](img/_page_549_Picture_6.jpeg)
 
 Figure 14-24. IoU metric for bounding boxes
 
 {550}------------------------------------------------
 
-## **Object Detection**
+### **Object Detection**
 
 The task of classifying and localizing multiple objects in an image is called *object* detection. Until a few years ago, a common approach was to take a CNN that was trained to classify and locate a single object roughly centered in the image, then slide this CNN across the image and make predictions at each step. The CNN was generally trained to predict not only class probabilities and a bounding box, but also an *objectness score*: this is the estimated probability that the image does indeed contain an object centered near the middle. This is a binary classification output; it can be produced by a dense output layer with a single unit, using the sigmoid activation function and trained using the binary cross-entropy loss.
 
-![](_page_550_Picture_2.jpeg)
+![](img/_page_550_Picture_2.jpeg)
 
 Instead of an objectness score, a "no-object" class was sometimes added, but in general this did not work as well: the questions "Is an object present?" and "What type of object is it?" are best answered separately.
 
 This sliding-CNN approach is illustrated in Figure 14-25. In this example, the image was chopped into a  $5 \times 7$  grid, and we see a CNN—the thick black rectangle—sliding across all  $3 \times 3$  regions and making predictions at each step.
 
-![](_page_550_Picture_5.jpeg)
+![](img/_page_550_Picture_5.jpeg)
 
 Figure 14-25. Detecting multiple objects by sliding a CNN across the image
 
@@ -13583,7 +13583,7 @@ This simple approach to object detection works pretty well, but it requires runn
 
 The idea of FCNs was first introduced in a 2015 paper<sup>30</sup> by Jonathan Long et al., for semantic segmentation (the task of classifying every pixel in an image according to the class of the object it belongs to). The authors pointed out that you could replace the dense layers at the top of a CNN with convolutional layers. To understand this, let's look at an example: suppose a dense layer with 200 neurons sits on top of a convolutional layer that outputs 100 feature maps, each of size  $7 \times 7$  (this is the feature map size, not the kernel size). Each neuron will compute a weighted sum of all 100  $\times$  7  $\times$  7 activations from the convolutional layer (plus a bias term). Now let's see what happens if we replace the dense layer with a convolutional layer using 200 filters, each of size  $7 \times 7$ , and with "valid" padding. This layer will output 200 feature maps, each  $1 \times 1$  (since the kernel is exactly the size of the input feature maps and we are using "valid" padding). In other words, it will output 200 numbers, just like the dense layer did; and if you look closely at the computations performed by a convolutional layer, you will notice that these numbers will be precisely the same as those the dense layer produced. The only difference is that the dense layer's output was a tensor of shape [batch size, 200], while the convolutional layer will output a tensor of shape [batch size, 1, 1, 200].
 
-![](_page_552_Picture_4.jpeg)
+![](img/_page_552_Picture_4.jpeg)
 
 To convert a dense layer to a convolutional layer, the number of filters in the convolutional layer must be equal to the number of units in the dense layer, the filter size must be equal to the size of the input feature maps, and you must use "valid" padding. The stride may be set to 1 or more, as you will see shortly.
 
@@ -13612,7 +13612,7 @@ Now suppose the last convolutional layer before the output layer (also called th
 
 {554}------------------------------------------------
 
-![](_page_554_Figure_0.jpeg)
+![](img/_page_554_Figure_0.jpeg)
 
 Figure 14-26. The same fully convolutional network processing a small image (left) and a large one (right)
 
@@ -13675,19 +13675,19 @@ One of the most popular object tracking systems is DeepSORT.<sup>38</sup> It is 
 
 For example, imagine a red ball that just bounced off a blue ball traveling in the opposite direction. Based on the previous positions of the balls, the Kalman filter will predict that the balls will go through each other: indeed, it assumes that objects move at a constant speed, so it will not expect the bounce. If the Hungarian algorithm only considered positions, then it would happily map the new detections to the wrong balls, as if they had just gone through each other and swapped colors. But thanks to the resemblance measure, the Hungarian algorithm will notice the problem. Assuming the balls are not too similar, the algorithm will map the new detections to the correct balls.
 
-![](_page_558_Picture_2.jpeg)
+![](img/_page_558_Picture_2.jpeg)
 
 There are a few DeepSORT implementations available on GitHub, including a TensorFlow implementation of YOLOv4 + DeepSORT: https://github.com/theAIGuysCode/yolov4-deepsort.
 
 So far we have located objects using bounding boxes. This is often sufficient, but sometimes you need to locate objects with much more precision—for example, to remove the background behind a person during a videoconference call. Let's see how to go down to the pixel level.
 
-## **Semantic Segmentation**
+### **Semantic Segmentation**
 
 In semantic segmentation, each pixel is classified according to the class of the object it belongs to (e.g., road, car, pedestrian, building, etc.), as shown in Figure 14-27. Note that different objects of the same class are not distinguished. For example, all the bicycles on the right side of the segmented image end up as one big lump of pixels. The main difficulty in this task is that when images go through a regular CNN, they gradually lose their spatial resolution (due to the layers with strides greater than 1); so, a regular CNN may end up knowing that there's a person somewhere in the bottom left of the image, but it will not be much more precise than that.
 
 {559}------------------------------------------------
 
-![](_page_559_Picture_0.jpeg)
+![](img/_page_559_Picture_0.jpeg)
 
 Figure 14-27. Semantic segmentation
 
@@ -13695,7 +13695,7 @@ Just like for object detection, there are many different approaches to tackle th
 
 There are several solutions available for upsampling (increasing the size of an image), such as bilinear interpolation, but that only works reasonably well up to  $\times$ 4 or  $\times$ 8. Instead, they use a *transposed convolutional layer*<sup>39</sup> this is equivalent to first stretching the image by inserting empty rows and columns (full of zeros), then performing a regular convolution (see Figure 14-28). Alternatively, some people prefer to think of it as a regular convolutional layer that uses fractional strides (e.g., the stride is  $1/2$ in Figure 14-28). The transposed convolutional layer can be initialized to perform something close to linear interpolation, but since it is a trainable layer, it will learn to do better during training. In Keras, you can use the Conv2DTranspose layer.
 
-![](_page_559_Picture_4.jpeg)
+![](img/_page_559_Picture_4.jpeg)
 
 In a transposed convolutional layer, the stride defines how much the input will be stretched, not the size of the filter steps, so the larger the stride, the larger the output (unlike for convolutional layers or pooling layers).
 
@@ -13703,7 +13703,7 @@ In a transposed convolutional layer, the stride defines how much the input will 
 
 {560}------------------------------------------------
 
-![](_page_560_Figure_0.jpeg)
+![](img/_page_560_Figure_0.jpeg)
 
 Figure 14-28. Upsampling using a transposed convolutional layer
 
@@ -13715,7 +13715,7 @@ Using transposed convolutional layers for upsampling is OK, but still too imprec
 
 In their best architecture, they used a second similar skip connection to recover even finer details from an even lower layer. In short, the output of the original CNN goes through the following extra steps: upsample  $\times 2$ , add the output of a lower layer (of the appropriate scale), upsample  $\times$ 2, add the output of an even lower layer, and finally upsample  $\times$ 8. It is even possible to scale up beyond the size of the original image: this can be used to increase the resolution of an image, which is a technique called super-resolution.
 
-![](_page_561_Figure_1.jpeg)
+![](img/_page_561_Figure_1.jpeg)
 
 Figure 14-29. Skip layers recover some spatial resolution from lower layers
 
@@ -13780,7 +13780,7 @@ Up to now we have focused on feedforward neural networks, where the activations 
 
 Let's look at the simplest possible RNN, composed of one neuron receiving inputs, producing an output, and sending that output back to itself, as shown in Figure 15-1 (left). At each *time step t* (also called a *frame*), this *recurrent neuron* receives the inputs  $\mathbf{x}_{(t)}$  as well as its own output from the previous time step,  $\hat{y}_{(t-1)}$ . Since there is no previous output at the first time step, it is generally set to 0. We can represent this tiny network against the time axis, as shown in Figure 15-1 (right). This is called unrolling *the network through time* (it's the same recurrent neuron represented once per time step).
 
-![](_page_565_Figure_4.jpeg)
+![](img/_page_565_Figure_4.jpeg)
 
 Figure 15-1. A recurrent neuron (left) unrolled through time (right)
 
@@ -13788,7 +13788,7 @@ You can easily create a layer of recurrent neurons. At each time step t, every n
 
 {566}------------------------------------------------
 
-![](_page_566_Figure_0.jpeg)
+![](img/_page_566_Figure_0.jpeg)
 
 Figure 15-2. A layer of recurrent neurons (left) unrolled through time (right)
 
@@ -13836,7 +13836,7 @@ A cell's state at time step t, denoted  $h_{(t)}$  (the "h" stands for "hidden")
 
 {568}------------------------------------------------
 
-![](_page_568_Figure_0.jpeg)
+![](img/_page_568_Figure_0.jpeg)
 
 Figure 15-3. A cell's hidden state and its output may be different
 
@@ -13856,13 +13856,13 @@ Lastly, you could have a sequence-to-vector network, called an encoder, followed
 
 need to wait until you have seen the whole sentence before translating it. We will go through the implementation of an encoder-decoder in Chapter 16 (as you will see, it is a bit more complex than what Figure 15-4 suggests).
 
-![](_page_569_Figure_1.jpeg)
+![](img/_page_569_Figure_1.jpeg)
 
 Figure 15-4. Sequence-to-sequence (top left), sequence-to-vector (top right), vector-tosequence (bottom left), and encoder-decoder (bottom right) networks
 
 This versatility sounds promising, but how do you train a recurrent neural network?
 
-## **Training RNNs**
+### **Training RNNs**
 
 To train an RNN, the trick is to unroll it through time (like we just did) and then use regular backpropagation (see Figure 15-5). This strategy is called backpropagation through time (BPTT).
 
@@ -13872,7 +13872,7 @@ Just like in regular backpropagation, there is a first forward pass through the 
 
  $\hat{Y}_{(2)}$ ,  $\hat{Y}_{(3)}$  and  $\hat{Y}_{(4)}$ . Moreover, since the same parameters W and b are used at each time step, their gradients will be tweaked multiple times during backprop. Once the backward phase is complete and all the gradients have been computed, BPTT can perform a gradient descent step to update the parameters (this is no different from regular backprop).
 
-![](_page_570_Figure_1.jpeg)
+![](img/_page_570_Figure_1.jpeg)
 
 Figure 15-5. Backpropagation through time
 
@@ -13933,7 +13933,7 @@ May
 
 Apr
 
-![](_page_571_Figure_6.jpeg)
+![](img/_page_571_Figure_6.jpeg)
 
 2019
 
@@ -13943,7 +13943,7 @@ Note that Pandas includes both the start and end month in the range, so this plo
 
 Looking at Figure 15-6, we can see that a similar pattern is clearly repeated every week. This is called a weekly seasonality. In fact, it's so strong in this case that forecasting tomorrow's ridership by just copying the values from a week earlier will yield reasonably good results. This is called naive forecasting: simply copying a past value to make our forecast. Naive forecasting is often a great baseline, and it can even be tricky to beat in some cases.
 
-![](_page_572_Picture_2.jpeg)
+![](img/_page_572_Picture_2.jpeg)
 
 In general, naive forecasting means copying the latest known value (e.g., forecasting that tomorrow will be the same as today). However, in our case, copying the value from the previous week works better, due to the strong weekly seasonality.
 
@@ -13966,7 +13966,7 @@ Not too bad! Notice how closely the lagged time series track the actual time ser
 
 {573}------------------------------------------------
 
-![](_page_573_Figure_0.jpeg)
+![](img/_page_573_Figure_0.jpeg)
 
 Figure 15-7. Time series overlaid with 7-day lagged time series (top), and difference between t and  $t - 7$  (bottom)
 
@@ -13998,7 +13998,7 @@ What we just computed is called the *mean absolute percentage error* (MAPE): it 
 
 also larger, but when we put the errors into perspective, it turns out that the bus forecasts are actually slightly better than the rail forecasts.
 
-![](_page_574_Picture_1.jpeg)
+![](img/_page_574_Picture_1.jpeg)
 
 The MAE, MAPE, and MSE are among the most common metrics you can use to evaluate your forecasts. As always, choosing the right metric depends on the task. For example, if your project suffers quadratically more from large errors than from small ones, then the MSE may be preferable, as it strongly penalizes large errors.
 
@@ -14015,7 +14015,7 @@ rolling_average_12_months.plot(ax=ax, grid=True, legend=False)
 plt.show()
 ```
 
-![](_page_574_Figure_6.jpeg)
+![](img/_page_574_Figure_6.jpeg)
 
 Figure 15-8. Yearly seasonality and long-term trends
 
@@ -14023,7 +14023,7 @@ Yep! There's definitely some yearly seasonality as well, although it is noisier 
 
 {575}------------------------------------------------
 
-![](_page_575_Figure_0.jpeg)
+![](img/_page_575_Figure_0.jpeg)
 
 Figure 15-9. The 12-month difference
 
@@ -14204,7 +14204,7 @@ rail_valid = df["rail"]["2019-01":"2019-05"] / 1e6
 ratio_{\text{test}} = df["tail"]['2019-06":] / 1e6
 ```
 
-![](_page_581_Picture_7.jpeg)
+![](img/_page_581_Picture_7.jpeg)
 
 When dealing with time series, you generally want to split across time. However, in some cases you may be able to split along other dimensions, which will give you a longer time period to train on. For example, if you have data about the financial health of 10,000 companies from 2001 to 2019, you might be able to split this data across the different companies. It's very likely that many of these companies will be strongly correlated, though (e.g., whole economic sectors may go up or down jointly), and if you have correlated companies across the training set and the test set, your test set will not be as useful, as its measure of the generalization error will be optimistically biased.
 
@@ -14265,7 +14265,7 @@ All recurrent layers in Keras expect 3D inputs of shape [batch size, time steps,
 
 This model works exactly as we saw earlier: the initial state  $h_{(init)}$  is set to 0, and it is passed to a single recurrent neuron, along with the value of the first time step,  $x_{(0)}$ . The neuron computes a weighted sum of these values plus the bias term, and it applies the activation function to the result, using the hyperbolic tangent function by default. The result is the first output,  $y_0$ . In a simple RNN, this output is also the new state  $h_0$ . This new state is passed to the same recurrent neuron along with the next input value,  $x_{(1)}$ , and the process is repeated until the last time step. At the end, the layer just outputs the last value: in our case the sequences are 56 steps long, so the last value is  $y_{55}$ . All of this is performed simultaneously for every sequence in the batch, of which there are 32 in this case.
 
-![](_page_583_Picture_5.jpeg)
+![](img/_page_583_Picture_5.jpeg)
 
 By default, recurrent layers in Keras only return the final output. To make them return one output per time step, you must set return\_sequences=True, as you will see.
 
@@ -14288,7 +14288,7 @@ univar model = tf.keras.Sequential(\lceiltf.keras.layers.SimpleRNN(32, input_sha
 
 Now if you compile, fit, and evaluate this model just like the previous one, you will find that its validation MAE reaches 27,703. That's the best model we've trained so far, and it even beats the SARIMA model: we're doing pretty well!
 
-![](_page_584_Picture_5.jpeg)
+![](img/_page_584_Picture_5.jpeg)
 
 We've only normalized the time series, without removing trend and seasonality, and yet the model still performs well. This is convenient, as it makes it possible to quickly search for promising models without worrying too much about preprocessing. However, to get the best performance, you may want to try making the time series more stationary; for example, using differencing.
 
@@ -14298,7 +14298,7 @@ It is quite common to stack multiple layers of cells, as shown in Figure 15-10. 
 
 {585}------------------------------------------------
 
-![](_page_585_Figure_0.jpeg)
+![](img/_page_585_Figure_0.jpeg)
 
 Figure 15-10. A deep RNN (left) unrolled through time (right)
 
@@ -14312,7 +14312,7 @@ deep model = tf. keras. Sequential(f)tf.keras.layers.SimpleRNN(32, return_sequen
 \overline{1}
 ```
 
-![](_page_585_Picture_4.jpeg)
+![](img/_page_585_Picture_4.jpeg)
 
 Make sure to set return\_sequences=True for all recurrent layers (except the last one, if you only care about the last output). If you forget to set this parameter for one recurrent layer, it will output a 2D array containing only the output of the last time step, instead of a 3D array containing outputs for all time steps. The next recurrent layer will complain that you are not feeding it sequences in the expected 3D format.
 
@@ -14383,13 +14383,13 @@ for step ahead in range(14):
 
 In this code, we take the rail ridership of the first 56 days of the validation period, and we convert the data to a NumPy array of shape  $[1, 56, 1]$  (recall that recurrent layers expect 3D inputs). Then we repeatedly use the model to forecast the next value, and we append each forecast to the input series, along the time axis (axis=1). The resulting forecasts are plotted in Figure 15-11.
 
-![](_page_587_Picture_7.jpeg)
+![](img/_page_587_Picture_7.jpeg)
 
 If the model makes an error at one time step, then the forecasts for the following time steps are impacted as well: the errors tend to accumulate. So, it's preferable to use this technique only for a small number of steps.
 
 {588}------------------------------------------------
 
-![](_page_588_Figure_0.jpeg)
+![](img/_page_588_Figure_0.jpeg)
 
 Figure 15-11. Forecasting 14 steps ahead, 1 step at a time
 
@@ -14470,7 +14470,7 @@ Now we can use the map() method to split these windows of windows into inputs an
 
 Now the dataset contains sequences of length 4 as inputs, and the targets are sequences containing the next two steps, for each time step. For example, the first input sequence is [0, 1, 2, 3], and its corresponding targets are  $[1, 2]$ , [2, 3], [3, 4], [4, 5]], which are the next two values for each time step. If you're like me, you will probably need a few minutes to wrap your head around this. Take your time!
 
-![](_page_590_Picture_4.jpeg)
+![](img/_page_590_Picture_4.jpeg)
 
 It may be surprising that the targets contain values that appear in the inputs. Isn't that cheating? Fortunately, not at all: at each time step, an RNN only knows about past time steps; it cannot look ahead. It is said to be a causal model.
 
@@ -14504,7 +14504,7 @@ seq2seq model = tf.keras. Sequential(\lceiltf.keras.layers.SimpleRNN(32, return 
 
 It is almost identical to our previous model: the only difference is that we set return sequences=True in the SimpleRNN layer. This way, it will output a sequence of vectors (each of size 32), instead of outputting a single vector at the last time step. The Dense layer is smart enough to handle sequences as input: it will be applied at each time step, taking a 32-dimensional vector as input and outputting a 14-dimensional vector. In fact, another way to get the exact same result is to use a Conv1D layer with a kernel size of 1: Conv1D(14, kernel\_size=1).
 
-![](_page_591_Picture_3.jpeg)
+![](img/_page_591_Picture_3.jpeg)
 
 Keras offers a TimeDistributed layer that lets you apply any vector-to-vector layer to every vector in the input sequences, at every time step. It does this efficiently, by reshaping the inputs so that each time step is treated as a separate instance, then it reshapes the layer's outputs to recover the time dimension. In our case, we don't need it since the Dense layer already supports sequences as inputs.
 
@@ -14516,7 +14516,7 @@ X = multvar_value.to_number() [np.newaxis, :seq_length]y_pred_14 = seq2seq_model
 
 If you evaluate this model's forecasts for  $t + 1$ , you will find a validation MAE of 25,519. For  $t + 2$  it's 26,274, and the performance continues to drop gradually as the model tries to forecast further into the future. At  $t + 14$ , the MAE is 34,322.
 
-![](_page_591_Picture_8.jpeg)
+![](img/_page_591_Picture_8.jpeg)
 
 You can combine both approaches to forecasting multiple steps ahead: for example, you can train a model that forecasts 14 days ahead, then take its output and append it to the inputs, then run the model again to get forecasts for the following 14 days, and possibly repeat the process.
 
@@ -14524,7 +14524,7 @@ Simple RNNs can be quite good at forecasting time series or handling other kinds
 
 {592}------------------------------------------------
 
-## **Handling Long Sequences**
+### **Handling Long Sequences**
 
 To train an RNN on long sequences, we must run it over many time steps, making the unrolled RNN a very deep network. Just like any deep neural network it may suffer from the unstable gradients problem, discussed in Chapter 11: it may take forever to train, or training may be unstable. Moreover, when an RNN processes a long sequence, it will gradually forget the first inputs in the sequence. Let's look at both these problems, starting with the unstable gradients problem.
 
@@ -14590,7 +14590,7 @@ With these techniques, you can alleviate the unstable gradients problem and trai
 
 {595}------------------------------------------------
 
-![](_page_595_Picture_0.jpeg)
+![](img/_page_595_Picture_0.jpeg)
 
 When forecasting time series, it is often useful to have some error bars along with your predictions. For this, one approach is to use MC dropout, introduced in Chapter 11: use recurrent dropout during training, then keep dropout active at inference time by calling the model using model(X, training=True). Repeat this several times to get multiple slightly different forecasts, then compute the mean and standard deviation of these predictions for each time step.
 
@@ -14624,7 +14624,7 @@ ble to use it (the RNN layer is mostly useful when you define custom cells, as w
 
 So how does an LSTM cell work? Its architecture is shown in Figure 15-12. If you don't look at what's inside the box, the LSTM cell looks exactly like a regular cell, except that its state is split into two vectors:  $h_{(t)}$  and  $c_{(t)}$  ("c" stands for "cell"). You can think of  $\mathbf{h}_{(t)}$  as the short-term state and  $\mathbf{c}_{(t)}$  as the long-term state.
 
-![](_page_596_Figure_2.jpeg)
+![](img/_page_596_Figure_2.jpeg)
 
 Figure 15-12. An LSTM cell
 
@@ -14685,7 +14685,7 @@ There are several variants of the LSTM cell. One particularly popular variant is
 
 The gated recurrent unit (GRU) cell (see Figure 15-13) was proposed by Kyunghyun Cho et al. in a 2014 paper<sup>14</sup> that also introduced the encoder-decoder network we discussed earlier.
 
-![](_page_598_Figure_5.jpeg)
+![](img/_page_598_Figure_5.jpeg)
 
 Figure 15-13. GRU cell
 
@@ -14753,7 +14753,7 @@ If you train and evaluate this model, you will find that it outperforms the prev
 
 In a 2016 paper,<sup>16</sup> Aaron van den Oord and other DeepMind researchers introduced a novel architecture called *WaveNet*. They stacked 1D convolutional layers, doubling the dilation rate (how spread apart each neuron's inputs are) at every layer: the first convolutional layer gets a glimpse of just two time steps at a time, while the next one sees four time steps (its receptive field is four time steps long), the next one sees eight time steps, and so on (see Figure 15-14). This way, the lower layers learn short-term patterns, while the higher layers learn long-term patterns. Thanks to the doubling dilation rate, the network can process extremely large sequences very efficiently.
 
-![](_page_601_Figure_2.jpeg)
+![](img/_page_601_Figure_2.jpeg)
 
 Figure 15-14. WaveNet architecture
 
@@ -14784,7 +14784,7 @@ This Sequential model starts with an explicit input layer-this is simpler than t
 
 The models we've discussed in this section offer similar performance for the ridership forecasting task, but they may vary significantly depending on the task and the amount of available data. In the WaveNet paper, the authors achieved state-of-the-art performance on various audio tasks (hence the name of the architecture), including text-to-speech tasks, producing incredibly realistic voices across several languages. They also used the model to generate music, one audio sample at a time. This feat is all the more impressive when you realize that a single second of audio can contain tens of thousands of time steps-even LSTMs and GRUs cannot handle such long sequences.
 
-![](_page_602_Picture_3.jpeg)
+![](img/_page_602_Picture_3.jpeg)
 
 If you evaluate our best Chicago ridership models on the test period, starting in 2020, you will find that they perform much worse than expected! Why is that? Well, that's when the Covid-19 pandemic started, which greatly affected public transportation. As mentioned earlier, these models will only work well if the patterns they learned from the past continue in the future. In any case, before deploying a model to production, verify that it works well on recent data. And once it's in production, make sure to monitor its performance regularly.
 
@@ -14827,7 +14827,7 @@ In the second part of this chapter, we will explore *attention mechanisms*. As t
 
 Let's start with a simple and fun model that can write like Shakespeare (sort of).
 
-## **Generating Shakespearean Text Using a Character RNN**
+### **Generating Shakespearean Text Using a Character RNN**
 
 In a famous 2015 blog post titled "The Unreasonable Effectiveness of Recurrent Neural Networks", Andrej Karpathy showed how to train an RNN to predict the next character in a sentence. This *char-RNN* can then be used to generate novel text, one character at a time. Here is a small sample of the text generated by a char-RNN model after it was trained on all of Shakespeare's works:
 
@@ -14901,7 +14901,7 @@ This function starts much like the to windows() custom utility function we creat
 
 Figure 16-1 summarizes the dataset preparation steps: it shows windows of length 11, and a batch size of 3. The start index of each window is indicated next to it.
 
-![](_page_607_Figure_7.jpeg)
+![](img/_page_607_Figure_7.jpeg)
 
 Figure 16-1. Preparing a dataset of shuffled windows
 
@@ -14917,7 +14917,7 @@ train set = to dataset(encoded[:1 000 000], length=length, shuffle=True,
 test_set = to_dataset(encoded[1_060_000:], length=length)
 ```
 
-![](_page_608_Picture_2.jpeg)
+![](img/_page_608_Picture_2.jpeg)
 
 We set the window length to 100, but you can try tuning it: it's easier and faster to train RNNs on shorter input sequences, but the RNN will not be able to learn any pattern longer than length, so don't make it too small.
 
@@ -14949,7 +14949,7 @@ probability for each possible character (at each time step). The 39 output proba
 
 • Lastly, we compile this model, using the "sparse\_categorical\_crossentropy" loss and a Nadam optimizer, and we train the model for several epochs,<sup>3</sup> using a ModelCheckpoint callback to save the best model (in terms of validation accuracy) as training progresses.
 
-![](_page_609_Picture_2.jpeg)
+![](img/_page_609_Picture_2.jpeg)
 
 If you are running this code on Colab with a GPU activated, then training should take roughly one to two hours. You can reduce the number of epochs if you don't want to wait that long, but of course the model's accuracy will probably be lower. If the Colab session times out, make sure to reconnect quickly, or else the Colab runtime will be destroyed.
 
@@ -15051,7 +15051,7 @@ stateful_test_set = to_dataset_for_stateful_rnn(encoded[1_060_000:], length)
 
 Figure 16-2 summarizes the main steps of this function.
 
-![](_page_612_Figure_2.jpeg)
+![](img/_page_612_Figure_2.jpeg)
 
 Figure 16-2. Preparing a dataset of consecutive sequence fragments for a stateful RNN
 
@@ -15085,7 +15085,7 @@ model.compile(loss="sparse categorical crossentropy", optimizer="nadam",
                     epochs=10, callbacks=[ResetStatesCallback(), model_ckpt])
 ```
 
-![](_page_613_Picture_5.jpeg)
+![](img/_page_613_Picture_5.jpeg)
 
 After this model is trained, it will only be possible to use it to make predictions for batches of the same size as were used during training. To avoid this restriction, create an identical stateless model, and copy the stateful model's weights to this model.
 
@@ -15097,7 +15097,7 @@ But before we explore unsupervised pretraining, let's turn our attention to word
 
 {614}------------------------------------------------
 
-## **Sentiment Analysis**
+### **Sentiment Analysis**
 
 Generating text can be fun and instructive, but in real-life projects, one of the most common applications of NLP is text classification—especially sentiment analysis. If image classification on the MNIST dataset is the "Hello world!" of computer vision, then sentiment analysis on the IMDb reviews dataset is the "Hello world!" of natural language processing. The IMDb dataset consists of 50,000 movie reviews in English  $(25,000)$  for training, 25,000 for testing) extracted from the famous Internet Movie Database, along with a simple binary target for each review indicating whether it is negative  $(0)$  or positive  $(1)$ . Just like MNIST, the IMDb reviews dataset is popular for good reasons: it is simple enough to be tackled on a laptop in a reasonable amount of time, but challenging enough to be fun and rewarding.
 
@@ -15117,7 +15117,7 @@ train_set = raw_train_set.shuffle(5000, seed=42).batch(32).prefetch(1)
 valid_set = raw_value_set.batch(32).prefetch(1)test_set = raw_test_set.batch(32).prefetch(1)
 ```
 
-![](_page_614_Picture_5.jpeg)
+![](img/_page_614_Picture_5.jpeg)
 
 Keras also includes a function for loading the IMDb dataset, if you prefer: tf.keras.datasets.imdb.load\_data(). The reviews are already preprocessed as sequences of word IDs.
 
@@ -15192,7 +15192,7 @@ Next, if the layer's supports\_masking attribute is True, then the mask is autom
 
 {618}------------------------------------------------
 
-![](_page_618_Picture_0.jpeg)
+![](img/_page_618_Picture_0.jpeg)
 
 Some layers need to update the mask before propagating it to the next layer: they do so by implementing the compute\_mask() method, which takes two arguments: the inputs and the previous mask. It then computes the updated mask and returns it. The default implementation of compute\_mask() just returns the previous mask unchanged.
 
@@ -15200,7 +15200,7 @@ Many Keras layers support masking: SimpleRNN, GRU, LSTM, Bidirectional, Dense, T
 
 If the mask propagates all the way to the output, then it gets applied to the losses as well, so the masked time steps will not contribute to the loss (their loss will be 0). This assumes that the model outputs sequences, which is not the case in our sentiment analysis model.
 
-![](_page_618_Picture_4.jpeg)
+![](img/_page_618_Picture_4.jpeg)
 
 The LSTM and GRU layers have an optimized implementation for GPUs, based on Nvidia's cuDNN library. However, this implementation only supports masking if all the padding tokens are at the end of the sequences. It also requires you to use the default values for several hyperparameters: activation, recurrent activation, recurrent dropout, unroll, use bias, and reset after. If that's not the case, then these layers will fall back to the (much slower) default GPU implementation.
 
@@ -15278,7 +15278,7 @@ model = tf.keras.Sequential([hub.KerasLayer("https://tfhub.dev/google/universal-
 model.fit(train_set, validation_data=valid_set, epochs=10)
 ```
 
-![](_page_621_Picture_3.jpeg)
+![](img/_page_621_Picture_3.jpeg)
 
 This model is quite large—close to 1 GB in size—so it may take a while to download. By default, TensorFlow Hub modules are saved to a temporary directory, and they get downloaded again and again every time you run your program. To avoid that, you must set the TFHUB CACHE DIR environment variable to a directory of your choice: the modules will then be saved there, and only downloaded once.
 
@@ -15308,7 +15308,7 @@ At each step, the decoder outputs a score for each word in the output vocabulary
 
 {623}------------------------------------------------
 
-![](_page_623_Figure_0.jpeg)
+![](img/_page_623_Figure_0.jpeg)
 
 model using the "sparse categorical crossentropy" loss, much like we did in the char-RNN model.
 
@@ -15316,7 +15316,7 @@ Figure 16-3. A simple machine translation model
 
 Note that at inference time (after training), you will not have the target sentence to feed to the decoder. Instead, you need to feed it the word that it has just output at the previous step, as shown in Figure 16-4 (this will require an embedding lookup that is not shown in the diagram).
 
-![](_page_623_Picture_4.jpeg)
+![](img/_page_623_Picture_4.jpeg)
 
 In a 2015 paper,<sup>14</sup> Samy Bengio et al. proposed gradually switching from feeding the decoder the previous target token to feeding it the previous output token during training.
 
@@ -15324,7 +15324,7 @@ In a 2015 paper,<sup>14</sup> Samy Bengio et al. proposed gradually switching fr
 
 {624}------------------------------------------------
 
-![](_page_624_Figure_0.jpeg)
+![](img/_page_624_Figure_0.jpeg)
 
 Figure 16-4. At inference time, the decoder is fed as input the word it just output at the previous time step
 
@@ -15422,7 +15422,7 @@ encoder embeddings = encoder embedding layer(encoder input ids)
 decoder_embeddings = decoder_embedding_layer(decoder_input_ids)
 ```
 
-![](_page_626_Picture_5.jpeg)
+![](img/_page_626_Picture_5.jpeg)
 
 When the languages share many words, you may get better performance using the same embedding layer for both the encoder and the decoder.
 
@@ -15511,7 +15511,7 @@ At each time step, a regular recurrent layer only looks at past and present inpu
 
 For example, consider the phrases "the right arm", "the right person", and "the right to criticize": to properly encode the word "right", you need to look ahead. One solution is to run two recurrent layers on the same inputs, one reading the words from left to right and the other reading them from right to left, then combine their outputs at each time step, typically by concatenating them. This is what a *bidirectional recurrent layer* does (see Figure 16-5).
 
-![](_page_629_Figure_1.jpeg)
+![](img/_page_629_Figure_1.jpeg)
 
 Figure 16-5. A bidirectional recurrent layer
 
@@ -15522,7 +15522,7 @@ encoder = tf.keras.layers.Bidirectional(
    tf.keras.layers.LSTM(256, return state=True))
 ```
 
-![](_page_629_Picture_5.jpeg)
+![](img/_page_629_Picture_5.jpeg)
 
 The Bidirectional layer will create a clone of the GRU layer (but in the reverse direction), and it will run both and concatenate their outputs. So although the GRU layer has 10 units, the Bidirectional layer will output 20 values per time step.
 
@@ -15549,13 +15549,13 @@ Next, we compute the probabilities of each of the 3,000 two-word sentences we co
 
 "me gusta" (24%), and "me encanta" (12%). Right now, the sentence "me gustan" is winning, but "me gusta" has not been eliminated.
 
-![](_page_631_Figure_1.jpeg)
+![](img/_page_631_Figure_1.jpeg)
 
 Figure 16-6. Beam search, with a beam width of 3
 
 Then we repeat the same process: we use the model to predict the next word in each of these three sentences, and we compute the probabilities of all 3,000 three-word sentences we considered. Perhaps the top three are now "me gustan los" (10%), "me gusta el" (8%), and "me gusta mucho" (2%). At the next step we may get "me gusta el fútbol" (6%), "me gusta mucho el" (1%), and "me gusta el deporte" (0.2%). Notice that "me gustan" was eliminated, and the correct translation is now ahead. We boosted our encoder-decoder model's performance without any extra training, simply by using it more wisely.
 
-![](_page_631_Picture_4.jpeg)
+![](img/_page_631_Picture_4.jpeg)
 
 The TensorFlow Addons library includes a full seq2seq API that lets you build encoder-decoder models with attention, including beam search, and more. However, its documentation is currently very limited. Implementing beam search is a good exercise, so give it a try! Check out this chapter's notebook for a possible solution.
 
@@ -15571,7 +15571,7 @@ the other words) needs to be carried over many steps before it is actually used.
 
 This was the core idea in a landmark 2014 paper<sup>18</sup> by Dzmitry Bahdanau et al., where the authors introduced a technique that allowed the decoder to focus on the appropriate words (as encoded by the encoder) at each time step. For example, at the time step where the decoder needs to output the word "futbol", it will focus its attention on the word "soccer". This means that the path from an input word to its translation is now much shorter, so the short-term memory limitations of RNNs have much less impact. Attention mechanisms revolutionized neural machine translation (and deep learning in general), allowing a significant improvement in the state of the art, especially for long sentences (e.g., over 30 words).
 
-![](_page_632_Picture_2.jpeg)
+![](img/_page_632_Picture_2.jpeg)
 
 The most common metric used in NMT is the bilingual evaluation understudy (BLEU) score, which compares each translation produced by the model with several good translations produced by humans: it counts the number of  $n$ -grams (sequences of  $n$  words) that appear in any of the target translations and adjusts the score to take into account the frequency of the produced  $n$ -grams in the target translations.
 
@@ -15581,7 +15581,7 @@ Figure 16-7 shows our encoder-decoder model with an added attention mechanism. O
 
 {633}------------------------------------------------
 
-![](_page_633_Figure_0.jpeg)
+![](img/_page_633_Figure_0.jpeg)
 
 Figure 16-7. Neural machine translation using an encoder-decoder network with an attention model
 
@@ -15589,7 +15589,7 @@ But where do these  $\alpha_{(t,i)}$  weights come from? Well, they are generate
 
 {634}------------------------------------------------
 
-![](_page_634_Picture_0.jpeg)
+![](img/_page_634_Picture_0.jpeg)
 
 If the input sentence is  $n$  words long, and assuming the output sentence is about as long, then this model will need to compute about  $n<sup>2</sup>$  weights. Fortunately, this quadratic computational complexity is still tractable because even long sentences don't have thousands of words.
 
@@ -15655,7 +15655,7 @@ In short, the left part of Figure 16-8 is the encoder, and the right part is the
 
 {637}------------------------------------------------
 
-![](_page_637_Figure_0.jpeg)
+![](img/_page_637_Figure_0.jpeg)
 
 Figure 16-8. The original 2017 transformer architecture<sup>22</sup>
 
@@ -15683,7 +15683,7 @@ That was the big picture; now let's walk through Figure 16-8 in more detail:
 - The decoder's upper *multi-head attention* layer is where the decoder pays attention to the words in the English sentence. This is called *cross*-attention, not self-attention in this case. For example, the decoder will probably pay close attention to the word "soccer" when it processes the word "el" and transforms its representation into a representation of the word "fútbol".
 - The *positional encodings* are dense vectors (much like word embeddings) that represent the position of each word in the sentence. The  $n<sup>th</sup>$  positional encoding is added to the word embedding of the  $n<sup>th</sup>$  word in each sentence. This is needed because all layers in the transformer architecture ignore word positions: without positional encodings, you could shuffle the input sequences, and it would just shuffle the output sequences in the same way. Obviously, the order of words matters, which is why we need to give positional information to the transformer somehow: adding positional encodings to the word representations is a good way to achieve this.
 
-![](_page_639_Picture_3.jpeg)
+![](img/_page_639_Picture_3.jpeg)
 
 The first two arrows going into each multi-head attention layer in Figure 16-8 represent the keys and values, and the third arrow represents the queries. In the self-attention layers, all three are equal to the word representations output by the previous layer, while in the decoder's upper attention layer, the keys and values are equal to the encoder's final word representations, and the queries are equal to the word representations output by the previous layer.
 
@@ -15707,11 +15707,11 @@ Note that this implementation assumes that the embeddings are represented as reg
 
 Instead of using trainable positional encodings, the authors of the transformer paper chose to use fixed positional encodings, based on the sine and cosine functions at different frequencies. The positional encoding matrix  $P$  is defined in Equation 16-2 and represented at the top of Figure 16-9 (transposed), where  $P_{p,i}$  is the  $i<sup>th</sup>$  component of the encoding for the word located at the  $p<sup>th</sup>$  position in the sentence.
 
-![](_page_640_Figure_3.jpeg)
+![](img/_page_640_Figure_3.jpeg)
 
  $P_{p,i} = \begin{cases} \sin(p/10000^{i/d}) & \text{if } i \text{ is even} \\ \cos(p/10000^{(i-1)/d}) & \text{if } i \text{ is odd} \end{cases}$ 
 
-![](_page_640_Figure_5.jpeg)
+![](img/_page_640_Figure_5.jpeg)
 
 Figure 16-9. Sine/cosine positional encoding matrix (transposed, top) with a focus on two values of *i* (bottom)
 
@@ -15774,7 +15774,7 @@ this makes it extremely efficient. Indeed, in TensorFlow, if A and B are tensors
 
 Now we're ready to look at the multi-head attention layer. Its architecture is shown in Figure 16-10.
 
-![](_page_643_Figure_2.jpeg)
+![](img/_page_643_Figure_2.jpeg)
 
 Figure 16-10. Multi-head attention layer architecture<sup>24</sup>
 
@@ -15868,7 +15868,7 @@ model.fit((X_train, X_train_dec), Y_train, epochs=10,
 
 Congratulations! You've built a full transformer from scratch, and trained it for automatic translation. This is getting quite advanced!
 
-![](_page_646_Picture_8.jpeg)
+![](img/_page_646_Picture_8.jpeg)
 
 The Keras team has created a new Keras NLP project, including an API to build a transformer more easily. You may also be interested in the new Keras CV project for computer vision.
 
@@ -15876,7 +15876,7 @@ The Keras team has created a new Keras NLP project, including an API to build a 
 
 But the field didn't stop there. Let's now explore some of the recent advances.
 
-## An Avalanche of Transformer Models
+### An Avalanche of Transformer Models
 
 The year 2018 has been called the "ImageNet moment for NLP". Since then, progress has been astounding, with larger and larger transformer-based architectures trained on immense datasets.
 
@@ -15904,7 +15904,7 @@ The model is trained to predict whether two sentences are consecutive or not. Fo
 
 The model is trained on these two tasks simultaneously (see Figure 16-11). For the NSP task, the authors inserted a class token (<CLS>) at the start of every input, and the corresponding output token represents the model's prediction: sentence B follows sentence A, or it does not. The two input sentences are concatenated, separated only by a special separation token (<SEP>), and they are fed as input to the model. To help the model know which sentence each input token belongs to, a segment embedding is added on top of each token's positional embeddings: there are just two possible segment embeddings, one for sentence A and one for sentence B. For the MLM task, some input words are masked (as we just saw) and the model tries to predict what those words were. The loss is only computed on the NSP prediction and the masked tokens, not on the unmasked ones.
 
-![](_page_648_Figure_4.jpeg)
+![](img/_page_648_Figure_4.jpeg)
 
 Figure 16-11. BERT training and fine-tuning process<sup>30</sup>
 
@@ -15956,7 +15956,7 @@ Not only does the model give the right answer much more frequently than using re
 
 Transformers have taken over NLP, but they didn't stop there: they soon expanded to computer vision as well.
 
-## **Vision Transformers**
+### **Vision Transformers**
 
 One of the first applications of attention mechanisms beyond NMT was in generating image captions using visual attention:<sup>38</sup> a convolutional neural network first processes the image and outputs some feature maps, then a decoder RNN equipped with an attention mechanism generates the caption, one word at a time.
 
@@ -15966,7 +15966,7 @@ At each decoder time step (i.e., each word), the decoder uses the attention mode
 
 {652}------------------------------------------------
 
-![](_page_652_Picture_0.jpeg)
+![](img/_page_652_Picture_0.jpeg)
 
 Figure 16-12. Visual attention: an input image (left) and the model's focus before producing the word "frisbee" (right)<sup>39</sup>
 
@@ -15986,7 +15986,7 @@ When transformers came out in 2017 and people started to experiment with them be
 
 Then, in October 2020, a team of Google researchers released a paper<sup>42</sup> that introduced a fully transformer-based vision model, called a vision transformer (ViT). The idea is surprisingly simple: just chop the image into little  $16 \times 16$  squares, and treat the sequence of squares as if it were a sequence of word representations. To be more precise, the squares are first flattened into  $16 \times 16 \times 3 = 768$ -dimensional vectors—the 3 is for the RGB color channels—then these vectors go through a linear layer that transforms them but retains their dimensionality. The resulting sequence of vectors can then be treated just like a sequence of word embeddings: this means adding positional embeddings, and passing the result to the transformer. That's it! This model beat the state of the art on ImageNet image classification, but to be fair the authors had to use over 300 million additional images for training. This makes sense since transformers don't have as many *inductive biases* as convolution neural nets, so they need extra data just to learn things that CNNs implicitly assume.
 
-![](_page_653_Picture_2.jpeg)
+![](img/_page_653_Picture_2.jpeg)
 
 An inductive bias is an implicit assumption made by the model, due to its architecture. For example, linear models implicitly assume that the data is, well, linear. CNNs implicitly assume that patterns learned in one location will likely be useful in other locations as well. RNNs implicitly assume that the inputs are ordered, and that recent tokens are more important than older ones. The more inductive biases a model has, assuming they are correct, the less training data the model will require. But if the implicit assumptions are wrong, then the model may perform poorly even if it is trained on a large dataset.
 
@@ -16034,7 +16034,7 @@ In April 2022, DeepMind released the Flamingo paper,<sup>51</sup> which introduc
 
 such as question answering, image captioning, and more. Soon after, in May 2022, DeepMind introduced GATO,<sup>52</sup> a multimodal model that can be used as a policy for a reinforcement learning agent (RL will be introduced in Chapter 18). The same transformer can chat with you, caption images, play Atari games, control (simulated) robotic arms, and more, all with "only" 1.2 billion parameters. And the adventure continues!
 
-![](_page_656_Picture_1.jpeg)
+![](img/_page_656_Picture_1.jpeg)
 
 These astounding advances have led some researchers to claim that human-level AI is near, that "scale is all you need", and that some of these models may be "slightly conscious". Others point out that despite the amazing progress, these models still lack the reliability and adaptability of human intelligence, our ability to reason symbolically, to generalize based on a single example, and more.
 
@@ -16095,7 +16095,7 @@ The pipeline() function uses the default model for the given task. For example, 
 [{'label': 'contradiction', 'score': 0.9790192246437073}]
 ```
 
-![](_page_658_Picture_2.jpeg)
+![](img/_page_658_Picture_2.jpeg)
 
 You can find the available models at https://huggingface.co/models, and the list of tasks at https://huggingface.co/tasks.
 
@@ -16118,7 +16118,7 @@ token_ids = tokenizer(["I like soccer. [SEP] We all love soccer!",
                      padding=True, return tensors="tf")
 ```
 
-![](_page_658_Picture_9.jpeg)
+![](img/_page_658_Picture_9.jpeg)
 
 Instead of passing "Sentence 1 [SEP] Sentence 2" to the tokenizer, you can equivalently pass it a tuple: ("Sentence 1", "Sentence 2").
 
@@ -16242,7 +16242,7 @@ Just like the chess players in this memory experiment, an autoencoder looks at t
 
 {665}------------------------------------------------
 
-![](_page_665_Figure_0.jpeg)
+![](img/_page_665_Figure_0.jpeg)
 
 Figure 17-1. The chess memory experiment (left) and a simple autoencoder (right)
 
@@ -16285,11 +16285,11 @@ Note that X\_train is used as both the inputs and the targets. Figure 17-2 shows
 
 {667}------------------------------------------------
 
-![](_page_667_Figure_0.jpeg)
+![](img/_page_667_Figure_0.jpeg)
 
 Figure 17-2. Approximate PCA performed by an undercomplete linear autoencoder
 
-![](_page_667_Picture_2.jpeg)
+![](img/_page_667_Picture_2.jpeg)
 
 You can think of an autoencoder as performing a form of selfsupervised learning, since it is based on a supervised learning technique with automatically generated labels (in this case simply equal to the inputs).
 
@@ -16301,7 +16301,7 @@ The architecture of a stacked autoencoder is typically symmetrical with regard t
 
 {668}------------------------------------------------
 
-![](_page_668_Figure_0.jpeg)
+![](img/_page_668_Figure_0.jpeg)
 
 Figure 17-3. Stacked autoencoder
 
@@ -16355,7 +16355,7 @@ Figure 17-4 shows the resulting images.
 
 {670}------------------------------------------------
 
-![](_page_670_Picture_0.jpeg)
+![](img/_page_670_Picture_0.jpeg)
 
 Figure 17-4. Original images (top) and their reconstructions (bottom)
 
@@ -16386,7 +16386,7 @@ Figure 17-5 shows the resulting scatterplot, beautified a bit by displaying some
 
 {671}------------------------------------------------
 
-![](_page_671_Figure_0.jpeg)
+![](img/_page_671_Figure_0.jpeg)
 
 Figure 17-5. Fashion MNIST visualization using an autoencoder followed by t-SNE
 
@@ -16400,13 +16400,13 @@ Similarly, if you have a large dataset but most of it is unlabeled, you can firs
 
 {672}------------------------------------------------
 
-![](_page_672_Figure_0.jpeg)
+![](img/_page_672_Figure_0.jpeg)
 
-![](_page_672_Figure_1.jpeg)
+![](img/_page_672_Figure_1.jpeg)
 
 Figure 17-6. Unsupervised pretraining using autoencoders
 
-![](_page_672_Picture_3.jpeg)
+![](img/_page_672_Picture_3.jpeg)
 
 Having plenty of unlabeled data and little labeled data is common. Building a large unlabeled dataset is often cheap (e.g., a simple script can download millions of images off the internet), but labeling those images (e.g., classifying them as cute or not) can usually be done reliably only by humans. Labeling instances is time-consuming and costly, so it's normal to have only a few thousand human-labeled instances, or even less.
 
@@ -16458,7 +16458,7 @@ Rather than training the whole stacked autoencoder in one go like we just did, i
 
 {674}------------------------------------------------
 
-![](_page_674_Figure_0.jpeg)
+![](img/_page_674_Figure_0.jpeg)
 
 technique is not used so much these days, but you may still run into papers that talk about "greedy layerwise training", so it's good to know what it means.
 
@@ -16474,7 +16474,7 @@ As I mentioned earlier, one of the triggers of the deep learning tsunami was the
 
 Autoencoders are not limited to dense networks: you can also build convolutional autoencoders. Let's look at these now
 
-## **Convolutional Autoencoders**
+### **Convolutional Autoencoders**
 
 If you are dealing with images, then the autoencoders we have seen so far will not work well (unless the images are very small): as you saw in Chapter 14, convolutional neural networks are far better suited than dense networks to working with images. So if you want to build an autoencoder for images (e.g., for unsupervised pretraining or dimensionality reduction), you will need to build a *convolutional autoencoder*.<sup>3</sup> The encoder is a regular CNN composed of convolutional layers and pooling layers. It typically reduces the spatial dimensionality of the inputs (i.e., height and width) while increasing the depth (i.e., the number of feature maps). The decoder must do the reverse (upscale the image and reduce its depth back to the original dimensions), and for this you can use transpose convolutional layers (alternatively, you could combine upsampling layers with convolutional layers). Here is a basic convolutional autoencoder for Fashion MNIST:
 
@@ -16505,7 +16505,7 @@ OK, let's step back for a second. So far we have looked at various kinds of auto
 
 Up to now, in order to force the autoencoder to learn interesting features, we have limited the size of the coding layer, making it undercomplete. There are actually many other kinds of constraints that can be used, including ones that allow the coding layer to be just as large as the inputs, or even larger, resulting in an *overcomplete* autoencoder. Then, in the following sections we'll look at a few more kinds of autoencoders: denoising autoencoders, sparse autoencoders, and variational autoencoders.
 
-## **Denoising Autoencoders**
+### **Denoising Autoencoders**
 
 Another way to force the autoencoder to learn useful features is to add noise to its inputs, training it to recover the original, noise-free inputs. This idea has been around since the 1980s (e.g., it is mentioned in Yann LeCun's 1987 master's thesis). In a 2008 paper,<sup>4</sup> Pascal Vincent et al. showed that autoencoders could also be used for feature extraction. In a 2010 paper,<sup>5</sup> Vincent et al. introduced *stacked denoising autoencoders*.
 
@@ -16530,7 +16530,7 @@ dropout_{encoder} = tf_{keras.Sequential}tf.keras.layers.Flatten(),
 \mathcal{I}dropout ae = tf.keras.Sequential([dropout encoder, dropout decoder])
 ```
 
-![](_page_677_Figure_1.jpeg)
+![](img/_page_677_Figure_1.jpeg)
 
 Figure 17-8. Denoising autoencoders, with Gaussian noise (left) or dropout (right)
 
@@ -16538,11 +16538,11 @@ Figure 17-9 shows a few noisy images (with half the pixels turned off), and the 
 
 {678}------------------------------------------------
 
-![](_page_678_Picture_0.jpeg)
+![](img/_page_678_Picture_0.jpeg)
 
 Figure 17-9. Noisy images (top) and their reconstructions (bottom)
 
-## **Sparse Autoencoders**
+### **Sparse Autoencoders**
 
 Another kind of constraint that often leads to good feature extraction is *sparsity*: by adding an appropriate term to the cost function, the autoencoder is pushed to reduce the number of active neurons in the coding layer. For example, it may be pushed to have on average only 5% significantly active neurons in the coding layer. This forces the autoencoder to represent each input as a combination of a small number of activations. As a result, each neuron in the coding layer typically ends up representing a useful feature (if you could speak only a few words per month, you would probably try to make them worth listening to).
 
@@ -16569,7 +16569,7 @@ Another approach, which often yields better results, is to measure the actual sp
 
 Once we have the mean activation per neuron, we want to penalize the neurons that are too active, or not active enough, by adding a *sparsity loss* to the cost function. For example, if we measure that a neuron has an average activation of 0.3, but the target sparsity is 0.1, it must be penalized to activate less. One approach could be simply adding the squared error  $(0.3 - 0.1)^2$  to the cost function, but in practice a better approach is to use the Kullback–Leibler (KL) divergence (briefly discussed in Chapter 4), which has much stronger gradients than the mean squared error, as you can see in Figure 17-10.
 
-![](_page_679_Figure_3.jpeg)
+![](img/_page_679_Figure_3.jpeg)
 
 Figure 17-10. Sparsity loss
 
@@ -16624,7 +16624,7 @@ kld_reg = KLDivergenceRegularizer(weight=5e-3, target=0.1)sparse kl encoder = tf
 
 After training this sparse autoencoder on Fashion MNIST, the coding layer will have roughly 10% sparsity.
 
-## **Variational Autoencoders**
+### **Variational Autoencoders**
 
 An important category of autoencoders was introduced in 2013 by Diederik Kingma and Max Welling<sup>6</sup> and quickly became one of the most popular variants: variational autoencoders (VAEs).
 
@@ -16641,7 +16641,7 @@ Both these properties make VAEs rather similar to RBMs, but they are easier to t
 
 Let's take a look at how VAEs work. Figure 17-11 (left) shows a variational autoencoder. You can recognize the basic structure of all autoencoders, with an encoder followed by a decoder (in this example, they both have two hidden layers), but there is a twist: instead of directly producing a coding for a given input, the encoder produces a *mean coding*  $\mu$  and a standard deviation  $\sigma$ . The actual coding is then sampled randomly from a Gaussian distribution with mean  $\mu$  and standard deviation σ. After that the decoder decodes the sampled coding normally. The right part of the diagram shows a training instance going through this autoencoder. First, the encoder produces  $\mu$  and  $\sigma$ , then a coding is sampled randomly (notice that it is not exactly located at  $\mu$ ), and finally this coding is decoded; the final output resembles the training instance.
 
-![](_page_682_Figure_1.jpeg)
+![](img/_page_682_Figure_1.jpeg)
 
 Figure 17-11. A variational autoencoder (left) and an instance going through it (right)
 
@@ -16744,7 +16744,7 @@ codings = tf.random.normal(shape=[3 * 7, codings_size])images = variational deco
 
 Figure 17-12 shows the 12 generated images.
 
-![](_page_685_Picture_8.jpeg)
+![](img/_page_685_Picture_8.jpeg)
 
 Figure 17-12. Fashion MNIST images generated by the variational autoencoder
 
@@ -16759,7 +16759,7 @@ codings = np{\cdot}zeros([7, codings_size])codings[:, 3] = np.linspace(-0.8, 0.8
 images = variational decoder(codings).numpv()
 ```
 
-![](_page_686_Picture_3.jpeg)
+![](img/_page_686_Picture_3.jpeg)
 
 Figure 17-13. Semantic interpolation
 
@@ -16781,7 +16781,7 @@ Takes a random distribution as input (typically Gaussian) and outputs some data�
 
 Takes either a fake image from the generator or a real image from the training set as input, and must guess whether the input image is fake or real.
 
-![](_page_687_Figure_2.jpeg)
+![](img/_page_687_Figure_2.jpeg)
 
 Figure 17-14. A generative adversarial network
 
@@ -16794,7 +16794,7 @@ During training, the generator and the discriminator have opposite goals: the di
 
 produce images that the discriminator will (wrongly) believe to be real! Crucially, the weights of the discriminator are frozen during this step, so backpropagation only affects the weights of the generator.
 
-![](_page_688_Picture_1.jpeg)
+![](img/_page_688_Picture_1.jpeg)
 
 The generator never actually sees any real images, yet it gradually learns to produce convincing fake images! All it gets is the gradients flowing back through the discriminator. Fortunately, the better the discriminator gets, the more information about the real images is contained in these secondhand gradients, so the generator can make significant progress.
 
@@ -16825,7 +16825,7 @@ gan.compile(loss="binary_crossentropy", optimizer="rmsprop")
 
 {689}------------------------------------------------
 
-![](_page_689_Picture_0.jpeg)
+![](img/_page_689_Picture_0.jpeg)
 
 The trainable attribute is taken into account by Keras only when compiling a model, so after running this code, the discriminator is trainable if we call its fit() method or its train on batch() method (which we will be using), while it is not trainable when we call these methods on the gan model.
 
@@ -16867,7 +16867,7 @@ generated_images = generator.predict(codings)
 
 If you display the generated images (see Figure 17-15), you will see that at the end of the first epoch, they already start to look like (very noisy) Fashion MNIST images.
 
-![](_page_690_Picture_3.jpeg)
+![](img/_page_690_Picture_3.jpeg)
 
 Figure 17-15. Images generated by the GAN after one epoch of training
 
@@ -16945,7 +16945,7 @@ Lastly, to build the dataset and then compile and train this model, we can use t
 
 {694}------------------------------------------------
 
-![](_page_694_Picture_0.jpeg)
+![](img/_page_694_Picture_0.jpeg)
 
 Figure 17-16. Images generated by the DCGAN after 50 epochs of training
 
@@ -16955,11 +16955,11 @@ DCGANs aren't perfect, though. For example, when you try to generate very large 
 
 {695}------------------------------------------------
 
-![](_page_695_Picture_0.jpeg)
+![](img/_page_695_Picture_0.jpeg)
 
 Figure 17-17. Vector arithmetic for visual concepts (part of figure 7 from the DCGAN  $paper$ <sup>13</sup>
 
-![](_page_695_Picture_2.jpeg)
+![](img/_page_695_Picture_2.jpeg)
 
 If you add each image's class as an extra input to both the generator and the discriminator, they will both learn what each class looks like, and thus you will be able to control the class of each image produced by the generator. This is called a conditional GAN(CGAN).<sup>14</sup>
 
@@ -16979,7 +16979,7 @@ For example, when growing the generator's outputs from  $4 \times 4$  to  $8 \ti
 
 existing convolutional layer ("Conv 1") to produce  $8 \times 8$  feature maps. These are fed to the new convolutional layer ("Conv 2"), which in turn feeds into a new output convolutional layer. To avoid breaking the trained weights of Conv 1, we gradually fade in the two new convolutional layers (represented with dashed lines in Figure 17-18) and fade out the original output layer. The final outputs are a weighted sum of the new outputs (with weight  $\alpha$ ) and the original outputs (with weight  $1 - \alpha$ ), slowly increasing  $\alpha$  from 0 to 1. A similar fade-in/fade-out technique is used when a new convolutional layer is added to the discriminator (followed by an average pooling layer for downsampling). Note that all convolutional layers use "same" padding and strides of 1, so they preserve the height and width of their inputs. This includes the original convolutional layer, so it now produces  $8 \times 8$  outputs (since its inputs are now  $8 \times 8$ ). Lastly, the output layers use kernel size 1. They just project their inputs down to the desired number of color channels (typically 3).
 
-![](_page_696_Figure_1.jpeg)
+![](img/_page_696_Figure_1.jpeg)
 
 Figure 17-18. A progressively growing GAN: a GAN generator outputs  $4 \times 4$  color images (left); we extend it to output  $8 \times 8$  images (right)
 
@@ -17025,7 +17025,7 @@ Responsible for generating the images. It has a constant learned input (to be cl
 
 {699}------------------------------------------------
 
-![](_page_699_Figure_0.jpeg)
+![](img/_page_699_Figure_0.jpeg)
 
 Figure 17-19. StyleGAN's generator architecture (part of Figure 1 from the StyleGAN  $paper)^{18}$ 
 
@@ -17045,7 +17045,7 @@ There is such a wide variety of GANs out there that it would require a whole boo
 
 Now that we've examined autoencoders and GANs, let's look at one last type of architecture: diffusion models.
 
-## **Diffusion Models**
+### **Diffusion Models**
 
 The ideas behind diffusion models have been around for many years, but they were first formalized in their modern form in a 2015 paper<sup>19</sup> by Jascha Sohl-Dickstein et al. from Stanford University and UC Berkeley. The authors applied tools from thermodynamics to model a diffusion process, similar to a drop of milk diffusing in a cup of tea. The core idea is to train a model to learn the reverse process: start from the completely mixed state, and gradually "unmix" the milk from the tea. Using this idea, they obtained promising results in image generation, but since GANs produced more convincing images back then, diffusion models did not get as much attention.
 
@@ -17079,7 +17079,7 @@ $$
 
 Our goal, of course, is not to drown cats in noise. On the contrary, we want to create many new cats! We can do so by training a model that can perform the reverse process: going from  $x_i$ , to  $x_{i-1}$ . We can then use it to remove a tiny bit of noise from an image, and repeat the operation many times until all the noise is gone. If we train the model on a dataset containing many cat images, then we can give it a picture entirely full of Gaussian noise, and the model will gradually make a brand new cat appear (see Figure 17-20).
 
-![](_page_702_Figure_5.jpeg)
+![](img/_page_702_Figure_5.jpeg)
 
 Figure 17-20. The forward process q and reverse process p
 
@@ -17101,7 +17101,7 @@ In these equations:
 - *s* is a tiny value which prevents  $\beta_t$  from being too small near  $t = 0$ . In the paper, the authors used  $s = 0.008$ .
 - $\beta_t$  is clipped to be no larger than 0.999, to avoid instabilities near  $t = T$ .
 
-![](_page_703_Figure_6.jpeg)
+![](img/_page_703_Figure_6.jpeg)
 
 Figure 17-21. Noise variance schedule  $\beta_{v}$  and the remaining signal variance  $\alpha_{t}$ 
 
@@ -17134,7 +17134,7 @@ Let's go through this code:
 - Then we generate some Gaussian noise with mean 0 and variance 1.
 - Lastly, we use Equation 17-6 to apply the diffusion process to the images. Note that  $x \rightarrow x$  0.5 is equal to the square root of x. The function returns a tuple containing the inputs and the targets. The inputs are represented as a Python dict containing the noisy images and the time steps used to generate them. The targets are the Gaussian noise used to generate each image.
 
-![](_page_704_Picture_9.jpeg)
+![](img/_page_704_Picture_9.jpeg)
 
 With this setup, the model will predict the noise that should be subtracted from the input image to get the original image. Why not predict the original image directly? Well, the authors tried: it simply doesn't work as well.
 
@@ -17202,7 +17202,7 @@ This may take a minute or two. That's the main drawback of diffusion models: gen
 
 {707}------------------------------------------------
 
-![](_page_707_Picture_0.jpeg)
+![](img/_page_707_Picture_0.jpeg)
 
 Figure 17-22. Images generated by the DDPM
 
@@ -17264,7 +17264,7 @@ So how did DeepMind (bought by Google for over \$500 million in 2014) achieve al
 
 then present two of the most important techniques in deep reinforcement learning. policy gradients and deep Q-networks, including a discussion of Markov decision processes. Let's get started!
 
-## **Learning to Optimize Rewards**
+### **Learning to Optimize Rewards**
 
 In reinforcement learning, a software *agent* makes *observations* and takes *actions* within an *environment*, and in return it receives *rewards* from the environment. Its objective is to learn to act in a way that will maximize its expected rewards over time. If you don't mind a bit of anthropomorphism, you can think of positive rewards as pleasure, and negative rewards as pain (the term "reward" is a bit misleading in this case). In short, the agent acts in the environment and learns by trial and error to maximize its pleasure and minimize its pain.
 
@@ -17280,13 +17280,13 @@ Note that there may not be any positive rewards at all; for example, the agent m
 
 {712}------------------------------------------------
 
-![](_page_712_Picture_0.jpeg)
+![](img/_page_712_Picture_0.jpeg)
 
 systems, placing ads on a web page, or controlling where an image classification system should focus its attention.
 
 Figure 18-1. Reinforcement learning examples: (a) robotics, (b) Ms. Pac-Man, (c) Go player, (d) thermostat, (e) automatic trader<sup>5</sup>
 
-## **Policy Search**
+### **Policy Search**
 
 The algorithm a software agent uses to determine its actions is called its policy. The policy could be a neural network taking observations as inputs and outputting the action to take (see Figure 18-2).
 
@@ -17294,7 +17294,7 @@ The algorithm a software agent uses to determine its actions is called its polic
 
 {713}------------------------------------------------
 
-![](_page_713_Figure_0.jpeg)
+![](img/_page_713_Figure_0.jpeg)
 
 Figure 18-2. Reinforcement learning using a neural network policy
 
@@ -17312,7 +17312,7 @@ Another way to explore the policy space is to use *genetic algorithms*. For exam
 
 {714}------------------------------------------------
 
-![](_page_714_Figure_0.jpeg)
+![](img/_page_714_Figure_0.jpeg)
 
 Figure 18-3. Four points in the policy space (left) and the agent's corresponding behavior  $(right)$ 
 
@@ -17352,7 +17352,7 @@ env = gym.make("CartPole-v1", render_mode="rgb_array")
 
 Here, we've created a CartPole environment. This is a 2D simulation in which a cart can be accelerated left or right in order to balance a pole placed on top of it (see Figure 18-4). This is a classic control task.
 
-![](_page_715_Picture_9.jpeg)
+![](img/_page_715_Picture_9.jpeg)
 
 The gym.envs.registry dictionary contains the names and specifications of all the available environments.
 
@@ -17360,7 +17360,7 @@ The gym.envs.registry dictionary contains the names and specifications of all th
 
 {716}------------------------------------------------
 
-![](_page_716_Figure_0.jpeg)
+![](img/_page_716_Figure_0.jpeg)
 
 Figure 18-4. The CartPole environment
 
@@ -17430,7 +17430,7 @@ info
 
 This environment-specific dictionary may provide extra information, just like the one returned by the reset() method.
 
-![](_page_717_Picture_12.jpeg)
+![](img/_page_717_Picture_12.jpeg)
 
 Once you have finished using an environment, you should call its close() method to free resources.
 
@@ -17467,7 +17467,7 @@ Let's create a neural network policy. This neural network will take an observati
 
 {719}------------------------------------------------
 
-![](_page_719_Figure_0.jpeg)
+![](img/_page_719_Figure_0.jpeg)
 
 Figure 18-5. Neural network policy
 
@@ -17502,13 +17502,13 @@ To tackle this problem, a common strategy is to evaluate an action based on the 
 
 as much as immediate rewards. Typical discount factors vary from 0.9 to 0.99. With a discount factor of 0.95, rewards 13 steps into the future count roughly for half as much as immediate rewards (since  $0.95^{13} \approx 0.5$ ), while with a discount factor of 0.99, rewards 69 steps into the future count for half as much as immediate rewards. In the CartPole environment, actions have fairly short-term effects, so choosing a discount factor of 0.95 seems reasonable.
 
-![](_page_721_Figure_1.jpeg)
+![](img/_page_721_Figure_1.jpeg)
 
 Figure 18-6. Computing an action's return: the sum of discounted future rewards
 
 Of course, a good action may be followed by several bad actions that cause the pole to fall quickly, resulting in the good action getting a low return. Similarly, a good actor may sometimes star in a terrible movie. However, if we play the game enough times, on average good actions will get a higher return than bad ones. We want to estimate how much better or worse an action is, compared to the other possible actions, on average. This is called the *action advantage*. For this, we must run many episodes and normalize all the action returns, by subtracting the mean and dividing by the standard deviation. After that, we can reasonably assume that actions with a negative advantage were bad while actions with a positive advantage were good. OK, now that we have a way to evaluate each action, we are ready to train our first agent using policy gradients. Let's see how.
 
-## **Policy Gradients**
+### **Policy Gradients**
 
 As discussed earlier, PG algorithms optimize the parameters of a policy by following the gradients toward higher rewards. One popular class of PG algorithms, called 
 
@@ -17647,7 +17647,7 @@ The simple policy gradients algorithm we just trained solved the CartPole task, 
 
 {726}------------------------------------------------
 
-![](_page_726_Picture_0.jpeg)
+![](img/_page_726_Picture_0.jpeg)
 
 Researchers try to find algorithms that work well even when the agent initially knows nothing about the environment. However, unless you are writing a paper, you should not hesitate to inject prior knowledge into the agent, as it will speed up training dramatically. For example, since you know that the pole should be as vertical as possible, you could add negative rewards proportional to the pole's angle. This will make the rewards much less sparse and speed up training. Also, if you already have a reasonably good policy (e.g., hardcoded), you may want to train the neural network to imitate it before using policy gradients to improve it.
 
@@ -17657,7 +17657,7 @@ We will now look at another popular family of algorithms. Whereas PG algorithms 
 
 In the early 20th century, the mathematician Andrey Markov studied stochastic processes with no memory, called Markov chains. Such a process has a fixed number of states, and it randomly evolves from one state to another at each step. The probability for it to evolve from a state s to a state s' is fixed, and it depends only on the pair  $(s,$  $s'$ ), not on past states. This is why we say that the system has no memory.
 
-![](_page_726_Figure_5.jpeg)
+![](img/_page_726_Figure_5.jpeg)
 
 Figure 18-7 shows an example of a Markov chain with four states.
 
@@ -17673,7 +17673,7 @@ Markov decision processes were first described in the 1950s by Richard Bellman.<
 
 For example, the MDP represented in Figure 18-8 has three states (represented by circles) and up to three possible discrete actions at each step (represented by diamonds).
 
-![](_page_727_Figure_3.jpeg)
+![](img/_page_727_Figure_3.jpeg)
 
 Figure 18-8. Example of a Markov decision process
 
@@ -17707,7 +17707,7 @@ $$
 
 In this equation,  $V_k(s)$  is the estimated value of state s at the  $k<sup>th</sup>$  iteration of the algorithm.
 
-![](_page_728_Picture_11.jpeg)
+![](img/_page_728_Picture_11.jpeg)
 
 This algorithm is an example of *dynamic programming*, which breaks down a complex problem into tractable subproblems that can be tackled iteratively.
 
@@ -17779,7 +17779,7 @@ array([0, 0, 1])
 
 This gives us the optimal policy for this MDP when using a discount factor of 0.90: in state  $s_0$  choose action  $a_0$ , in state  $s_1$  choose action  $a_0$  (i.e., stay put), and in state  $s_2$ choose action  $a_1$  (the only possible action). Interestingly, if we increase the discount factor to 0.95, the optimal policy changes: in state  $s_1$  the best action becomes  $a_2$  (go through the fire!). This makes sense because the more you value future rewards, the more you are willing to put up with some pain now for the promise of future bliss.
 
-## **Temporal Difference Learning**
+### **Temporal Difference Learning**
 
 Reinforcement learning problems with discrete actions can often be modeled as Markov decision processes, but the agent initially has no idea what the transition probabilities are (it does not know  $T(s, a, s')$ ), and it does not know what the rewards are going to be either (it does not know  $R(s, a, s')$ ). It must experience each state and each transition at least once to know the rewards, and it must experience them multiple times if it is to have a reasonable estimate of the transition probabilities.
 
@@ -17801,13 +17801,13 @@ In this equation:
 
 A more concise way of writing the first form of this equation is to use the notation  $a \leftarrow b$ , which means  $a_{k+1} \leftarrow (1 - \alpha) \cdot a_k + \alpha \cdot b_k$ . So, the first line of Equation 18-4 can be rewritten like this:  $V(s) \leftarrow r + \gamma \cdot V(s')$ .
 
-![](_page_731_Picture_8.jpeg)
+![](img/_page_731_Picture_8.jpeg)
 
 TD learning has many similarities with stochastic gradient descent, including the fact that it handles one sample at a time. Moreover, just like SGD, it can only truly converge if you gradually reduce the learning rate; otherwise, it will keep bouncing around the optimum Q-values.
 
 For each state s, this algorithm keeps track of a running average of the immediate rewards the agent gets upon leaving that state, plus the rewards it expects to get later, assuming it acts optimally.
 
-## **Q-Learning**
+### **Q-Learning**
 
 Similarly, the Q-learning algorithm is an adaptation of the Q-value iteration algorithm to the situation where the transition probabilities and the rewards are initially unknown (see Equation 18-5). Q-learning works by watching an agent play (e.g., randomly) and gradually improving its estimates of the Q-values. Once it has accurate Q-value estimates (or close enough), then the optimal policy is just choosing the action that has the highest Q-value (i.e., the greedy policy).
 
@@ -17856,7 +17856,7 @@ for iteration in range(10 000):
 
 This algorithm will converge to the optimal Q-values, but it will take many iterations, and possibly quite a lot of hyperparameter tuning. As you can see in Figure 18-9, the Q-value iteration algorithm (left) converges very quickly, in fewer than 20 iterations, while the Q-learning algorithm (right) takes about 8,000 iterations to converge. Obviously, not knowing the transition probabilities or the rewards makes finding the optimal policy significantly harder!
 
-![](_page_733_Figure_1.jpeg)
+![](img/_page_733_Figure_1.jpeg)
 
 Figure 18-9. Learning curve of the Q-value iteration algorithm versus the Q-learning algorithm
 
@@ -17899,7 +17899,7 @@ y(s, a) = r + \gamma \cdot \max_{a'} Q_{\theta}(s', a')
 
 With this target Q-value, we can run a training step using any gradient descent algorithm. Specifically, we generally try to minimize the squared error between the estimated Q-value  $Q_0(s, a)$  and the target Q-value  $y(s, a)$ , or the Huber loss to reduce the algorithm's sensitivity to large errors. And that's the deep Q-learning algorithm! Let's see how to implement it to solve the CartPole environment.
 
-## Implementing Deep Q-Learning
+### Implementing Deep Q-Learning
 
 The first thing we need is a deep Q-network. In theory, we need a neural net that takes a state-action pair as input, and outputs an approximate Q-value. However, in practice it's much more efficient to use a neural net that takes only a state as input, and outputs one approximate Q-value for each possible action. To solve the CartPole environment, we do not need a very complicated neural net; a couple of hidden layers will do:
 
@@ -17933,7 +17933,7 @@ from collections import deque
 replay buffer = deque(maxlen=2000)
 ```
 
-![](_page_736_Picture_4.jpeg)
+![](img/_page_736_Picture_4.jpeg)
 
 A *deque* is a queue elements can be efficiently added to or removed from on both ends. Inserting and deleting items from the ends of the queue is very fast, but random access can be slow when the queue gets long. If you need a very large replay buffer, you should use a circular buffer instead (see the notebook for an implementation), or check out DeepMind's Reverb library.
 
@@ -18000,7 +18000,7 @@ for episode in range(600):
 
 We run 600 episodes, each for a maximum of 200 steps. At each step, we first compute the epsilon value for the *ε*-greedy policy: it will go from 1 down to 0.01, linearly, in a bit under 500 episodes. Then we call the play one  $step()$  function, which will use the  $\varepsilon$ -greedy policy to pick an action, then execute it and record the experience in the replay buffer. If the episode is done or truncated, we exit the loop. Finally, if we are past episode 50, we call the training step() function to train the model on one batch sampled from the replay buffer. The reason we play many episodes without training is to give the replay buffer some time to fill up (if we don't wait enough, then there will not be enough diversity in the replay buffer). And that's it: we just implemented the Deep Q-learning algorithm!
 
-![](_page_738_Figure_5.jpeg)
+![](img/_page_738_Figure_5.jpeg)
 
 Figure 18-10 shows the total rewards the agent got during each episode.
 
@@ -18010,7 +18010,7 @@ Figure 18-10. Learning curve of the deep O-learning algorithm
 
 As you can see, the algorithm took a while to start learning anything, in part because  $\varepsilon$  was very high at the beginning. Then its progress was erratic: it first reached the max reward around episode 220, but it immediately dropped, then bounced up and down a few times, and soon after it looked like it had finally stabilized near the max reward, at around episode 320, its score again dropped down dramatically. This is called *catastrophic forgetting*, and it is one of the big problems facing virtually all RL algorithms: as the agent explores the environment, it updates its policy, but what it learns in one part of the environment may break what it learned earlier in other parts of the environment. The experiences are quite correlated, and the learning environment keeps changing—this is not ideal for gradient descent! If you increase the size of the replay buffer, the algorithm will be less subject to this problem. Tuning the learning rate may also help. But the truth is, reinforcement learning is hard: training is often unstable, and you may need to try many hyperparameter values and random seeds before you find a combination that works well. For example, if you try changing the activation function from "elu" to "relu", the performance will be much lower
 
-![](_page_739_Picture_1.jpeg)
+![](img/_page_739_Picture_1.jpeg)
 
 Reinforcement learning is notoriously difficult, largely because of the training instabilities and the huge sensitivity to the choice of hyperparameter values and random seeds.<sup>13</sup> As the researcher Andrej Karpathy put it, "[Supervised learning] wants to work. [...] RL must be forced to work". You will need time, patience, perseverance, and perhaps a bit of luck too. This is a major reason RL is not as widely adopted as regular deep learning (e.g., convolutional nets). But there are a few real-world applications, beyond AlphaGo and Atari games: for example, Google uses RL to optimize its datacenter costs, and it is used in some robotics applications, for hyperparameter tuning, and in recommender systems.
 
@@ -18022,7 +18022,7 @@ The basic deep Q-learning algorithm we've been using so far would be too unstabl
 
 {740}------------------------------------------------
 
-## **Deep Q-Learning Variants**
+### **Deep Q-Learning Variants**
 
 Let's look at a few variants of the deep Q-learning algorithm that can stabilize and speed up training.
 
@@ -18174,7 +18174,7 @@ Open-ended learning (OEL)
 
 The objective of OEL is to train agents capable of endlessly learning new and interesting tasks, typically generated procedurally. We're not there yet, but there has been some amazing progress over the last few years. For example, a 2019 paper<sup>28</sup> by a team of researchers from Uber AI introduced the *POET algorithm*, which generates multiple simulated 2D environments with bumps and holes and trains one agent per environment: the agent's goal is to walk as fast as possible while avoiding the obstacles. The algorithm starts out with simple environments, but they gradually get harder over time: this is called *curriculum* learning. Moreover, although each agent is only trained within one environment, it must regularly compete against other agents, across all environments. In each environment, the winner is copied over and it replaces the agent that was there before. This way, knowledge is regularly transferred across environments, and the most adaptable agents are selected. In the end, the agents are much better walkers than agents trained on a single task, and they can tackle much harder environments. Of course, this principle can be applied to other environments and tasks as well. If you're interested in OEL, make sure to check out the Enhanced POET paper,<sup>29</sup> as well as DeepMind's 2021 paper<sup>30</sup> on this topic.
 
-![](_page_746_Picture_2.jpeg)
+![](img/_page_746_Picture_2.jpeg)
 
 If you'd like to learn more about reinforcement learning, check out the book Reinforcement Learning by Phil Winder (O'Reilly).
 
@@ -18231,7 +18231,7 @@ TF Serving is a very efficient, battle-tested model server, written in C++. It c
 
 {750}------------------------------------------------
 
-![](_page_750_Figure_0.jpeg)
+![](img/_page_750_Figure_0.jpeg)
 
 Figure 19-1. TF Serving can serve multiple models and automatically deploy the latest version of each model
 
@@ -18255,7 +18255,7 @@ It's usually a good idea to include all the preprocessing layers in the final mo
 
 {751}------------------------------------------------
 
-![](_page_751_Picture_0.jpeg)
+![](img/_page_751_Picture_0.jpeg)
 
 Since a SavedModel saves the computation graph, it can only be used with models that are based exclusively on TensorFlow operations, excluding the tf.py\_function() operation, which wraps arbitrary Python code.
 
@@ -18427,7 +18427,7 @@ Hurray, we have the predictions! The model is close to 100% confident that the f
 
 The REST API is nice and simple, and it works well when the input and output data are not too large. Moreover, just about any client application can make REST queries without additional dependencies, whereas other protocols are not always so readily available. However, it is based on JSON, which is text-based and fairly verbose. For example, we had to convert the NumPy array to a Python list, and every float ended up represented as a string. This is very inefficient, both in terms of serialization/deserialization time—we have to convert all the floats to strings and back—and in terms of payload size: many floats end up being represented using over 15 characters, which translates to over 120 bits for 32-bit floats! This will result in high latency and bandwidth usage when transferring large NumPy arrays.<sup>6</sup> So, let's see how to use gRPC instead.
 
-![](_page_755_Picture_6.jpeg)
+![](img/_page_755_Picture_6.jpeg)
 
 When transferring large amounts of data, or when latency is important, it is much better to use the gRPC API, if the client supports it, as it uses a compact binary format and an efficient communication protocol based on HTTP/2 framing.
 
@@ -18491,7 +18491,7 @@ Done quiescing servable version {name: my_mnist_model version: 1}
 Unloading servable version {name: my mnist model version: 1}
 ```
 
-![](_page_757_Picture_5.jpeg)
+![](img/_page_757_Picture_5.jpeg)
 
 If the SavedModel contains some example instances in the assets/ extra directory, you can configure TF Serving to run the new model on these instances before starting to use it to serve requests. This is called *model warmup*: it will ensure that everything is properly loaded, avoiding long response times for the first requests.
 
@@ -18501,13 +18501,13 @@ As you can see, TF Serving makes it straightforward to deploy new models. Moreov
 
 {758}------------------------------------------------
 
-![](_page_758_Picture_0.jpeg)
+![](img/_page_758_Picture_0.jpeg)
 
 Another great feature of TF Serving is its automatic batching capability, which you can activate using the --enable\_batching option upon startup. When TF Serving receives multiple requests within a short period of time (the delay is configurable), it will automatically batch them together before using the model. This offers a significant performance boost by leveraging the power of the GPU. Once the model returns the predictions, TF Serving dispatches each prediction to the right client. You can trade a bit of latency for a greater throughput by increasing the batching delay (see the --batching parameters file option).
 
 If you expect to get many queries per second, you will want to deploy TF Serving on multiple servers and load-balance the queries (see Figure 19-2). This will require deploying and managing many TF Serving containers across these servers. One way to handle that is to use a tool such as Kubernetes, which is an open source system for simplifying container orchestration across many servers. If you do not want to purchase, maintain, and upgrade all the hardware infrastructure, you will want to use virtual machines on a cloud platform such as Amazon AWS, Microsoft Azure, Google Cloud Platform, IBM Cloud, Alibaba Cloud, Oracle Cloud, or some other platform as a service (PaaS) offering. Managing all the virtual machines, handling container orchestration (even with the help of Kubernetes), taking care of TF Serving configuration, tuning and monitoring—all of this can be a full-time job. Fortunately, some service providers can take care of all this for you. In this chapter we will use Vertex AI: it's the only platform with TPUs today; it supports TensorFlow 2, Scikit-Learn, and XGBoost; and it offers a nice suite of AI services. There are several other providers in this space that are capable of serving TensorFlow models as well, though, such as Amazon AWS SageMaker and Microsoft AI Platform, so make sure to check them out too
 
-![](_page_758_Figure_3.jpeg)
+![](img/_page_758_Figure_3.jpeg)
 
 Figure 19-2. Scaling up TF Serving with load balancing
 
@@ -18524,7 +18524,7 @@ Before we start, there's a little bit of setup to take care of:
 - 1. Log in to your Google account, and then go to the Google Cloud Platform console (see Figure 19-3). If you don't have a Google account, you'll have to create one.
 - 2. If it's your first time using GCP, you'll have to read and accept the terms and conditions. New users are offered a free trial, including \$300 worth of GCP credit that you can use over the course of 90 days (as of May 2022). You'll only need a small portion of that to pay for the services you'll use in this chapter. Upon signing up for a free trial, you'll still need to create a payment profile and enter your credit card number: it's used for verification purposes-probably to avoid people using the free trial multiple times—but you won't be billed for the first \$300, and after that you'll only be charged if you opt in by upgrading to a paid account.
 
-![](_page_759_Figure_5.jpeg)
+![](img/_page_759_Figure_5.jpeg)
 
 Figure 19-3. Google Cloud Platform console
 
@@ -18533,7 +18533,7 @@ Figure 19-3. Google Cloud Platform console
 - 3. If you have used GCP before and your free trial has expired, then the services you will use in this chapter will cost you some money. It shouldn't be too much, especially if you remember to turn off the services when you don't need them anymore. Make sure you understand and agree to the pricing conditions before you run any service. I hereby decline any responsibility if services end up costing more than you expected! Also make sure your billing account is active. To check, open the  $\equiv$  navigation menu at the top left and click Billing, then make sure you have set up a payment method and that the billing account is active.
 - 4. Every resource in GCP belongs to a *project*. This includes all the virtual machines you may use, the files you store, and the training jobs you run. When you create an account, GCP automatically creates a project for you, called "My First Project". If you want, you can change its display name by going to the project settings: in the  $\equiv$  navigation menu, select "IAM and admin  $\rightarrow$  Settings", change the project's display name, and click SAVE. Note that the project also has a unique ID and number. You can choose the project ID when you create a project, but you cannot change it later. The project number is automatically generated and cannot be changed. If you want to create a new project, click the project name at the top of the page, then click NEW PROJECT and enter the project name. You can also click EDIT to set the project ID. Make sure billing is active for this new project so that service fees can be billed (to your free credits, if any).
 
-![](_page_760_Picture_2.jpeg)
+![](img/_page_760_Picture_2.jpeg)
 
 Always set an alarm to remind yourself to turn services off when you know you will only need them for a few hours, or else you might leave them running for days or months, incurring potentially significant costs.
 
@@ -18549,7 +18549,7 @@ Google Cloud's command-line interface (CLI) includes the gcloud command, which l
 
 GCP also offers a preconfigured shell environment called the Google Cloud Shell, which you can use directly in your web browser; it runs on a free Linux VM (Debian) with the Google Cloud SDK already preinstalled and configured for you, so there's no need to authenticate. The Cloud Shell is available anywhere in GCP: just click the Activate Cloud Shell icon at the top right of the page (see Figure 19-4).
 
-![](_page_761_Figure_3.jpeg)
+![](img/_page_761_Figure_3.jpeg)
 
 Figure 19-4. Activating the Google Cloud Shell
 
@@ -18569,7 +18569,7 @@ The authentication process is based on *OAuth 2.0*: a pop-up window will ask you
 
 {762}------------------------------------------------
 
-![](_page_762_Picture_0.jpeg)
+![](img/_page_762_Picture_0.jpeg)
 
 If you are *not* working with the official notebooks from https:// github.com/ageron/handson-ml3, then you should be extra careful: if the notebook's author is mischievous, they could include code to do whatever they want with your data.
 
@@ -18599,7 +18599,7 @@ location = "us-centrall"storage_client = storage.Client(project=project_id)
 bucket = storage_client.create_bucket(bucket_name, location=location)
 ```
 
-![](_page_763_Picture_5.jpeg)
+![](img/_page_763_Picture_5.jpeg)
 
 If you want to reuse an existing bucket, replace the last line with bucket = storage client.bucket(bucket name). Make sure location is set to the bucket's region.
 
@@ -18665,7 +18665,7 @@ endpoint.deploy(
 
 This code may take a few minutes to run, because Vertex AI needs to set up a virtual machine. In this example, we use a fairly basic machine of type n1-standard-4 (see https://homl.info/machinetypes for other types). We also use a basic GPU of type NVIDIA\_TESLA\_K80 (see https://homl.info/accelerators for other types). If you selected another region than "us-central1", then you may need to change the machine type or the accelerator type to values that are supported in that region (e.g., not all regions have Nvidia Tesla K80 GPUs).
 
-![](_page_765_Picture_3.jpeg)
+![](img/_page_765_Picture_3.jpeg)
 
 Google Cloud Platform enforces various GPU quotas, both worldwide and per region: you cannot create thousands of GPU nodes without prior authorization from Google. To check your quotas, open "IAM and admin  $\rightarrow$  Quotas" in the GCP console. If some quotas are too low (e.g., if you need more GPUs in a particular region), you can ask for them to be increased; it often takes about 48 hours.
 
@@ -18728,7 +18728,7 @@ batch_prediction_job = mnist_model.batch_predict(
 \mathcal{L}
 ```
 
-![](_page_767_Picture_2.jpeg)
+![](img/_page_767_Picture_2.jpeg)
 
 For large batches, you can split the inputs into multiple JSON Lines files and list them all via the gcs source argument.
 
@@ -18791,7 +18791,7 @@ with open("my_converted_savedmodel.tflite", "wb") as f:
     f.write(tflite_model)
 ```
 
-![](_page_769_Picture_6.jpeg)
+![](img/_page_769_Picture_6.jpeg)
 
 You can also save a Keras model directly to a FlatBuffer using tf.lite.TFLiteConverter.from\_keras\_model(model).
 
@@ -18805,7 +18805,7 @@ Another way you can reduce the model size—other than simply using smaller neur
 
 TFLite's converter can go further than that, by quantizing the model weights down to fixed-point, 8-bit integers! This leads to a fourfold size reduction compared to using 32-bit floats. The simplest approach is called *post-training quantization*: it just quantizes the weights after training, using a fairly basic but efficient symmetrical quantization technique. It finds the maximum absolute weight value,  $m$ , then it maps the floating-point range  $-m$  to  $+m$  to the fixed-point (integer) range  $-127$  to  $+127$ . For example, if the weights range from  $-1.5$  to  $+0.8$ , then the bytes  $-127$ , 0, and  $+127$ will correspond to the floats  $-1.5$ , 0.0, and  $+1.5$ , respectively (see Figure 19-5). Note that 0.0 always maps to 0 when using symmetrical quantization. Also note that the byte values  $+68$  to  $+127$  will not be used in this example, since they map to floats greater than  $+0.8$ .
 
-![](_page_770_Figure_2.jpeg)
+![](img/_page_770_Figure_2.jpeg)
 
 Figure 19-5. From 32-bit floats to 8-bit integers, using symmetrical quantization
 
@@ -18859,7 +18859,7 @@ It's even possible to turn this website into a *progressive web app* (PWA): this
 
 {773}------------------------------------------------
 
-![](_page_773_Picture_0.jpeg)
+![](img/_page_773_Picture_0.jpeg)
 
 Check out many more demos of machine learning models running in your browser at https://tensorflow.org/js/demos.
 
@@ -18871,7 +18871,7 @@ Once again, doing justice to this topic would require a whole book. If you want 
 
 Now that you've seen how to deploy TensorFlow models to TF Serving, or to the cloud with Vertex AI, or to mobile and embedded devices using TFLite, or to a web browser using TFJS, let's discuss how to use GPUs to speed up computations.
 
-## **Using GPUs to Speed Up Computations**
+### **Using GPUs to Speed Up Computations**
 
 In Chapter 11 we looked at several techniques that can considerably speed up training: better weight initialization, sophisticated optimizers, and so on. But even with all of these techniques, training a large neural network on a single machine with a single CPU can take hours, days, or even weeks, depending on the task. Thanks to GPUs, this training time can be reduced down to minutes or hours. Not only does this save an enormous amount of time, but it also means that you can experiment with various models much more easily, and frequently retrain your models on fresh data.
 
@@ -18881,7 +18881,7 @@ In the previous chapters, we used GPU-enabled runtimes on Google Colab. All you 
 
 And what if you want to distribute the computations across the CPU and multiple GPU devices on a single machine (see Figure 19-6)? This is what we will discuss now, then later in this chapter we will discuss how to distribute computations across multiple servers.
 
-![](_page_774_Figure_1.jpeg)
+![](img/_page_774_Figure_1.jpeg)
 
 Figure 19-6. Executing a TensorFlow graph across multiple devices in parallel
 
@@ -18895,7 +18895,7 @@ If you decide to purchase a GPU card, then take some time to make the right choi
 
 If you go for an Nvidia GPU card, you will need to install the appropriate Nvidia drivers and several Nvidia libraries.<sup>9</sup> These include the Compute Unified Device Architecture library (CUDA) Toolkit, which allows developers to use CUDA-enabled GPUs for all sorts of computations (not just graphics acceleration), and the CUDA Deep Neural Network library (cuDNN), a GPU-accelerated library of common DNN computations such as activation layers, normalization, forward and backward convolutions, and pooling (see Chapter 14). cuDNN is part of Nvidia's Deep Learning SDK. Note that you will need to create an Nvidia developer account in order to download it. TensorFlow uses CUDA and cuDNN to control the GPU cards and accelerate computations (see Figure 19-7).
 
-![](_page_775_Figure_1.jpeg)
+![](img/_page_775_Figure_1.jpeg)
 
 Figure 19-7. TensorFlow uses CUDA and cuDNN to control GPUs and boost DNNs
 
@@ -18958,7 +18958,7 @@ $ CUDA DEVICE ORDER=PCI BUS ID CUDA VISIBLE DEVICES=3,2 python3 program 2.py
 
 Program 1 will then only see GPU cards 0 and 1, named "/qpu:0" and "/qpu:1", respectively, in TensorFlow, and program 2 will only see GPU cards 2 and 3, named "/gpu:1" and "/gpu:0", respectively (note the order). Everything will work fine (see Figure 19-8). Of course, you can also define these environment variables in Python by setting os.environ["CUDA\_DEVICE\_ORDER"] and os.environ["CUDA\_ VISIBLE\_DEVICES"], as long as you do so before using TensorFlow.
 
-![](_page_777_Figure_4.jpeg)
+![](img/_page_777_Figure_4.jpeg)
 
 Figure 19-8. Each program gets two GPUs
 
@@ -18976,7 +18976,7 @@ Let's suppose you have four GPUs, each with at least 4 GiB of RAM: in this case,
 
 {778}------------------------------------------------
 
-![](_page_778_Figure_0.jpeg)
+![](img/_page_778_Figure_0.jpeg)
 
 Figure 19-9. Each program gets all four GPUs, but with only 2 GiB of RAM on each **GPU** 
 
@@ -19048,7 +19048,7 @@ If you want to place an operation on a different device than the default one, us
 '/job:localhost/replica:0/task:0/device:CPU:0'
 ```
 
-![](_page_780_Picture_3.jpeg)
+![](img/_page_780_Picture_3.jpeg)
 
 The CPU is always treated as a single device ("/cpu:0"), even if your machine has multiple CPU cores. Any operation placed on the CPU may run in parallel across multiple cores if it has a multithreaded kernel.
 
@@ -19062,7 +19062,7 @@ As we saw in Chapter 12, one of the benefits of using TF functions is parallelis
 
 {781}------------------------------------------------
 
-![](_page_781_Figure_0.jpeg)
+![](img/_page_781_Figure_0.jpeg)
 
 Figure 19-10. Parallelized execution of a TensorFlow graph
 
@@ -19078,7 +19078,7 @@ intra-op thread pool and runs the operation across many GPU threads in parallel.
 
 An extra bit of magic that TensorFlow performs is when the TF function modifies a stateful resource, such as a variable: it ensures that the order of execution matches the order in the code, even if there is no explicit dependency between the statements. For example, if your TF function contains v.assign\_add(1) followed by v.assign(v \* 2), TensorFlow will ensure that these operations are executed in that order.
 
-![](_page_782_Picture_2.jpeg)
+![](img/_page_782_Picture_2.jpeg)
 
 You can control the number of threads in the inter-op thread pool by calling tf.config.threading.set\_inter\_op\_parallel ism\_threads(). To set the number of intra-op threads, use tf.config.threading.set intra op parallelism threads(). This is useful if you do not want TensorFlow to use all the CPU cores or if you want it to be single-threaded.<sup>12</sup>
 
@@ -19110,13 +19110,13 @@ So far we have trained each neural network on a single device. What if we want t
 
 {784}------------------------------------------------
 
-![](_page_784_Figure_0.jpeg)
+![](img/_page_784_Figure_0.jpeg)
 
 Figure 19-11. Splitting a fully connected neural network
 
 Some neural network architectures, such as convolutional neural networks (see Chapter 14), contain layers that are only partially connected to the lower layers, so it is much easier to distribute chunks across devices in an efficient way (Figure 19-12).
 
-![](_page_784_Figure_3.jpeg)
+![](img/_page_784_Figure_3.jpeg)
 
 Figure 19-12. Splitting a partially connected neural network
 
@@ -19124,7 +19124,7 @@ Figure 19-12. Splitting a partially connected neural network
 
 Deep recurrent neural networks (see Chapter 15) can be split a bit more efficiently across multiple GPUs. If you split the network horizontally by placing each layer on a different device, and feed the network with an input sequence to process, then at the first time step only one device will be active (working on the sequence's first value), at the second step two will be active (the second layer will be handling the output of the first layer for the first value, while the first layer will be handling the second value), and by the time the signal propagates to the output layer, all devices will be active simultaneously (Figure 19-13). There is still a lot of cross-device communication going on, but since each cell may be fairly complex, the benefit of running multiple cells in parallel may (in theory) outweigh the communication penalty. However, in practice a regular stack of LSTM layers running on a single GPU actually runs much faster.
 
-![](_page_785_Figure_1.jpeg)
+![](img/_page_785_Figure_1.jpeg)
 
 Figure 19-13. Splitting a deep recurrent neural network
 
@@ -19142,7 +19142,7 @@ Another way to parallelize the training of a neural network is to replicate it o
 
 Arguably the simplest approach is to completely mirror all the model parameters across all the GPUs and always apply the exact same parameter updates on every GPU. This way, all replicas always remain perfectly identical. This is called the mirrored strategy, and it turns out to be quite efficient, especially when using a single machine (see Figure 19-14).
 
-![](_page_786_Figure_4.jpeg)
+![](img/_page_786_Figure_4.jpeg)
 
 Figure 19-14. Data parallelism using the mirrored strategy
 
@@ -19154,7 +19154,7 @@ The tricky part when using this approach is to efficiently compute the mean of a
 
 Another approach is to store the model parameters outside of the GPU devices performing the computations (called *workers*); for example, on the CPU (see Figure 19-15). In a distributed setup, you may place all the parameters on one or more CPU-only servers called *parameter servers*, whose only role is to host and update the parameters.
 
-![](_page_787_Figure_3.jpeg)
+![](img/_page_787_Figure_3.jpeg)
 
 Figure 19-15. Data parallelism with centralized parameters
 
@@ -19164,7 +19164,7 @@ Whereas the mirrored strategy imposes synchronous weight updates across all GPUs
 
 **Synchronous updates.** With *synchronous updates*, the aggregator waits until all gradients are available before it computes the average gradients and passes them to the optimizer, which will update the model parameters. Once a replica has finished computing its gradients, it must wait for the parameters to be updated before it can proceed to the next mini-batch. The downside is that some devices may be slower than others, so the fast devices will have to wait for the slow ones at every step, making the whole process as slow as the slowest device. Moreover, the parameters will be copied to every device almost at the same time (immediately after the gradients are applied), which may saturate the parameter servers' bandwidth.
 
-![](_page_788_Picture_1.jpeg)
+![](img/_page_788_Picture_1.jpeg)
 
 To reduce the waiting time at each step, you could ignore the gradients from the slowest few replicas (typically  $\sim$ 10%). For example, you could run 20 replicas, but only aggregate the gradients from the fastest 18 replicas at each step, and just ignore the gradients from the last 2. As soon as the parameters are updated, the first 18 replicas can start working again immediately, without having to wait for the 2 slowest replicas. This setup is generally described as having 18 replicas plus 2 spare replicas.<sup>16</sup>
 
@@ -19178,7 +19178,7 @@ Data parallelism with asynchronous updates is an attractive choice because of it
 
 (the learning curve may contain temporary oscillations), or they can even make the training algorithm diverge.
 
-![](_page_789_Figure_1.jpeg)
+![](img/_page_789_Figure_1.jpeg)
 
 Figure 19-16. Stale gradients when using asynchronous updates
 
@@ -19213,7 +19213,7 @@ There is plenty of research going on to alleviate the bandwidth saturation issue
 
 queue, backpropagates these gradients and updates its own model parameters, and pushes the backpropagated gradients to the previous stage's gradient queue. It then repeats the whole process again and again. Each stage can also use regular data parallelism (e.g., using the mirrored strategy), independently from the other stages.
 
-![](_page_791_Figure_1.jpeg)
+![](img/_page_791_Figure_1.jpeg)
 
 Figure 19-17. PipeDream's pipeline parallelism
 
@@ -19310,13 +19310,13 @@ cluster spec = \{"worker": [
 
 In general there will be a single task per machine, but as this example shows, you can configure multiple tasks on the same machine if you want. In this case, if they share the same GPUs, make sure the RAM is split appropriately, as discussed earlier.
 
-![](_page_794_Picture_8.jpeg)
+![](img/_page_794_Picture_8.jpeg)
 
 By default, every task in the cluster may communicate with every other task, so make sure to configure your firewall to authorize all communications between these machines on these ports (it's usually simpler if you use the same port on every machine).
 
 {795}------------------------------------------------
 
-![](_page_795_Figure_0.jpeg)
+![](img/_page_795_Figure_0.jpeg)
 
 Figure 19-18. An example TensorFlow cluster
 
@@ -19329,7 +19329,7 @@ When you start a task, you must give it the cluster spec, and you must also tell
 \}
 ```
 
-![](_page_795_Picture_4.jpeg)
+![](img/_page_795_Picture_4.jpeg)
 
 In general you want to define the TF\_CONFIG environment variable outside of Python, so the code does not need to include the current task's type and index (this makes it possible to use the same code across all workers).
 
@@ -19358,7 +19358,7 @@ else:
 
 That's almost the same code you used earlier, except this time you are using the MultiWorkerMirroredStrategy. When you start this script on the first workers, they will remain blocked at the AllReduce step, but training will begin as soon as the last worker starts up, and you will see them all advancing at exactly the same rate since they synchronize at each step.
 
-![](_page_796_Picture_2.jpeg)
+![](img/_page_796_Picture_2.jpeg)
 
 When using the MultiWorkerMirroredStrategy, it's important to ensure that all workers do the same thing, including saving model checkpoints or writing TensorBoard logs, even though you will only keep what the chief writes. This is because these operations may need to run the AllReduce operations, so all workers must be in sync.
 
@@ -19384,7 +19384,7 @@ strategy = tf.distribute.experimental.TPUStrategy(resolver)
 
 This needs to be run right after importing TensorFlow. You can then use this strategy normally.
 
-![](_page_797_Picture_4.jpeg)
+![](img/_page_797_Picture_4.jpeg)
 
 If you are a researcher, you may be eligible to use TPUs for free; see https://tensorflow.org/tfrc for more details.
 
@@ -19412,7 +19412,7 @@ model.fit(X_train, y_train, validation_data=(X_valid, y_valid), epochs=10,
 model.save(model dir, save format="tf")
 ```
 
-![](_page_798_Picture_1.jpeg)
+![](img/_page_798_Picture_1.jpeg)
 
 If you place the training data on GCS, you can create a tf.data.TextLineDataset or tf.data.TFRecordDataset to access it: just use the GCS paths as the filenames (e.g., gs://my\_bucket/ data/001.csv). These datasets rely on the tf.io.gfile package to access files: it supports both local files and GCS files.
 
@@ -19442,7 +19442,7 @@ mist model2 = custom training job.run(machine_type="n1-standard-4".
 
 And that's it: Vertex AI will provision the compute nodes you requested (within your quotas), and it will run your training script across them. Once the job is complete, the run() method will return a trained model that you can use exactly like the one you created earlier: you can deploy it to an endpoint, or use it to make batch predictions. If anything goes wrong during training, you can view the logs in the GCP console: in the  $\equiv$  navigation menu, select Vertex AI  $\rightarrow$  Training, click on your training job, and click VIEW LOGS. Alternatively, you can click the CUSTOM JOBS tab and copy the job's ID (e.g., 1234), then select Logging from the  $\equiv$  navigation menu and query resource.labels.job\_id=1234.
 
-![](_page_799_Picture_3.jpeg)
+![](img/_page_799_Picture_3.jpeg)
 
 To visualize the training progress, just start TensorBoard and point its --logdir to the GCS path of the logs. It will use application default credentials, which you can set up using gcloud auth application-default login. Vertex AI also offers hosted Tensor-Board servers if you prefer.
 
@@ -19486,7 +19486,7 @@ def build model(args):
 model = build_model(args)history = model.fit([...])
 ```
 
-![](_page_800_Picture_4.jpeg)
+![](img/_page_800_Picture_4.jpeg)
 
 You can use the AIP\_\* environment variables we mentioned earlier to determine where to save the checkpoints, the TensorBoard logs, and the final model.
 
@@ -19570,7 +19570,7 @@ parameter_id: "optimizer" value { string_value: "adam" }
 
 That's it! Now you can get this trial's SavedModel, optionally train it a bit more, and deploy it to production.
 
-![](_page_802_Picture_5.jpeg)
+![](img/_page_802_Picture_5.jpeg)
 
 Vertex AI also includes an AutoML service, which completely takes care of finding the right model architecture and training it for you. All you need to do is upload your dataset to Vertex AI using a special format that depends on the type of dataset (images, text, tabular, video, etc.), then create an AutoML training job, pointing to the dataset and specifying the maximum number of compute hours you're willing to spend. See the notebook for an example.
 
@@ -19606,7 +19606,7 @@ You can distribute Keras Tuner across any set of machines. If you want to run it
 
 Now you have all the tools and knowledge you need to create state-of-the-art neural net architectures and train them at scale using various distribution strategies, on your own infrastructure or on the cloud, and then deploy them anywhere. In other words, you now have superpowers: use them well!
 
-## **Exercises**
+### **Exercises**
 
 - 1. What does a SavedModel contain? How do you inspect its content?
 - 2. When should you use TF Serving? What are its main features? What are some tools you can use to deploy it?
@@ -19625,7 +19625,7 @@ Now you have all the tools and knowledge you need to create state-of-the-art neu
 
 Solutions to these exercises are available at the end of this chapter's notebook, at https://homl.info/colab3.
 
-## **Thank You!**
+### **Thank You!**
 
 Before we close the last chapter of this book, I would like to thank you for reading it up to the last paragraph. I truly hope that you had as much fun reading this book as I had writing it, and that it will be useful for your projects, big or small.
 
@@ -19641,7 +19641,7 @@ My greatest hope is that this book will inspire you to build a wonderful ML appl
 
 {806}------------------------------------------------
 
-## **APPENDIX A Machine Learning Project Checklist**
+### **APPENDIX A Machine Learning Project Checklist**
 
 This checklist can guide you through your machine learning projects. There are eight main steps:
 
@@ -19741,7 +19741,7 @@ Notes<sup>.</sup>
 - 4. Perform feature scaling:
   - Standardize or normalize features.
 
-## **Shortlist Promising Models**
+### **Shortlist Promising Models**
 
 Notes:
 
@@ -19772,7 +19772,7 @@ Notes:
 - 2. Try ensemble methods. Combining your best models will often produce better performance than running them individually.
 - 3. Once you are confident about your final model, measure its performance on the test set to estimate the generalization error.
 
-![](_page_810_Picture_3.jpeg)
+![](img/_page_810_Picture_3.jpeg)
 
 Don't tweak your model after measuring the generalization error: you would just start overfitting the test set.
 
@@ -19787,7 +19787,7 @@ Don't tweak your model after measuring the generalization error: you would just 
   - List your assumptions and your system's limitations.
 - 5. Ensure your key findings are communicated through beautiful visualizations or easy-to-remember statements (e.g., "the median income is the number-one predictor of housing prices").
 
-## Launch!
+### Launch!
 
 - 1. Get your solution ready for production (plug into production data inputs, write unit tests, etc.).
 - 2. Write monitoring code to check your system's live performance at regular intervals and trigger alerts when it drops:
@@ -19803,7 +19803,7 @@ Don't tweak your model after measuring the generalization error: you would just 
 
 {812}------------------------------------------------
 
-## **APPENDIX B** Autodiff
+### **APPENDIX B** Autodiff
 
 This appendix explains how TensorFlow's autodifferentiation (autodiff) feature works, and how it compares to other solutions.
 
@@ -19865,7 +19865,7 @@ However, this method is so simple to implement that it is a great tool to check 
 
 So far, we have considered two ways to compute gradients: using manual differentiation and using finite difference approximation. Unfortunately, both are fatally flawed for training a large-scale neural network. So let's turn to autodiff, starting with forward mode.
 
-## **Forward-Mode Autodiff**
+### **Forward-Mode Autodiff**
 
 Figure B-1 shows how forward-mode autodiff works on an even simpler function,  $g(x, y) = 5 + xy$ . The graph for that function is represented on the left. After forwardmode autodiff, we get the graph on the right, which represents the partial derivative  $\partial g/\partial x = 0 + (0 \times x + y \times 1) = y$  (we could similarly obtain the partial derivative with regard to  $y$ ).
 
@@ -19877,7 +19877,7 @@ Finally, we can go up to the addition node in function *g*. As mentioned, the de
 
 {815}------------------------------------------------
 
-![](_page_815_Figure_0.jpeg)
+![](img/_page_815_Figure_0.jpeg)
 
 Figure B-1. Forward-mode autodiff
 
@@ -19893,11 +19893,11 @@ is simplified just to give you some idea of what dual numbers are). A dual numbe
 
 Dual numbers can be added, multiplied, and so on, as shown in Equation B-3.
 
-![](_page_816_Figure_2.jpeg)
+![](img/_page_816_Figure_2.jpeg)
 
 Most importantly, it can be shown that  $h(a + b\varepsilon) = h(a) + b \times h'(a)\varepsilon$ , so computing  $h(a + \varepsilon)$  gives you both  $h(a)$  and the derivative  $h'(a)$  in just one shot. Figure B-2 shows that the partial derivative of  $f(x, y)$  with regard to x at  $x = 3$  and  $y = 4$  (which I will write  $\partial f/\partial x$  (3, 4)) can be computed using dual numbers. All we need to do is compute  $f(3 + \varepsilon, 4)$ ; this will output a dual number whose first component is equal to  $f(3, 4)$  and whose second component is equal to  $\partial f/\partial x$  (3, 4).
 
-![](_page_816_Figure_4.jpeg)
+![](img/_page_816_Figure_4.jpeg)
 
 Figure B-2. Forward-mode autodiff using dual numbers
 
@@ -19911,7 +19911,7 @@ So, forward-mode autodiff is much more accurate than finite difference approxima
 
 Reverse-mode autodiff is the solution implemented by TensorFlow. It first goes through the graph in the forward direction (i.e., from the inputs to the output) to compute the value of each node. Then it does a second pass, this time in the reverse direction (i.e., from the output to the inputs), to compute all the partial derivatives. The name "reverse mode" comes from this second pass through the graph, where gradients flow in the reverse direction. Figure B-3 represents the second pass. During the first pass, all the node values were computed, starting from  $x = 3$  and  $y = 4$ . You can see those values at the bottom right of each node (e.g.,  $x \times x = 9$ ). The nodes are labeled  $n_1$  to  $n_7$  for clarity. The output node is  $n_7$ :  $f(3, 4) = n_7 = 42$ .
 
-![](_page_817_Figure_4.jpeg)
+![](img/_page_817_Figure_4.jpeg)
 
 Figure B-3. Reverse-mode autodiff
 
@@ -19939,13 +19939,13 @@ In Figure B-3, the numerical results are computed on the fly, at each node. Howe
 
 {819}------------------------------------------------
 
-![](_page_819_Picture_0.jpeg)
+![](img/_page_819_Picture_0.jpeg)
 
 If you ever want to implement a new type of low-level TensorFlow operation in C++, and you want to make it compatible with autodiff, then you will need to provide a function that returns the partial derivatives of the function's outputs with regard to its inputs. For example, suppose you implement a function that computes the square of its input:  $f(x) = x^2$ . In that case you would need to provide the corresponding derivative function:  $f(x) = 2x$ .
 
 {820}------------------------------------------------
 
-## **APPENDIX C Special Data Structures**
+### **APPENDIX C Special Data Structures**
 
 In this appendix we will take a very quick look at the data structures supported by TensorFlow, beyond regular float or integer tensors. This includes strings, ragged tensors, sparse tensors, tensor arrays, sets, and queues.
 
@@ -19975,7 +19975,7 @@ It is also possible to create tensors representing Unicode strings. Just create 
 
 {821}------------------------------------------------
 
-![](_page_821_Picture_0.jpeg)
+![](img/_page_821_Picture_0.jpeg)
 
 In tensors of type tf.string, the string length is not part of the tensor's shape. In other words, strings are considered as atomic values. However, in a Unicode string tensor (i.e., an int32 tensor), the length of the string is part of the tensor's shape.
 
@@ -20001,7 +20001,7 @@ You can also manipulate tensors containing multiple strings:
 
 Notice that the decoded strings are stored in a RaggedTensor. What is that?
 
-## **Ragged Tensors**
+### **Ragged Tensors**
 
 A ragged tensor is a special kind of tensor that represents a list of arrays of different sizes. More generally, it is a tensor with one or more ragged dimensions, meaning dimensions whose slices may have different lengths. In the ragged tensor r, the second dimension is a ragged dimension. In all ragged tensors, the first dimension is always a regular dimension (also called a *uniform dimension*).
 
@@ -20046,7 +20046,7 @@ array([[ 67,  97,  102,  233,\theta,
 
 Many TF operations support ragged tensors. For the full list, see the documentation of the tf.RaggedTensor class.
 
-## **Sparse Tensors**
+### **Sparse Tensors**
 
 TensorFlow can also efficiently represent *sparse tensors* (i.e., tensors containing mostly zeros). Just create a tf. SparseTensor, specifying the indices and values of the nonzero elements and the tensor's shape. The indices must be listed in "reading order" (from left to right, and top to bottom). If you are unsure, just use tf.sparse.reorder(). You can convert a sparse tensor to a dense tensor (i.e., a regular tensor) using tf.sparse.to dense():
 
@@ -20068,7 +20068,7 @@ Note that sparse tensors do not support as many operations as dense tensors. For
 555 + 42.0[...] TypeError: unsupported operand type(s) for +: 'SparseTensor' and 'float'
 ```
 
-## **Tensor Arrays**
+### **Tensor Arrays**
 
 A tf. TensorArray represents a list of tensors. This can be handy in dynamic models containing loops, to accumulate results and later compute some statistics. You can read or write tensors at any location in the array:
 
@@ -20078,7 +20078,7 @@ array = tf.TensorArray(dtype=tf.float32, size=3)array = array.write(0, tf consta
 
 By default, reading an item also replaces it with a tensor of the same shape but full of zeros. You can set clear\_after\_read to False if you don't want this.
 
-![](_page_823_Picture_6.jpeg)
+![](img/_page_823_Picture_6.jpeg)
 
 When you write to the array, you must assign the output back to the array, as shown in this code example. If you don't, although your code will work fine in eager mode, it will break in graph mode (these modes are discussed in Chapter 12).
 
@@ -20094,7 +20094,7 @@ array([[1., 2.],[0., 0.1,[5., 7.]], dtype=float32)>
 
 {824}------------------------------------------------
 
-## **Sets**
+### **Sets**
 
 TensorFlow supports sets of integers or strings (but not floats). It represents sets using regular tensors. For example, the set {1, 5, 9} is just represented as the tensor [[1, 5, 9]]. Note that the tensor must have at least two dimensions, and the sets must be in the last dimension. For example,  $[1, 5, 9]$ ,  $[2, 5, 11]$  is a tensor holding two independent sets:  $\{1, 5, 9\}$  and  $\{2, 5, 11\}$ .
 
@@ -20119,7 +20119,7 @@ You can also compute the union of multiple pairs of sets simultaneously. If some
 
 If you prefer to use a different padding value, such as  $-1$ , then you must set default\_value=-1 (or your preferred value) when calling to\_dense().
 
-![](_page_824_Picture_7.jpeg)
+![](img/_page_824_Picture_7.jpeg)
 
 The default default\_value is 0, so when dealing with string sets, you must set this parameter (e.g., to an empty string).
 
@@ -20127,7 +20127,7 @@ Other functions available in tf.sets include difference(), intersection(), and s
 
 {825}------------------------------------------------
 
-## **Oueues**
+### **Oueues**
 
 A queue is a data structure to which you can push data records, and later pull them out. TensorFlow implements several types of queues in the tf.queue package. They used to be very important when implementing efficient data loading and preprocessing pipelines, but the tf.data API has essentially rendered them useless (except perhaps in some rare cases) because it is much simpler to use and provides all the tools you need to build efficient pipelines. For the sake of completeness, though, let's take a quick look at them.
 
@@ -20174,7 +20174,7 @@ If a queue is already full and you try to enqueue another record, the enqueue\*(
 
 {828}------------------------------------------------
 
-## **APPENDIX D TensorFlow Graphs**
+### **APPENDIX D TensorFlow Graphs**
 
 In this appendix, we will explore the graphs generated by TF functions (see Chapter 12).
 
@@ -20202,7 +20202,7 @@ Every time you call a TF function with a new combination of input types or shape
 
 Figure D-1 shows the tf\_cube() TF function, after we called tf\_cube(2) and tf\_cube(tf.constant(2.0)): two concrete functions were generated, one for each signature, each with its own optimized *function graph* (FuncGraph) and its own function definition (FunctionDef). A function definition points to the parts of the graph that correspond to the function's inputs and outputs. In each FuncGraph, the nodes (ovals) represent operations (e.g., power, constants, or placeholders for arguments like  $x$ ), while the edges (the solid arrows between the operations) represent the tensors that will flow through the graph. The concrete function on the left is specialized for x=2, so TensorFlow managed to simplify it to just output 8 all the time (note that the function definition does not even have an input). The concrete function on the right is specialized for float 32 scalar tensors, and it could not be simplified. If we call tf\_cube(tf.constant(5.0)), the second concrete function will be called, the placeholder operation for x will output 5.0, then the power operation will compute  $5.0$  \*\* 3, so the output will be 125.0.
 
-![](_page_829_Figure_2.jpeg)
+![](img/_page_829_Figure_2.jpeg)
 
 Figure  $D-1$ . The  $tf$  cube() TF function, with its ConcreteFunctions and their FuncGraphs
 
@@ -20212,7 +20212,7 @@ The tensors in these graphs are *symbolic tensors*, meaning they don't have an a
 
 Now let's continue to peek under the hood, and see how to access function definitions and function graphs and how to explore a graph's operations and tensors.
 
-## **Exploring Function Definitions and Graphs**
+### **Exploring Function Definitions and Graphs**
 
 You can access a concrete function's computation graph using the graph attribute, and get the list of its operations by calling the graph's get\_operations() method:
 
@@ -20244,7 +20244,7 @@ This computation graph is represented in Figure D-2.
 
 {831}------------------------------------------------
 
-![](_page_831_Figure_0.jpeg)
+![](img/_page_831_Figure_0.jpeg)
 
 Figure D-2. Example of a computation graph
 
@@ -20277,7 +20277,7 @@ output arg \{name: "identity"
 
 Now let's look more closely at tracing.
 
-## **A Closer Look at Tracing**
+### **A Closer Look at Tracing**
 
 Let's tweak the tf cube() function to print its input:
 
@@ -20310,7 +20310,7 @@ x = Tensor("x:0", shape=(1, 2), dtype=float32)>>> result = tf cube(tf.constant([
 x = Tensor("x:0", shape=(None, 2), dtype=float32)>>> result = tf_{\text{cube}}(tf_{\text{.}} \text{constant}([7., 8.], [9., 10.]])) # same shape: no trace
 ```
 
-![](_page_832_Picture_10.jpeg)
+![](img/_page_832_Picture_10.jpeg)
 
 If your function has Python side effects (e.g., it saves some logs to disk), be aware that this code will only run when the function is traced (i.e., every time the TF function is called with a new input signature). It's best to assume that the function may be traced (or not) any time the TF function is called.
 
@@ -20420,7 +20420,7 @@ class Counter:
        return self.counter.assign add(c)
 ```
 
-![](_page_835_Picture_7.jpeg)
+![](img/_page_835_Picture_7.jpeg)
 
 Do not use  $=$ ,  $+=$ ,  $-$ =, or any other Python assignment operator with TF variables. Instead, you must use the assign(), assign\_add(), or assign sub() methods. If you try to use a Python assignment operator, you will get an exception when you call the method.
 
@@ -20428,7 +20428,7 @@ A good example of this object-oriented approach is, of course, Keras. Let's see 
 
 {836}------------------------------------------------
 
-## Using TF Functions with Keras (or Not)
+### Using TF Functions with Keras (or Not)
 
 By default, any custom function, layer, or model you use with Keras will automatically be converted to a TF function; you do not need to do anything at all! However, in some cases you may want to deactivate this automatic conversion—for example, if your custom code cannot be turned into a TF function, or if you just want to debug your code (which is much easier in eager mode). To do this, you can simply pass dynamic=True when creating the model or any of its layers:
 
@@ -20458,7 +20458,7 @@ Now you know how TF functions handle polymorphism (with multiple concrete functi
 
 {838}------------------------------------------------
 
-## **Index**
+### **Index**
 
 #### **Symbols**
 
@@ -20720,9 +20720,9 @@ Many of the animals on O'Reilly covers are endangered; all of them are important
 
 {863}------------------------------------------------
 
-## **O'REILLY®**
+### **O'REILLY®**
 
-## Learn from experts. Become one yourself.
+### Learn from experts. Become one yourself.
 
 Books | Live online courses **Instant Answers | Virtual events** Videos | Interactive learning
 
