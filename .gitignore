@@ -12,3 +12,4 @@ node_modules
 *.pth
 # *.txt
 localTest
+local

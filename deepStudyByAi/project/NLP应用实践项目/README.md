@@ -1,22 +1,21 @@
-# NLP应用实践项目总览
 # NLP Applications Practice Project Overview
+# NLP应用实践项目总览
 
-**从理论到实践 - 掌握NLP核心应用技术**
 **From Theory to Practice - Master Core NLP Application Technologies**
+**从理论到实践 - 掌握NLP核心应用技术**
 
 ---
 
-## 🎯 项目目标 | Project Goals
-
-这个项目旨在通过三个核心NLP应用领域的实践，让你全面掌握自然语言处理的实用技能：
+## 🎯 Project Goals | 项目目标
 
 This project aims to help you comprehensively master practical NLP skills through hands-on practice in three core NLP application areas:
+这个项目旨在通过三个核心NLP应用领域的实践，让你全面掌握自然语言处理的实用技能：
 
-- **命名实体识别** | **Named Entity Recognition**: 从文本中识别人名、地名、机构名等关键信息
-- **问答系统** | **Question Answering**: 构建能理解和回答问题的智能系统  
-- **机器翻译** | **Machine Translation**: 实现跨语言的自动翻译
+- **Named Entity Recognition** | **命名实体识别**: Identify key information like person names, locations, and organizations from text | 从文本中识别人名、地名、机构名等关键信息
+- **Question Answering** | **问答系统**: Build intelligent systems that can understand and answer questions | 构建能理解和回答问题的智能系统  
+- **Machine Translation** | **机器翻译**: Implement automatic translation across languages | 实现跨语言的自动翻译
 
-## 📁 项目结构 | Project Structure
+## 📁 Project Structure | 项目结构
 
 ```
 NLP应用实践项目/
@@ -46,7 +45,7 @@ NLP应用实践项目/
 └── README.md                       # 使用指南
 ```
 
-## 🚀 快速开始 | Quick Start
+## 🚀 Quick Start | 快速开始
 
 ### 环境准备 | Environment Setup
 
@@ -71,8 +70,8 @@ cd deepStudyByAi/project/NLP应用实践项目
 
 #### 第1-2周：命名实体识别 | Week 1-2: Named Entity Recognition
 
-**目标**: 理解序列标注任务，掌握BERT+CRF架构
 **Goal**: Understand sequence labeling tasks, master BERT+CRF architecture
+**目标**: 理解序列标注任务，掌握BERT+CRF架构
 
 **学习步骤 | Learning Steps:**
 1. 阅读 `01_命名实体识别项目/中文NER系统/命名实体识别.md`
@@ -87,8 +86,8 @@ cd deepStudyByAi/project/NLP应用实践项目
 
 #### 第3-4周：问答系统 | Week 3-4: Question Answering
 
-**目标**: 掌握阅读理解和知识库问答技术
 **Goal**: Master reading comprehension and knowledge base QA techniques
+**目标**: 掌握阅读理解和知识库问答技术
 
 **学习步骤 | Learning Steps:**
 1. 学习 `02_问答系统项目/阅读理解QA系统/阅读理解问答.md`
@@ -103,8 +102,8 @@ cd deepStudyByAi/project/NLP应用实践项目
 
 #### 第5-6周：机器翻译 | Week 5-6: Machine Translation
 
-**目标**: 理解序列到序列模型和注意力机制
 **Goal**: Understand sequence-to-sequence models and attention mechanisms
+**目标**: 理解序列到序列模型和注意力机制
 
 **学习步骤 | Learning Steps:**
 1. 学习 `03_机器翻译项目/序列到序列翻译/序列到序列翻译.md`
@@ -225,41 +224,41 @@ def plot_attention_weights(attention_weights, source_tokens, target_tokens):
 ## 🎓 学习建议 | Learning Recommendations
 
 ### 理论学习 | Theoretical Learning
-1. **深入理解Transformer架构** | **Deep understanding of Transformer architecture**
-2. **掌握注意力机制原理** | **Master attention mechanism principles**  
-3. **学习序列标注技术** | **Learn sequence labeling techniques**
+1. **Deep understanding of Transformer architecture** | **深入理解Transformer架构**
+2. **Master attention mechanism principles** | **掌握注意力机制原理**  
+3. **Learn sequence labeling techniques** | **学习序列标注技术**
 
 ### 实践建议 | Practice Recommendations
-1. **从简单数据集开始** | **Start with simple datasets**
-2. **逐步增加模型复杂度** | **Gradually increase model complexity**
-3. **重视数据质量和预处理** | **Focus on data quality and preprocessing**
+1. **Start with simple datasets** | **从简单数据集开始**
+2. **Gradually increase model complexity** | **逐步增加模型复杂度**
+3. **Focus on data quality and preprocessing** | **重视数据质量和预处理**
 
 ### 进阶方向 | Advanced Directions
-1. **多模态NLP** | **Multimodal NLP**: 结合文本、图像、音频
-2. **大规模预训练模型** | **Large-scale pre-trained models**: GPT、T5等
-3. **领域适应** | **Domain adaptation**: 垂直领域应用
+1. **Multimodal NLP** | **多模态NLP**: 结合文本、图像、音频
+2. **Large-scale pre-trained models** | **大规模预训练模型**: GPT、T5等
+3. **Domain adaptation** | **领域适应**: 垂直领域应用
 
 ## 🔧 故障排除 | Troubleshooting
 
 ### 常见问题 | Common Issues
 
-**Q1: 内存不足怎么办？**
 **Q1: What to do about insufficient memory?**
+**Q1: 内存不足怎么办？**
 
-A: 减小批次大小、使用梯度累积、模型并行化
 A: Reduce batch size, use gradient accumulation, model parallelization
+A: 减小批次大小、使用梯度累积、模型并行化
 
-**Q2: 训练速度太慢？**
 **Q2: Training too slow?**
+**Q2: 训练速度太慢？**
 
-A: 使用GPU加速、混合精度训练、数据并行
 A: Use GPU acceleration, mixed precision training, data parallelism
+A: 使用GPU加速、混合精度训练、数据并行
 
-**Q3: 模型效果不好？**
 **Q3: Poor model performance?**
+**Q3: 模型效果不好？**
 
-A: 检查数据质量、调整超参数、增加训练数据
 A: Check data quality, adjust hyperparameters, increase training data
+A: 检查数据质量、调整超参数、增加训练数据
 
 ## 📚 参考资源 | Reference Resources
 
@@ -282,14 +281,13 @@ A: Check data quality, adjust hyperparameters, increase training data
 
 ## 🎉 开始你的NLP应用实践之旅！| Start Your NLP Application Practice Journey!
 
+Through this comprehensive practical project, you will:
 通过这个综合性的实践项目，你将：
 
-Through this comprehensive practical project, you will:
+✅ **Master three core NLP applications** | **掌握三大核心NLP应用**
+✅ **Understand deep learning applications in NLP** | **理解深度学习在NLP中的应用**  
+✅ **Gain ability to build practical NLP systems** | **具备构建实用NLP系统的能力**
+✅ **Lay foundation for NLP engineer career development** | **为NLP工程师职业发展奠定基础**
 
-✅ **掌握三大核心NLP应用** | **Master three core NLP applications**
-✅ **理解深度学习在NLP中的应用** | **Understand deep learning applications in NLP**  
-✅ **具备构建实用NLP系统的能力** | **Gain ability to build practical NLP systems**
-✅ **为NLP工程师职业发展奠定基础** | **Lay foundation for NLP engineer career development**
-
+**Start with the first project - Chinese Named Entity Recognition System now!**
 **现在就开始第一个项目 - 中文命名实体识别系统吧！**
-**Start with the first project - Chinese Named Entity Recognition System now!** 

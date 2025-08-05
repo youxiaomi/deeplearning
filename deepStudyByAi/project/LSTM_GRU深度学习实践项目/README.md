@@ -1,125 +1,125 @@
-# LSTM与GRU深度学习实践项目
 # LSTM and GRU Deep Learning Practice Projects
+# LSTM与GRU深度学习实践项目
 
-## 项目简介 | Project Overview
-
-本项目是基于PyTorch框架的LSTM和GRU实践教学项目，通过多个具体案例帮助初学者深入理解和掌握长短期记忆网络和门控循环单元的工作原理及应用。
+## Project Overview | 项目简介
 
 This project is a PyTorch-based LSTM and GRU practice teaching project that helps beginners deeply understand and master the working principles and applications of Long Short-Term Memory networks and Gated Recurrent Units through multiple specific cases.
 
-## 学习目标 | Learning Objectives
+本项目是基于PyTorch框架的LSTM和GRU实践教学项目，通过多个具体案例帮助初学者深入理解和掌握长短期记忆网络和门控循环单元的工作原理及应用。
 
-### 理论理解 | Theoretical Understanding
-- 深入理解LSTM和GRU的网络结构和数学原理
+## Learning Objectives | 学习目标
+
+### Theoretical Understanding | 理论理解
 - Deep understanding of LSTM and GRU network structures and mathematical principles
-- 掌握序列建模和时间序列预测的核心概念
+- 深入理解LSTM和GRU的网络结构和数学原理
 - Master core concepts of sequence modeling and time series prediction
-- 理解梯度消失问题及其解决方案
+- 掌握序列建模和时间序列预测的核心概念
 - Understand gradient vanishing problem and its solutions
+- 理解梯度消失问题及其解决方案
 
-### 实践技能 | Practical Skills
-- 使用PyTorch实现LSTM和GRU网络
+### Practical Skills | 实践技能
 - Implement LSTM and GRU networks using PyTorch
-- 处理序列数据的预处理和特征工程
+- 使用PyTorch实现LSTM和GRU网络
 - Handle sequence data preprocessing and feature engineering
-- 掌握模型训练、验证和优化技巧
+- 处理序列数据的预处理和特征工程
 - Master model training, validation and optimization techniques
+- 掌握模型训练、验证和优化技巧
 
-## 项目结构 | Project Structure
+## Project Structure | 项目结构
 
 ```
 LSTM_GRU深度学习实践项目/
-├── README.md                           # 项目说明文档
-├── requirements.txt                    # 依赖包列表
-├── utils/                             # 工具函数
+├── README.md                           # Project documentation
+├── requirements.txt                    # List of dependencies
+├── utils/                             # Utility functions
 │   ├── __init__.py
-│   ├── data_utils.py                  # 数据处理工具
-│   ├── model_utils.py                 # 模型工具
-│   └── visualization.py              # 可视化工具
-├── 01_基础理论实现/                    # Basic Theory Implementation
-│   ├── lstm_from_scratch.py           # 从零实现LSTM
-│   ├── gru_from_scratch.py            # 从零实现GRU
-│   └── theory_comparison.py           # 理论对比分析
-├── 02_文本情感分析/                    # Text Sentiment Analysis
-│   ├── data/                          # 数据文件夹
-│   ├── sentiment_lstm.py              # LSTM情感分析
-│   ├── sentiment_gru.py               # GRU情感分析
-│   └── model_comparison.py            # 模型对比
-├── 03_股票价格预测/                    # Stock Price Prediction
-│   ├── data/                          # 股票数据
-│   ├── stock_lstm.py                  # LSTM股票预测
-│   ├── stock_gru.py                   # GRU股票预测
-│   └── performance_analysis.py        # 性能分析
-├── 04_文本生成/                       # Text Generation
-│   ├── data/                          # 文本数据
-│   ├── text_lstm.py                   # LSTM文本生成
-│   ├── text_gru.py                    # GRU文本生成
-│   └── creative_writing.py            # 创意写作
-├── 05_序列分类/                       # Sequence Classification
-│   ├── data/                          # 序列数据
-│   ├── sequence_lstm.py               # LSTM序列分类
-│   ├── sequence_gru.py                # GRU序列分类
-│   └── classification_metrics.py      # 分类指标
-└── 06_综合对比分析/                   # Comprehensive Comparison
-    ├── model_comparison.py            # 模型全面对比
-    ├── performance_benchmark.py       # 性能基准测试
-    └── visualization_dashboard.py     # 可视化仪表板
+│   ├── data_utils.py                  # Data processing utilities
+│   ├── model_utils.py                 # Model utilities
+│   └── visualization.py              # Visualization tools
+├── 01_Basic Theory Implementation/    # 基础理论实现
+│   ├── lstm_from_scratch.py           # Implement LSTM from scratch
+│   ├── gru_from_scratch.py            # Implement GRU from scratch
+│   └── theory_comparison.py           # Theoretical comparison and analysis
+├── 02_Text Sentiment Analysis/        # 文本情感分析
+│   ├── data/                          # Data folder
+│   ├── sentiment_lstm.py              # LSTM sentiment analysis
+│   ├── sentiment_gru.py               # GRU sentiment analysis
+│   └── model_comparison.py            # Model comparison
+├── 03_Stock Price Prediction/         # 股票价格预测
+│   ├── data/                          # Stock data
+│   ├── stock_lstm.py                  # LSTM stock prediction
+│   ├── stock_gru.py                   # GRU stock prediction
+│   └── performance_analysis.py        # Performance analysis
+├── 04_Text Generation/                # 文本生成
+│   ├── data/                          # Text data
+│   ├── text_lstm.py                   # LSTM text generation
+│   ├── text_gru.py                    # GRU text generation
+│   └── creative_writing.py            # Creative writing
+├── 05_Sequence Classification/        # 序列分类
+│   ├── data/                          # Sequence data
+│   ├── sequence_lstm.py               # LSTM sequence classification
+│   ├── sequence_gru.py                # GRU sequence classification
+│   └── classification_metrics.py      # Classification metrics
+└── 06_Comprehensive Comparison/       # 综合对比分析
+    ├── model_comparison.py            # Comprehensive model comparison
+    ├── performance_benchmark.py       # Performance benchmark testing
+    └── visualization_dashboard.py     # Visualization dashboard
 ```
 
-## 实践案例介绍 | Practice Cases Introduction
+## Practice Cases Introduction | 实践案例介绍
 
-### 1. 基础理论实现 | Basic Theory Implementation
-- 从数学公式出发，手动实现LSTM和GRU的前向传播和反向传播
+### 1. Basic Theory Implementation | 基础理论实现
 - Implement forward and backward propagation of LSTM and GRU manually from mathematical formulas
-- 深入理解门控机制和记忆单元的工作原理
+- 从数学公式出发，手动实现LSTM和GRU的前向传播和反向传播
 - Deeply understand the working principles of gating mechanisms and memory cells
+- 深入理解门控机制和记忆单元的工作原理
 
-### 2. 文本情感分析 | Text Sentiment Analysis
-- 使用电影评论数据进行情感分类
+### 2. Text Sentiment Analysis | 文本情感分析
 - Perform sentiment classification using movie review data
-- 对比LSTM和GRU在自然语言处理任务中的表现
+- 使用电影评论数据进行情感分类
 - Compare LSTM and GRU performance in natural language processing tasks
+- 对比LSTM和GRU在自然语言处理任务中的表现
 
-### 3. 股票价格预测 | Stock Price Prediction
-- 基于历史股价数据预测未来走势
+### 3. Stock Price Prediction | 股票价格预测
 - Predict future trends based on historical stock price data
-- 学习时间序列预测的实际应用
+- 基于历史股价数据预测未来走势
 - Learn practical applications of time series prediction
+- 学习时间序列预测的实际应用
 
-### 4. 文本生成 | Text Generation
-- 训练模型生成连贯的文本内容
+### 4. Text Generation | 文本生成
 - Train models to generate coherent text content
-- 探索序列到序列生成的奥秘
+- 训练模型生成连贯的文本内容
 - Explore the mysteries of sequence-to-sequence generation
+- 探索序列到序列生成的奥秘
 
-### 5. 序列分类 | Sequence Classification
-- 对时间序列数据进行分类任务
+### 5. Sequence Classification | 序列分类
 - Perform classification tasks on time series data
-- 理解序列特征提取和模式识别
+- 对时间序列数据进行分类任务
 - Understand sequence feature extraction and pattern recognition
+- 理解序列特征提取和模式识别
 
-### 6. 综合对比分析 | Comprehensive Comparison
-- 全面对比LSTM和GRU的性能差异
+### 6. Comprehensive Comparison | 综合对比分析
 - Comprehensively compare performance differences between LSTM and GRU
-- 分析不同任务场景下的最佳选择
+- 全面对比LSTM和GRU的性能差异
 - Analyze optimal choices for different task scenarios
+- 分析不同任务场景下的最佳选择
 
-## 环境配置 | Environment Setup
+## Environment Setup | 环境配置
 
-### 系统要求 | System Requirements
+### System Requirements | 系统要求
 - Python 3.8+
 - PyTorch 1.10+
-- CUDA支持（可选，用于GPU加速）
 - CUDA support (optional, for GPU acceleration)
+- CUDA支持（可选，用于GPU加速）
 
-### 安装依赖 | Install Dependencies
+### Install Dependencies | 安装依赖
 ```bash
 pip install -r requirements.txt
 ```
 
-## 使用方法 | Usage
+## Usage | 使用方法
 
-### 快速开始 | Quick Start
+### Quick Start | 快速开始
 ```bash
 # 进入项目目录
 cd LSTM_GRU深度学习实践项目
@@ -131,58 +131,58 @@ python 01_基础理论实现/lstm_from_scratch.py
 python 02_文本情感分析/sentiment_lstm.py
 ```
 
-### 学习路径建议 | Recommended Learning Path
+### Recommended Learning Path | 学习路径建议
 1. 首先阅读 `../05_LSTM_GRU/长短期记忆网络与门控循环单元.md` 理论基础
 2. 运行 `01_基础理论实现/` 中的代码理解核心算法
 3. 按顺序完成各个实践案例
 4. 最后进行综合对比分析
 
-## 项目特色 | Project Features
+## Project Features | 项目特色
 
-### 渐进式学习 | Progressive Learning
-- 从基础理论到实际应用的完整学习路径
+### Progressive Learning | 渐进式学习
 - Complete learning path from basic theory to practical applications
-- 每个案例都有详细的代码注释和说明
+- 从基础理论到实际应用的完整学习路径
 - Each case has detailed code comments and explanations
+- 每个案例都有详细的代码注释和说明
 
-### 多样化应用 | Diverse Applications
-- 涵盖自然语言处理、时间序列预测等多个领域
+### Diverse Applications | 多样化应用
 - Covers multiple domains including NLP and time series prediction
-- 真实数据集和实际问题场景
+- 涵盖自然语言处理、时间序列预测等多个领域
 - Real datasets and practical problem scenarios
+- 真实数据集和实际问题场景
 
-### 深入对比分析 | In-depth Comparative Analysis
-- LSTM vs GRU 全面性能对比
+### In-depth Comparative Analysis | 深入对比分析
 - Comprehensive performance comparison between LSTM and GRU
-- 不同超参数设置的影响分析
+- LSTM vs GRU 全面性能对比
 - Analysis of different hyperparameter settings' impact
+- 不同超参数设置的影响分析
 
-### 可视化展示 | Visualization Display
-- 丰富的图表和可视化分析
+### Visualization Display | 可视化展示
 - Rich charts and visualization analysis
-- 模型训练过程的实时监控
+- 丰富的图表和可视化分析
 - Real-time monitoring of model training process
+- 模型训练过程的实时监控
 
-## 注意事项 | Notes
+## Notes | 注意事项
 
-### 数据准备 | Data Preparation
-- 某些案例需要下载额外的数据集
+### Data Preparation | 数据准备
 - Some cases require downloading additional datasets
-- 具体数据获取方法请参考各个子项目的说明
+- 某些案例需要下载额外的数据集
 - Please refer to individual sub-project instructions for specific data acquisition methods
+- 具体数据获取方法请参考各个子项目的说明
 
-### 计算资源 | Computing Resources
-- 建议使用GPU加速训练过程
+### Computing Resources | 计算资源
 - GPU acceleration is recommended for training process
-- 可根据实际硬件配置调整batch_size等参数
+- 建议使用GPU加速训练过程
 - Adjust parameters like batch_size according to actual hardware configuration
+- 可根据实际硬件配置调整batch_size等参数
 
-## 贡献与反馈 | Contribution and Feedback
+## Contribution and Feedback | 贡献与反馈
 
-欢迎提出改进建议和问题反馈！
 Welcome to provide improvement suggestions and feedback!
+欢迎提出改进建议和问题反馈！
 
 ---
 
 **开始你的LSTM/GRU学习之旅吧！**
-**Start your LSTM/GRU learning journey!** 
+**Start your LSTM/GRU learning journey!**
