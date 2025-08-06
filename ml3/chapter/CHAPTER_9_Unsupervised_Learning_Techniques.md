@@ -2,53 +2,97 @@
 
 Although most of the applications of machine learning today are based on supervised learning (and as a result, this is where most of the investments go to), the vast majority of the available data is unlabeled: we have the input features X, but we do not have the labels y. The computer scientist Yann LeCun famously said that "if intelligence was a cake, unsupervised learning would be the cake, supervised learning would be the icing on the cake, and reinforcement learning would be the cherry on the cake." In other words, there is a huge potential in unsupervised learning that we have only barely started to sink our teeth into.
 
-Say you want to create a system that will take a few pictures of each item on a manufacturing production line and detect which items are defective. You can fairly easily create a system that will take pictures automatically, and this might give you thousands of pictures every day. You can then build a reasonably large dataset in just a few weeks. But wait, there are no labels! If you want to train a regular binary classifier that will predict whether an item is defective or not, you will need to label every single picture as "defective" or "normal". This will generally require human experts to sit down and manually go through all the pictures. This is a long, costly, and tedious task, so it will usually only be done on a small subset of the available pictures. As a result, the labeled dataset will be quite small, and the classifier's performance will be disappointing. Moreover, every time the company makes any change to its products, the whole process will need to be started over from scratch. Wouldn't it be great if the algorithm could just exploit the unlabeled data without needing humans to label every picture? Enter unsupervised learning.
+虽然当今机器学习的大部分应用都基于监督学习（因此，大部分投资都集中在那里），但绝大多数可用的数据都是没有标签的：我们拥有输入特征 X，但没有标签 y。计算机科学家扬·勒丘恩（Yann LeCun）曾幽默地说：“如果智能是一块蛋糕，无监督学习就是蛋糕，监督学习就是蛋糕上的糖霜，强化学习就是樱桃。” 换句话说，无监督学习具有巨大的潜力，而我们刚刚开始窥探。
 
 {287}------------------------------------------------
 
+Say you want to create a system that will take a few pictures of each item on a manufacturing production line and detect which items are defective. You can fairly easily create a system that will take pictures automatically, and this might give you thousands of pictures every day. You can then build a reasonably large dataset in just a few weeks. But wait, there are no labels! If you want to train a regular binary classifier that will predict whether an item is defective or not, you will need to label every single picture as "defective" or "normal". This will generally require human experts to sit down and manually go through all the pictures. This is a long, costly, and tedious task, so it will usually only be done on a small subset of the available pictures. As a result, the labeled dataset will be quite small, and the classifier's performance will be disappointing. Moreover, every time the company makes any change to its products, the whole process will need to be started over from scratch. Wouldn't it be great if the algorithm could just exploit the unlabeled data without needing humans to label every picture? Enter unsupervised learning.
+
+如果您想创建一个系统，该系统可以拍摄每个生产线上零件的几张照片并检测哪些零件有缺陷，您可能会相当容易地创建一个自动拍照的系统，这可能会每天提供数千张照片。然后您可以在短短几周内构建一个相当大的数据集。但是等等，没有标签！如果您想训练一个常规的二元分类器来预测零件是有缺陷的还是正常的，您需要将每张照片都标记为“有缺陷的”或“正常的”。这通常需要人类专家坐下来手动检查所有照片。这是一项漫长、昂贵且繁琐的任务，因此通常只在可用图像的一小部分上进行。因此，标记的数据集将相当小，分类器的性能将令人失望。此外，每次公司对产品进行任何更改，整个过程都需要从头开始。如果算法可以利用未标记的数据，而无需人类标记每张照片会怎么样？进入无监督学习。
+
 In Chapter 8 we looked at the most common unsupervised learning task: dimensionality reduction. In this chapter we will look at a few more unsupervised tasks:
+
+我们在第 8 章中探讨了最常见的无监督学习任务：降维。在本章中，我们将探讨一些其他的无监督任务：
 
 Clustering
 
+聚类
+
 The goal is to group similar instances together into *clusters*. Clustering is a great tool for data analysis, customer segmentation, recommender systems, search engines, image segmentation, semi-supervised learning, dimensionality reduction, and more.
+
+目标是将相似的实例分组到 *聚类* 中。聚类是数据分析、客户分段、推荐系统、搜索引擎、图像分割、半监督学习、降维等领域的绝佳工具。
 
 Anomaly detection (also called outlier detection)
 
+异常检测（也称为离群值检测）
+
 The objective is to learn what "normal" data looks like, and then use that to detect abnormal instances. These instances are called *anomalies*, or *outliers*, while the normal instances are called *inliers*. Anomaly detection is useful in a wide variety of applications, such as fraud detection, detecting defective products in manufacturing, identifying new trends in time series, or removing outliers from a dataset before training another model, which can significantly improve the performance of the resulting model.
+
+目标是学习“正常”数据是什么样子，然后使用它来检测不正常的实例。这些实例被称为 *异常* 或 *离群值*，而正常的实例被称为 *内群值*。异常检测在各种应用中都很有用，例如欺诈检测、检测制造业中的有缺陷的产品、识别时间序列中的新趋势，或者在训练另一个模型之前从数据集中删除离群值，这可以显着提高结果模型的性能。
 
 Density estimation
 
+密度估计
+
 This is the task of estimating the *probability density function* (PDF) of the random process that generated the dataset. Density estimation is commonly used for anomaly detection: instances located in very low-density regions are likely to be anomalies. It is also useful for data analysis and visualization.
+
+这是估计生成数据集的随机过程的 *概率密度函数* (PDF) 的任务。密度估计通常用于异常检测：位于密度非常低的区域的实例很可能是不正常的。它也对数据分析和可视化很有用。
 
 Ready for some cake? We will start with two clustering algorithms, k-means and DBSCAN, then we'll discuss Gaussian mixture models and see how they can be used for density estimation, clustering, and anomaly detection.
 
+准备好享用蛋糕了吗？我们将从两个聚类算法开始，k均值和DBSCAN，然后讨论高斯混合模型，并了解它们如何用于密度估计、聚类和异常检测。
+
 ### **Clustering Algorithms: k-means and DBSCAN**
+
+### **聚类算法：k均值和DBSCAN**
 
 As you enjoy a hike in the mountains, you stumble upon a plant you have never seen before. You look around and you notice a few more. They are not identical, yet they are sufficiently similar for you to know that they most likely belong to the same species (or at least the same genus). You may need a botanist to tell you what species that is, but you certainly don't need an expert to identify groups of similar-looking objects. This is called *clustering*: it is the task of identifying similar instances and assigning them to *clusters*, or groups of similar instances.
 
+当您在山中徒步旅行时，您偶然发现了一种您以前从未见过的植物。您环顾四周，注意到还有几株。它们并不完全相同，但它们足够相似，让您知道它们很可能属于同一物种（或者至少属于同一属）。您可能需要一位植物学家来告诉您那是什么物种，但您当然不需要专家来识别外观相似的物体组。这被称为 *聚类*：任务是识别相似的实例并将它们分配到 *聚类* 中，或外观相似的物体组。
+
 Just like in classification, each instance gets assigned to a group. However, unlike classification, clustering is an unsupervised task. Consider Figure 9-1: on the left is the iris dataset (introduced in Chapter 4), where each instance's species (i.e., its class) is represented with a different marker. It is a labeled dataset, for which classification algorithms such as logistic regression, SVMs, or random forest classifiers are well suited. On the right is the same dataset, but without the labels, so you cannot use a classification algorithm anymore. This is where clustering algorithms step in: many of 
+
+就像在分类中一样，每个实例都会被分配到一个组中。但是与分类不同，聚类是一种无监督任务。考虑图 9-1：左侧是鸢尾花数据集（在第 4 章中介绍），其中每个实例的物种（即其类别）用不同的标记表示。这是一个标记数据集，非常适合用于逻辑回归、SVM 或随机森林分类器等分类算法。右侧是相同的数据集，但没有标记，因此您不能再使用分类算法。聚类算法就在此发挥作用：许多
 
 {288}------------------------------------------------
 
 them can easily detect the lower-left cluster. It is also quite easy to see with our own eyes, but it is not so obvious that the upper-right cluster is composed of two distinct subclusters. That said, the dataset has two additional features (sepal length and width) that are not represented here, and clustering algorithms can make good use of all features, so in fact they identify the three clusters fairly well (e.g., using a Gaussian mixture model, only 5 instances out of 150 are assigned to the wrong cluster).
 
+它们可以轻松检测到左下角的聚类。用肉眼观察起来也很容易，但可以明显看出右上角的聚类由两个不同的子聚类组成。也就是说，该数据集有两个额外的特征（萼片长度和宽度）未在此处表示，聚类算法可以很好地利用所有特征，因此它们实际上相当好地识别了三个聚类（例如，使用高斯混合模型，在 150 个实例中只有 5 个被错误地分配到错误的聚类中）。
+
 ![](img/_page_288_Figure_1.jpeg)
 
-Figure 9-1. Classification (left) versus clustering (right)
+图 9-1. 分类（左）与聚类（右）
+
+Figure 9-1. 分类（左）与聚类（右）
 
 Clustering is used in a wide variety of applications, including:
 
+聚类被用于各种应用中，包括：
+
 #### Customer segmentation
+
+#### 客户分段
 
 You can cluster your customers based on their purchases and their activity on your website. This is useful to understand who your customers are and what they need, so you can adapt your products and marketing campaigns to each segment. For example, customer segmentation can be useful in *recommender systems* to suggest content that other users in the same cluster enjoyed.
 
+您可以根据客户的购买行为和他们在网站上的活动来对客户进行分群。这有助于您了解您的客户是谁以及他们需要什么，以便您可以调整您的产品和营销活动以适应每个细分市场。例如，客户分段对于*推荐系统*来说可能很有用，因为可以建议其他用户在同一聚类中享用的内容。
+
 #### Data analysis
+
+#### 数据分析
 
 When you analyze a new dataset, it can be helpful to run a clustering algorithm, and then analyze each cluster separately.
 
+在您分析新的数据集时，运行聚类算法然后分别分析每个聚类可能会很有帮助。
+
 #### Dimensionality reduction
 
+#### 降维
+
 Once a dataset has been clustered, it is usually possible to measure each instance's *affinity* with each cluster; affinity is any measure of how well an instance fits into a cluster. Each instance's feature vector **x** can then be replaced with the vector of its cluster affinities. If there are  $k$  clusters, then this vector is  $k$ -dimensional. The new vector is typically much lower-dimensional than the original feature vector, but it can preserve enough information for further processing.
+
+一旦数据集被聚类，通常可以测量每个实例与每个聚类的 *亲和力*；亲和力是衡量实例适合聚类的任何方法。然后，每个实例的特征向量 **x** 就可以被替换为亲和力向量。如果存在  $k$  个聚类，则此向量是  $k$  维的。新的向量通常比原始特征向量的维度低得多，但它可以保留足够的信息以进行进一步处理。
 
 {289}------------------------------------------------
 

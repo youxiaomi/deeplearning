@@ -948,6 +948,8 @@ Figure 14-22. An SE block performs feature map recalibration
 
 An SE block is composed of just three layers: a global average pooling layer, a hidden dense layer using the ReLU activation function, and a dense output layer using the sigmoid activation function (see Figure 14-23).
 
+SE块仅由三层组成：一个全局平均池化层、一个使用ReLU激活函数的隐藏密集层，以及一个使用sigmoid激活函数的密集输出层（见图14-23）。
+
 {539}------------------------------------------------
 
 ![](img/_page_539_Figure_0.jpeg)
@@ -956,13 +958,21 @@ Figure 14-23. SE block architecture
 
 As earlier, the global average pooling layer computes the mean activation for each feature map: for example, if its input contains 256 feature maps, it will output 256 numbers representing the overall level of response for each filter. The next layer is where the "squeeze" happens: this layer has significantly fewer than 256 neurons typically 16 times fewer than the number of feature maps (e.g., 16 neurons)—so the 256 numbers get compressed into a small vector (e.g., 16 dimensions). This is a low-dimensional vector representation (*i.e.*, an embedding) of the distribution of feature responses. This bottleneck step forces the SE block to learn a general representation of the feature combinations (we will see this principle in action again when we discuss autoencoders in Chapter 17). Finally, the output layer takes the embedding and outputs a recalibration vector containing one number per feature map (e.g., 256), each between 0 and 1. The feature maps are then multiplied by this recalibration vector, so irrelevant features (with a low recalibration score) get scaled down while relevant features (with a recalibration score close to 1) are left alone.
 
+如前所述，全局平均池化层计算每个特征图的平均激活值：例如，如果其输入包含256个特征图，它将输出256个数字，表示每个滤波器的整体响应水平。下一层是发生"挤压"的地方：这一层的神经元数量明显少于256个，通常比特征图数量少16倍（例如，16个神经元）——因此256个数字被压缩成一个小向量（例如，16维）。这是特征响应分布的低维向量表示（即嵌入）。这个瓶颈步骤迫使SE块学习特征组合的一般表示（当我们在第17章讨论自编码器时，将再次看到这个原理的作用）。最后，输出层接受嵌入并输出一个重新校准向量，每个特征图包含一个数字（例如，256个），每个数字都在0和1之间。然后将特征图乘以这个重新校准向量，因此不相关的特征（重新校准分数低）被缩小，而相关的特征（重新校准分数接近1）保持不变。
+
 #### **Other Noteworthy Architectures**
 
+#### **其他值得注意的架构**
+
 There are many other CNN architectures to explore. Here's a brief overview of some of the most noteworthy:
+
+还有许多其他的CNN架构值得探索。以下是一些最值得注意的架构的简要概述：
 
 #### $ResNeXt^{22}$
 
 ResNeXt improves the residual units in ResNet. Whereas the residual units in the best ResNet models just contain 3 convolutional layers each, the ResNeXt residual units are composed of many parallel stacks (e.g., 32 stacks), with 3 convolutional layers each. However, the first two layers in each stack only use a few filters (e.g., just four), so the overall number of parameters remains the same as in ResNet. Then the outputs of all the stacks are added together, and the result is passed to the next residual unit (along with the skip connection).
+
+ResNeXt改进了ResNet中的残差单元。虽然最佳ResNet模型中的残差单元每个只包含3个卷积层，但ResNeXt残差单元由许多并行堆栈组成（例如，32个堆栈），每个堆栈有3个卷积层。然而，每个堆栈中的前两层只使用少量滤波器（例如，只有四个），因此总体参数数量与ResNet保持相同。然后将所有堆栈的输出相加，结果传递给下一个残差单元（连同跳跃连接）。
 
 <sup>22</sup> Saining Xie et al., "Aggregated Residual Transformations for Deep Neural Networks", arXiv preprint arXiv:1611.05431 (2016).
 
@@ -972,19 +982,29 @@ ResNeXt improves the residual units in ResNet. Whereas the residual units in the
 
 A DenseNet is composed of several dense blocks, each made up of a few densely connected convolutional layers. This architecture achieved excellent accuracy while using comparatively few parameters. What does "densely connected" mean? The output of each layer is fed as input to every layer after it within the same block. For example, layer 4 in a block takes as input the depthwise concatenation of the outputs of layers 1, 2, and 3 in that block. Dense blocks are separated by a few transition layers.
 
+DenseNet由几个密集块组成，每个密集块由几个密集连接的卷积层组成。这种架构在使用相对较少参数的情况下实现了出色的准确性。"密集连接"是什么意思？每一层的输出都作为输入馈送到同一块中它之后的每一层。例如，块中的第4层将块中第1、2和3层输出的深度级联作为输入。密集块由几个过渡层分隔。
+
 #### $MobileNet<sup>24</sup>$
 
 MobileNets are streamlined models designed to be lightweight and fast, making them popular in mobile and web applications. They are based on depthwise separable convolutional layers, like Xception. The authors proposed several variants, trading a bit of accuracy for faster and smaller models.
+
+MobileNet是设计为轻量级和快速的流线型模型，使它们在移动和Web应用程序中很受欢迎。它们基于深度可分离卷积层，就像Xception一样。作者提出了几个变体，以牺牲一点准确性来换取更快更小的模型。
 
 #### $CSPNet^{25}$
 
 A Cross Stage Partial Network (CSPNet) is similar to a DenseNet, but part of each dense block's input is concatenated directly to that block's output, without going through the block.
 
+跨阶段部分网络（CSPNet）类似于DenseNet，但每个密集块输入的一部分直接连接到该块的输出，而不经过该块。
+
 #### EfficientNet<sup>26</sup>
 
 EfficientNet is arguably the most important model in this list. The authors proposed a method to scale any CNN efficiently, by jointly increasing the depth (number of layers), width (number of filters per layer), and resolution (size of the input image) in a principled way. This is called *compound scaling*. They used neural architecture search to find a good architecture for a scaled-down version of ImageNet (with smaller and fewer images), and then used compound scaling to create larger and larger versions of this architecture. When EfficientNet models came out, they vastly outperformed all existing models, across all compute budgets, and they remain among the best models out there today.
 
+EfficientNet可以说是这个列表中最重要的模型。作者提出了一种有效扩展任何CNN的方法，通过有原则地联合增加深度（层数）、宽度（每层滤波器数量）和分辨率（输入图像大小）。这被称为*复合缩放*。他们使用神经架构搜索为ImageNet的缩小版本（图像更小更少）找到一个好的架构，然后使用复合缩放创建这个架构越来越大的版本。当EfficientNet模型问世时，它们在所有计算预算下都大大超越了所有现有模型，并且至今仍然是最好的模型之一。
+
 Understanding EfficientNet's compound scaling method is helpful to gain a deeper understanding of CNNs, especially if you ever need to scale a CNN architecture. It is based on a logarithmic measure of the compute budget, noted  $\phi$ : if your compute budget doubles, then  $\phi$  increases by 1. In other words, the number of floating-point operations available for training is proportional to  $2^{\phi}$ . Your CNN architecture's depth,
+
+理解EfficientNet的复合缩放方法有助于更深入地理解CNN，特别是如果您需要缩放CNN架构。它基于计算预算的对数度量，记为$\phi$：如果您的计算预算翻倍，那么$\phi$增加1。换句话说，可用于训练的浮点运算数量与$2^{\phi}$成正比。您的CNN架构的深度、
 
 <sup>23</sup> Gao Huang et al., "Densely Connected Convolutional Networks", arXiv preprint arXiv:1608.06993 (2016).
 
@@ -998,9 +1018,15 @@ Understanding EfficientNet's compound scaling method is helpful to gain a deeper
 
 width, and resolution should scale as  $\alpha^{\phi}$ ,  $\beta^{\phi}$ , and  $\gamma^{\phi}$ , respectively. The factors  $\alpha$ ,  $\beta$ , and y must be greater than 1, and  $\alpha + \beta^2 + \gamma^2$  should be close to 2. The optimal values for these factors depend on the CNN's architecture. To find the optimal values for the EfficientNet architecture, the authors started with a small baseline model (EfficientNetB0), fixed  $\phi = 1$ , and simply ran a grid search: they found  $\alpha = 1.2$ ,  $\beta =$ 1.1, and  $\gamma = 1.1$ . They then used these factors to create several larger architectures, named EfficientNetB1 to EfficientNetB7, for increasing values of  $\phi$ .
 
+宽度和分辨率应该分别按$\alpha^{\phi}$、$\beta^{\phi}$和$\gamma^{\phi}$缩放。因子$\alpha$、$\beta$和$\gamma$必须大于1，并且$\alpha + \beta^2 + \gamma^2$应该接近2。这些因子的最优值取决于CNN的架构。为了找到EfficientNet架构的最优值，作者从一个小的基线模型（EfficientNetB0）开始，固定$\phi = 1$，并简单地运行网格搜索：他们发现$\alpha = 1.2$，$\beta = 1.1$，$\gamma = 1.1$。然后他们使用这些因子创建了几个更大的架构，命名为EfficientNetB1到EfficientNetB7，对应$\phi$的递增值。
+
 #### **Choosing the Right CNN Architecture**
 
 With so many CNN architectures, how do you choose which one is best for your project? Well, it depends on what matters most to you: Accuracy? Model size (e.g., for deployment to a mobile device)? Inference speed on CPU? On GPU? Table 14-3 lists the best pretrained models currently available in Keras (you'll see how to use them later in this chapter), sorted by model size. You can find the full list at https:// keras.io/api/applications. For each model, the table shows the Keras class name to use (in the tf.keras.applications package), the model's size in MB, the top-1 and top-5 validation accuracy on the ImageNet dataset, the number of parameters (millions), and the inference time on CPU and GPU in ms, using batches of 32 images on reasonably powerful hardware.<sup>27</sup> For each column, the best value is highlighted. As you can see, larger models are generally more accurate, but not always; for example, EfficientNetB2 outperforms InceptionV3 both in size and accuracy. I only kept Inception V3 in the list because it is almost twice as fast as Efficient Net B2 on a CPU. Similarly, InceptionResNetV2 is fast on a CPU, and ResNet50V2 and ResNet101V2 are blazingly fast on a GPU.
+
+#### **选择正确的CNN架构**
+
+有这么多CNN架构，您如何选择最适合您项目的架构？这取决于您最关心什么：准确性？模型大小（例如，部署到移动设备）？CPU上的推理速度？GPU上的推理速度？表14-3列出了Keras中目前可用的最佳预训练模型（您将在本章后面看到如何使用它们），按模型大小排序。您可以在https://keras.io/api/applications找到完整列表。对于每个模型，表格显示了要使用的Keras类名（在tf.keras.applications包中）、模型的大小（MB）、在ImageNet数据集上的top-1和top-5验证准确性、参数数量（百万）以及在相当强大的硬件上使用32张图像批次在CPU和GPU上的推理时间（毫秒）。<sup>27</sup>对于每一列，最佳值都被突出显示。如您所见，较大的模型通常更准确，但并非总是如此；例如，EfficientNetB2在大小和准确性方面都优于InceptionV3。我保留InceptionV3在列表中是因为它在CPU上的速度几乎是EfficientNetB2的两倍。同样，InceptionResNetV2在CPU上很快，ResNet50V2和ResNet101V2在GPU上速度极快。
 
 | Size (MB) |       |       |       | CPU (ms)                   | GPU (ms) |
 |-----------|-------|-------|-------|----------------------------|----------|
@@ -1032,9 +1058,15 @@ Table 14-3. Pretrained models available in Keras
 
 I hope you enjoyed this deep dive into the main CNN architectures! Now let's see how to implement one of them using Keras.
 
+我希望您喜欢这次对主要CNN架构的深入探讨！现在让我们看看如何使用Keras实现其中一个。
+
 ### Implementing a ResNet-34 CNN Using Keras
 
 Most CNN architectures described so far can be implemented pretty naturally using Keras (although generally you would load a pretrained network instead, as you will see). To illustrate the process, let's implement a ResNet-34 from scratch with Keras. First, we'll create a ResidualUnit layer:
+
+### 使用Keras实现ResNet-34 CNN
+
+到目前为止描述的大多数CNN架构都可以使用Keras很自然地实现（尽管通常您会加载预训练网络，正如您将看到的）。为了说明这个过程，让我们从头开始使用Keras实现ResNet-34。首先，我们将创建一个ResidualUnit层：
 
 ```
 DefaultConv2D = partial(tf.keras.layers.Conv2D, kernel size=3, strides=1,
@@ -1061,7 +1093,11 @@ class ResidualUnit(tf.keras.layers.Layer):
 
 As you can see, this code matches Figure 14-19 pretty closely. In the constructor, we create all the layers we will need: the main layers are the ones on the right side of the diagram, and the skip layers are the ones on the left (only needed if the stride is greater than 1). Then in the call() method, we make the inputs go through the main layers and the skip layers (if any), and we add both outputs and apply the activation function.
 
+如您所见，这段代码与图14-19非常接近。在构造函数中，我们创建了所需的所有层：主层是图表右侧的层，跳跃层是左侧的层（仅在步长大于1时需要）。然后在call()方法中，我们让输入通过主层和跳跃层（如果有的话），然后将两个输出相加并应用激活函数。
+
 Now we can build a ResNet-34 using a Sequential model, since it's really just a long sequence of layers—we can treat each residual unit as a single layer now that we have the ResidualUnit class. The code closely matches Figure 14-18:
+
+现在我们可以使用Sequential模型构建ResNet-34，因为它实际上只是一个长的层序列——现在我们有了ResidualUnit类，可以将每个残差单元视为单个层。代码与图14-18非常接近：
 
 ```
 model = tf.keras.Sequential(DefaultConv2D(64, kernel_size=7, strides=2, input_shape=[224, 224, 3]),
@@ -1079,21 +1115,33 @@ model.add(tf.keras.layers.Dense(10, activation="softmax"))
 
 The only tricky part in this code is the loop that adds the ResidualUnit layers to the model: as explained earlier, the first 3 RUs have 64 filters, then the next 4 RUs have 128 filters, and so on. At each iteration, we must set the stride to 1 when the number of filters is the same as in the previous RU, or else we set it to 2; then we add the ResidualUnit, and finally we update prev filters.
 
+这段代码中唯一棘手的部分是向模型添加ResidualUnit层的循环：如前所述，前3个RU有64个滤波器，接下来的4个RU有128个滤波器，依此类推。在每次迭代中，当滤波器数量与前一个RU相同时，我们必须将步长设置为1，否则设置为2；然后我们添加ResidualUnit，最后更新prev_filters。
+
 It is amazing that in about 40 lines of code, we can build the model that won the ILSVRC 2015 challenge! This demonstrates both the elegance of the ResNet model and the expressiveness of the Keras API. Implementing the other CNN architectures is a bit longer, but not much harder. However, Keras comes with several of these architectures built in, so why not use them instead?
+
+令人惊讶的是，在大约40行代码中，我们可以构建赢得ILSVRC 2015挑战赛的模型！这展示了ResNet模型的优雅性和Keras API的表达能力。实现其他CNN架构稍微长一些，但并不难多少。然而，Keras内置了其中几种架构，那么为什么不使用它们呢？
 
 ### **Using Pretrained Models from Keras**
 
 In general, you won't have to implement standard models like GoogLeNet or ResNet manually, since pretrained networks are readily available with a single line of code in the tf.keras.applications package.
 
+### **使用Keras的预训练模型**
+
+一般来说，您不必手动实现像GoogLeNet或ResNet这样的标准模型，因为预训练网络在tf.keras.applications包中只需一行代码就可以轻松获得。
+
 {544}------------------------------------------------
 
 For example, you can load the ResNet-50 model, pretrained on ImageNet, with the following line of code:
+
+例如，您可以使用以下代码行加载在ImageNet上预训练的ResNet-50模型：
 
 ```
 model = tf.keras.applications.ResNet50(weights="imagenet")
 ```
 
 That's all! This will create a ResNet-50 model and download weights pretrained on the ImageNet dataset. To use it, you first need to ensure that the images have the right size. A ResNet-50 model expects  $224 \times 224$ -pixel images (other models may expect other sizes, such as  $299 \times 299$ ), so let's use Keras's Resizing layer (introduced in Chapter 13) to resize two sample images (after cropping them to the target aspect ratio):
+
+就是这样！这将创建一个ResNet-50模型并下载在ImageNet数据集上预训练的权重。要使用它，您首先需要确保图像具有正确的大小。ResNet-50模型期望$224 \times 224$像素的图像（其他模型可能期望其他大小，如$299 \times 299$），所以让我们使用Keras的Resizing层（在第13章中介绍）来调整两个样本图像的大小（在将它们裁剪到目标纵横比之后）：
 
 ```
 images = load_sample_images()["images"]
@@ -1103,11 +1151,15 @@ images_resized = tf.keras.layers.Resizing(height=224, width=224,
 
 The pretrained models assume that the images are preprocessed in a specific way. In some cases they may expect the inputs to be scaled from 0 to 1, or from -1 to 1, and so on. Each model provides a preprocess\_input() function that you can use to preprocess your images. These functions assume that the original pixel values range from 0 to 255, which is the case here:
 
+预训练模型假设图像以特定方式进行预处理。在某些情况下，它们可能期望输入被缩放到0到1，或从-1到1，等等。每个模型都提供一个preprocess_input()函数，您可以使用它来预处理图像。这些函数假设原始像素值范围从0到255，这里就是这种情况：
+
 ```
 inputs = tf.keras.applications.resnet50.preprocess_input(images_resized)
 ```
 
 Now we can use the pretrained model to make predictions:
+
+现在我们可以使用预训练模型进行预测：
 
 ```
 \Rightarrow Y proba = model.predict(inputs)
@@ -1116,6 +1168,8 @@ Now we can use the pretrained model to make predictions:
 ```
 
 As usual, the output Y\_proba is a matrix with one row per image and one column per class (in this case, there are 1,000 classes). If you want to display the top  $K$ predictions, including the class name and the estimated probability of each predicted class, use the decode predictions() function. For each image, it returns an array containing the top K predictions, where each prediction is represented as an array containing the class identifier,<sup>28</sup> its name, and the corresponding confidence score:
+
+像往常一样，输出Y_proba是一个矩阵，每个图像一行，每个类别一列（在这种情况下，有1,000个类别）。如果您想显示前$K$个预测，包括类别名称和每个预测类别的估计概率，请使用decode_predictions()函数。对于每个图像，它返回一个包含前K个预测的数组，其中每个预测表示为包含类别标识符<sup>28</sup>、其名称和相应置信度分数的数组：
 
 ```
 top_K = tf.keras.applications.resnet50.decode_predictions(Y_proba, top=3)
@@ -1127,7 +1181,11 @@ for image_index in range(len(images)):
 
 The output looks like this:
 
+输出如下所示：
+
 <sup>28</sup> In the ImageNet dataset, each image is mapped to a word in the WordNet dataset: the class ID is just a WordNet ID.
+
+<sup>28</sup> 在ImageNet数据集中，每个图像都映射到WordNet数据集中的一个单词：类别ID只是一个WordNet ID。
 
 {545}------------------------------------------------
 
@@ -1144,13 +1202,23 @@ The output looks like this:
 
 The correct classes are palace and dahlia, so the model is correct for the first image but wrong for the second. However, that's because dahlia is not one of the 1,000 ImageNet classes. With that in mind, vase is a reasonable guess (perhaps the flower is in a vase?), and daisy is not a bad choice either, since dahlias and daisies are both from the same Compositae family.
 
+正确的类别是宫殿和大丽花，所以模型对第一张图像是正确的，但对第二张图像是错误的。然而，这是因为大丽花不是1,000个ImageNet类别之一。考虑到这一点，花瓶是一个合理的猜测（也许花在花瓶里？），雏菊也不是一个坏选择，因为大丽花和雏菊都来自同一个菊科。
+
 As you can see, it is very easy to create a pretty good image classifier using a pretrained model. As you saw in Table 14-3, many other vision models are available in tf.keras.applications, from lightweight and fast models to large and accurate ones.
 
+如您所见，使用预训练模型创建一个相当好的图像分类器非常容易。正如您在表14-3中看到的，tf.keras.applications中有许多其他视觉模型可用，从轻量级和快速的模型到大型和准确的模型。
+
 But what if you want to use an image classifier for classes of images that are not part of ImageNet? In that case, you may still benefit from the pretrained models by using them to perform transfer learning.
+
+但是，如果您想为不属于ImageNet的图像类别使用图像分类器怎么办？在这种情况下，您仍然可以通过使用预训练模型进行迁移学习来受益。
 
 ### **Pretrained Models for Transfer Learning**
 
 If you want to build an image classifier but you do not have enough data to train it from scratch, then it is often a good idea to reuse the lower layers of a pretrained model, as we discussed in Chapter 11. For example, let's train a model to classify pictures of flowers, reusing a pretrained Xception model. First, we'll load the flowers dataset using TensorFlow Datasets (introduced in Chapter 13):
+
+### **用于迁移学习的预训练模型**
+
+如果您想构建图像分类器但没有足够的数据从头开始训练，那么重用预训练模型的较低层通常是一个好主意，正如我们在第11章中讨论的那样。例如，让我们训练一个模型来分类花朵图片，重用预训练的Xception模型。首先，我们将使用TensorFlow Datasets（在第13章中介绍）加载花朵数据集：
 
 ```
 import tensorflow_datasets as tfds
@@ -1159,6 +1227,8 @@ dataset size = info.splits["train"].num examples # 3670class names = info.featur
 ```
 
 Note that you can get information about the dataset by setting with\_info=True. Here, we get the dataset size and the names of the classes. Unfortunately, there is only a "train" dataset, no test set or validation set, so we need to split the training set. Let's call tfds. load() again, but this time taking the first 10% of the dataset for testing, the next 15% for validation, and the remaining 75% for training:
+
+请注意，您可以通过设置with_info=True来获取有关数据集的信息。在这里，我们获得数据集大小和类别名称。不幸的是，只有一个"train"数据集，没有测试集或验证集，所以我们需要分割训练集。让我们再次调用tfds.load()，但这次取数据集的前10%用于测试，接下来的15%用于验证，剩余的75%用于训练：
 
 ```
 test_set_raw, valid_set_raw, train_set_raw = tfds.load(
@@ -1171,6 +1241,8 @@ test_set_raw, valid_set_raw, train_set_raw = tfds.load(
 
 All three datasets contain individual images. We need to batch them, but first we need to ensure they all have the same size, or batching will fail. We can use a Resizing layer for this. We must also call the tf.keras.applications. xception.preprocess\_input() function to preprocess the images appropriately for the Xception model. Lastly, we'll also shuffle the training set and use prefetching:
 
+所有三个数据集都包含单独的图像。我们需要对它们进行批处理，但首先我们需要确保它们都具有相同的大小，否则批处理将失败。我们可以为此使用Resizing层。我们还必须调用tf.keras.applications.xception.preprocess_input()函数来为Xception模型适当地预处理图像。最后，我们还将打乱训练集并使用预取：
+
 ```
 batch size = 32preprocess = tf.keras.Sequential[tf.keras.layers.Resizing(height=224, width=224, crop_to_aspect_ratio=True),
     tf.keras.layers.Lambda(tf.keras.applications.xception.preprocess_input)
@@ -1182,7 +1254,11 @@ test set = test set raw.map(lambda X, y: (preprocess(X), y)).batch(batch size)
 
 Now each batch contains 32 images, all of them  $224 \times 224$  pixels, with pixel values ranging from -1 to 1. Perfect!
 
+现在每个批次包含32张图像，所有图像都是$224 \times 224$像素，像素值范围从-1到1。完美！
+
 Since the dataset is not very large, a bit of data augmentation will certainly help. Let's create a data augmentation model that we will embed in our final model. During training, it will randomly flip the images horizontally, rotate them a little bit, and tweak the contrast:
+
+由于数据集不是很大，一点数据增强肯定会有帮助。让我们创建一个数据增强模型，我们将把它嵌入到最终模型中。在训练期间，它将随机水平翻转图像，稍微旋转它们，并调整对比度：
 
 ```
 data augmentation = tf.keras. Sequential(\lceiltf.keras.layers.RandomFlip(mode="horizontal", seed=42),
@@ -1195,7 +1271,11 @@ data augmentation = tf.keras. Sequential(\lceiltf.keras.layers.RandomFlip(mode="
 
 The tf.keras.preprocessing.image.ImageDataGenerator class makes it easy to load images from disk and augment them in various ways: you can shift each image, rotate it, rescale it, flip it horizontally or vertically, shear it, or apply any transformation function you want to it. This is very convenient for simple projects. However, a tf.data pipeline is not much more complicated, and it's generally faster. Moreover, if you have a GPU and you include the preprocessing or data augmentation layers inside your model, they will benefit from GPU acceleration during training.
 
+tf.keras.preprocessing.image.ImageDataGenerator类使从磁盘加载图像并以各种方式增强它们变得容易：您可以移动每个图像、旋转它、重新缩放它、水平或垂直翻转它、剪切它，或对其应用您想要的任何变换函数。这对于简单项目非常方便。然而，tf.data管道并不复杂多少，而且通常更快。此外，如果您有GPU并且在模型内包含预处理或数据增强层，它们将在训练期间受益于GPU加速。
+
 Next let's load an Xception model, pretrained on ImageNet. We exclude the top of the network by setting include top=False. This excludes the global average pooling layer and the dense output layer. We then add our own global average pooling layer (feeding it the output of the base model), followed by a dense output layer with one unit per class, using the softmax activation function. Finally, we wrap all this in a Keras Model:
+
+接下来让我们加载一个在ImageNet上预训练的Xception模型。我们通过设置include_top=False来排除网络的顶部。这排除了全局平均池化层和密集输出层。然后我们添加自己的全局平均池化层（将基础模型的输出馈送给它），接着是每个类别一个单元的密集输出层，使用softmax激活函数。最后，我们将所有这些包装在Keras模型中：
 
 {547}------------------------------------------------
 
@@ -1209,6 +1289,8 @@ model = tf.keras.Model(inputs=base model.input, outputs=output)
 
 As explained in Chapter 11, it's usually a good idea to freeze the weights of the pretrained layers, at least at the beginning of training:
 
+如第11章所解释的，冻结预训练层的权重通常是一个好主意，至少在训练开始时：
+
 ```
 for layer in base model. layers:
     layer.trainable = False
@@ -1218,7 +1300,11 @@ for layer in base model. layers:
 
 Since our model uses the base model's layers directly, rather than the base model object itself, setting base model.trainable=False would have no effect.
 
+由于我们的模型直接使用基础模型的层，而不是基础模型对象本身，设置base_model.trainable=False将没有效果。
+
 Finally, we can compile the model and start training:
+
+最后，我们可以编译模型并开始训练：
 
 ```
 optimize r = tf.keras.optimizers.SGD(learning rate=0.1, momentum=0.9)
@@ -1231,7 +1317,11 @@ history = model.fit(train_set, validation_data=valid_set, epochs=3)
 
 If you are running in Colab, make sure the runtime is using a GPU: select Runtime  $\rightarrow$  "Change runtime type", choose "GPU" in the "Hardware accelerator" drop-down menu, then click Save. It's possible to train the model without a GPU, but it will be terribly slow (minutes per epoch, as opposed to seconds).
 
+如果您在Colab中运行，请确保运行时使用GPU：选择Runtime $\rightarrow$ "Change runtime type"，在"Hardware accelerator"下拉菜单中选择"GPU"，然后点击Save。可以在没有GPU的情况下训练模型，但会非常慢（每个epoch几分钟，而不是几秒钟）。
+
 After training the model for a few epochs, its validation accuracy should reach a bit over 80% and then stop improving. This means that the top layers are now pretty well trained, and we are ready to unfreeze some of the base model's top layers, then continue training. For example, let's unfreeze layers 56 and above (that's the start of residual unit 7 out of 14, as you can see if you list the layer names):
+
+在训练模型几个epoch后，其验证准确率应该达到80%多一点，然后停止改善。这意味着顶层现在已经训练得相当好了，我们准备解冻基础模型的一些顶层，然后继续训练。例如，让我们解冻第56层及以上的层（这是14个残差单元中第7个的开始，如果您列出层名称就可以看到）：
 
 ```
 for layer in base_model.layers[56:]:
@@ -1239,6 +1329,8 @@ for layer in base_model.layers[56:]:
 ```
 
 Don't forget to compile the model whenever you freeze or unfreeze layers. Also make sure to use a much lower learning rate to avoid damaging the pretrained weights:
+
+不要忘记在冻结或解冻层时重新编译模型。还要确保使用更低的学习率以避免损坏预训练的权重：
 
 ```
 optimizer = tf.keras.optimizers.SGD(learning rate=0.01, momentum=0.9)
@@ -1249,13 +1341,21 @@ history = model.fit(train_set, validation_data=valid_set, epochs=10)
 
 This model should reach around 92% accuracy on the test set, in just a few minutes of training (with a GPU). If you tune the hyperparameters, lower the learning rate, 
 
+该模型在测试集上应该能达到约92%的准确率，仅需几分钟的训练时间（使用GPU）。如果您调整超参数，降低学习率，
+
 {548}------------------------------------------------
 
 and train for quite a bit longer, you should be able to reach 95% to 97%. With that, you can start training amazing image classifiers on your own images and classes! But there's more to computer vision than just classification. For example, what if you also want to know where the flower is in a picture? Let's look at this now.
 
+并训练更长时间，您应该能够达到95%到97%的准确率。有了这些，您就可以开始在自己的图像和类别上训练出色的图像分类器！但计算机视觉不仅仅是分类。例如，如果您还想知道花在图片中的位置怎么办？让我们现在来看看这个问题。
+
 ### **Classification and Localization**
 
+### **分类与定位**
+
 Localizing an object in a picture can be expressed as a regression task, as discussed in Chapter 10: to predict a bounding box around the object, a common approach is to predict the horizontal and vertical coordinates of the object's center, as well as its height and width. This means we have four numbers to predict. It does not require much change to the model; we just need to add a second dense output layer with four units (typically on top of the global average pooling layer), and it can be trained using the MSE loss:
+
+在图片中定位对象可以表达为回归任务，如第10章所讨论的：为了预测对象周围的边界框，一种常见的方法是预测对象中心的水平和垂直坐标，以及其高度和宽度。这意味着我们需要预测四个数字。这不需要对模型进行太多更改；我们只需要添加一个具有四个单元的第二个密集输出层（通常在全局平均池化层之上），并且可以使用MSE损失进行训练：
 
 ```
 base_model = tf.keras.applications.xception.Xception(weights="imagenet",
@@ -1272,21 +1372,33 @@ model.compile(loss=["sparse categorical crossentropy", "mse"],
 
 But now we have a problem: the flowers dataset does not have bounding boxes around the flowers. So, we need to add them ourselves. This is often one of the hardest and most costly parts of a machine learning project: getting the labels. It's a good idea to spend time looking for the right tools. To annotate images with bounding boxes, you may want to use an open source image labeling tool like VGG Image Annotator, LabelImg, OpenLabeler, or ImgLab, or perhaps a commercial tool like LabelBox or Supervisely. You may also want to consider crowdsourcing platforms such as Amazon Mechanical Turk if you have a very large number of images to annotate. However, it is quite a lot of work to set up a crowdsourcing platform, prepare the form to be sent to the workers, supervise them, and ensure that the quality of the bounding boxes they produce is good, so make sure it is worth the effort. Adriana Kovashka et al. wrote a very practical paper<sup>29</sup> about crowdsourcing in computer vision. I recommend you check it out, even if you do not plan to use crowdsourcing. If there are just a few hundred or a even a couple thousand images to label, and you don't plan to do this frequently, it may be preferable to do it
 
+但现在我们有一个问题：花卉数据集没有花朵周围的边界框。所以，我们需要自己添加它们。这通常是机器学习项目中最困难和最昂贵的部分之一：获取标签。花时间寻找合适的工具是一个好主意。要用边界框标注图像，您可能想要使用开源图像标注工具，如VGG Image Annotator、LabelImg、OpenLabeler或ImgLab，或者商业工具如LabelBox或Supervisely。如果您有大量图像需要标注，您也可能想要考虑众包平台，如Amazon Mechanical Turk。然而，建立众包平台、准备发送给工作者的表单、监督他们并确保他们产生的边界框质量良好，这是相当多的工作，所以要确保这是值得的。Adriana Kovashka等人写了一篇关于计算机视觉中众包的非常实用的论文<sup>29</sup>。我建议您查看一下，即使您不打算使用众包。如果只有几百张甚至几千张图像需要标注，并且您不打算经常这样做，那么自己做可能更可取
+
 <sup>29</sup> Adriana Kovashka et al., "Crowdsourcing in Computer Vision", Foundations and Trends in Computer Graphics and Vision 10, no. 3 (2014): 177-243.
 
 {549}------------------------------------------------
 
 yourself: with the right tools, it will only take a few days, and you'll also gain a better understanding of your dataset and task.
 
+：使用合适的工具，只需要几天时间，您还会对数据集和任务有更好的理解。
+
 Now let's suppose you've obtained the bounding boxes for every image in the flowers dataset (for now we will assume there is a single bounding box per image). You then need to create a dataset whose items will be batches of preprocessed images along with their class labels and their bounding boxes. Each item should be a tuple of the form (images, (class labels, bounding boxes)). Then you are ready to train your model!
+
+现在假设您已经获得了花卉数据集中每张图像的边界框（现在我们假设每张图像有一个边界框）。然后您需要创建一个数据集，其项目将是预处理图像的批次以及它们的类标签和边界框。每个项目应该是形式为(images, (class labels, bounding boxes))的元组。然后您就可以训练您的模型了！
 
 ![](img/_page_549_Picture_2.jpeg)
 
 The bounding boxes should be normalized so that the horizontal and vertical coordinates, as well as the height and width, all range from 0 to 1. Also, it is common to predict the square root of the height and width rather than the height and width directly: this way, a 10-pixel error for a large bounding box will not be penalized as much as a 10-pixel error for a small bounding box.
 
+边界框应该被归一化，使得水平和垂直坐标以及高度和宽度都在0到1的范围内。此外，通常预测高度和宽度的平方根而不是直接预测高度和宽度：这样，大边界框的10像素误差不会像小边界框的10像素误差那样受到严重惩罚。
+
 The MSE often works fairly well as a cost function to train the model, but it is not a great metric to evaluate how well the model can predict bounding boxes. The most common metric for this is the *intersection over union* (IoU): the area of overlap between the predicted bounding box and the target bounding box, divided by the area of their union (see Figure 14-24). In Keras, it is implemented by the tf.keras.metrics.MeanIoU class.
 
+MSE作为训练模型的成本函数通常效果相当好，但它不是评估模型预测边界框能力的好指标。最常见的指标是*交并比*(IoU)：预测边界框和目标边界框之间的重叠面积，除以它们的并集面积（见图14-24）。在Keras中，它由tf.keras.metrics.MeanIoU类实现。
+
 Classifying and localizing a single object is nice, but what if the images contain multiple objects (as is often the case in the flowers dataset)?
+
+分类和定位单个对象很好，但如果图像包含多个对象（花卉数据集中经常出现这种情况）怎么办？
 
 ![](img/_page_549_Picture_6.jpeg)
 
@@ -1296,13 +1408,21 @@ Figure 14-24. IoU metric for bounding boxes
 
 ### **Object Detection**
 
+### **目标检测**
+
 The task of classifying and localizing multiple objects in an image is called *object* detection. Until a few years ago, a common approach was to take a CNN that was trained to classify and locate a single object roughly centered in the image, then slide this CNN across the image and make predictions at each step. The CNN was generally trained to predict not only class probabilities and a bounding box, but also an *objectness score*: this is the estimated probability that the image does indeed contain an object centered near the middle. This is a binary classification output; it can be produced by a dense output layer with a single unit, using the sigmoid activation function and trained using the binary cross-entropy loss.
+
+在图像中分类和定位多个对象的任务称为*目标*检测。直到几年前，一种常见的方法是使用一个训练来分类和定位大致位于图像中心的单个对象的CNN，然后将这个CNN在图像上滑动并在每一步进行预测。CNN通常被训练来预测不仅是类概率和边界框，还有*对象性得分*：这是图像确实包含一个位于中间附近的对象的估计概率。这是一个二元分类输出；它可以由具有单个单元的密集输出层产生，使用sigmoid激活函数并使用二元交叉熵损失进行训练。
 
 ![](img/_page_550_Picture_2.jpeg)
 
 Instead of an objectness score, a "no-object" class was sometimes added, but in general this did not work as well: the questions "Is an object present?" and "What type of object is it?" are best answered separately.
 
+有时会添加一个"无对象"类而不是对象性得分，但通常这样做效果不如前者："是否存在对象？"和"这是什么类型的对象？"这两个问题最好分别回答。
+
 This sliding-CNN approach is illustrated in Figure 14-25. In this example, the image was chopped into a  $5 \times 7$  grid, and we see a CNN—the thick black rectangle—sliding across all  $3 \times 3$  regions and making predictions at each step.
+
+这种滑动CNN方法在图14-25中进行了说明。在这个例子中，图像被切分成$5 \times 7$网格，我们看到一个CNN——粗黑色矩形——在所有$3 \times 3$区域上滑动并在每一步进行预测。
 
 ![](img/_page_550_Picture_5.jpeg)
 
@@ -1312,32 +1432,63 @@ Figure 14-25. Detecting multiple objects by sliding a CNN across the image
 
 In this figure, the CNN has already made predictions for three of these  $3 \times 3$  regions:
 
+在这个图中，CNN已经对其中三个$3 \times 3$区域进行了预测：
+
 - When looking at the top-left  $3 \times 3$  region (centered on the red-shaded grid cell located in the second row and second column), it detected the leftmost rose. Notice that the predicted bounding box exceeds the boundary of this  $3 \times 3$ region. That's absolutely fine: even though the CNN could not see the bottom part of the rose, it was able to make a reasonable guess as to where it might be. It also predicted class probabilities, giving a high probability to the "rose" class. Lastly, it predicted a fairly high objectness score, since the center of the bounding box lies within the central grid cell (in this figure, the objectness score is represented by the thickness of the bounding box).
+
+- 当查看左上角的$3 \times 3$区域（以位于第二行第二列的红色阴影网格单元为中心）时，它检测到了最左边的玫瑰。注意预测的边界框超出了这个$3 \times 3$区域的边界。这完全没问题：即使CNN看不到玫瑰的底部，它也能够对其可能的位置做出合理的猜测。它还预测了类概率，给"玫瑰"类一个高概率。最后，它预测了相当高的对象性得分，因为边界框的中心位于中央网格单元内（在这个图中，对象性得分由边界框的粗细表示）。
+
 - When looking at the next  $3 \times 3$  region, one grid cell to the right (centered on the shaded blue square), it did not detect any flower centered in that region, so it predicted a very low objectness score; therefore, the predicted bounding box and class probabilities can safely be ignored. You can see that the predicted bounding box was no good anyway.
+
+- 当查看下一个$3 \times 3$区域，向右一个网格单元（以蓝色阴影正方形为中心）时，它没有检测到该区域中心有任何花朵，所以它预测了非常低的对象性得分；因此，预测的边界框和类概率可以安全地忽略。您可以看到预测的边界框本来就不好。
+
 - finally, when looking at the next  $3 \times 3$  region, again one grid cell to the right (centered on the shaded green cell), it detected the rose at the top, although not perfectly: this rose is not well centered within this region, so the predicted objectness score was not very high.
+
+- 最后，当查看下一个$3 \times 3$区域，再次向右一个网格单元（以绿色阴影单元为中心）时，它检测到了顶部的玫瑰，尽管不完美：这朵玫瑰在该区域内不是很好地居中，所以预测的对象性得分不是很高。
 
 You can imagine how sliding the CNN across the whole image would give you a total of 15 predicted bounding boxes, organized in a  $3 \times 5$  grid, with each bounding box accompanied by its estimated class probabilities and objectness score. Since objects can have varying sizes, you may then want to slide the CNN again across larger  $4 \times 4$ regions as well, to get even more bounding boxes.
 
+您可以想象将CNN在整个图像上滑动会给您总共15个预测边界框，组织成$3 \times 5$网格，每个边界框都伴随着其估计的类概率和对象性得分。由于对象可以有不同的大小，您可能还想要在更大的$4 \times 4$区域上再次滑动CNN，以获得更多的边界框。
+
 This technique is fairly straightforward, but as you can see it will often detect the same object multiple times, at slightly different positions. Some postprocessing is needed to get rid of all the unnecessary bounding boxes. A common approach for this is called non-max suppression. Here's how it works:
 
+这种技术相当简单，但正如您所看到的，它经常会在稍微不同的位置多次检测同一个对象。需要一些后处理来去除所有不必要的边界框。一种常见的方法称为非最大抑制。它的工作原理如下：
+
 - 1. First, get rid of all the bounding boxes for which the objectness score is below some threshold: since the CNN believes there's no object at that location, the bounding box is useless.
+
+- 1. 首先，去除所有对象性得分低于某个阈值的边界框：由于CNN认为该位置没有对象，边界框是无用的。
+
 - 2. Find the remaining bounding box with the highest objectness score, and get rid of all the other remaining bounding boxes that overlap a lot with it (e.g., with an IoU greater than 60%). For example, in Figure 14-25, the bounding box with the max objectness score is the thick bounding box over the leftmost rose. The other bounding box that touches this same rose overlaps a lot with the max bounding box, so we will get rid of it (although in this example it would already have been removed in the previous step).
+
+- 2. 找到具有最高对象性得分的剩余边界框，并去除所有与其大量重叠的其他剩余边界框（例如，IoU大于60%）。例如，在图14-25中，具有最大对象性得分的边界框是最左边玫瑰上的粗边界框。触及同一朵玫瑰的另一个边界框与最大边界框大量重叠，所以我们将去除它（尽管在这个例子中它已经在前一步中被移除了）。
 
 {552}------------------------------------------------
 
 3. Repeat step 2 until there are no more bounding boxes to get rid of.
 
+3. 重复步骤2，直到没有更多的边界框需要去除。
+
 This simple approach to object detection works pretty well, but it requires running the CNN many times (15 times in this example), so it is quite slow. Fortunately, there is a much faster way to slide a CNN across an image: using a fully convolutional *network* (FCN).
+
+这种简单的目标检测方法效果相当好，但它需要多次运行CNN（在这个例子中是15次），所以相当慢。幸运的是，有一种更快的方法来在图像上滑动CNN：使用全卷积*网络*(FCN)。
 
 #### **Fully Convolutional Networks**
 
+#### **全卷积网络**
+
 The idea of FCNs was first introduced in a 2015 paper<sup>30</sup> by Jonathan Long et al., for semantic segmentation (the task of classifying every pixel in an image according to the class of the object it belongs to). The authors pointed out that you could replace the dense layers at the top of a CNN with convolutional layers. To understand this, let's look at an example: suppose a dense layer with 200 neurons sits on top of a convolutional layer that outputs 100 feature maps, each of size  $7 \times 7$  (this is the feature map size, not the kernel size). Each neuron will compute a weighted sum of all 100  $\times$  7  $\times$  7 activations from the convolutional layer (plus a bias term). Now let's see what happens if we replace the dense layer with a convolutional layer using 200 filters, each of size  $7 \times 7$ , and with "valid" padding. This layer will output 200 feature maps, each  $1 \times 1$  (since the kernel is exactly the size of the input feature maps and we are using "valid" padding). In other words, it will output 200 numbers, just like the dense layer did; and if you look closely at the computations performed by a convolutional layer, you will notice that these numbers will be precisely the same as those the dense layer produced. The only difference is that the dense layer's output was a tensor of shape [batch size, 200], while the convolutional layer will output a tensor of shape [batch size, 1, 1, 200].
+
+FCN的想法最初是由Jonathan Long等人在2015年的一篇论文<sup>30</sup>中为语义分割（根据像素所属对象的类别对图像中的每个像素进行分类的任务）而提出的。作者指出，您可以用卷积层替换CNN顶部的密集层。为了理解这一点，让我们看一个例子：假设一个有200个神经元的密集层位于一个输出100个特征图的卷积层之上，每个特征图的大小为$7 \times 7$（这是特征图大小，不是核大小）。每个神经元将计算来自卷积层的所有100 $\times$ 7 $\times$ 7激活的加权和（加上偏置项）。现在让我们看看如果我们用使用200个滤波器的卷积层替换密集层会发生什么，每个滤波器的大小为$7 \times 7$，并使用"valid"填充。这一层将输出200个特征图，每个$1 \times 1$（因为核的大小正好是输入特征图的大小，我们使用"valid"填充）。换句话说，它将输出200个数字，就像密集层所做的那样；如果您仔细观察卷积层执行的计算，您会注意到这些数字将与密集层产生的数字完全相同。唯一的区别是密集层的输出是形状为[batch size, 200]的张量，而卷积层将输出形状为[batch size, 1, 1, 200]的张量。
 
 ![](img/_page_552_Picture_4.jpeg)
 
 To convert a dense layer to a convolutional layer, the number of filters in the convolutional layer must be equal to the number of units in the dense layer, the filter size must be equal to the size of the input feature maps, and you must use "valid" padding. The stride may be set to 1 or more, as you will see shortly.
 
+要将密集层转换为卷积层，卷积层中的滤波器数量必须等于密集层中的单元数量，滤波器大小必须等于输入特征图的大小，并且必须使用"valid"填充。步长可以设置为1或更多，您很快就会看到。
+
 Why is this important? Well, while a dense layer expects a specific input size (since it has one weight per input feature), a convolutional layer will happily process images of any size<sup>31</sup> (however, it does expect its inputs to have a specific number of channels, since each kernel contains a different set of weights for each input channel). Since
+
+为什么这很重要？嗯，虽然密集层期望特定的输入大小（因为每个输入特征有一个权重），但卷积层可以愉快地处理任何大小的图像<sup>31</sup>（但是，它确实期望其输入具有特定数量的通道，因为每个核包含每个输入通道的不同权重集）。由于
 
 <sup>30</sup> Jonathan Long et al., "Fully Convolutional Networks for Semantic Segmentation", Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (2015): 3431-3440.
 
@@ -1347,16 +1498,35 @@ Why is this important? Well, while a dense layer expects a specific input size (
 
 an FCN contains only convolutional layers (and pooling layers, which have the same property), it can be trained and executed on images of any size!
 
+FCN只包含卷积层（和具有相同属性的池化层），它可以在任何大小的图像上进行训练和执行！
+
 For example, suppose we'd already trained a CNN for flower classification and localization. It was trained on  $224 \times 224$  images, and it outputs 10 numbers:
 
+例如，假设我们已经训练了一个用于花卉分类和定位的CNN。它在$224 \times 224$图像上进行训练，输出10个数字：
+
 - Outputs 0 to 4 are sent through the softmax activation function, and this gives the class probabilities (one per class).
+
+- 输出0到4通过softmax激活函数，这给出了类概率（每个类一个）。
+
 - Output 5 is sent through the sigmoid activation function, and this gives the objectness score.
+
+- 输出5通过sigmoid激活函数，这给出了对象性得分。
+
 - Outputs 6 and 7 represent the bounding box's center coordinates; they also go through a sigmoid activation function to ensure they range from 0 to 1.
+
+- 输出6和7表示边界框的中心坐标；它们也通过sigmoid激活函数以确保它们的范围从0到1。
+
 - Lastly, outputs 8 and 9 represent the bounding box's height and width; they do not go through any activation function to allow the bounding boxes to extend beyond the borders of the image.
+
+- 最后，输出8和9表示边界框的高度和宽度；它们不通过任何激活函数，以允许边界框延伸到图像边界之外。
 
 We can now convert the CNN's dense layers to convolutional layers. In fact, we don't even need to retrain it; we can just copy the weights from the dense layers to the convolutional layers! Alternatively, we could have converted the CNN into an FCN before training.
 
+我们现在可以将CNN的密集层转换为卷积层。实际上，我们甚至不需要重新训练它；我们可以直接将权重从密集层复制到卷积层！或者，我们可以在训练之前将CNN转换为FCN。
+
 Now suppose the last convolutional layer before the output layer (also called the bottleneck layer) outputs  $7 \times 7$  feature maps when the network is fed a 224  $\times$  224 image (see the left side of Figure 14-26). If we feed the FCN a 448  $\times$  448 image (see the right side of Figure 14-26), the bottleneck layer will now output  $14 \times 14$ feature maps.<sup>32</sup> Since the dense output layer was replaced by a convolutional layer using 10 filters of size  $7 \times 7$ , with "valid" padding and stride 1, the output will be composed of 10 features maps, each of size  $8 \times 8$  (since  $14 - 7 + 1 = 8$ ). In other words, the FCN will process the whole image only once, and it will output an  $8 \times$ 8 grid where each cell contains 10 numbers (5 class probabilities, 1 objectness score, and 4 bounding box coordinates). It's exactly like taking the original CNN and sliding it across the image using 8 steps per row and 8 steps per column. To visualize this, imagine chopping the original image into a  $14 \times 14$  grid, then sliding a  $7 \times 7$  window across this grid; there will be  $8 \times 8 = 64$  possible locations for the window, hence  $8 \times$ 8 predictions. However, the FCN approach is *much* more efficient, since the network only looks at the image once. In fact, You Only Look Once (YOLO) is the name of a very popular object detection architecture, which we'll look at next.
+
+现在假设输出层之前的最后一个卷积层（也称为瓶颈层）在网络输入224 $\times$ 224图像时输出$7 \times 7$特征图（见图14-26的左侧）。如果我们向FCN输入448 $\times$ 448图像（见图14-26的右侧），瓶颈层现在将输出$14 \times 14$特征图。<sup>32</sup>由于密集输出层被使用10个大小为$7 \times 7$的滤波器的卷积层替换，使用"valid"填充和步长1，输出将由10个特征图组成，每个大小为$8 \times 8$（因为$14 - 7 + 1 = 8$）。换句话说，FCN将只处理整个图像一次，它将输出一个$8 \times 8$网格，其中每个单元包含10个数字（5个类概率、1个对象性得分和4个边界框坐标）。这就像取原始CNN并使用每行8步和每列8步在图像上滑动一样。为了可视化这一点，想象将原始图像切分成$14 \times 14$网格，然后在此网格上滑动$7 \times 7$窗口；窗口将有$8 \times 8 = 64$个可能的位置，因此有$8 \times 8$个预测。然而，FCN方法*更加*高效，因为网络只查看图像一次。实际上，You Only Look Once (YOLO)是一个非常流行的目标检测架构的名称，我们接下来将看看它。
 
 <sup>32</sup> This assumes we used only "same" padding in the network: "valid" padding would reduce the size of the feature maps. Moreover, 448 can be neatly divided by 2 several times until we reach 7, without any rounding error. If any layer uses a different stride than 1 or 2, then there may be some rounding error, so again the feature maps may end up being smaller.
 
@@ -1368,9 +1538,15 @@ Figure 14-26. The same fully convolutional network processing a small image (lef
 
 ### **You Only Look Once**
 
+### **你只看一次**
+
 YOLO is a fast and accurate object detection architecture proposed by Joseph Redmon et al. in a 2015 paper.<sup>33</sup> It is so fast that it can run in real time on a video, as seen in Redmon's demo. YOLO's architecture is quite similar to the one we just discussed, but with a few important differences:
 
+YOLO是由Joseph Redmon等人在2015年的论文中提出的快速准确的目标检测架构。它非常快，可以在视频上实时运行，正如Redmon的演示所示。YOLO的架构与我们刚才讨论的架构非常相似，但有几个重要的区别：
+
 • For each grid cell, YOLO only considers objects whose bounding box center lies within that cell. The bounding box coordinates are relative to that cell, where  $(0, 0)$  means the top-left corner of the cell and  $(1, 1)$  means the bottom right. However, the bounding box's height and width may extend well beyond the cell.
+
+• 对于每个网格单元，YOLO只考虑边界框中心位于该单元内的对象。边界框坐标相对于该单元，其中$(0, 0)$表示单元的左上角，$(1, 1)$表示右下角。但是，边界框的高度和宽度可能远远超出单元。
 
 <sup>33</sup> Joseph Redmon et al., "You Only Look Once: Unified, Real-Time Object Detection", Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (2016): 779-788.
 
@@ -1379,36 +1555,66 @@ YOLO is a fast and accurate object detection architecture proposed by Joseph Red
 - It outputs two bounding boxes for each grid cell (instead of just one), which allows the model to handle cases where two objects are so close to each other that their bounding box centers lie within the same cell. Each bounding box also comes with its own objectness score.
 - YOLO also outputs a class probability distribution for each grid cell, predicting 20 class probabilities per grid cell since YOLO was trained on the PASCAL VOC dataset, which contains 20 classes. This produces a coarse class probability map. Note that the model predicts one class probability distribution per grid cell, not per bounding box. However, it's possible to estimate class probabilities for each bounding box during postprocessing, by measuring how well each bounding box matches each class in the class probability map. For example, imagine a picture of a person standing in front of a car. There will be two bounding boxes: one large horizontal one for the car, and a smaller vertical one for the person. These bounding boxes may have their centers within the same grid cell. So how can we tell which class should be assigned to each bounding box? Well, the class probability map will contain a large region where the "car" class is dominant, and inside it there will be a smaller region where the "person" class is dominant. Hopefully, the car's bounding box will roughly match the "car" region, while the person's bounding box will roughly match the "person" region: this will allow the correct class to be assigned to each bounding box.
 
+- 它为每个网格单元输出两个边界框（而不是只有一个），这使得模型能够处理两个对象彼此非常接近，以至于它们的边界框中心位于同一单元内的情况。每个边界框也有自己的对象性得分。
+- YOLO还为每个网格单元输出类别概率分布，由于YOLO在包含20个类别的PASCAL VOC数据集上训练，因此每个网格单元预测20个类别概率。这产生了一个粗糙的类别概率图。注意，模型为每个网格单元预测一个类别概率分布，而不是为每个边界框。但是，在后处理期间，可以通过测量每个边界框与类别概率图中每个类别的匹配程度来估计每个边界框的类别概率。例如，想象一张人站在汽车前面的图片。将有两个边界框：一个用于汽车的大水平框，一个用于人的较小垂直框。这些边界框的中心可能位于同一网格单元内。那么我们如何判断应该为每个边界框分配哪个类别呢？类别概率图将包含一个"汽车"类别占主导地位的大区域，在其内部将有一个"人"类别占主导地位的较小区域。希望汽车的边界框大致匹配"汽车"区域，而人的边界框大致匹配"人"区域：这将允许为每个边界框分配正确的类别。
+
 YOLO was originally developed using Darknet, an open source deep learning framework initially developed in C by Joseph Redmon, but it was soon ported to Tensor-Flow, Keras, PyTorch, and more. It was continuously improved over the years, with YOLOv2, YOLOv3, and YOLO9000 (again by Joseph Redmon et al.), YOLOv4 (by Alexey Bochkovskiy et al.), YOLOv5 (by Glenn Jocher), and PP-YOLO (by Xiang Long et al.).
 
+YOLO最初是使用Darknet开发的，这是一个由Joseph Redmon最初用C语言开发的开源深度学习框架，但很快就被移植到TensorFlow、Keras、PyTorch等平台。多年来它不断改进，有YOLOv2、YOLOv3和YOLO9000（再次由Joseph Redmon等人开发）、YOLOv4（由Alexey Bochkovskiy等人开发）、YOLOv5（由Glenn Jocher开发）和PP-YOLO（由Xiang Long等人开发）。
+
 Each version brought some impressive improvements in speed and accuracy, using a variety of techniques; for example, YOLOv3 boosted accuracy in part thanks to *anchor priors*, exploiting the fact that some bounding box shapes are more likely than others, depending on the class (e.g., people tend to have vertical bounding boxes, while cars usually don't). They also increased the number of bounding boxes per grid cell, they trained on different datasets with many more classes (up to 9,000 classes organized in a hierarchy in the case of YOLO9000), they added skip connections to recover some of the spatial resolution that is lost in the CNN (we will discuss this shortly, when we look at semantic segmentation), and much more. There are many variants of these models too, such as YOLOv4-tiny, which is optimized to be trained on less powerful machines and which can run extremely fast (at over 1,000 frames per second!), but with a slightly lower mean average precision (mAP).
+
+每个版本都在速度和准确性方面带来了令人印象深刻的改进，使用了各种技术；例如，YOLOv3部分通过*锚点先验*提高了准确性，利用了某些边界框形状比其他形状更可能的事实，这取决于类别（例如，人往往有垂直边界框，而汽车通常没有）。他们还增加了每个网格单元的边界框数量，在具有更多类别的不同数据集上进行训练（在YOLO9000的情况下，多达9,000个按层次组织的类别），他们添加了跳跃连接以恢复CNN中丢失的一些空间分辨率（我们将在查看语义分割时很快讨论这一点），等等。这些模型也有许多变体，例如YOLOv4-tiny，它被优化为在功能较弱的机器上训练，可以极快地运行（超过每秒1,000帧！），但平均精度（mAP）略低。
 
 {556}------------------------------------------------
 
 #### **Mean Average Precision**
 
+#### **平均精度**
+
 A very common metric used in object detection tasks is the mean average precision. "Mean average" sounds a bit redundant, doesn't it? To understand this metric, let's go back to two classification metrics we discussed in Chapter 3: precision and recall. Remember the trade-off: the higher the recall, the lower the precision. You can visualize this in a precision/recall curve (see Figure 3-6). To summarize this curve into a single number, we could compute its area under the curve (AUC). But note that the precision/recall curve may contain a few sections where precision actually goes up when recall increases, especially at low recall values (you can see this at the top left of Figure 3-6). This is one of the motivations for the mAP metric.
+
+目标检测任务中使用的一个非常常见的指标是平均精度。"平均精度"听起来有点冗余，不是吗？为了理解这个指标，让我们回到第3章讨论的两个分类指标：精确率和召回率。记住权衡：召回率越高，精确率越低。你可以在精确率/召回率曲线中可视化这一点（见图3-6）。为了将这条曲线总结为一个数字，我们可以计算其曲线下面积（AUC）。但请注意，精确率/召回率曲线可能包含一些精确率在召回率增加时实际上上升的部分，特别是在低召回率值时（你可以在图3-6的左上角看到这一点）。这是mAP指标的动机之一。
 
 Suppose the classifier has 90% precision at 10% recall, but 96% precision at 20% recall. There's really no trade-off here: it simply makes more sense to use the classifier at 20% recall rather than at 10% recall, as you will get both higher recall and higher precision. So instead of looking at the precision at 10% recall, we should really be looking at the *maximum* precision that the classifier can offer with *at least* 10% recall. It would be 96%, not 90%. Therefore, one way to get a fair idea of the model's performance is to compute the maximum precision you can get with at least 0% recall, then 10% recall, 20%, and so on up to 100%, and then calculate the mean of these maximum precisions. This is called the *average precision* (AP) metric. Now when there are more than two classes, we can compute the AP for each class, and then compute the mean AP (mAP). That's it!
 
+假设分类器在10%召回率时有90%的精确率，但在20%召回率时有96%的精确率。这里真的没有权衡：在20%召回率而不是10%召回率下使用分类器更有意义，因为你将获得更高的召回率和更高的精确率。因此，我们不应该查看10%召回率时的精确率，而应该查看分类器在*至少*10%召回率下能提供的*最大*精确率。它将是96%，而不是90%。因此，获得模型性能公平概念的一种方法是计算你可以在至少0%召回率、然后10%召回率、20%等等直到100%下获得的最大精确率，然后计算这些最大精确率的平均值。这被称为*平均精度*（AP）指标。现在当有两个以上的类别时，我们可以计算每个类别的AP，然后计算平均AP（mAP）。就是这样！
+
 In an object detection system, there is an additional level of complexity: what if the system detected the correct class, but at the wrong location (i.e., the bounding box is completely off)? Surely we should not count this as a positive prediction. One approach is to define an IoU threshold: for example, we may consider that a prediction is correct only if the IoU is greater than, say, 0.5, and the predicted class is correct. The corresponding mAP is generally noted mAP@0.5 (or mAP@50%, or sometimes just  $AP_{50}$ ). In some competitions (such as the PASCAL VOC challenge), this is what is done. In others (such as the COCO competition), the mAP is computed for different IoU thresholds (0.50, 0.55, 0.60, ..., 0.95), and the final metric is the mean of all these mAPs (noted mAP@[.50:.95] or mAP@[.50:0.05:.95]). Yes, that's a mean mean average.
+
+在目标检测系统中，还有一个额外的复杂性层次：如果系统检测到了正确的类别，但位置错误（即边界框完全偏离）怎么办？我们当然不应该将此计为正预测。一种方法是定义IoU阈值：例如，我们可以认为只有当IoU大于（比如说）0.5且预测类别正确时，预测才是正确的。相应的mAP通常记为mAP@0.5（或mAP@50%，有时只是$AP_{50}$）。在一些竞赛中（如PASCAL VOC挑战赛），这就是所做的。在其他竞赛中（如COCO竞赛），mAP是为不同的IoU阈值（0.50、0.55、0.60、...、0.95）计算的，最终指标是所有这些mAP的平均值（记为mAP@[.50:.95]或mAP@[.50:0.05:.95]）。是的，这是一个平均的平均精度。
 
 {557}------------------------------------------------
 
 Many object detection models are available on TensorFlow Hub, often with pretrained weights, such as YOLOv5,<sup>34</sup> SSD,<sup>35</sup> Faster R-CNN,<sup>36</sup> and EfficentDet.<sup>37</sup>
 
+许多目标检测模型在TensorFlow Hub上可用，通常带有预训练权重，如YOLOv5、SSD、Faster R-CNN和EfficientDet。
+
 SSD and EfficientDet are "look once" detection models, similar to YOLO. Efficient-Det is based on the EfficientNet convolutional architecture. Faster R-CNN is more complex: the image first goes through a CNN, then the output is passed to a region *proposal network* (RPN) that proposes bounding boxes that are most likely to contain an object; a classifier is then run for each bounding box, based on the cropped output of the CNN. The best place to start using these models is TensorFlow Hub's excellent object detection tutorial.
+
+SSD和EfficientDet是"看一次"检测模型，类似于YOLO。EfficientDet基于EfficientNet卷积架构。Faster R-CNN更复杂：图像首先通过CNN，然后输出传递给区域*提议网络*（RPN），该网络提议最可能包含对象的边界框；然后基于CNN的裁剪输出为每个边界框运行分类器。开始使用这些模型的最佳地方是TensorFlow Hub优秀的目标检测教程。
 
 So far, we've only considered detecting objects in single images. But what about videos? Objects must not only be detected in each frame, they must also be tracked over time. Let's take a quick look at object tracking now.
 
+到目前为止，我们只考虑了在单个图像中检测对象。但是视频呢？对象不仅必须在每一帧中被检测到，还必须随时间被跟踪。现在让我们快速看一下目标跟踪。
+
 ### **Object Tracking**
+
+### **目标跟踪**
 
 Object tracking is a challenging task: objects move, they may grow or shrink as they get closer to or further away from the camera, their appearance may change as they turn around or move to different lighting conditions or backgrounds, they may be temporarily occluded by other objects, and so on.
 
+目标跟踪是一项具有挑战性的任务：对象移动，当它们靠近或远离相机时可能会变大或变小，当它们转身或移动到不同的光照条件或背景时，它们的外观可能会改变，它们可能被其他对象暂时遮挡，等等。
+
 One of the most popular object tracking systems is DeepSORT.<sup>38</sup> It is based on a combination of classical algorithms and deep learning:
+
+最受欢迎的目标跟踪系统之一是DeepSORT。它基于经典算法和深度学习的结合：
 
 - It uses Kalman filters to estimate the most likely current position of an object given prior detections, and assuming that objects tend to move at a constant speed.
 - It uses a deep learning model to measure the resemblance between new detections and existing tracked objects.
+
+- 它使用卡尔曼滤波器来估计给定先前检测的对象最可能的当前位置，并假设对象倾向于以恒定速度移动。
+- 它使用深度学习模型来测量新检测和现有跟踪对象之间的相似性。
 
 - 36 Shaoqing Ren et al., "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks", Proceedings of the 28th International Conference on Neural Information Processing Systems 1 (2015): 91-99.
 - 37 Mingxing Tan et al., "EfficientDet: Scalable and Efficient Object Detection", arXiv preprint arXiv:1911.09070  $(2019).$
@@ -1423,17 +1629,29 @@ One of the most popular object tracking systems is DeepSORT.<sup>38</sup> It is 
 
 • Lastly, it uses the *Hungarian algorithm* to map new detections to existing tracked objects (or to new tracked objects): this algorithm efficiently finds the combination of mappings that minimizes the distance between the detections and the predicted positions of tracked objects, while also minimizing the appearance discrepancy.
 
+• 最后，它使用*匈牙利算法*将新检测映射到现有跟踪对象（或新跟踪对象）：该算法有效地找到映射组合，最小化检测和跟踪对象预测位置之间的距离，同时也最小化外观差异。
+
 For example, imagine a red ball that just bounced off a blue ball traveling in the opposite direction. Based on the previous positions of the balls, the Kalman filter will predict that the balls will go through each other: indeed, it assumes that objects move at a constant speed, so it will not expect the bounce. If the Hungarian algorithm only considered positions, then it would happily map the new detections to the wrong balls, as if they had just gone through each other and swapped colors. But thanks to the resemblance measure, the Hungarian algorithm will notice the problem. Assuming the balls are not too similar, the algorithm will map the new detections to the correct balls.
+
+例如，想象一个红球刚刚从一个向相反方向行进的蓝球上弹开。基于球的先前位置，卡尔曼滤波器将预测球会穿过彼此：实际上，它假设对象以恒定速度移动，所以它不会预期弹跳。如果匈牙利算法只考虑位置，那么它会愉快地将新检测映射到错误的球上，就好像它们刚刚穿过彼此并交换了颜色。但是由于相似性测量，匈牙利算法会注意到问题。假设球不太相似，算法会将新检测映射到正确的球上。
 
 ![](img/_page_558_Picture_2.jpeg)
 
 There are a few DeepSORT implementations available on GitHub, including a TensorFlow implementation of YOLOv4 + DeepSORT: https://github.com/theAIGuysCode/yolov4-deepsort.
 
+GitHub上有一些DeepSORT实现可用，包括YOLOv4 + DeepSORT的TensorFlow实现：https://github.com/theAIGuysCode/yolov4-deepsort。
+
 So far we have located objects using bounding boxes. This is often sufficient, but sometimes you need to locate objects with much more precision—for example, to remove the background behind a person during a videoconference call. Let's see how to go down to the pixel level.
+
+到目前为止，我们使用边界框定位对象。这通常是足够的，但有时你需要更精确地定位对象——例如，在视频会议通话期间移除人后面的背景。让我们看看如何深入到像素级别。
 
 ### **Semantic Segmentation**
 
+### **语义分割**
+
 In semantic segmentation, each pixel is classified according to the class of the object it belongs to (e.g., road, car, pedestrian, building, etc.), as shown in Figure 14-27. Note that different objects of the same class are not distinguished. For example, all the bicycles on the right side of the segmented image end up as one big lump of pixels. The main difficulty in this task is that when images go through a regular CNN, they gradually lose their spatial resolution (due to the layers with strides greater than 1); so, a regular CNN may end up knowing that there's a person somewhere in the bottom left of the image, but it will not be much more precise than that.
+
+在语义分割中，每个像素根据它所属对象的类别进行分类（例如，道路、汽车、行人、建筑物等），如图14-27所示。注意，同一类别的不同对象不被区分。例如，分割图像右侧的所有自行车最终成为一大块像素。这项任务的主要困难是，当图像通过常规CNN时，它们逐渐失去空间分辨率（由于步长大于1的层）；因此，常规CNN可能最终知道图像左下角某处有一个人，但不会比这更精确。
 
 {559}------------------------------------------------
 
@@ -1441,13 +1659,19 @@ In semantic segmentation, each pixel is classified according to the class of the
 
 Figure 14-27. Semantic segmentation
 
-Just like for object detection, there are many different approaches to tackle this problem, some quite complex. However, a fairly simple solution was proposed in the 2015 paper by Jonathan Long et al. I mentioned earlier, on fully convolutional networks. The authors start by taking a pretrained CNN and turning it into an FCN. The CNN applies an overall stride of 32 to the input image (i.e., if you add up all the strides greater than 1), meaning the last layer outputs feature maps that are 32 times smaller than the input image. This is clearly too coarse, so they added a single *upsampling layer that multiplies the resolution by 32.* 
+Just like for object detection, there are many different approaches to tackle this problem, some quite complex. However, a fairly simple solution was proposed in the 2015 paper by Jonathan Long et al. I mentioned earlier, on fully convolutional networks. The authors start by taking a pretrained CNN and turning it into an FCN. The CNN applies an overall stride of 32 to the input image (i.e., if you add up all the strides greater than 1), meaning the last layer outputs feature maps that are 32 times smaller than the input image. This is clearly too coarse, so they added a single *upsampling layer that multiplies the resolution by 32.*
+
+就像目标检测一样，有许多不同的方法来解决这个问题，有些相当复杂。然而，我之前提到的Jonathan Long等人在2015年关于全卷积网络的论文中提出了一个相当简单的解决方案。作者首先取一个预训练的CNN并将其转换为FCN。CNN对输入图像应用总步长32（即，如果你将所有大于1的步长相加），这意味着最后一层输出的特征图比输入图像小32倍。这显然太粗糙了，所以他们添加了一个*将分辨率乘以32的上采样层*。 
 
 There are several solutions available for upsampling (increasing the size of an image), such as bilinear interpolation, but that only works reasonably well up to  $\times$ 4 or  $\times$ 8. Instead, they use a *transposed convolutional layer*<sup>39</sup> this is equivalent to first stretching the image by inserting empty rows and columns (full of zeros), then performing a regular convolution (see Figure 14-28). Alternatively, some people prefer to think of it as a regular convolutional layer that uses fractional strides (e.g., the stride is  $1/2$ in Figure 14-28). The transposed convolutional layer can be initialized to perform something close to linear interpolation, but since it is a trainable layer, it will learn to do better during training. In Keras, you can use the Conv2DTranspose layer.
+
+有几种可用于上采样（增加图像大小）的解决方案，如双线性插值，但这只在$\times$ 4或$\times$ 8以内效果合理。相反，他们使用*转置卷积层*，这相当于首先通过插入空行和列（全为零）来拉伸图像，然后执行常规卷积（见图14-28）。或者，有些人更喜欢将其视为使用分数步长的常规卷积层（例如，图14-28中的步长是$1/2$）。转置卷积层可以初始化为执行接近线性插值的操作，但由于它是一个可训练层，它将在训练期间学会做得更好。在Keras中，你可以使用Conv2DTranspose层。
 
 ![](img/_page_559_Picture_4.jpeg)
 
 In a transposed convolutional layer, the stride defines how much the input will be stretched, not the size of the filter steps, so the larger the stride, the larger the output (unlike for convolutional layers or pooling layers).
+
+在转置卷积层中，步长定义输入将被拉伸多少，而不是滤波器步骤的大小，所以步长越大，输出越大（与卷积层或池化层不同）。
 
 <sup>39</sup> This type of layer is sometimes referred to as a *deconvolution layer*, but it does not perform what mathematicians call a deconvolution, so this name should be avoided.
 
@@ -1457,13 +1681,23 @@ In a transposed convolutional layer, the stride defines how much the input will 
 
 Figure 14-28. Upsampling using a transposed convolutional layer
 
-#### **Other Keras Convolutional Layers** Keras also offers a few other kinds of convolutional layers: tf.keras.lavers.Conv1D A convolutional layer for 1D inputs, such as time series or text (sequences of letters or words), as you will see in Chapter 15. tf.keras.lavers.Conv3D A convolutional layer for 3D inputs, such as 3D PET scans. dilation rate Setting the dilation\_rate hyperparameter of any convolutional layer to a value of 2 or more creates an $\dot{a}$ -trous convolutional layer ("à trous" is French for "with holes"). This is equivalent to using a regular convolutional layer with a filter dilated by inserting rows and columns of zeros (i.e., holes). For example, a $1 \times$ 3 filter equal to [[1,2,3]] may be dilated with a *dilation rate* of 4, resulting in a dilated filter of $[1, 0, 0, 0, 2, 0, 0, 0, 3]$ . This lets the convolutional layer have a larger receptive field at no computational price and using no extra parameters.
+#### **Other Keras Convolutional Layers** 
+
+#### **其他Keras卷积层**
+
+Keras also offers a few other kinds of convolutional layers: tf.keras.lavers.Conv1D A convolutional layer for 1D inputs, such as time series or text (sequences of letters or words), as you will see in Chapter 15. tf.keras.lavers.Conv3D A convolutional layer for 3D inputs, such as 3D PET scans. dilation rate Setting the dilation\_rate hyperparameter of any convolutional layer to a value of 2 or more creates an $\dot{a}$ -trous convolutional layer ("à trous" is French for "with holes"). This is equivalent to using a regular convolutional layer with a filter dilated by inserting rows and columns of zeros (i.e., holes). For example, a $1 \times$ 3 filter equal to [[1,2,3]] may be dilated with a *dilation rate* of 4, resulting in a dilated filter of $[1, 0, 0, 0, 2, 0, 0, 0, 3]$ . This lets the convolutional layer have a larger receptive field at no computational price and using no extra parameters.
+
+Keras还提供了其他几种卷积层：tf.keras.layers.Conv1D 用于1D输入的卷积层，如时间序列或文本（字母或单词序列），你将在第15章中看到。tf.keras.layers.Conv3D 用于3D输入的卷积层，如3D PET扫描。膨胀率 将任何卷积层的dilation_rate超参数设置为2或更多会创建一个à-trous卷积层（"à trous"在法语中意为"有孔"）。这相当于使用常规卷积层，其滤波器通过插入零行和列（即孔）进行膨胀。例如，等于[[1,2,3]]的$1 \times$ 3滤波器可以用*膨胀率*4进行膨胀，产生膨胀滤波器$[1, 0, 0, 0, 2, 0, 0, 0, 3]$。这让卷积层在没有计算代价和不使用额外参数的情况下具有更大的感受野。
 
 Using transposed convolutional layers for upsampling is OK, but still too imprecise. To do better, Long et al. added skip connections from lower layers: for example, they upsampled the output image by a factor of 2 (instead of 32), and they added the output of a lower layer that had this double resolution. Then they upsampled the result by a factor of 16, leading to a total upsampling factor of 32 (see Figure 14-29). This recovered some of the spatial resolution that was lost in earlier pooling layers.
+
+使用转置卷积层进行上采样是可以的，但仍然太不精确。为了做得更好，Long等人从较低层添加了跳跃连接：例如，他们将输出图像上采样2倍（而不是32倍），并添加了具有这种双倍分辨率的较低层的输出。然后他们将结果上采样16倍，导致总上采样因子为32（见图14-29）。这恢复了在早期池化层中丢失的一些空间分辨率。
 
 {561}------------------------------------------------
 
 In their best architecture, they used a second similar skip connection to recover even finer details from an even lower layer. In short, the output of the original CNN goes through the following extra steps: upsample  $\times 2$ , add the output of a lower layer (of the appropriate scale), upsample  $\times$ 2, add the output of an even lower layer, and finally upsample  $\times$ 8. It is even possible to scale up beyond the size of the original image: this can be used to increase the resolution of an image, which is a technique called super-resolution.
+
+在他们最好的架构中，他们使用了第二个类似的跳跃连接来从更低的层恢复更精细的细节。简而言之，原始CNN的输出经过以下额外步骤：上采样$\times 2$，添加较低层的输出（适当的尺度），上采样$\times$ 2，添加更低层的输出，最后上采样$\times$ 8。甚至可以扩展到超过原始图像的大小：这可以用来增加图像的分辨率，这是一种称为超分辨率的技术。
 
 ![](img/_page_561_Figure_1.jpeg)
 
@@ -1471,7 +1705,11 @@ Figure 14-29. Skip layers recover some spatial resolution from lower layers
 
 *Instance segmentation* is similar to semantic segmentation, but instead of merging all objects of the same class into one big lump, each object is distinguished from the others (e.g., it identifies each individual bicycle). For example the Mask R-CNN architecture, proposed in a 2017 paper<sup>40</sup> by Kaiming He et al., extends the Faster R-CNN model by additionally producing a pixel mask for each bounding box. So, not only do you get a bounding box around each object, with a set of estimated class probabilities, but you also get a pixel mask that locates pixels in the bounding box that belong to the object. This model is available on TensorFlow Hub, pretrained on the COCO 2017 dataset. The field is moving fast, though so if you want to try the latest and greatest models, please check out the state-of-the-art section of https:// paperswithcode.com.
 
+*实例分割*类似于语义分割，但不是将同一类的所有对象合并成一个大块，而是将每个对象与其他对象区分开来（例如，它识别每个单独的自行车）。例如，Kaiming He等人在2017年论文<sup>40</sup>中提出的Mask R-CNN架构，通过为每个边界框额外产生像素掩码来扩展Faster R-CNN模型。因此，你不仅可以获得每个对象周围的边界框和一组估计的类概率，还可以获得定位边界框中属于该对象的像素的像素掩码。该模型在TensorFlow Hub上可用，在COCO 2017数据集上预训练。不过该领域发展很快，所以如果你想尝试最新最好的模型，请查看https://paperswithcode.com的最先进部分。
+
 As you can see, the field of deep computer vision is vast and fast-paced, with all sorts of architectures popping up every year. Almost all of them are based on convolutional neural networks, but since 2020 another neural net architecture has entered the computer vision space: transformers (which we will discuss in Chapter 16). The progress made over the last decade has been astounding, and researchers are now focusing on harder and harder problems, such as *adversarial learning* (which attempts to make the network more resistant to images designed to fool it), explainability (understanding why the network makes a specific classification), realistic *image gen*eration (which we will come back to in Chapter 17), single-shot learning (a system that
+
+如你所见，深度计算机视觉领域是广阔且快节奏的，每年都有各种架构涌现。几乎所有这些都基于卷积神经网络，但自2020年以来，另一种神经网络架构进入了计算机视觉领域：变换器（我们将在第16章中讨论）。过去十年取得的进展令人惊叹，研究人员现在专注于越来越困难的问题，如*对抗学习*（试图使网络对设计来欺骗它的图像更有抵抗力）、可解释性（理解网络为什么做出特定分类）、逼真的*图像生成*（我们将在第17章中回到这个话题）、单次学习（一个系统
 
 <sup>40</sup> Kaiming He et al., "Mask R-CNN", arXiv preprint arXiv:1703.06870 (2017).
 
@@ -1479,9 +1717,15 @@ As you can see, the field of deep computer vision is vast and fast-paced, with a
 
 can recognize an object after it has seen it just once), predicting the next frames in a video, combining text and image tasks, and more.
 
+能够在只看过一次后就识别对象），预测视频中的下一帧，结合文本和图像任务等等。
+
 Now on to the next chapter, where we will look at how to process sequential data such as time series using recurrent neural networks and convolutional neural networks.
 
+现在进入下一章，我们将看看如何使用循环神经网络和卷积神经网络处理时间序列等序列数据。
+
 ### **Fxercises**
+
+### **练习**
 
 - 1. What are the advantages of a CNN over a fully connected DNN for image classification?
 - 2. Consider a CNN composed of three convolutional layers, each with  $3 \times 3$  kernels, a stride of 2, and "same" padding. The lowest layer outputs 100 feature maps, the middle one outputs 200, and the top one outputs 400. The input images are RGB images of  $200 \times 300$  pixels:
@@ -1499,12 +1743,34 @@ Now on to the next chapter, where we will look at how to process sequential data
   - a. Create a training set containing at least 100 images per class. For example, you could classify your own pictures based on the location (beach, mountain, city, etc.), or alternatively you can use an existing dataset (e.g., from TensorFlow Datasets).
   - **b.** Split it into a training set, a validation set, and a test set.
 
+- 1. 对于图像分类，CNN相比全连接DNN有什么优势？
+- 2. 考虑一个由三个卷积层组成的CNN，每个都有$3 \times 3$核，步长为2，"same"填充。最低层输出100个特征图，中间层输出200个，顶层输出400个。输入图像是$200 \times 300$像素的RGB图像：
+  - a. CNN中参数的总数是多少？
+  - b. 如果我们使用32位浮点数，这个网络在对单个实例进行预测时至少需要多少RAM？
+  - c. 在50张图像的小批量上训练时呢？
+- 3. 如果你的GPU在训练CNN时内存不足，你可以尝试解决这个问题的五件事是什么？
+- 4. 为什么你想添加最大池化层而不是具有相同步长的卷积层？
+- 5. 什么时候你想添加局部响应归一化层？
+- 6. 你能说出AlexNet相比LeNet-5的主要创新吗？GoogLeNet、ResNet、SENet、Xception和EfficientNet的主要创新呢？
+- 7. 什么是全卷积网络？如何将密集层转换为卷积层？
+- 8. 语义分割的主要技术难点是什么？
+- 9. 从头构建你自己的CNN，并尝试在MNIST上达到尽可能高的准确率。
+- 10. 使用迁移学习进行大型图像分类，经过以下步骤：
+  - a. 创建一个每类至少包含100张图像的训练集。例如，你可以根据位置（海滩、山脉、城市等）对自己的图片进行分类，或者你可以使用现有数据集（例如，来自TensorFlow Datasets）。
+  - **b.** 将其分为训练集、验证集和测试集。
+
 {563}------------------------------------------------
 
 - c. Build the input pipeline, apply the appropriate preprocessing operations, and optionally add data augmentation.
 - d. Fine-tune a pretrained model on this dataset.
 - 11. Go through TensorFlow's Style Transfer tutorial. This is a fun way to generate art using deep learning.
 
+  - c. 构建输入管道，应用适当的预处理操作，并可选择添加数据增强。
+  - d. 在此数据集上微调预训练模型。
+- 11. 完成TensorFlow的风格迁移教程。这是使用深度学习生成艺术的有趣方式。
+
 Solutions to these exercises are available at the end of this chapter's notebook, at https://homl.info/colab3.
+
+这些练习的解决方案可在本章笔记本的末尾找到，网址为https://homl.info/colab3。
 
 {564}------------------------------------------------
